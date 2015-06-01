@@ -1,0 +1,64 @@
+\documentclass[logo,magister,dosguias]{tesis-postgrado}
+% opciones: logo,dosguias,magister,doctorado,propuesta,txfonts
+
+\keywords{Stream Processing System; Elasticidad; Replicación; Algoritmo predictivo; Algoritmo reactivo}
+
+\begin{document}
+\baselineskip 23pt
+% ----------------------------------------------------------
+% ----------- PARTE INICIAL --------------------------------
+\thispagestyle{empty}
+\include{preliminares/cubierta}
+\makecopyright % si es propuesta no se mostrará
+% ----------------------------------------------------------
+% ----------- PRIMERA PARTE --------------------------------
+\frontmatter
+% ### Resumen e Indices ####
+\include{preliminares/dedicatoria}
+\include{preliminares/agradecimiento}
+\include{preliminares/abstract}
+\pagestyle{fancy}
+\fancyhead[L]{\slshape \leftmark}
+\fancyhead[C]{}
+\fancyhead[R]{\thepage}
+\tableofcontents        %% Indice general
+\listoftables           %% Indice de tablas
+\listoffigures          %% Indice de figuras
+%\listofalgorithms       %% Indice de algoritmos
+
+
+% ----------------------------------------------------------
+% ----------- SEGUNDA PARTE --------------------------------
+\mainmatter
+% ### Configuración del header ###
+\pagestyle{fancy}
+\fancyhead[L]{\slshape \leftmark}
+\fancyhead[C]{}
+\fancyhead[R]{\thepage}
+\pagenumbering{arabic}
+% ### Capitulos de la tesis ###
+\include{chapters/1-introduccion}
+\include{chapters/2-estado_del_arte}
+%\include{chapters/3-disegno_del_framework}
+%\include{chapters/4-aplicaciones_de_ejemplo}
+%\include{chapters/5-evaluacion_del_framework}
+%\include{chapters/6-conclusiones}
+
+
+
+
+% ----------------------------------------------------------
+% ----------- TERCERA PARTE --------------------------------
+% \backmatter %Elimina la numeración
+% ### Bibliografía de este documento ###
+\bibliographystyle{apa-good}
+\bibliography{referencias}
+% ----------------------------------------------------------
+% ----------- CUARTA PARTE ---------------------------------
+\appendix
+\addappheadtotoc %agregar Apéndice al índice. Si no tiene apéndices COMENTAR o BORRAR
+% \noappendicestocpagenum %quitar número de páginas a los apéndices
+% ### ANEXOS ###
+\include{apendices/Apendice-1} % Manuales de Usuario
+\end{document}
+%\\end
