@@ -1,28 +1,46 @@
-\chapter{Estado del arte}
-\label{cap:estado_del_arte}
+\chapter{Marco Teórico}
+\label{cap:marcoTeorico}
 
-%Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}). Una perspectiva es respecto a los recursos físicos, donde se define la sobrecarga de un nodo por la cantidad de operadores que posee \cite{MadsenTZ14}. Una solución es lo realizado por Borealis; éste realiza un balanceador según la carga de los nodos \cite{XingZH05}, de tal manera de enviar las tareas a los nodos menos sobrecargados.
+\section{Sistemas de Procesamiento de \textit{Streaming}}
 
-%Otra perspectiva es a nivel lógico, la cual está orientada en el grafo de operadores, donde el problema está en la sobrecarga de un operador \cite{FernandezMKP13}. Este problema se debe a que un operador puede sobrecargarse, formando cuellos de botella y  esperas en el sistema. Una de las soluciones, es lo presentando por Schneider que corresponde a la paralelización de una tarea que posea distintos operadores \cite{SchneiderAGBW09}, de tal manera que cada tarea pueda trabajar de forma independiente y no sobrecargar un nodo. Otra solución es lo presentando por Fernández \cite{FernandezMKP13}, el cual consiste en la replicación de un operador según la sobrecarga de algún operador en el grafo, de tal manera de detectarlo y crear una réplica de éste para que puedan ambos operadores trabajar en conjunto para la operación demandada.
+Entre los diferentes motores de procesamiento de datos masivos, existen los motores de \textsl{streaming}, los cuales reciben grandes cantidades de datos que deben procesar de forma distribuida y \textsl{online}. Para realizar esto, se requiere un cambio en el paradigma \textsl{bash processing}, el cual guarda los datos en una base de datos, los cuales luego son procesados de forma \textsl{offline} \cite{HawwashN14}, a uno que procese de forma \textsl{online}. Por lo que el paradigma cambia a uno basado en grafos, donde a través del cual fluye un \textsl{stream} de datos que es procesamiento por el conjunto de operadores que lo componen, los operadores corresponden a los nodos del grafo y las aristas a los flujos de datos preprocesados que salen del operador \citep{Shahrivari14}.
 
-Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}), siendo las más consideradas las que consideran los factores de recursos físicos o lógicos como problemas de la sobrecarga del sistema, habiendo dos perspectivas importantes.
+El modelo de procesamiento que se muestra en la Figura \ref{fig:grafo}, corresponde a un SPS (Sistema de Procesamiento de \textit{Streaming}). Los vértices corresponden a operadores, como por ejemplo analizadores de sentimientos, filtros de palabras o algún algoritmo en particular, y las aristas corresponden a los flujos de datos entre un operador y otro. Además de esto, se tiene una fuente de datos, la cual entrega los datos iniciales a los primeros operadores del grafo \citep{AppelFFB12}.
 
-\section{Perspectiva física}
-Se toma en consideración la sobrecarga del sistema dado las limitantes físicas que éste posea, ya sea por condiciones de los recursos disponibles o por el ambiente de desarrollo. Por ejemplo, que exista una violación en el SLO, la cantidad de CPU deseada o disponibilidad de memoria, tomando estos parámetros como umbrales para determinar cuando existe una sobrecarga, para posteriormente utilizar alguna técnica y aliviar el sistema.
+\begin{figure}[ht!]
+  \centering
+    \includegraphics[scale=0.5]{images/Grafo.png}
+  \caption{Ejemplo de modelo de SPE.}
+  \label{fig:grafo}
+\end{figure}
+
+Cada motor de procesamiento de \textsl{streaming} está basado en un modelo de procesamiento en particular. Por ejemplo, S4 está basado en el modelo de procesamiento \textsl{push} \citep{s4yahoo}, y Storm en el modelo \textsl{pull} \citep{stormtwitter}. El primer modelo consiste en el envío de datos desde el operador. La ventaja de este modelo empleado por S4 radica en la abstracción en el envío de datos, sin embargo no asegura el procesamiento de estos, debido a que no existe un mensaje de respuesta al ser entregado al operador. En cambio, en el segundo modelo se basa en la petición de datos a un operador, por lo que son enviados solo si son requeridos. Si bien este modelo asegura procesamiento de los datos, genera una menor abstracción al programador, dado que en el primer modelo sólo se programa a que operador debe ir, en cambio en el segundo se debe indicar quién lo envía y quién lo recibe.
+
+Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
+
+\section{Balance de carga}
+
+Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}), las cuales consideran los recursos físicos o lógicos como problemas de la sobrecarga del sistema.
+
+\subsection{Recursos físicos}
+En esta perspectiva se toma en consideración la sobrecarga del sistema dado las limitantes físicas que éste posea, ya sea por condiciones de los recursos disponibles o por el ambiente de desarrollo. Para esto, se consideran distintos parámetros como umbrales, los cuales si son sobrepasados debe aplicarse alguna estrategia para aliviar la carga del sistema. Estos umbrales pueden ser el nivel SLO, porcentaje de CPU utilizada o disponibilidad de la memoria.
 
 Una de las soluciones con la perspectiva anterior es el Borealis \citep{XingZH05}, donde considerará la cantidad de carga de los nodos en ventanas de tiempo determinadas, las cuales serán manejadas por un coordinador centralizado. Por lo que este coordinador estará encargada de analizar los recursos del sistema, y en caso de sobrepase el umbral propuesto, se deberán emigrar los operadores que estén en ese nodo, para luego ser enviados a otro nodo candidato con menor cantidad de carga. Para elegir al nodo candidato, se realizó una análisis de la cantidad de correlación que existe entre el operador y el nodo candidato, de esta manera, no necesariamente iba a ser enviado a otro nodo con menor sobrecarga, sino también a uno que posea menor cantidad de mensajes. Dentro de los problemas que pueden existir en el sistema es la conexión entre los distintos nodos, por lo que para las pruebas se consideró un buen ancho de banda, de tal manera que aparente una red sin limitaciones de recursos.
 
-\section{Perspectiva lógica}
-A diferencia de la física, aquí se consideran los componentes lógicos del sistema, como por ejemplo, una sobrecarga en algún operador. De esta manera, en las distintas soluciones se pueden encontrar soluciones en cuanto a la carga existente en el operador o la cantidad de cola que posea, de tal manera, que estos sean los umbrales a considerar para generar una mejora en el sistema.
+\subsection{Recursos lógicos}
+%A diferencia de la física, aquí se consideran los componentes lógicos del sistema, como por ejemplo, una sobrecarga en algún operador. De esta manera, en las distintas soluciones se pueden encontrar soluciones en cuanto a la carga existente en el operador o la cantidad de cola que posea, de tal manera, que estos sean los umbrales a considerar para generar una mejora en el sistema.
 
-% ENFOQUES
+A diferencia de la física, en esta perspectiva se consideran los componentes lógicos del sistema, como la carga de un operador. Por lo que las distintas soluciones que se presentan, analizan la componentes como el flujo de datos o el tamaño de la cola de un operador, tomando esos parámetros como umbrales en los algoritmos implementados para realizar mejoras en el sistema.
 
-Por lo tanto, para realizar optimizaciones al sistema se han presentando dos tipos de enfoques: el estático y el dinámico \cite{Dong06schedulingalgorithms}. El primer enfoque se centra en la confección de un modelo definido y fijo antes de iniciar el sistema y que no varía en el tiempo. En cambio, el segundo se basa en la adaptación del sistema según su estado en tiempo de ejecución.
+% Enfoques de la perspectiva lógica
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\section{Enfoque estático}
+Dado esta perspectiva, se han presentando dos tipos de enfoques: el estático y el dinámico \citep{Dong06schedulingalgorithms}. El primer enfoque está centrado en un modelo definido y fijo antes de la inicialización del sistema, sin considerar el estado del sistema. En cambio, el segundo enfoque está basado en un modelo que analizará el sistema según su estado en el transcurso de su ejecución.
 
-Este enfoque se ha implementando en distintos motores de \textsl{streaming}, donde no se depende del estado del sistema \citep{stormtwitter, s4}. De esta manera, no existe una interrupción en la ejecución o un cambio en las variables  \citep{CasavantK88}. Esto significa, que al momento de distribuir los distintos operadores, esto se realiza homogéneamente, independiente de la carga, latencia u otro estado del sistema.
+%El primer enfoque se centra en la confección de un modelo definido y fijo antes de iniciar el sistema y que no varía en el tiempo. En cambio, el segundo se basa en la adaptación del sistema según su estado en tiempo de ejecución.
+
+\subsection{Enfoque estático}
+
+Este enfoque se ha implementando en distintos motores de \textsl{streaming}, donde no se depende del estado del sistema \citep{stormtwitter, s4}. De esta manera, no existe una interrupción en la ejecución o un cambio en las variables \citep{CasavantK88}. Esto significa, que al momento de distribuir los distintos operadores, esto se realiza homogéneamente, independiente de la carga, latencia u otro estado del sistema.
 
 \textsl{Storm} utiliza la técnica de distribución de operadores según alguna política, tomando el enfoque estático \citep{stormtwitter}. El sistema configura el número de operadores que son necesarios para realizar una tarea, para que después estos sean repartidos en los distintos nodos disponibles según la política de \textit{Shuffle grouping}. Esta técnica basada en algoritmos de planificación \citep{bookScheduling}, consiste en distribuir los operadores en los distintos nodos utilizando una planificación \textsl{Round-Robin}, de tal manera que la cantidad de operadores sea uniforme en los nodos del sistema \citep{bookstorm}.
 
@@ -30,16 +48,15 @@ Otra técnica es el uso de la función \textsl{hash} \citep{RogawayS04} para dis
 
 Una ventaja del enfoque estático es el bajo costo de la implementación de los métodos, lo cual es beneficioso para sistemas con bajos recursos. Por otra parte, una desventaja existente es la sobrecarga de un nodo u operador, debido que no asegura que alguno de ellos tenga una mayor tasa de procesamiento que la tasa de llegada. Si bien, no es una solución óptima, es un buen complemento para un modelo con el enfoque dinámico.
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-\section{Enfoque dinámico}
+\subsection{Enfoque dinámico}
 
 Este enfoque está basado en el estado del sistema, donde según las variables y estado de cada uno de sus atributos, genera una acción en el sistema \citep{CasavantK88}. Esto significa que si el sistema posee alguna anomalía, como una sobrecarga en un operador o latencia entre distintos nodos, se realiza un cambio en el sistema, con el fin de solucionar estos problemas. Para poder dar una solución al problema de sobrecarga, se pueden utilizar dos tipos de modelos: reactivo y predictivo.
 
-\subsection{Reactivo}
+\subsubsection{Reactivo}
 
 Este modelo está basado en la detección de sobrecargas en el sistema a través de un monitor \citep{GulisanoJPSV12}. El monitor recibe periódicamente la carga de cada uno de los nodos u operadores, y en caso que se sobrepase un umbral, se aplica una técnica para aumentar el rendimiento bajo una métrica dada. El umbral puede estar basado en el tiempo de procesamiento, el tamaño de la cola u otra variable del nodo u operador \citep{BhuvanagiriGKS06}. Por ejemplo, para realizar una paralelización de un operador sobrecargado, se utiliza un algoritmo que analiza si los operadores sobrepasan un umbral propuesta, el cual está determinado por la frecuencia máxima de llegada de ellos según el tasa de procesamiento del operador \citep{SchneiderAGBW09}.
 
-\subsection{Predictivo}
+\subsubsection{Predictivo}
 El modelo predictivo está basado en modelos matemáticos que puedan simular la actividad del operador, y predecir la carga de éste. Primero se determina la carga de un operador en cierto período de tiempo, y después se aplica un modelo matemático que predice la carga en el próximo intervalo de tiempo. La predicción de carga de cada operador se realiza mediante modelos de Markov \citep{GongGW10}, y analizando si existe alguna sobrecarga en los operadores a futuro. Si bien lo anterior no ha sido implementando en el contexto de \textsl{Stream}, si se ha realizado en \textsl{Cloud Computing} según la sobrecarga de los computadores \citep{NguyenSGSW13}.\\
 
 Existen distintas técnicas que son utilizadas en ambos modelos, entre las cuales están la planificación determinista \citep{XuCTS14, DongTS07}, descarte de eventos \citep{SheuC09}, migración \citep{XingZH05}, para\-lelización \citep{GulisanoJPSV12, IshiiS11, GedikSHW14} y replicación \citep{FernandezMKP13}.

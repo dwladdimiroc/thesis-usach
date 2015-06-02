@@ -6,13 +6,13 @@ A level-1 auxiliary file: preliminares/dedicatoria.aux
 A level-1 auxiliary file: preliminares/agradecimiento.aux
 A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: chapters/1-Introduccion.aux
-A level-1 auxiliary file: chapters/2-EstadoDelArte.aux
+A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: apendices/Apendice-1.aux
 Database file #1: referencias.bib
 You've used 35 entries,
             2804 wiz_defined-function locations,
-            801 strings with 12600 characters,
+            801 strings with 12599 characters,
 and the built_in function-call counts, 21189 in all, are:
 = -- 1790
 > -- 815

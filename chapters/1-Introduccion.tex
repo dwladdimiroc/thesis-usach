@@ -1,5 +1,5 @@
 \chapter{Introducción}
-\label{cap:intro}
+\label{cap:introduccion}
 
 \section{Antecedentes y motivación}
 \label{intro:motivacion}
@@ -15,26 +15,13 @@ El problema de sobrecarga conlleva a una baja en el rendimiento, produciendo una
 \section{Descripción del problema}
 \label{intro:problema}
 
-Entre los diferentes motores de procesamiento de datos masivos, existen los motores de \textsl{streaming}, los cuales reciben grandes cantidades de datos que deben procesar de forma distribuida y \textsl{online}. Para realizar esto, se requiere un cambio en el paradigma \textsl{bash processing}, el cual guarda los datos en una base de datos, los cuales luego son procesados de forma \textsl{offline} \citep{HawwashN14}, a uno que procese de forma \textsl{online}. Por lo que el paradigma cambia a uno basado en grafos, donde a través del cual fluye un \textsl{stream} de datos que es procesamiento por el conjunto de operadores que lo componen, los operadores corresponden a los nodos del grafo y las aristas a los flujos de datos preprocesados que salen del operador \citep{Shahrivari14}.
+%En los SPS (Sistemas de Procesamiento de \textit{Streaming}) son planteados como un grafo en el cual cada vértice es un operador y las aristas son el flujo de datos entre operadores. Debido a esto, puede generarse alguna sobrecarga del sistema, dado distintos factores, entre los cuales puede ser físico o lógico. El físico se define como los componentes que posea la máquina que generan una limitante en el sistema. En cambio, el lógico es una limitante dado los componentes del grafo generador por el sistema.
 
-El modelo de procesamiento que se muestra en la Figura \ref{fig:grafo}, corresponde a un SPE (Sistema de Procesamiento de Eventos). Los vértices corresponden a operadores, como por ejemplo analizadores de sentimientos, filtros de palabras o algún algoritmo en particular, y las aristas corresponden a los flujos de datos entre un operador y otro. Además de esto, se tiene una fuente de datos, la cual entrega los datos iniciales a los primeros operadores del grafo \citep{AppelFFB12}.
+Los SPS (Sistemas de Procesamiento de \textit{Streaming}) están planteados como un grafo cuyas vértices son operadores y las aristas son flujo de datos entre los operadores. Dada su representación, puede existir sobrecarga del sistema a producto de factores físicos o lógicos. El factor físico se define como los componentes que posee la máquina, los cuales pueden ser limitantes para el sistema alojado. En cambio, el lógico se concentra en los componentes del grafo, por lo que existe una limitante en la cantidad de operadores o la cantidad de flujo existente entre los operadores.
 
-\begin{figure}[ht!]
-  \centering
-    \includegraphics[scale=0.5]{images/Grafo.png}
-  \caption{Ejemplo de modelo de SPE.}
-  \label{fig:grafo}
-\end{figure}
+%Es por esto, que el problema se plantea como la sobrecarga que puede existir en el sistema debido a los distintos factores lógicos, como la cola de cada operador, siendo esto a causa de la falta de flexibilidad del SPS, en los operadores más demandados. Esto debido a que no existe una forma de disminuir la sobrecarga y reducir las colas de espera, para mejorar el rendimiento del sistema y obtener información cercana al tiempo real.
 
-Cada motor de procesamiento de \textsl{streaming} está basado en un modelo de procesamiento en particular. Por ejemplo, S4 está basado en el modelo de procesamiento \textsl{push} \citep{s4yahoo}, y Storm en el modelo \textsl{pull} \citep{stormtwitter}. El primer modelo consiste en el envío de datos desde el operador. La ventaja de este modelo empleado por S4 radica en la abstracción en el envío de datos, sin embargo no asegura el procesamiento de estos, debido a que no existe un mensaje de respuesta al ser entregado al operador. En cambio, en el segundo modelo se basa en la petición de datos a un operador, por lo que son enviados solo si son requeridos. Si bien este modelo asegura procesamiento de los datos, genera una menor abstracción al programador, dado que en el primer modelo sólo se programa a que operador debe ir, en cambio en el segundo se debe indicar quién lo envía y quién lo recibe.
-
-Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
-
-El caso más simple de modelo de SPE, existe una réplica por cada operador, de esta manera, cada servicio tendrá un valor de 1. Por lo tanto, al crear réplicas de cada uno de los servicios, se aumenta el rendimiento del sistema, en caso de haber colas. Para no utilizar recursos de forma excesiva, es necesario realizar el proceso de forma elástica, la cual se define como el aumento o disminución de la cantidad de servicios según la cantidad requerida por el sistema.
-
-%Por lo tanto, es importante dar solución a las sobrecargas en los operadores, de tal manera que haya una menor tiempo promedio de espera en el procesamiento de los datos. Además, se tiene una mayor exactitud en los datos entregados, debido que la información entregada es más pŕoxima al tiempo real.
-
-Es importante dar una solución al problema de sobrecarga de los operadores, para disminuir el tiempo del  procesamiento y aumentar la precisión de los resultados del sistema. Por lo tanto, dada la falta de flexibilidad del modelo de procesamiento de \textsl{streams}, surge un problema basado en la sobrecargada de los operadores más demandados. Esto debido a que no existe una forma de disminuir la sobrecarga y reducir las colas de espera, para mejorar el rendimiento del sistema y obtener información cercana al tiempo real.
+Debido a lo anterior, existe un problema en el sistema a raíz de la sobrecarga que puede darse en el sistema debido a los distintos factores lógico, como la cola de cada operador, por la falta de flexibilidad del SPS en los operadores más demandados. Esto sucede dada la condición estática del grafo, es decir que no varia la topología del grafo con el tiempo, por lo que no existe una forma de disminuir la carga y reducir las colas, de tal manera de mejorar el rendimiento del sistema y obtener información cercana al tiempo real.
 
 \section{Solución propuesta}
 \label{intro:solucion}
