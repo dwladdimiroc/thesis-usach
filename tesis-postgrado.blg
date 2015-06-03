@@ -10,44 +10,44 @@ A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: apendices/Apendice-1.aux
 Database file #1: referencias.bib
-You've used 35 entries,
+You've used 36 entries,
             2804 wiz_defined-function locations,
-            801 strings with 12599 characters,
-and the built_in function-call counts, 21189 in all, are:
-= -- 1790
-> -- 815
-< -- 35
-+ -- 309
-- -- 270
-* -- 1506
-:= -- 3251
-add.period$ -- 105
-call.type$ -- 35
-change.case$ -- 295
-chr.to.int$ -- 35
-cite$ -- 35
-duplicate$ -- 1537
-empty$ -- 1594
-format.name$ -- 371
-if$ -- 4270
+            807 strings with 12808 characters,
+and the built_in function-call counts, 21936 in all, are:
+= -- 1856
+> -- 842
+< -- 36
++ -- 319
+- -- 279
+* -- 1560
+:= -- 3357
+add.period$ -- 108
+call.type$ -- 36
+change.case$ -- 305
+chr.to.int$ -- 36
+cite$ -- 36
+duplicate$ -- 1591
+empty$ -- 1651
+format.name$ -- 383
+if$ -- 4427
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 290
-newline$ -- 182
-num.names$ -- 140
-pop$ -- 639
+missing$ -- 299
+newline$ -- 187
+num.names$ -- 144
+pop$ -- 661
 preamble$ -- 1
-purify$ -- 230
+purify$ -- 237
 quote$ -- 0
-skip$ -- 706
+skip$ -- 734
 stack$ -- 0
-substring$ -- 995
-swap$ -- 814
-text.length$ -- 17
+substring$ -- 1038
+swap$ -- 845
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 303
+type$ -- 312
 warning$ -- 0
-while$ -- 166
+while$ -- 172
 width$ -- 0
-write$ -- 451
+write$ -- 464

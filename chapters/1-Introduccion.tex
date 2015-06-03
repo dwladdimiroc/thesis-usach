@@ -43,36 +43,36 @@ El predictor de carga consiste en un método proactivo, el cual analiza la carga
 
 El administrador de réplicas se alimenta de la información entregada por los dos módulos anteriores, y así toma una decisión de la administración de cada una de las réplicas de los distintos operadores. Por lo tanto, verifica cuántas réplicas son necesarias según la cantidad de tráfico de cierto operador.
 
-Finalmente, el sistema de procesamiento constantemente está realizando un \textsl{feedback} al sistema de optimización, de tal manera que pueda administrar las réplicas necesarias.
+Finalmente, el sistema de procesamiento constantemente está realizando un \textit{feedback} al sistema de optimización, de tal manera que pueda administrar las réplicas necesarias.
 
 %HIPOTESIS
-Este sistema dar\'a un procesamiento más rápido de la información entregada en el sistema de procesamiento \textsl{online} de datos, a través de un proceso de optimización que posea bajo \textsl{overhead}.
+Este sistema dar\'a un procesamiento más rápido de la información entregada en el sistema de procesamiento \textit{online} de datos, a través de un proceso de optimización que posea bajo \textit{overhead}.
 
 
 \section{Objetivos y alcance del proyecto}
 \label{intro:objetivos}
 
 \subsection{Objetivo general}
-	Dise\~no, construcción y evaluaci\'on de un algoritmo de predicci\'on y un algoritmo de distribuci\'on de carga para motores de procesamiento de \textsl{stream}.
+	Dise\~no, construcción y evaluaci\'on de un algoritmo de predicci\'on y un algoritmo de distribuci\'on de carga para motores de procesamiento de \textit{stream}.
 
 \subsection{Objetivos específicos}
 \begin{enumerate}
 	\item Dise\~nar e implementar un algoritmo de predicci\'on que permita estimar la carga de los operadores.
 	\item Dise\~nar e implementar un algoritmo de distribuci\'on que permita la administraci\'on de los operadores del grafo de procesamiento de forma el\'astica.
 	\item Dise\~nar y construir experimentos que permitan validar la hip\'otesis formulada.
-	\item Evaluar y analizar el rendimiento del sistema a trav\'es de aplicaciones generadas sobre procesamiento de motores de \textsl{stream}.
+	\item Evaluar y analizar el rendimiento del sistema a trav\'es de aplicaciones generadas sobre procesamiento de motores de \textit{stream}.
 \end{enumerate}
 
 \subsection{Alcances}
 Dentro de los alcances y limitaciones que se tienen en el proyecto son:
 \begin{itemize}
-	\item La evaluación de la solución presentada se implementará sobre un solo motor de procesamiento de \textsl{streaming} a definir.
+	\item La evaluación de la solución presentada se implementará sobre un solo motor de procesamiento de \textit{streaming} a definir.
 %\item Se experimentará con diferentes aplicaciones con restricciones de tiempo de respuesta y con dinamismo en su flujo de datos.
 	\item Se evaluará con al menos dos aplicaciones bajo escenarios simulados utilizando datos reales.
 	\item La distribución de flujo de datos será a nivel de operadores y no de nodos f\'isicos, por lo que no se analizará la carga de estos \'ultimos.
 	\item Los algoritmos propuestos no incluyen t\'ecnicas que garanticen el procesamiento de todo el flujo de datos.
 	\item En la evaluación de los algoritmos propuestos se considerará el costo de comunicación de manera igualitaria para todos los operadores.
-	\item Se comparará la solución con dos motores de procesamiento de \textsl{stream} del estado del arte.
+	\item Se comparará la solución con dos motores de procesamiento de \textit{stream} del estado del arte.
 \end{itemize}
 
 
@@ -92,7 +92,7 @@ Dado el carácter de investigación de la propuesta de tesis, se propone utiliza
 \end{enumerate}
 
 \subsection{Herramientas de desarrollo}
-Para el procesamiento de \textsl{stream} se utilizó Apache S4 0.6.0, por lo que fue necesario para su configuración Java SE Development Kit 8. Dentro esto, el lenguaje de programación de cada una de las estructuras del sistema desarrollado fue en Java, por lo que se trabajó sobre el IDE Eclipse Standard 4.3.2, y para el uso de un modelo matemático se utilizará MATLAB 2014a. De forma complementaria, se utilizará Texmaker 4.2 para la confección de los distintos informes requeridos y la documentación correspondiente al trabajo.
+Para el procesamiento de \textit{stream} se utilizó Apache S4 0.6.0, por lo que fue necesario para su configuración Java SE Development Kit 8. Dentro esto, el lenguaje de programación de cada una de las estructuras del sistema desarrollado fue en Java, por lo que se trabajó sobre el IDE Eclipse Standard 4.3.2, y para el uso de un modelo matemático se utilizará MATLAB 2014a. De forma complementaria, se utilizará Texmaker 4.2 para la confección de los distintos informes requeridos y la documentación correspondiente al trabajo.
 
 \section{Resultados Obtenidos}
 \label{intro:resultados}

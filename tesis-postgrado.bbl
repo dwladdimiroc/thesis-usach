@@ -1,8 +1,14 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{36}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Alves et~al.(2010)Alves, Bizarro, \& Marques}]{Alves2010flood}
+Alves, D., Bizarro, P., \& Marques, P. (2010).
+\newblock Flood: Elastic streaming mapreduce.
+\newblock In {\em Proceedings of the Fourth ACM International Conference on
+  Distributed Event-Based Systems\/}, (pp. 113--114).
 
 \bibitem[{Appel et~al.(2012)Appel, Frischbier, Freudenreich, \&
   Buchmann}]{AppelFFB12}

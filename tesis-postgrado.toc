@@ -16,15 +16,16 @@
 \contentsline {section}{\numberline {1.7}Organizaci\IeC {\'o}n del documento}{7}{section.1.7}
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}Sistemas de Procesamiento de \textit {Streaming}}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Balance de carga}{9}{section.2.2}
+\contentsline {section}{\numberline {2.2}Balance de carga}{10}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Recursos f\IeC {\'\i }sicos}{10}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Recursos l\IeC {\'o}gicos}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Recursos l\IeC {\'o}gicos}{11}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Enfoque est\IeC {\'a}tico}{11}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Enfoque din\IeC {\'a}mico}{12}{subsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.4.1}Reactivo}{12}{subsubsection.2.2.4.1}
-\contentsline {subsubsection}{\numberline {2.2.4.2}Predictivo}{13}{subsubsection.2.2.4.2}
-\contentsline {chapter}{Referencias}{16}{chapter*.6}
-\contentsline {chapter}{Ap\IeC {\'e}ndices}{20}{section*.7}
-\contentsline {chapter}{\numberline {A}Manual de Usuario}{21}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Requerimientos}{21}{section.Alph1.1}
-\contentsline {section}{\numberline {A.2}Instalaci\'on}{21}{section.Alph1.2}
+\contentsline {subsection}{\numberline {2.2.4}Enfoque din\IeC {\'a}mico}{13}{subsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.4.1}Reactivo}{13}{subsubsection.2.2.4.1}
+\contentsline {subsubsection}{\numberline {2.2.4.2}Predictivo}{14}{subsubsection.2.2.4.2}
+\contentsline {subsubsection}{\numberline {2.2.4.3}T\IeC {\'e}cnicas}{14}{subsubsection.2.2.4.3}
+\contentsline {chapter}{Referencias}{17}{chapter*.6}
+\contentsline {chapter}{Ap\IeC {\'e}ndices}{21}{section*.7}
+\contentsline {chapter}{\numberline {A}Manual de Usuario}{22}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Requerimientos}{22}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Instalaci\'on}{22}{section.Alph1.2}
