@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{38}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -111,6 +111,12 @@ Gulisano, V., Jim{\'{e}}nez{-}Peris, R., Pati{\~{n}}o{-}Mart{\'{\i}}nez, M.,
 \newblock {\em {IEEE} Trans. Parallel Distrib. Syst.\/}, {\em 23\/}(12),
   2351--2365.
 
+\bibitem[{Gupta \& Bepari(1999)}]{Gupta99loadsharing}
+Gupta, D., \& Bepari, P. (1999).
+\newblock Load sharing in distributed systems.
+\newblock In {\em In Proceedings of the National Workshop on Distributed
+  Computing\/}.
+
 \bibitem[{Hawwash \& Nasraoui(2014)}]{HawwashN14}
 Hawwash, B., \& Nasraoui, O. (2014).
 \newblock From tweets to stories: Using stream-dashboard to weave the twitter
@@ -166,6 +172,11 @@ Nguyen, H., Shen, Z., Gu, X., Subbiah, S., \& Wilkes, J. (2013).
 Oberhelman, D. (2007).
 \newblock Coming to terms with {W}eb 2.0.
 \newblock {\em Reference Reviews\/}, {\em 21\/}, 5--6.
+
+\bibitem[{Papoulis(1984)}]{Papoulis1984}
+Papoulis, A. (1984).
+\newblock {\em Probability, Random Variables, and Stochastic Processes\/}.
+\newblock Mc-Graw Hill.
 
 \bibitem[{Pittau et~al.(2007)Pittau, Alimonda, Carta, \&
   Acquaviva}]{PittauACA07}
