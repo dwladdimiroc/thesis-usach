@@ -21,12 +21,12 @@
 \contentsline {subsection}{\numberline {2.2.2}Recursos l\IeC {\'o}gicos}{11}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Enfoque est\IeC {\'a}tico}{11}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Enfoque din\IeC {\'a}mico}{13}{subsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.4.1}Reactivo}{13}{subsubsection.2.2.4.1}
-\contentsline {subsubsection}{\numberline {2.2.4.2}Predictivo}{14}{subsubsection.2.2.4.2}
+\contentsline {paragraph}{Reactivo}{13}{subsection.2.2.4}
+\contentsline {paragraph}{Predictivo}{14}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}T\IeC {\'e}cnicas de balance de carga}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Planificaci\IeC {\'o}n determinista}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Planificaci\IeC {\'o}n determinista}{15}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Load Shedding}{16}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Migraci\IeC {\'o}n}{16}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}Migraci\IeC {\'o}n}{17}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Fisi\IeC {\'o}n}{17}{subsection.2.3.4}
 \contentsline {chapter}{Referencias}{19}{chapter*.6}
 \contentsline {chapter}{Ap\IeC {\'e}ndices}{23}{section*.7}

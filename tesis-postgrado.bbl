@@ -1,8 +1,15 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{36}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Abadi et~al.(2003)Abadi, Carney, {\c{C}}etintemel, Cherniack, Convey,
+  Lee, Stonebraker, Tatbul, \& Zdonik}]{aurora}
+Abadi, D.~J., Carney, D., {\c{C}}etintemel, U., Cherniack, M., Convey, C., Lee,
+  S., Stonebraker, M., Tatbul, N., \& Zdonik, S.~B. (2003).
+\newblock Aurora: a new model and architecture for data stream management.
+\newblock {\em {VLDB} J.\/}, {\em 12\/}(2), 120--139.
 
 \bibitem[{Alves et~al.(2010)Alves, Bizarro, \& Marques}]{Alves2010flood}
 Alves, D., Bizarro, P., \& Marques, P. (2010).
@@ -26,12 +33,6 @@ Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
 \newblock In {\em Proceedings of the Seventeenth Annual {ACM-SIAM} Symposium on
   Discrete Algorithms, {SODA} 2006, Miami, Florida, USA, January 22-26,
   2006\/}, (pp. 708--713).
-
-\bibitem[{Birman(2012)}]{bookDistrSys}
-Birman, K.~P. (2012).
-\newblock {\em Guide to Reliable Distributed Systems - Building High-Assurance
-  Applications and Cloud-Hosted Services\/}.
-\newblock Texts in Computer Science. Springer.
 
 \bibitem[{Breuer \& Baum(2005)}]{queueingtheory}
 Breuer, L., \& Baum, D. (2005).
@@ -178,15 +179,6 @@ Papoulis, A. (1984).
 \newblock {\em Probability, Random Variables, and Stochastic Processes\/}.
 \newblock Mc-Graw Hill.
 
-\bibitem[{Pittau et~al.(2007)Pittau, Alimonda, Carta, \&
-  Acquaviva}]{PittauACA07}
-Pittau, M., Alimonda, A., Carta, S., \& Acquaviva, A. (2007).
-\newblock Impact of task migration on streaming multimedia for embedded
-  multiprocessors: {A} quantitative evaluation.
-\newblock In {\em Proceedings of the 2007 5th Workshop on Embedded Systems for
-  Real-Time Multimedia, ESTImedia 2007, October 4-5, Salzburg, Austria,
-  conjunction with {CODES+ISSS} 2007\/}, (pp. 59--64).
-
 \bibitem[{Rogaway \& Shrimpton(2004)}]{RogawayS04}
 Rogaway, P., \& Shrimpton, T. (2004).
 \newblock Cryptographic hash-function basics: Definitions, implications, and
@@ -228,14 +220,6 @@ Sheu, T., \& Chi, Y. (2009).
 Storm (2014).
 \newblock Distributed and fault-tolerant realtime computation.
 \newblock \url{http://storm.incubator.apache.org/}.
-
-\bibitem[{Thies et~al.(2002)Thies, Karczmarek, \& Amarasinghe}]{ThiesKA02}
-Thies, W., Karczmarek, M., \& Amarasinghe, S.~P. (2002).
-\newblock Streamit: {A} language for streaming applications.
-\newblock In {\em Compiler Construction, 11th International Conference, {CC}
-  2002, Held as Part of the Joint European Conferences on Theory and Practice
-  of Software, {ETAPS} 2002, Grenoble, France, April 8-12, 2002,
-  Proceedings\/}, (pp. 179--196).
 
 \bibitem[{Wenzel(2014)}]{Wenzel14}
 Wenzel, S. (2014).
