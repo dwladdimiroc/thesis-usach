@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{37}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -215,6 +215,12 @@ Sheu, T., \& Chi, Y. (2009).
 \newblock Intelligent stale-frame discards for real-time video streaming over
   wireless ad hoc networks.
 \newblock {\em {EURASIP} J. Wireless Comm. and Networking\/}, {\em 2009\/}.
+
+\bibitem[{Stonebraker et~al.(2005)Stonebraker, {\c{C}}etintemel, \&
+  Zdonik}]{StonebrakerCZ05}
+Stonebraker, M., {\c{C}}etintemel, U., \& Zdonik, S.~B. (2005).
+\newblock The 8 requirements of real-time stream processing.
+\newblock {\em {SIGMOD} Record\/}, {\em 34\/}(4), 42--47.
 
 \bibitem[{Storm(2014)}]{stormtwitter}
 Storm (2014).

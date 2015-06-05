@@ -13,6 +13,7 @@ Marco teorico
 - definicion sps
 - Time series
 -- cadena de markov
+-- series de fourier
 --- predictivo (ponerlo aqui)
 - teoria de cola
 
@@ -21,5 +22,11 @@ Estado del arte
 --- dibujos
 - tecnicas
 - elasticidad
+
+Solución
+- 
+
+Experimentos
+- 
 
 buscar spark

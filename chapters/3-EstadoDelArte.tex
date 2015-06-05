@@ -1,48 +1,22 @@
-\chapter{Marco Teórico}
-\label{cap:marcoTeorico}
-
-\section{Streaming}
-
-Streaming es una técnica para la transferencia de datos de forma continua, de tal manera que sea temporal y secuencial, cuyo funcionamiento se basa en el envío de datos por parte de un ente externo para que estos sean procesados, y en caso de estar ocupado el servicio, dejar los datos en cola. Generalmente, esto se utilizado en la interacción de usuarios en la Web, como redes sociales, o reproducción \textit{online} de material multimedia. En la Figura \ref{fig:streaming} se muestra un servidor que emana un flujo de datos que llega a distintos clientes, donde cada uno de ellos procesa la información entrante, y en caso de estar ocupado el procesamiento, se guarda en un \textit{buffer} los datos para posteriormente ser procesados.
-
-\begin{figure}[ht!]
-  \centering
-    \includegraphics[scale=0.8]{images/Streaming.pdf}
-  \caption{Flujo de datos entre servidor y clientes.}
-  \label{fig:streaming}
-\end{figure}
-
-Este tipo de técnica es útil cuando se desee procesar información en tiempo real, por lo que la temporalidad de los datos es importante, como es el caso de la reproducción de datos multimedia. Por lo tanto, detección de patrones de la información en el momento, como detección de fraudes, es un buen caso para utilizar sistemas de procesamiento de \textit{streaming}, dado que el flujo de datos está dado por la interacción de transacciones.
+\chapter{Estado del Arte}
+\label{cap:estadoDelArte}
 
 \section{Sistemas de Procesamiento de \textit{Streaming}}
 
-Entre los diferentes motores de procesamiento de datos masivos, existen los sistemas de procesamiento de \textsl{streaming}, los cuales reciben grandes cantidades de datos que deben procesar de forma distribuida y \textsl{online}. Para realizar esto, se requiere un cambio en el paradigma \textsl{bash processing}, el cual guarda los datos en una base de datos, los que posteriormente son procesados de forma \textsl{offline} \citep{HawwashN14}, a uno que procese de forma \textsl{online}. Por lo que el paradigma cambia a uno basado en grafos, donde a través del cual fluye un \textsl{stream} de datos que es procesamiento por el conjunto de operadores que lo componen, los operadores corresponden a las vértices del grafo, y las aristas a los flujos de datos preprocesados que salen del operador \citep{Shahrivari14}.
+Entre los diferentes motores de procesamiento de datos masivos, existen los motores de \textsl{streaming}, los cuales reciben grandes cantidades de datos que deben procesar de forma distribuida y \textsl{online}. Para realizar esto, se requiere un cambio en el paradigma \textsl{bash processing}, el cual guarda los datos en una base de datos, los que posteriormente son procesados de forma \textsl{offline} \citep{HawwashN14}, a uno que procese de forma \textsl{online}. Por lo que el paradigma cambia a uno basado en grafos, donde a través del cual fluye un \textsl{stream} de datos que es procesamiento por el conjunto de operadores que lo componen, los operadores corresponden a las vértices del grafo, y las aristas a los flujos de datos preprocesados que salen del operador \citep{Shahrivari14}.
 
 El modelo de procesamiento que se muestra en la Figura \ref{fig:grafo}, corresponde a un SPS (Sistema de Procesamiento de \textit{Streaming}). Los vértices corresponden a operadores, como por ejemplo analizadores de sentimientos, filtros de palabras o algún algoritmo en particular, y las aristas corresponden a los flujos de datos entre un operador y otro. Además de esto, se tiene una fuente de datos, la cual entrega los datos iniciales a los primeros operadores del grafo \citep{AppelFFB12}.
 
 \begin{figure}[ht!]
   \centering
     \includegraphics[scale=0.5]{images/Grafo.png}
-  \caption{Ejemplo de modelo de SPS.}
+  \caption{Ejemplo de modelo de SPE.}
   \label{fig:grafo}
 \end{figure}
 
-Cabe destacar que al ser distribuido los SPS, cada uno de las vértices del grafo serán alojadas en un nodo disponible en el ambiente que se esté almacenado el sistema, ya sea un \textit{cluster}, un \textit{grid} o un \textit{Infrastructure-as-Service}. Por lo que se debe realizar una comunicación entre los distintos nodos, para realizar el envío del flujo de un operador a otro.
-
-Los principales uso que se realizan en los SPS es el manejo de grandes cantidades de flujos de datos, los cuales son procesados para obtener información de esto, como es el caso de detección de fraudes, recolección de información en caso de desastres o análisis de la interacción en las redes sociales. Por lo que para ser efectivo esto, es necesario cumplir los siguientes requerimientos \citep{StonebrakerCZ05}:
-
-\begin{itemize}
-	\item Baja latencia: Este concepto está asociado con que debe ser fluida la comunicación entre los distintos nodos que estén trabajando en el sistema, de tal manera que no exista \textit{delay} en el procesamiento del sistema.
-	\item bla
-\end{itemize}
+Cabe destacar que al ser distribuido los SPS, cada uno de las vértices del grafo serán alojadas en un nodo del ambiente que esté siendo almacenada, ya sea un \textit{cluster}, un \textit{grid} o un \textit{Infrastructure-as-Service}. Por lo que se debe realizar una comunicación entre los distintos nodos, para realizar el envío del flujo de un operador a otro.
 
 Cada motor de procesamiento de \textsl{streaming} está basado en un modelo de procesamiento en particular. Por ejemplo, S4 está basado en el modelo de procesamiento \textsl{push} \citep{s4yahoo}, y Storm en el modelo \textsl{pull} \citep{stormtwitter}. El primer modelo consiste en el envío de datos desde el operador. La ventaja de este modelo empleado por S4 radica en la abstracción en el envío de datos, sin embargo no asegura el procesamiento de estos, debido a que no existe un mensaje de respuesta al ser entregado al operador. En cambio, en el segundo modelo se basa en la petición de datos a un operador, por lo que son enviados solo si son requeridos. Si bien este modelo asegura procesamiento de los datos, genera una menor abstracción al programador, dado que en el primer modelo sólo se programa a que operador debe ir, en cambio en el segundo se debe indicar quién lo envía y quién lo recibe.
-
-\subsection{Serie temporal}
-
-BLa bla bla
-
-\subsection{Teoría de colas}
 
 Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
 
