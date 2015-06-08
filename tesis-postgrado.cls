@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tesis}[Estilo de Tesis Usach]
+\ProvidesClass{tesis}[2015/06/08 v1.4 Estilo para tesis (Daniel Wladdimiro)]
 \newif\ifkeys\keysfalse
 \newif\iftxfonts\txfontsfalse
 \newif\ifdosguias\dosguiasfalse
@@ -58,7 +58,7 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amsmath}
-\RequirePackage{mathtools}
+%\RequirePackage{mathtools}
 \RequirePackage{amsthm}
 \RequirePackage{marvosym}
 \RequirePackage{textcomp}

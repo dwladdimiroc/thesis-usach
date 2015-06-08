@@ -77,36 +77,75 @@ Se define proceso estocástico como una colección de variables aleatorias {$X_t
 Por lo tanto, se puede definir estado como el posible comportamiento que puede tener una variable aleatoria en el sistema. Por ejemplo, se puede poseer un modelo que considere tres estados: estable, inestable y ocioso, y según el valor de la variable aleatoria pueda definirse el estado en uno de esos tres estados. Dado estos estados, puede generarse modelos que aplican estos estados como las cadenas de Markov, las cuales toman representan distintos estados dada variables aleatorias en tiempos discretos y una serie temporal con sus respectivas variables aleatorias \citep{de1978calculus}.
 
 \subsection{Cadena de Markov}
-Sea $X_t$ el valor de una variable aleatoria $X$ en un tiempo $t$. El conjunto de todas los valores posibles para $X$ se llama espacio de estado. La variable aleatoria es un proceso de Markov si las probabilidades de transición entre dos estados cualquiera de $\omega$, sólo depende del estado actual como se muestra en la Figura \ref{fig:procesoMarkov}. Cabe destacar que este tipo de proceso es un caso específico de los procesos estocásticos.
+Sea $X_t$ el valor de una variable aleatoria $X$ en un tiempo $t$. El conjunto de todas los valores posibles para $X$ se llama espacio de estado. La variable aleatoria es un proceso de Markov si las probabilidades de transición entre dos estados cualquiera de $\omega$ sólo depende del estado, lo cual se denota en la Ecuación \ref{eq:defMarkov} y gráficamente en la Figura \ref{fig:procesoMarkov}. Cabe destacar que este tipo de proceso es un caso específico de los procesos estocásticos.
 
-$P_r(X_{t+r} = S_j | X_0 = S_k ; X_1 = S_l ; ... ; X_t = S_i) = P_r(X_{t+1} = S_j | X_t = S_i) $
+\begin{equation} \label{eq:defMarkov} 
+	P_r(X_{t+r} = S_j | X_0 = S_k ; X_1 = S_l ; ... ; X_t = S_i) = P_r(X_{t+1} = S_j | X_t = S_i)
+\end{equation}
 
 \begin{figure}[ht!]
   \centering
-    \includegraphics[scale=1]{images/ProcesoMarkov.pdf}
+    \includegraphics[scale=0.6]{images/ProcesoMarkov.pdf}
   \caption{Proceso de Markov.}
   \label{fig:procesoMarkov}
 \end{figure}
 
-Una cadena de Markov es una secuencia de variables aleatorias generadas por un proceso de Markov, como se .
+Una cadena de Markov es una secuencia de variables aleatorias generadas por un proceso de Markov, como se denota en la Ecuación \ref{eq:cadenaMarkov}
 
-$(X_0, X_1, X_2, ..., X_{n-1}, X_{n})$
+\begin{equation} \label{eq:cadenaMarkov}
+	(X_0, X_1, X_2, ..., X_{n-1}, X_{n})
+\end{equation}
 
-La cual se define por sus probabilidades de transición
+La cual se define por sus probabilidades de transición, definida en la Ecuación \ref{eq:cadenaMarkov}. En la Figura \ref{fig:cadenaMarkov} se muestra un ejemplo de la transición del estado $i$ al estado $j$, dada la probabilidad $P_{ij}$.
 
-$P_{ij} = P_r(i \rightarrow j) = P_r(X_{t+1} = S_j | X_t = S_i)$
+\begin{equation} \label{eq:transicionMarkov}
+	P_{ij} = P_r(i \rightarrow j) = P_r(X_{t+1} = S_j | X_t = S_i)
+\end{equation}
 
 \begin{figure}[ht!]
   \centering
-    \includegraphics[scale=1]{images/CadenaMarkov.pdf}
+    \includegraphics[scale=0.6]{images/CadenaMarkov.pdf}
   \caption{Cadena de Markov.}
-  \label{fig:procesoMarkov}
+  \label{fig:cadenaMarkov}
 \end{figure}
+
+En la Ecuación \ref{eq:matrizTransicion} se presenta una matriz de transición de finitos estados, donde la probabilidad de pasar de un estado a otro esta terminado por una posición de la matriz, tomando en consideración que la suma de todas las transición de un estado debe ser igual a 1.
+
+\begin{equation} \label{eq:matrizTransicion}
+	P =
+	\begin{bmatrix}
+		P_{1,1} & P_{1,2} & \cdots & P_{1,m} \\
+		P_{2,1} & P_{2,2} & \cdots & P_{2,m} \\
+		\vdots  & \vdots  & \ddots & \vdots  \\
+		P_{n,1} & P_{n,2} & \cdots & P_{n,m} \\
+	\end{bmatrix}
+	\hspace*{1cm} \sum_{j=1}^{m} P_{ij} = 1 ; \forall i
+\end{equation}
+
+En la Figura \ref{fig:ejCadenaMarkov} se muestra un ejemplo de una cadena de Markov simple, donde se analiza la probabilidad del clima de mañana dado el clima de hoy día. Como se podrá observar, no se considera la historia del clima en la semana, sólo en el caso actual, lo cual es aplicado en los procesos estocásticos. Dada las probabilidades que transite de un clima a otro, se puede ver en la Ecuación \ref{eq:ejCadenaMarkov} la matriz de transición resultante.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{images/EjCadenaMarkov.pdf}
+	\caption{Ejemplo de cadena de Markov.}
+	\label{fig:ejCadenaMarkov}
+\end{figure}
+
+\begin{equation} \label{eq:matrizTransicion}
+	P =
+	\begin{bmatrix}
+		\frac{1}{2} & \frac{1}{4} & \frac{1}{4} \\
+		\frac{1}{2} & 0 & \frac{1}{2} \\
+		\frac{1}{4} & \frac{1}{4} & \frac{1}{2}
+	\end{bmatrix}
+\end{equation}
+
+Si se desea saber la probabilidad que la cadena esté en el estado $S_i$ en el tiempo $t+1$, está dada por la ecuación de Chapman-Kolmogórov \citep{Papoulis1984}
 
 \subsection{Trabajo relacionado}
 Los modelos predictivos están basados en modelos matemáticos, los cuales simulan el comportamiento del sistema, ya sea del flujo o de la carga de un operador, de tal manera que pueda predecir como será su estado en un tiempo futuro. En general, para poder realizar una predicción se analiza las variables deseadas en una ventana de tiempo, para posteriormente aplicar un modelo matemático que prediga la variación del sistema en la próxima ventana de tiempo que se tiene estipulada.
 
-Dentro de las aplicaciones que se han realizado con modelos predictivos, se encuentra PRESS \citep{GongGW10}. En este sistema lo que se analiza es la cantidad de recursos disponibles, ya sea la memoria disponible o el uso promedio de CPU, en las máquinas virtuales que se dispone en el \textit{Infrastructure-as-a-Service}. Para realizar la predicción del estado del sistema, se aplicó cadenas de Markov, tomando sus estados como ventanas de tiempo en un determinado período. De esta manera, se analiza el estado del sistema en un tiempo en específico, para analizar si posee correlación con algún estado de la cadena de Markov, para posteriormente ver la transición de ese estado a otro y generar la matriz de transición. Posteriormente, con la ecuación de Chapman-Kolmogorov \citep{Papoulis1984}, se calcula la distribución estacionaria de la matriz estacionaria, de tal manera de saber en que estado estará en la próxima ventana de tiempo, para finalmente analizar si es necesario algún cambio en el sistema.
+Dentro de las aplicaciones que se han realizado con modelos predictivos, se encuentra PRESS \citep{GongGW10}. En este sistema lo que se analiza es la cantidad de recursos disponibles, ya sea la memoria disponible o el uso promedio de CPU, en las máquinas virtuales que se dispone en el \textit{Infrastructure-as-a-Service}. Para realizar la predicción del estado del sistema, se aplicó cadenas de Markov, tomando sus estados como ventanas de tiempo en un determinado período. De esta manera, se analiza el estado del sistema en un tiempo en específico, para analizar si posee correlación con algún estado de la cadena de Markov, para posteriormente ver la transición de ese estado a otro y generar la matriz de transición. Posteriormente, con la ecuación de Chapman-Kolmogorov, se calcula la distribución estacionaria de la matriz estacionaria, de tal manera de saber en que estado estará en la próxima ventana de tiempo, para finalmente analizar si es necesario algún cambio en el sistema.
 
 Dentro de la misma línea, existe el sistema AGILE que modifica las máquinas virtuales de forma elástica en un \textit{Infrastructure-as-a-Service} \citep{NguyenSGSW13}. Lo que se realizó en este trabajo fue aplicar la transformada de Fourier a la carga de CPU en una ventana de tiempo determinada, donde la función resultante se analizó con distintas frecuencias, de tal manera de solicitar la predicción de la próxima ventana de tiempo a cada una de las funciones creadas. De esta manera, se sintetizan todas predicciones realizadas por cada función, para analizar el comportamiento del sistema en la próxima ventana de tiempo, y ver si es necesario aumentar o disminuir recursos de éste.
 
