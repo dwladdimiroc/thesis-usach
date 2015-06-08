@@ -1,25 +1,6 @@
 \chapter{Estado del Arte}
 \label{cap:estadoDelArte}
 
-\section{Sistemas de Procesamiento de \textit{Streaming}}
-
-Entre los diferentes motores de procesamiento de datos masivos, existen los motores de \textsl{streaming}, los cuales reciben grandes cantidades de datos que deben procesar de forma distribuida y \textsl{online}. Para realizar esto, se requiere un cambio en el paradigma \textsl{bash processing}, el cual guarda los datos en una base de datos, los que posteriormente son procesados de forma \textsl{offline} \citep{HawwashN14}, a uno que procese de forma \textsl{online}. Por lo que el paradigma cambia a uno basado en grafos, donde a través del cual fluye un \textsl{stream} de datos que es procesamiento por el conjunto de operadores que lo componen, los operadores corresponden a las vértices del grafo, y las aristas a los flujos de datos preprocesados que salen del operador \citep{Shahrivari14}.
-
-El modelo de procesamiento que se muestra en la Figura \ref{fig:grafo}, corresponde a un SPS (Sistema de Procesamiento de \textit{Streaming}). Los vértices corresponden a operadores, como por ejemplo analizadores de sentimientos, filtros de palabras o algún algoritmo en particular, y las aristas corresponden a los flujos de datos entre un operador y otro. Además de esto, se tiene una fuente de datos, la cual entrega los datos iniciales a los primeros operadores del grafo \citep{AppelFFB12}.
-
-\begin{figure}[ht!]
-  \centering
-    \includegraphics[scale=0.5]{images/Grafo.png}
-  \caption{Ejemplo de modelo de SPE.}
-  \label{fig:grafo}
-\end{figure}
-
-Cabe destacar que al ser distribuido los SPS, cada uno de las vértices del grafo serán alojadas en un nodo del ambiente que esté siendo almacenada, ya sea un \textit{cluster}, un \textit{grid} o un \textit{Infrastructure-as-Service}. Por lo que se debe realizar una comunicación entre los distintos nodos, para realizar el envío del flujo de un operador a otro.
-
-Cada motor de procesamiento de \textsl{streaming} está basado en un modelo de procesamiento en particular. Por ejemplo, S4 está basado en el modelo de procesamiento \textsl{push} \citep{s4yahoo}, y Storm en el modelo \textsl{pull} \citep{stormtwitter}. El primer modelo consiste en el envío de datos desde el operador. La ventaja de este modelo empleado por S4 radica en la abstracción en el envío de datos, sin embargo no asegura el procesamiento de estos, debido a que no existe un mensaje de respuesta al ser entregado al operador. En cambio, en el segundo modelo se basa en la petición de datos a un operador, por lo que son enviados solo si son requeridos. Si bien este modelo asegura procesamiento de los datos, genera una menor abstracción al programador, dado que en el primer modelo sólo se programa a que operador debe ir, en cambio en el segundo se debe indicar quién lo envía y quién lo recibe.
-
-Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
-
 \section{Balance de carga}
 
 Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}), las cuales consideran los recursos físicos o lógicos como problemas de la sobrecarga del sistema.
@@ -71,17 +52,6 @@ Este modelo está basado en la detección de sobrecargas en el sistema a través
 % Arreglar
 Si bien estas soluciones en su mayoría son eficientes y poseen buen rendimiento, una de los principales problemas es que no analiza el comportamiento a futuro, debido que sólo analiza la situación en el momento, resolviendo el problema en el momento. Otro problema son los falsos positivos, debido que puede ser que en un momento exista un \textit{pick} de tráfico, pero esto era sólo un caso particular de un tiempo determinado, por lo que no era necesaria la mejora en el sistema.
 
-\paragraph{Predictivo}
-
-%El modelo predictivo está basado en modelos matemáticos que puedan simular la actividad del operador y predecir la carga de éste en tiempo futuro. En general, los pasos a seguir son en primer lugar determinar la carga de un operador en cierto período de tiempo, y segundo lugar aplicar un modelo matemático que prediga la carga en el próximo intervalo de tiempo. Un ejemplo de esto, es la predicción de carga de cada operador se realiza mediante modelos de Markov \citep{GongGW10}, de tal manera que con la iteración . Si bien lo anterior no ha sido implementando en el contexto de \textsl{Stream}, si se ha realizado en \textit{Cloud Computing} según la sobrecarga de los computadores \citep{NguyenSGSW13}.
-
-Los modelos predictivos están basados en modelos matemáticos, los cuales simulan el comportamiento del sistema, ya sea del flujo o de la carga de un operador, de tal manera que pueda predecir como será su estado en un tiempo futuro. En general, para poder realizar una predicción se analiza las variables deseadas en una ventana de tiempo, para posteriormente aplicar un modelo matemático que prediga la variación del sistema en la próxima ventana de tiempo que se tiene estipulada.
-
-Dentro de las aplicaciones que se han realizado con modelos predictivos, se encuentra PRESS \citep{GongGW10}. En este sistema lo que se analiza es la cantidad de recursos disponibles, ya sea la memoria disponible o el uso promedio de CPU, en las máquinas virtuales que se dispone en el \textit{Infrastructure-as-a-Service}. Para realizar la predicción del estado del sistema, se aplicó cadenas de Markov, tomando sus estados como ventanas de tiempo en un determinado período. De esta manera, se analiza el estado del sistema en un tiempo en específico, para analizar si posee correlación con algún estado de la cadena de Markov, para posteriormente ver la transición de ese estado a otro y generar la matriz de transición. Posteriormente, con la ecuación de Chapman-Kolmogorov \citep{Papoulis1984}, se calcula la distribución estacionaria de la matriz estacionaria, de tal manera de saber en que estado estará en la próxima ventana de tiempo, para finalmente analizar si es necesario algún cambio en el sistema.
-
-Dentro de la misma línea, existe el sistema AGILE que modifica las máquinas virtuales de forma elástica en un \textit{Infrastructure-as-a-Service} \citep{NguyenSGSW13}. Lo que se realizó en este trabajo fue aplicar la transformada de Fourier a la carga de CPU en una ventana de tiempo determinada, donde la función resultante se analizó con distintas frecuencias, de tal manera de solicitar la predicción de la próxima ventana de tiempo a cada una de las funciones creadas. De esta manera, se sintetizan todas predicciones realizadas por cada función, para analizar el comportamiento del sistema en la próxima ventana de tiempo, y ver si es necesario aumentar o disminuir recursos de éste.
-
-%Par esto, se analizarán distintos estados como cantidad de ventanas de tiempo que se consideren en un período determinado, por lo que posteriormente se analizará si cierto tiempo posee una correlación o no con cierto estado, de esta manera se analiza el cambio que surge de un estado a otro hasta generar una 
 
 \section{Técnicas de balance de carga}
 

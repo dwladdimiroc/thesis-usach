@@ -11,44 +11,46 @@ A level-1 auxiliary file: chapters/3-EstadoDelArte.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: apendices/Apendice-1.aux
 Database file #1: referencias.bib
-You've used 37 entries,
+Warning--empty journal in de1978calculus
+You've used 40 entries,
             2804 wiz_defined-function locations,
-            815 strings with 12661 characters,
-and the built_in function-call counts, 22504 in all, are:
-= -- 1878
-> -- 901
-< -- 35
-+ -- 343
-- -- 300
-* -- 1624
-:= -- 3463
-add.period$ -- 110
-call.type$ -- 37
-change.case$ -- 315
-chr.to.int$ -- 37
-cite$ -- 37
-duplicate$ -- 1627
-empty$ -- 1679
-format.name$ -- 409
-if$ -- 4505
+            827 strings with 13016 characters,
+and the built_in function-call counts, 23884 in all, are:
+= -- 1983
+> -- 957
+< -- 37
++ -- 366
+- -- 318
+* -- 1718
+:= -- 3693
+add.period$ -- 118
+call.type$ -- 40
+change.case$ -- 334
+chr.to.int$ -- 40
+cite$ -- 41
+duplicate$ -- 1729
+empty$ -- 1787
+format.name$ -- 436
+if$ -- 4772
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 313
-newline$ -- 192
-num.names$ -- 148
-pop$ -- 683
+missing$ -- 336
+newline$ -- 206
+num.names$ -- 160
+pop$ -- 740
 preamble$ -- 1
-purify$ -- 248
+purify$ -- 266
 quote$ -- 0
-skip$ -- 726
+skip$ -- 772
 stack$ -- 0
-substring$ -- 1039
-swap$ -- 867
+substring$ -- 1074
+swap$ -- 908
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 321
-warning$ -- 0
-while$ -- 173
+type$ -- 342
+warning$ -- 1
+while$ -- 182
 width$ -- 0
-write$ -- 475
+write$ -- 509
+(There was 1 warning)

@@ -1,9 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-% Estilo original para tesis de Victor Munoz
-% Agradecimiento por aportes a:
-% Rodrigo Campos
-% Hugo Meneses
-\ProvidesClass{tesis}[2014/12/26 v1.3 Estilo para tesis (Víctor Flores)]
+\ProvidesClass{tesis}[Estilo de Tesis Usach]
 \newif\ifkeys\keysfalse
 \newif\iftxfonts\txfontsfalse
 \newif\ifdosguias\dosguiasfalse
@@ -62,6 +58,7 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amsmath}
+\RequirePackage{mathtools}
 \RequirePackage{amsthm}
 \RequirePackage{marvosym}
 \RequirePackage{textcomp}

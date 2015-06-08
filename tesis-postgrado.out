@@ -15,33 +15,24 @@
 \BOOKMARK [1][]{section.1.7}{1.7 Organizaci\363n del documento}{chapter.1}% 15
 \BOOKMARK [0][]{chapter.2}{2 Marco Te\363rico}{}% 16
 \BOOKMARK [1][]{section.2.1}{2.1 Streaming}{chapter.2}% 17
-\BOOKMARK [1][]{section.2.2}{2.2 Sistemas de Procesamiento de Streaming}{chapter.2}% 18
-\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Serie temporal}{section.2.2}% 19
-\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Teor\355a de colas}{section.2.2}% 20
-\BOOKMARK [1][]{section.2.3}{2.3 Balance de carga}{chapter.2}% 21
-\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Recursos f\355sicos}{section.2.3}% 22
-\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Recursos l\363gicos}{section.2.3}% 23
-\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Enfoque est\341tico}{section.2.3}% 24
-\BOOKMARK [2][]{subsection.2.3.4}{2.3.4 Enfoque din\341mico}{section.2.3}% 25
-\BOOKMARK [1][]{section.2.4}{2.4 T\351cnicas de balance de carga}{chapter.2}% 26
-\BOOKMARK [2][]{subsection.2.4.1}{2.4.1 Planificaci\363n determinista}{section.2.4}% 27
-\BOOKMARK [2][]{subsection.2.4.2}{2.4.2 Load Shedding}{section.2.4}% 28
-\BOOKMARK [2][]{subsection.2.4.3}{2.4.3 Migraci\363n}{section.2.4}% 29
-\BOOKMARK [2][]{subsection.2.4.4}{2.4.4 Fisi\363n}{section.2.4}% 30
-\BOOKMARK [0][]{chapter.3}{3 Estado del Arte}{}% 31
-\BOOKMARK [1][]{section.3.1}{3.1 Sistemas de Procesamiento de Streaming}{chapter.3}% 32
-\BOOKMARK [1][]{section.3.2}{3.2 Balance de carga}{chapter.3}% 33
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Recursos f\355sicos}{section.3.2}% 34
-\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Recursos l\363gicos}{section.3.2}% 35
-\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Enfoque est\341tico}{section.3.2}% 36
-\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Enfoque din\341mico}{section.3.2}% 37
-\BOOKMARK [1][]{section.3.3}{3.3 T\351cnicas de balance de carga}{chapter.3}% 38
-\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Planificaci\363n determinista}{section.3.3}% 39
-\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Load Shedding}{section.3.3}% 40
-\BOOKMARK [2][]{subsection.3.3.3}{3.3.3 Migraci\363n}{section.3.3}% 41
-\BOOKMARK [2][]{subsection.3.3.4}{3.3.4 Fisi\363n}{section.3.3}% 42
-\BOOKMARK [0][]{chapter*.8}{Referencias}{}% 43
-\BOOKMARK [0][]{section*.9}{Ap\351ndices}{}% 44
-\BOOKMARK [0][]{appendix.Alph1}{A Manual de Usuario}{}% 45
-\BOOKMARK [1][]{section.Alph1.1}{A.1 Requerimientos}{appendix.Alph1}% 46
-\BOOKMARK [1][]{section.Alph1.2}{A.2 Instalaci\363n}{appendix.Alph1}% 47
+\BOOKMARK [1][]{section.2.2}{2.2 Sistemas de Procesamiento de Stream}{chapter.2}% 18
+\BOOKMARK [1][]{section.2.3}{2.3 Procesos estoc\341sticos}{chapter.2}% 19
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Cadena de Markov}{section.2.3}% 20
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Trabajo relacionado}{section.2.3}% 21
+\BOOKMARK [1][]{section.2.4}{2.4 Teor\355a de colas}{chapter.2}% 22
+\BOOKMARK [0][]{chapter.3}{3 Estado del Arte}{}% 23
+\BOOKMARK [1][]{section.3.1}{3.1 Balance de carga}{chapter.3}% 24
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Recursos f\355sicos}{section.3.1}% 25
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Recursos l\363gicos}{section.3.1}% 26
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Enfoque est\341tico}{section.3.1}% 27
+\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Enfoque din\341mico}{section.3.1}% 28
+\BOOKMARK [1][]{section.3.2}{3.2 T\351cnicas de balance de carga}{chapter.3}% 29
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Planificaci\363n determinista}{section.3.2}% 30
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Load Shedding}{section.3.2}% 31
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Migraci\363n}{section.3.2}% 32
+\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Fisi\363n}{section.3.2}% 33
+\BOOKMARK [0][]{chapter*.9}{Referencias}{}% 34
+\BOOKMARK [0][]{section*.10}{Ap\351ndices}{}% 35
+\BOOKMARK [0][]{appendix.Alph1}{A Manual de Usuario}{}% 36
+\BOOKMARK [1][]{section.Alph1.1}{A.1 Requerimientos}{appendix.Alph1}% 37
+\BOOKMARK [1][]{section.Alph1.2}{A.2 Instalaci\363n}{appendix.Alph1}% 38

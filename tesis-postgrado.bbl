@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{40}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -16,6 +16,13 @@ Alves, D., Bizarro, P., \& Marques, P. (2010).
 \newblock Flood: Elastic streaming mapreduce.
 \newblock In {\em Proceedings of the Fourth ACM International Conference on
   Distributed Event-Based Systems\/}, (pp. 113--114).
+
+\bibitem[{Andrade et~al.(2014)Andrade, Gedik, \&
+  Turaga}]{andrade2014fundamentals}
+Andrade, H., Gedik, B., \& Turaga, D. (2014).
+\newblock {\em Fundamentals of Stream Processing: Application Design, Systems,
+  and Analytics\/}.
+\newblock Cambridge University Press.
 
 \bibitem[{Appel et~al.(2012)Appel, Frischbier, Freudenreich, \&
   Buchmann}]{AppelFFB12}
@@ -56,6 +63,10 @@ Chen, C. L.~P., \& Zhang, C. (2014).
 \newblock Data-intensive applications, challenges, techniques and technologies:
   {A} survey on big data.
 \newblock {\em Inf. Sci.\/}, {\em 275\/}, 314--347.
+
+\bibitem[{De~Sapio(1978)}]{de1978calculus}
+De~Sapio, R. (1978).
+\newblock Calculus for the life sciences.
 
 \bibitem[{Documentation(2014)}]{stormtwitterdoc}
 Documentation, S. (2014).
@@ -178,6 +189,11 @@ Oberhelman, D. (2007).
 Papoulis, A. (1984).
 \newblock {\em Probability, Random Variables, and Stochastic Processes\/}.
 \newblock Mc-Graw Hill.
+
+\bibitem[{Pinsky \& Karlin(2010)}]{pinsky2010introduction}
+Pinsky, M., \& Karlin, S. (2010).
+\newblock {\em An introduction to stochastic modeling\/}.
+\newblock Academic press.
 
 \bibitem[{Rogaway \& Shrimpton(2004)}]{RogawayS04}
 Rogaway, P., \& Shrimpton, T. (2004).
