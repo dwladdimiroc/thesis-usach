@@ -20,21 +20,21 @@
 \contentsline {section}{\numberline {2.3}Procesos estoc\IeC {\'a}sticos}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Cadena de Markov}{14}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Trabajo relacionado}{17}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Teor\IeC {\'\i }a de colas}{18}{section.2.4}
-\contentsline {chapter}{\numberline {3}Estado del Arte}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Balance de carga}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Recursos f\IeC {\'\i }sicos}{19}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Recursos l\IeC {\'o}gicos}{20}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Enfoque est\IeC {\'a}tico}{20}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Enfoque din\IeC {\'a}mico}{22}{subsection.3.1.4}
-\contentsline {paragraph}{Reactivo}{22}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}T\IeC {\'e}cnicas de balance de carga}{23}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Planificaci\IeC {\'o}n determinista}{23}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Load Shedding}{24}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Migraci\IeC {\'o}n}{25}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{25}{subsection.3.2.4}
-\contentsline {chapter}{Referencias}{27}{chapter*.12}
-\contentsline {chapter}{Ap\IeC {\'e}ndices}{31}{section*.13}
-\contentsline {chapter}{\numberline {A}Manual de Usuario}{32}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Requerimientos}{32}{section.Alph1.1}
-\contentsline {section}{\numberline {A.2}Instalaci\'on}{32}{section.Alph1.2}
+\contentsline {section}{\numberline {2.4}Teor\IeC {\'\i }a de colas}{19}{section.2.4}
+\contentsline {chapter}{\numberline {3}Estado del Arte}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}Balance de carga}{20}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Recursos f\IeC {\'\i }sicos}{20}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Recursos l\IeC {\'o}gicos}{21}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Enfoque est\IeC {\'a}tico}{21}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Enfoque din\IeC {\'a}mico}{23}{subsection.3.1.4}
+\contentsline {paragraph}{Reactivo}{23}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}T\IeC {\'e}cnicas de balance de carga}{24}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Planificaci\IeC {\'o}n determinista}{24}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Load Shedding}{25}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Migraci\IeC {\'o}n}{26}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{26}{subsection.3.2.4}
+\contentsline {chapter}{Referencias}{28}{chapter*.12}
+\contentsline {chapter}{Ap\IeC {\'e}ndices}{32}{section*.13}
+\contentsline {chapter}{\numberline {A}Manual de Usuario}{33}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Requerimientos}{33}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Instalaci\'on}{33}{section.Alph1.2}

@@ -153,17 +153,39 @@ Si se desea saber la probabilidad que la cadena esté en el estado $S_i$ en el t
 En notación matricial:
 
 \begin{equation} \label{eq:chapman-kolgorov2}
+\begin{split}
+	\Pi_{(t+1)} &= \Pi_{(t)}P\\
 	\begin{bmatrix}
- 		\Pi_1 & \Pi_2 & \Pi_3
+		\Pi_1 & \Pi_2 & \Pi_3
+	\end{bmatrix} _{(t+1)}
+	&= \begin{bmatrix}
+		\Pi_1 & \Pi_2 & \Pi_3
+	\end{bmatrix} _{(t)}
+	\begin{bmatrix}
+		P_{1,1} & P_{1,2} & \cdots & P_{1,n} \\
+		P_{2,1} & P_{2,2} & \cdots & P_{2,n} \\
+		\vdots  & \vdots  & \ddots & \vdots  \\
+		P_{n,1} & P_{n,2} & \cdots & P_{n,n}
 	\end{bmatrix}
+\end{split}
+\end{equation}
+
+Usando recurrencia, se puede calcular la distribución estacionaria como se muestra la ecuación \ref{eq:chapman-kolgorov3}, la cual indica el comportamiento a futuro de la cadena de Markov, dado los estados y transiciones que éste posee.
+
+\begin{equation} \label{eq:chapman-kolgorov3}
+\begin{split}
+	\Pi (t) &= \Pi (t-1)P \\
+				  &= \Pi (t-2)P^{2}\\
+				  &= \Pi (0)P^{t} ; \Pi (0): \text{distribución inicial}
+\end{split}
 \end{equation}
 
 \subsection{Trabajo relacionado}
 Los modelos predictivos están basados en modelos matemáticos, los cuales simulan el comportamiento del sistema, ya sea del flujo o de la carga de un operador, de tal manera que pueda predecir como será su estado en un tiempo futuro. En general, para poder realizar una predicción se analiza las variables deseadas en una ventana de tiempo, para posteriormente aplicar un modelo matemático que prediga la variación del sistema en la próxima ventana de tiempo que se tiene estipulada.
 
-Dentro de las aplicaciones que se han realizado con modelos predictivos, se encuentra PRESS \citep{GongGW10}. En este sistema lo que se analiza es la cantidad de recursos disponibles, ya sea la memoria disponible o el uso promedio de CPU, en las máquinas virtuales que se dispone en el \textit{Infrastructure-as-a-Service}. Para realizar la predicción del estado del sistema, se aplicó cadenas de Markov, tomando sus estados como ventanas de tiempo en un determinado período. De esta manera, se analiza el estado del sistema en un tiempo en específico, para analizar si posee correlación con algún estado de la cadena de Markov, para posteriormente ver la transición de ese estado a otro y generar la matriz de transición. Posteriormente, con la ecuación de Chapman-Kolmogorov, se calcula la distribución estacionaria de la matriz estacionaria, de tal manera de saber en que estado estará en la próxima ventana de tiempo, para finalmente analizar si es necesario algún cambio en el sistema.
+Dentro de las aplicaciones que se han realizado con modelos predictivos, se encuentra PRESS \citep{GongGW10}. En este sistema orientado para \textit{Cloud Computing}, lo que se analiza es la cantidad de recursos disponibles, ya sea la memoria disponible o el uso promedio de CPU, en las máquinas virtuales que se dispone en el \textit{Infrastructure-as-a-Service}. Para realizar la predicción del estado del sistema, se aplicó cadenas de Markov, tomando sus estados como ventanas de tiempo en un determinado período. De esta manera, se analiza el estado del sistema en un tiempo en específico, para analizar si posee correlación con algún estado de la cadena de Markov, para posteriormente ver la transición de ese estado a otro y generar la matriz de transición. Posteriormente, con la ecuación de Chapman-Kolmogorov, se calcula la distribución estacionaria de la matriz estacionaria, de tal manera de saber en que estado estará en la próxima ventana de tiempo, para finalmente analizar si es necesario algún cambio en el sistema.
 
-Dentro de la misma línea, existe el sistema AGILE que modifica las máquinas virtuales de forma elástica en un \textit{Infrastructure-as-a-Service} \citep{NguyenSGSW13}. Lo que se realizó en este trabajo fue aplicar la transformada de Fourier a la carga de CPU en una ventana de tiempo determinada, donde la función resultante se analizó con distintas frecuencias, de tal manera de solicitar la predicción de la próxima ventana de tiempo a cada una de las funciones creadas. De esta manera, se sintetizan todas predicciones realizadas por cada función, para analizar el comportamiento del sistema en la próxima ventana de tiempo, y ver si es necesario aumentar o disminuir recursos de éste.
+Dentro de la misma línea de modelos predictivos, existe el sistema AGILE para \textit{Cloud Computing}, que modifica las máquinas virtuales de forma elástica en un \textit{Infrastructure-as-a-Service} \citep{NguyenSGSW13}. Lo que se realizó en este trabajo fue aplicar la transformada de Fourier a la carga de CPU en una ventana de tiempo determinada, donde la función resultante se analizó con distintas frecuencias, de tal manera de solicitar la predicción de la próxima ventana de tiempo a cada una de las funciones creadas. De esta manera, se sintetizan todas predicciones realizadas por cada función, para analizar el comportamiento del sistema en la próxima ventana de tiempo, y ver si es necesario aumentar o disminuir recursos de éste.
 
 \section{Teoría de colas}
 
