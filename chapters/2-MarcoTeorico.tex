@@ -114,12 +114,12 @@ En la Ecuación \ref{eq:matrizTransicion} se presenta una matriz de transición 
 \begin{equation} \label{eq:matrizTransicion}
 	P =
 	\begin{bmatrix}
-		P_{1,1} & P_{1,2} & \cdots & P_{1,m} \\
-		P_{2,1} & P_{2,2} & \cdots & P_{2,m} \\
+		P_{1,1} & P_{1,2} & \cdots & P_{1,n} \\
+		P_{2,1} & P_{2,2} & \cdots & P_{2,n} \\
 		\vdots  & \vdots  & \ddots & \vdots  \\
-		P_{n,1} & P_{n,2} & \cdots & P_{n,m} \\
+		P_{n,1} & P_{n,2} & \cdots & P_{n,n} \\
 	\end{bmatrix}
-	\hspace*{1cm} \sum_{j=1}^{m} P_{ij} = 1 ; \forall i
+	\hspace*{1cm} \sum_{j=1}^{n} P_{ij} = 1 ; \forall i
 \end{equation}
 
 En la Figura \ref{fig:ejCadenaMarkov} se muestra un ejemplo de una cadena de Markov simple, donde se analiza la probabilidad del clima de mañana dado el clima de hoy día. Como se podrá observar, no se considera la historia del clima en la semana, sólo en el caso actual, lo cual es aplicado en los procesos estocásticos. Dada las probabilidades que transite de un clima a otro, se puede ver en la Ecuación \ref{eq:ejCadenaMarkov} la matriz de transición resultante.
@@ -131,16 +131,32 @@ En la Figura \ref{fig:ejCadenaMarkov} se muestra un ejemplo de una cadena de Mar
 	\label{fig:ejCadenaMarkov}
 \end{figure}
 
-\begin{equation} \label{eq:matrizTransicion}
+\begin{equation} \label{eq:ejCadenaMarkov}
 	P =
 	\begin{bmatrix}
 		\frac{1}{2} & \frac{1}{4} & \frac{1}{4} \\
 		\frac{1}{2} & 0 & \frac{1}{2} \\
 		\frac{1}{4} & \frac{1}{4} & \frac{1}{2}
-	\end{bmatrix}
+	\end{bmatrix}	
 \end{equation}
 
-Si se desea saber la probabilidad que la cadena esté en el estado $S_i$ en el tiempo $t+1$, está dada por la ecuación de Chapman-Kolmogórov \citep{Papoulis1984}
+Si se desea saber la probabilidad que la cadena esté en el estado $S_i$ en el tiempo $t+1$, está dada por la ecuación de Chapman-Kolmogórov \citep{Papoulis1984}:
+
+\begin{equation} \label{eq:chapman-kolmogorov1}
+\begin{split}
+	\Pi_{i} (t+1) &= P_r(X_{t+i}=S_i) \\
+				  &= \sum _{k} P_r(X_{t+i} = S_i / X_t = S_k)·P_r(X_t = S_k)\\
+				  &= \sum _{k} P_r(X_{t+i} = S_i / X_t = S_k)·\Pi_{k} (t)
+\end{split}	
+\end{equation}
+
+En notación matricial:
+
+\begin{equation} \label{eq:chapman-kolgorov2}
+	\begin{bmatrix}
+ 		\Pi_1 & \Pi_2 & \Pi_3
+	\end{bmatrix}
+\end{equation}
 
 \subsection{Trabajo relacionado}
 Los modelos predictivos están basados en modelos matemáticos, los cuales simulan el comportamiento del sistema, ya sea del flujo o de la carga de un operador, de tal manera que pueda predecir como será su estado en un tiempo futuro. En general, para poder realizar una predicción se analiza las variables deseadas en una ventana de tiempo, para posteriormente aplicar un modelo matemático que prediga la variación del sistema en la próxima ventana de tiempo que se tiene estipulada.
