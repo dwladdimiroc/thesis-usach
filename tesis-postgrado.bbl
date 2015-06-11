@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{42}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -64,6 +64,11 @@ Chen, C. L.~P., \& Zhang, C. (2014).
   {A} survey on big data.
 \newblock {\em Inf. Sci.\/}, {\em 275\/}, 314--347.
 
+\bibitem[{Ching \& Ng(2006)}]{ching2006markov}
+Ching, W.~K., \& Ng, M.~K. (2006).
+\newblock {\em Markov chains\/}.
+\newblock Springer.
+
 \bibitem[{De~Sapio(1978)}]{de1978calculus}
 De~Sapio, R. (1978).
 \newblock Calculus for the life sciences.
@@ -85,6 +90,12 @@ Dong, M., Tong, L., \& Sadler, B.~M. (2007).
   Deterministic scheduling versus random access.
 \newblock {\em {IEEE} Transactions on Signal Processing\/}, {\em 55\/}(12),
   5806--5820.
+
+\bibitem[{Falk et~al.(2012)Falk, Marohn, Michel, Hofmann, Macke, Tewes, \&
+  Dinges}]{falk2012first}
+Falk, M., Marohn, F., Michel, R., Hofmann, D., Macke, M., Tewes, B., \& Dinges,
+  P. (2012).
+\newblock A first course on time series analysis: examples with sas.
 
 \bibitem[{Fernandez et~al.(2013)Fernandez, Migliavacca, Kalyvianaki, \&
   Pietzuch}]{FernandezMKP13}
@@ -190,11 +201,6 @@ Papoulis, A. (1984).
 \newblock {\em Probability, Random Variables, and Stochastic Processes\/}.
 \newblock Mc-Graw Hill.
 
-\bibitem[{Pinsky \& Karlin(2010)}]{pinsky2010introduction}
-Pinsky, M., \& Karlin, S. (2010).
-\newblock {\em An introduction to stochastic modeling\/}.
-\newblock Academic press.
-
 \bibitem[{Rogaway \& Shrimpton(2004)}]{RogawayS04}
 Rogaway, P., \& Shrimpton, T. (2004).
 \newblock Cryptographic hash-function basics: Definitions, implications, and
@@ -242,6 +248,11 @@ Stonebraker, M., {\c{C}}etintemel, U., \& Zdonik, S.~B. (2005).
 Storm (2014).
 \newblock Distributed and fault-tolerant realtime computation.
 \newblock \url{http://storm.incubator.apache.org/}.
+
+\bibitem[{Taylor \& Karlin(2014)}]{taylor2014introduction}
+Taylor, H.~M., \& Karlin, S. (2014).
+\newblock {\em An introduction to stochastic modeling\/}.
+\newblock Academic press.
 
 \bibitem[{Wenzel(2014)}]{Wenzel14}
 Wenzel, S. (2014).
