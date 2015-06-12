@@ -189,4 +189,14 @@ Dentro de la misma línea de modelos predictivos, existe el sistema AGILE \citep
 
 \section{Teoría de colas}
 
-Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
+%Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
+
+Dentro de los sistemas que se basan en el modelo de productor y consumidor, puede tratarse como un modelo matemática basado en las líneas de espera en el sistema, el estudio de esto se denomina teoría de colas.
+
+La teoría de colas se centra en el estudio de las colas que existen en un sistema cuyo esquema existe un productor y un consumidor (servidor), como se muestra en la Figura \ref{fig:teoriaColas}. En este esquema se puede ver que existe 
+
+\begin{figure}
+	\includegraphics[scale=1]{images/TeoriaColas.pdf}
+	\caption{Ejemplo de un sistema.}
+	\label{fig:teoriaColas}
+\end{figure}
