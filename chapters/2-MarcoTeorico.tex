@@ -189,14 +189,31 @@ Dentro de la misma línea de modelos predictivos, existe el sistema AGILE \citep
 
 \section{Teoría de colas}
 
-%Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
+Dentro de los sistemas que se basan en el modelo de productor y consumidor, puede tratarse como un modelo matemática basado en las líneas de espera en el sistema, el estudio de esto se denomina teoría de colas \citep{queueingtheory}.
 
-Dentro de los sistemas que se basan en el modelo de productor y consumidor, puede tratarse como un modelo matemática basado en las líneas de espera en el sistema, el estudio de esto se denomina teoría de colas.
+La teoría de colas se centra en el estudio de las colas que existen en un sistema cuyo esquema existe un productor y un consumidor (servidor), como se muestra en la Figura \ref{fig:teoriaColas}. De esta manera, se encuentran tres entes importantes: el productor, la cola y el servidor.
 
-La teoría de colas se centra en el estudio de las colas que existen en un sistema cuyo esquema existe un productor y un consumidor (servidor), como se muestra en la Figura \ref{fig:teoriaColas}. En este esquema se puede ver que existe 
+\begin{itemize}
+	\item \textbf{Productor} es quién provee la fuente de entrada para el servidor, de tal manera que procese según la necesidad que se posea.
+	\item \textbf{Cola} o línea de espera, la cual está encargada de almacenar la información emanada por el productor en caso que los servidores estén ocupados, para que posteriormente sean procesados.
+	\item \textbf{Servidor} es quién procesa la información disponible en la cola, de tal manera que entre una fuente de salida con los datos o información deseada.
+\end{itemize}
 
-\begin{figure}
-	\includegraphics[scale=1]{images/TeoriaColas.pdf}
-	\caption{Ejemplo de un sistema.}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.6]{images/TeoriaColas.pdf}
+	\caption{Ejemplo de un sistema basado en teoría de colas.}
 	\label{fig:teoriaColas}
 \end{figure}
+
+Además de esto, se tienen ciertos componentes importantes en el sistemas, definidos a continuación:
+\begin{itemize}
+	\item \textbf{Tasa de llegada}, denotado $\lambda$, es la cantidad de datos, eventos o información que van llegando por un determinado período de tiempo, la cual está determinada por los productores que existan en el sistema.
+	\item \textbf{Tasa de procesamiento} , denotado $\mu$, es la cantidad de datos, eventos o información que salen del sistema, a producto del servicio que provisto por cada servidor.
+	\item \textbf{Tasa de rendimiento}, denotado $\rho$, es el porcentaje de utilización del sistema, donde $\rho = \frac{\lambda}{\mu}$, siendo un sistema estable si $\rho < 1$, dado que la capacidad de procesamiento es mayor que la tasa de llegada.
+	\item \textbf{Disciplina de la cola} significa el método utilizado para extraer los datos encolados en el sistema, para esto puede aplicarse los métodos \textit{FIFO},\textit{LIFO}, \textit{RSS}, entre otros.
+\end{itemize}
+
+%Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
+
+Este tipo de modelos se puede aplicar en los SPS, debido que la fuente de datos es el productor y cada operador es un servidor del sistema. Por lo que existe un problema interesante a analizar, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce a causa que la tasa de procesamiento es menor a la tasa de llegada, creando colas en el sistema. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se tendrá un sistema inestable, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.

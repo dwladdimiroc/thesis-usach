@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{44}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -162,6 +162,14 @@ Ishii, A., \& Suzumura, T. (2011).
 \newblock In {\em {IEEE} International Conference on Cloud Computing, {CLOUD}
   2011, Washington, DC, USA, 4-9 July, 2011\/}, (pp. 195--202).
 
+\bibitem[{Lehrig et~al.(2015)Lehrig, Eikerling, \& Becker}]{LehrigEB15}
+Lehrig, S., Eikerling, H., \& Becker, S. (2015).
+\newblock Scalability, elasticity, and efficiency in cloud computing: a
+  systematic literature review of definitions and metrics.
+\newblock In {\em Proceedings of the 11th International {ACM} {SIGSOFT}
+  Conference on Quality of Software Architectures, QoSA'15 (part of CompArch
+  2015), Montreal, QC, Canada, May 4-8, 2015\/}, (pp. 83--92).
+
 \bibitem[{Leibiusky et~al.(2012)Leibiusky, Eisbruch, \& Simonassi}]{bookstorm}
 Leibiusky, J., Eisbruch, G., \& Simonassi, D. (2012).
 \newblock {\em Getting Started with Storm - Continuous Streaming Computation
@@ -200,6 +208,15 @@ Oberhelman, D. (2007).
 Papoulis, A. (1984).
 \newblock {\em Probability, Random Variables, and Stochastic Processes\/}.
 \newblock Mc-Graw Hill.
+
+\bibitem[{Pittau et~al.(2007)Pittau, Alimonda, Carta, \&
+  Acquaviva}]{PittauACA07}
+Pittau, M., Alimonda, A., Carta, S., \& Acquaviva, A. (2007).
+\newblock Impact of task migration on streaming multimedia for embedded
+  multiprocessors: {A} quantitative evaluation.
+\newblock In {\em Proceedings of the 2007 5th Workshop on Embedded Systems for
+  Real-Time Multimedia, ESTImedia 2007, October 4-5, Salzburg, Austria,
+  conjunction with {CODES+ISSS} 2007\/}, (pp. 59--64).
 
 \bibitem[{Rogaway \& Shrimpton(2004)}]{RogawayS04}
 Rogaway, P., \& Shrimpton, T. (2004).

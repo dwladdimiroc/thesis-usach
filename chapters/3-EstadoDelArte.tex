@@ -1,8 +1,20 @@
 \chapter{Estado del Arte}
 \label{cap:estadoDelArte}
+\section{Elasticidad}
+La propiedad de elasticidad en el área de \textit{Cloud Computing} o \textit{SPS}, está arraigado con capacidad que el sistema se adapte dinámicamente según el rendimiento que éste posea. Esto quiere decir, que aumente o disminuya los recursos necesarios para que funcione de manera eficiente el sistema.
+
+En el caso de \textit{Cloud Computing}, se pueden ver trabajos que han realizado este tipo como en \citep{GongGW10, NguyenSGSW13, LehrigEB15}, donde de manera elástica el sistema determina la cantidad de máquinas virtuales necesarias en el sistema. Por otra parte, en los SPS, existen trabajos como \citep{GedikSHW14, IshiiS11, SchneiderAGBW09, MadsenTZ14, GulisanoJPSV12}, que el sistema de forma dinámica determina la cantidad de operadores necesarios para realizar una tarea en específico, como se ve representando en la Figura \ref{fig:elasticidad}.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.55]{images/Elasticidad.pdf}
+	\caption{Elasticidad en un SPS.}
+	\label{fig:elasticidad}
+\end{figure}
+
+Un ejemplo práctico de elasticidad es el supermercado, donde se debe considerar la cantidad de cajas necesarias para atender de manera eficiente los $n$ clientes que van llegando en un período de tiempo. Si se estudia el período de la mañana, en general, es tiene un bajo flujo de personas que acude al supermercado, en comparación con la tarde, pero alto con la medianoche. Por lo tanto, en los horarios de la tarde es necesario poseer una mayor cantidad de cajas disponibles que en la tarde, disminuyendo la cantidad cuando el horario borde la media noche, adaptándose de forma elástica la cantidad de cajas disponibles en el supermercado.
 
 \section{Balance de carga}
-
 Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}), las cuales consideran los recursos físicos o lógicos como problemas de la sobrecarga del sistema.
 
 \subsection{Recursos físicos}
@@ -49,13 +61,11 @@ Este enfoque está basado en el estado del sistema, siendo esto el parámetro pa
 
 Este modelo está basado en la detección de sobrecargas en el sistema a través de un monitor \citep{GulisanoJPSV12}, el cual recibe periódicamente las variables de cada uno los operadores, y en caso que sobrepase un umbral, se aplica una técnica para aumentar el rendimiento bajo una métrica dada. El umbral puede estar basado en el tiempo de procesamiento, el tamaño de la cola u otra variable del operador \citep{BhuvanagiriGKS06}. Por ejemplo, para realizar una optimización en el rendimiento general del sistema, se considera la tasa de procesamiento de cada operador, por lo que en caso de existir congestión en un operador, se procede a realizar una paralelización del operador, de tal manera que exista un operador adicional que pueda recibir un flujo de datos y realizar la misma operación que el operador sobrecargado \citep{SchneiderAGBW09}.
 
-% Arreglar
-Si bien estas soluciones en su mayoría son eficientes y poseen buen rendimiento, una de los principales problemas es que no analiza el comportamiento a futuro, debido que sólo analiza la situación en el momento, resolviendo el problema en el momento. Otro problema son los falsos positivos, debido que puede ser que en un momento exista un \textit{pick} de tráfico, pero esto era sólo un caso particular de un tiempo determinado, por lo que no era necesaria la mejora en el sistema.
-
+Si bien estas soluciones en su mayoría son eficientes y poseen buen rendimiento, una de los principales problemas es que no analiza el comportamiento a futuro, debido que sólo analiza y resuelve la situación en el momento. Otro problema son los falsos positivos, debido que puede ser que en un momento exista un \textit{pick} de tráfico, pero esto era sólo un caso particular de un tiempo determinado, por lo que no era necesaria la mejora en el sistema.
 
 \section{Técnicas de balance de carga}
 
-Existen distintas técnicas de balance de carga que utilizan alguno de los dos modelos presentados anteriormente, los cuales están enfocadas en mejorar al rendimiento del sistema en caso de existir una sobrecarga. Dentro de las técnicas existentes se encuentrán la planificación determinista \citep{XuCTS14, DongTS07}, descarte de eventos \citep{SheuC09}, migración \citep{XingZH05}, paralelización \citep{GulisanoJPSV12, IshiiS11, GedikSHW14} y replicación \citep{FernandezMKP13}.
+Existen distintas técnicas de balance de carga que utilizan alguno de los dos modelos presentados anteriormente, los cuales están enfocadas en mejorar al rendimiento del sistema en caso de existir una sobrecarga. Dentro de las técnicas existentes se encuentrán la planificación determinista \citep{XuCTS14, DongTS07}, descarte de eventos \citep{SheuC09}, migración \citep{XingZH05}, fisión \citep{GulisanoJPSV12, IshiiS11, GedikSHW14, FernandezMKP13} y \textit{load balancing}. %\citep{StreamIt}.
 
 \subsection{Planificación determinista}
 %La planificación determinista \citep{DongTS07} se centra en la planificación según los recursos y estados del sistema \textit{a priori} según alguna métrica \citep{XuCTS14}. Una métrica utilizada es la frecuencia de datos estimada en un nodo u operador \citep{Ganguly09}. Esta técnica se utiliza, por ejemplo, en \textit{StreamIt} \citep{ThiesKA02}. Una de las limitaciones es que si bien realiza una predicción determinista de la frecuencia, no necesariamente es correcta a futuro, por lo que no se puede predecir las tasas de tráfico en el transcurso del procesamiento, sino sólo estimarlas al comienzo de la ejecución del sistema.
@@ -69,7 +79,14 @@ Una de las limitaciones es que si bien realiza una predicción determinista de l
 \subsection{Load Shedding}
 %Otra estrategia está orientada a descartar eventos de un operador sobrecargado, de tal manera de no generar colas en el sistema. Esta estrategia que si bien no está implementada en el sistema por defecto de S4, puede habilitarse \citep{s4}. Otro ejemplo, es la trasmisión de vídeo \textit{streaming}, donde se descartan los datos que son de baja calidad, para procesar en su mayoría información de alta calidad \citep{SheuC09}. Esta solución está pensada para disminuir la carga, perdiendo la exactitud de la información debido a la pérdida de datos. Por lo tanto existe una menor fiabilidad en el sistema en caso de realizar operaciones de transacción \citep{bookDistrSys}.
 
-En los SPS también se encuentra la técnica de \textit{load shedding} o descarte de eventos, que consiste en descartar eventos del sistema en caso de existir un comportamiento anómalo. Por ejemplo, en la transmisión de \textit{video streaming}, al enviar el flujo de información existe un administrador que estará analizando el contenido a procesar, por lo que en caos de llegar datos de baja calidad, serán descartados por éste. De esta manera, al existir menor cantidad de datos que procesar, el sistema posee un mejor rendimiento, además de tener una mejor calidad en la visualización de los videos, dado que en su mayoría se procesan datos de alta calidad \citep{SheuC09}. 
+En los SPS también se encuentra la técnica de \textit{load shedding} o descarte de eventos, que consiste en descartar eventos del sistema en caso de existir un comportamiento anómalo, ya sea un máximo en la cantidad de la cola u otro factor como se puede apreciar en la Figura \ref{fig:loadShedding}. Por ejemplo, en la transmisión de \textit{video streaming}, al enviar el flujo de información existe un administrador que estará analizando el contenido a procesar, por lo que en caos de llegar datos de baja calidad, serán descartados por éste. De esta manera, al existir menor cantidad de datos que procesar, el sistema posee un mejor rendimiento, además de tener una mejor calidad en la visualización de los videos, dado que en su mayoría se procesan datos de alta calidad \citep{SheuC09}. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.6]{images/LoadShedding.pdf}
+	\caption{Load shedding en un SPS.}
+	\label{fig:loadShedding}
+\end{figure}
 
 En el mundo de los SPS, varios poseen este tipo de estrategia, como por ejemplo S4 \citep{s4}, doonde se establece una cota superior de eventos en cola, y en caso que su cola sea igual al límite establecido, los eventos entrantes serán descartados. Otro sistema que aplica esta técnica es Aurora \citep{aurora}, el cual se basa en procesamiento de datos por ventanas de tiempo, por lo que en caso de existir una ventana de tiempo con una mayor cantidad de eventos de lo estipulado, se descartará el exceso de eventos.
 
@@ -78,9 +95,42 @@ Si bien esta técnica es simple y de bajo costo, siendo pensada para la disminuc
 \subsection{Migración}
 %También se encuentra la migración, en el cual según el estado del sistema se migran los operadores de un nodo a otro. En \citep{XingZH05} se implementa   esta técnica, y si bien genera una menor carga en distintos nodos, produce un alto costo en la transferencia de los datos. Al realizar la transferencia de los datos, existe una menor tolerancia a fallos, a raíz de lo cual, se propone el uso de un búffer en el sistema, aumentando sus costos \citep{PittauACA07}.
 
+La técnica de migración está basada en el traspaso de un operador de un nodo a otro, según el estado del sistema, como se puede apreciar en la Figura \ref{fig:migracion}. Si bien no existe alguna implementación que utilice los recursos lógicos, si existe una que utiliza los recursos físicos como es el caso de Borealis, el cual fue explicado anteriormente \citep{XingZH05}. Una de las principales críticas que se realiza a esta técnica, es la transferencia de datos, por lo que existe una menor tolerancia de fallos, por lo que se propone el uso de \textit{buffer} que tengan respaldos de la información, aumentando los costos del sistema \citep{PittauACA07}.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.45]{images/Migracion.pdf}
+	\caption{Técnia de migración en un SPS.}
+	\label{fig:migracion}
+\end{figure}
+
 \subsection{Fisión}
-Desde otra perspectiva, existen las técnicas de paralelización y replicación, las cuales se utilizan en caso de sobrepasar un umbral, el cual depende de la carga de un operador, nodo, entre otras variables. El primero consiste en paralelizar una tarea, la cual está determinada por un conjunto de operadores, en otro nodo físico \citep{IshiiS11}. En cambio, la replicación consiste en replicar un operador a nivel lógico del grafo \citep{MadsenTZ14}. Una de las características que existen en este tipo de soluciones es la elasticidad, que consiste en la capacidad de aumentar o disminuir la cantidad de operadores según la necesidad del sistema.
+%Desde otra perspectiva, existen las técnicas de paralelización y replicación, las cuales se utilizan en caso de sobrepasar un umbral, el cual depende de la carga de un operador, nodo, entre otras variables. El primero consiste en paralelizar una tarea, la cual está determinada por un conjunto de operadores, en otro nodo físico \citep{IshiiS11}. En cambio, la replicación consiste en replicar un operador a nivel lógico del grafo \citep{MadsenTZ14}. Una de las características que existen en este tipo de soluciones es la elasticidad, que consiste en la capacidad de aumentar o disminuir la cantidad de operadores según la necesidad del sistema.
 
-Una aplicación de la técnica de paralelización según el enfoque estático, es la paralelización de tareas de Storm \citep{stormtwitterdoc}, donde un conjunto de operadores realizan una tarea, indicado la cantidad de tareas que se desean ejecutar paralelamente en el sistema. Un ejemplo aplicado de esta técnica según el enfoque dińamico es StreamCloud \citep{GulisanoJPSV12}, que dada la cantidad de consultas que van llegando al sistema, se paralelizan las tareas existentes. Uno de los problemas que surge en estos casos son las operaciones con estado, como lo son los contadores o algoritmos de orden. La solución planteada es poseer un operador que realiza la tarea de \textit{merge}, que consiste en recibir las salidas de las tareas paralelas, agrupando los datos y proporcionando una salida según lo realizado por cada uno de las operaciones \citep{GedikSHW14}.
+Otra técnica utilizada en el balance de carga es la fisión, o también llamada replicación, particionamiento o paralelismo, la cual consiste en crear una réplica paralela del operador, sin perder el funcionamiento y estado, en caso de existe una sobrecarga en el operador. En Figura \ref{fig:fision} se puede ver que existe un operador A, el cual en primera instancia tiene un flujo de entrada $q_1$ y flujo de salida $q_2$, pero debido a la sobrecarga del operador A, se crea dos operadores extras, los cuales pasarán por un \textit{Split} y posteriormente por un \textit{Merge}, que tendrán como función distribuir y juntar la información respectivamente. En ciertos SPS se posee el planteamiento que el \textit{split} y el \textit{merge} son operadores que deben ser realizados por el programador, y no de forma automática por el sistema, como S4 o Storm. Una de las características que se posee de esta técnica es la elasticidad del sistema, donde aumenta o disminuye la cantidad de operadores según la necesidad del sistema.
 
-Por otra parte, se usa la técnica de replicación en una aplicación diseñada por Fernández \citep{FernandezMKP13}. Ésta está enfocada en la replicación de operadores, la cual se activa si se detecta un cuello botella en el procesamiento de los datos. Para la detección, existe un monitor que está recibiendo la carga de cada uno de los procesos, y si es sobrepasado el umbral, debe realizar una petición de replicación al operador sobrecargado.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.4]{images/Fision.pdf}
+	\caption{Técnica de fisión en un SPS.}
+	\label{fig:fision}
+\end{figure}
+
+%Una aplicación de la técnica de paralelización según el enfoque estático, es la paralelización de tareas de Storm \citep{stormtwitterdoc}, donde un conjunto de operadores realizan una tarea, indicado la cantidad de tareas que se desean ejecutar paralelamente en el sistema.
+
+%Un ejemplo aplicado de esta técnica según el enfoque dińamico es StreamCloud \citep{GulisanoJPSV12}, que dada la cantidad de consultas que van llegando al sistema, se paralelizan las tareas existentes. Uno de los problemas que surge en estos casos son las operaciones con estado, como lo son los contadores o algoritmos de orden. La solución planteada es poseer un operador que realiza la tarea de \textit{merge}, que consiste en recibir las salidas de las tareas paralelas, agrupando los datos y proporcionando una salida según lo realizado por cada uno de las operaciones \citep{GedikSHW14}.
+
+Una aplicación que aplica la técnica de fusión según el enfoque estático, es la paralelización de tareas de Storm \citep{stormtwitterdoc}, donde se indica la cantidad de operadores necesarios para realizar una tarea paralelamente. De esta manera, existe un proceso que está encargada de la tarea deseada, y $n$ hebras por la cantidad de operadores que se deseen.
+
+Otro sistema que abarca esta técnica, utilizando el enfoque dinámico, es \textit{StreamCloud} \citep{GulisanoJPSV12}, donde según la cantidad de consultas realizadas al sistema, se aumenta o disminuye la cantidad de operadores que cumplan las tareas que se solicitan. Como se había mencionado anteriormente, existe un problema con la variable de distribución y unión de la información al replicar los operadores, este sistema propone que pueda resolver ciertas consultas el sistema y que de forma automática pueda realizar el proceso de \textit{split} y \textit{merge}, de tal manera de no tener problemas con los operadores con estado, como lo son los contadores y algoritmos de orden. Una de las características principales de este sistema, es aplicar el concepto de elasticidad, que aumenta y disminuye la cantidad de operadores según lo requerido por el sistema. Pero no sólo este tipo de sistemas aplica este método, también se puede ver otros trabajos como \citep{GedikSHW14, SchneiderAGBW09} que paralelizan las tareas de forma elástica, y con parámetros similares, sólo que su implementación es distinta.
+
+El último trabajo a analizar según esta técnica es lo realizado por Fernández \citep{FernandezMKP13}, donde aplican fisión en el caso que exista un cuello de botella en un operador. Para la detección de estas situaciones, se posee un monitor, el cual está consultando en un período de tiempo corto el estado de cada uno de los operadores. De esta manera, se puede ver en cada operador si sobrepaso el umbral propuesto, que era en este caso la utilización de la CPU, se procede a replicar el operador sobrecargado. En la Figura \ref{fig:ejFision} se puede ver el caso de un simple sistema, en el cual el operador \textit{u} está enviado un flujo de datos al operador \textit{o}, hasta que en cierto momento el operador \textit{o} posee un cuello de botella y debe replicar, hasta que en la parte (c) denota que convergió y ya no es necesario más réplicas, pero con el transcurso del tiempo si fue necesario en el operador \textit{u}, por lo que se aplica la misma lógica descrita anteriormente con el operador \textit{o}.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.3]{images/EjFision.png}
+	\caption{Ejemplo de replicación de los operadores \citep{FernandezMKP13}.}
+	\label{fig:ejFision}
+\end{figure}
+
+%Por otra parte, se usa la técnica de replicación en una aplicación diseñada por Fernández \citep{FernandezMKP13}. Ésta está enfocada en la replicación de operadores, la cual se activa si se detecta un cuello botella en el procesamiento de los datos. Para la detección, existe un monitor que está recibiendo la carga de cada uno de los procesos, y si es sobrepasado el umbral, debe realizar una petición de replicación al operador sobrecargado.
