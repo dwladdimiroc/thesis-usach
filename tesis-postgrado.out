@@ -32,8 +32,15 @@
 \BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Load Shedding}{section.3.3}% 32
 \BOOKMARK [2][]{subsection.3.3.3}{3.3.3 Migraci\363n}{section.3.3}% 33
 \BOOKMARK [2][]{subsection.3.3.4}{3.3.4 Fisi\363n}{section.3.3}% 34
-\BOOKMARK [0][]{chapter*.18}{Referencias}{}% 35
-\BOOKMARK [0][]{section*.19}{Ap\351ndices}{}% 36
-\BOOKMARK [0][]{appendix.Alph1}{A Manual de Usuario}{}% 37
-\BOOKMARK [1][]{section.Alph1.1}{A.1 Requerimientos}{appendix.Alph1}% 38
-\BOOKMARK [1][]{section.Alph1.2}{A.2 Instalaci\363n}{appendix.Alph1}% 39
+\BOOKMARK [0][]{chapter.4}{4 Estructura del sistema de distribuci\363n de carga}{}% 35
+\BOOKMARK [1][]{section.4.1}{4.1 Componentes del sistema}{chapter.4}% 36
+\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 Inicializaci\363n del sistema}{section.4.1}% 37
+\BOOKMARK [2][]{subsection.4.1.2}{4.1.2 Monitor de carga}{section.4.1}% 38
+\BOOKMARK [0][]{chapter.5}{5 Algoritmos de distribuci\363n de carga}{}% 39
+\BOOKMARK [1][]{section.5.1}{5.1 Algoritmo reactivo}{chapter.5}% 40
+\BOOKMARK [1][]{section.5.2}{5.2 Algoritmo predictivo}{chapter.5}% 41
+\BOOKMARK [0][]{chapter*.19}{Referencias}{}% 42
+\BOOKMARK [0][]{section*.20}{Ap\351ndices}{}% 43
+\BOOKMARK [0][]{appendix.Alph1}{A Manual de Usuario}{}% 44
+\BOOKMARK [1][]{section.Alph1.1}{A.1 Requerimientos}{appendix.Alph1}% 45
+\BOOKMARK [1][]{section.Alph1.2}{A.2 Instalaci\363n}{appendix.Alph1}% 46

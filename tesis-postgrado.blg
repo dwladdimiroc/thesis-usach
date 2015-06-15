@@ -8,6 +8,8 @@ A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: chapters/1-Introduccion.aux
 A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 A level-1 auxiliary file: chapters/3-EstadoDelArte.aux
+A level-1 auxiliary file: chapters/4-EstructuraSistema.aux
+A level-1 auxiliary file: chapters/5-Algoritmos.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: apendices/Apendice-1.aux
 Database file #1: referencias.bib
@@ -15,7 +17,7 @@ Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
 You've used 44 entries,
             2804 wiz_defined-function locations,
-            846 strings with 14025 characters,
+            848 strings with 14082 characters,
 and the built_in function-call counts, 26555 in all, are:
 = -- 2190
 > -- 1097

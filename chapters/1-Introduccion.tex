@@ -26,14 +26,7 @@ Debido a lo anterior, existe un problema en el sistema a raíz de la sobrecarga 
 \section{Solución propuesta}
 \label{intro:solucion}
 
-La solución propuesta consiste en el dise\~no de algoritmos de predicci\'on y distribuci\'on de carga a nivel de la l\'ogica del grafo. En la Figura \ref{fig:opt} se muestran los cuatro módulos que componen la estructura del m\'odelo propuesto para el dise\~no de los algoritmos, los cuales se componen por el monitor de carga, analizador de carga, predictor de carga y administrador de réplicas.
-
-\begin{figure}[hb!]
-  \centering
-    \includegraphics[scale=0.9]{images/Diagrama.pdf}
-  \caption{Estructura del sistema de operadores y modelo propuesto.}
-  \label{fig:opt}
-\end{figure}
+La solución propuesta consiste en el dise\~no de algoritmos de predicci\'on y distribuci\'on de carga a nivel de la l\'ogica del grafo. Por lo que propone implementar cuatro módulos que componen la estructura del sistema de distribución de carga para el dise\~no de los algoritmos, los cuales se componen por el monitor de carga, analizador de carga, predictor de carga y administrador de réplicas.
 
 El monitor de carga está encargado de recuperar el nivel de carga de cada uno de los operadores. Esta información es entregada a otros dos módulos, los cuales están encargados de procesarla de tal manera de ver si existe alguna sobrecarga. Cada uno de éstos trabaja de forma independiente y tiene distintos métodos, uno proactivo y otro reactivo, de tal manera de poseer mayor exactitud en la detección de una sobrecarga.
 
@@ -43,10 +36,7 @@ El predictor de carga consiste en un método proactivo, el cual analiza la carga
 
 El administrador de réplicas se alimenta de la información entregada por los dos módulos anteriores, y así toma una decisión de la administración de cada una de las réplicas de los distintos operadores. Por lo tanto, verifica cuántas réplicas son necesarias según la cantidad de tráfico de cierto operador.
 
-Finalmente, el sistema de procesamiento constantemente está realizando un \textit{feedback} al sistema de optimización, de tal manera que pueda administrar las réplicas necesarias.
-
-%HIPOTESIS
-Este sistema dar\'a un procesamiento más rápido de la información entregada en el sistema de procesamiento \textit{online} de datos, a través de un proceso de optimización que posea bajo \textit{overhead}.
+Finalmente, el sistema de procesamiento constantemente está realizando un \textit{feedback} al sistema de optimización, de tal manera que pueda administrar las réplicas necesarias. De esta manera, se poseerá un sistema procesa información de manera más rápida, a través de este sistema de optimización con bajo \textit{overhead}.
 
 
 \section{Objetivos y alcance del proyecto}
