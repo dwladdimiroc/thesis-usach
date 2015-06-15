@@ -1,6 +1,7 @@
 \select@language {spanish}
 \contentsline {chapter}{\IeC {\'I}ndice de Tablas}{vii}{chapter*.2}
 \contentsline {chapter}{\IeC {\'I}ndice de Figuras}{viii}{chapter*.3}
+\contentsline {chapter}{\IeC {\'I}ndice de Algoritmos}{ix}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Antecedentes y motivaci\IeC {\'o}n}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Descripci\IeC {\'o}n del problema}{2}{section.1.2}
@@ -32,12 +33,14 @@
 \contentsline {paragraph}{Reactivo}{26}{subsection.3.1.4}
 \contentsline {paragraph}{Predictivo}{27}{subsection.3.1.4}
 \contentsline {section}{\numberline {3.2}T\IeC {\'e}cnicas de balance de carga}{27}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Planificaci\IeC {\'o}n determinista}{27}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Load Shedding}{28}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.1}Planificaci\IeC {\'o}n determinista}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Load Shedding}{29}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Migraci\IeC {\'o}n}{30}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{30}{subsection.3.2.4}
-\contentsline {chapter}{Referencias}{33}{chapter*.17}
-\contentsline {chapter}{Ap\IeC {\'e}ndices}{37}{section*.18}
-\contentsline {chapter}{\numberline {A}Manual de Usuario}{38}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Requerimientos}{38}{section.Alph1.1}
-\contentsline {section}{\numberline {A.2}Instalaci\'on}{38}{section.Alph1.2}
+\contentsline {chapter}{\numberline {4}Dise\~no del sistema de distribuci\IeC {\'o}n de carga}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis del sistema de distribuci\IeC {\'o}n de carga}{33}{section.4.1}
+\contentsline {chapter}{Referencias}{36}{chapter*.19}
+\contentsline {chapter}{Ap\IeC {\'e}ndices}{40}{section*.20}
+\contentsline {chapter}{\numberline {A}Manual de Usuario}{41}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Requerimientos}{41}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Instalaci\'on}{41}{section.Alph1.2}

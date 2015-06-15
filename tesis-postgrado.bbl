@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{46}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -41,6 +41,11 @@ Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
   Discrete Algorithms, {SODA} 2006, Miami, Florida, USA, January 22-26,
   2006\/}, (pp. 708--713).
 
+\bibitem[{Bose(2013)}]{bose2013introduction}
+Bose, S.~K. (2013).
+\newblock {\em An introduction to queueing systems\/}.
+\newblock Springer Science \& Business Media.
+
 \bibitem[{Breuer \& Baum(2005)}]{queueingtheory}
 Breuer, L., \& Baum, D. (2005).
 \newblock {\em An introduction to queueing theory and matrix-analytic
@@ -76,7 +81,7 @@ De~Sapio, R. (1978).
 \bibitem[{Documentation(2014)}]{stormtwitterdoc}
 Documentation, S. (2014).
 \newblock Understanding the parallelism of a storm topology.
-\newblock
+\newblock [Online]
   \url{http://storm.incubator.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html}.
 
 \bibitem[{Dong \& Akl(2006)}]{Dong06schedulingalgorithms}
@@ -156,6 +161,12 @@ Hern{\'a}ndez~Sampieri, R., Fern{\'a}ndez~Collado, C., \& Baptista~Lucio, P.
 \newblock Metodolog{\'\i}a de la investigaci{\'o}n.
 \newblock {\em M{\'e}xico: Editorial Mc Graw Hill\/}.
 
+\bibitem[{Hirzel et~al.(2013)Hirzel, Soul{\'{e}}, Schneider, Gedik, \&
+  Grimm}]{HirzelSSGG13}
+Hirzel, M., Soul{\'{e}}, R., Schneider, S., Gedik, B., \& Grimm, R. (2013).
+\newblock A catalog of stream processing optimizations.
+\newblock {\em {ACM} Comput. Surv.\/}, {\em 46\/}(4), 46:1--46:34.
+
 \bibitem[{Ishii \& Suzumura(2011)}]{IshiiS11}
 Ishii, A., \& Suzumura, T. (2011).
 \newblock Elastic stream computing with clouds.
@@ -175,7 +186,6 @@ Leibiusky, J., Eisbruch, G., \& Simonassi, D. (2012).
 \newblock {\em Getting Started with Storm - Continuous Streaming Computation
   with Twitter's Cluster Technology\/}.
 \newblock O'Reilly.
-\newline\urlprefix\url{http://www.oreilly.de/catalog/9781449324018/index.html}
 
 \bibitem[{Madsen et~al.(2014)Madsen, Thyssen, \& Zhou}]{MadsenTZ14}
 Madsen, K. G.~S., Thyssen, P., \& Zhou, Y. (2014).
@@ -229,7 +239,7 @@ Rogaway, P., \& Shrimpton, T. (2004).
 \bibitem[{S4(2014)}]{s4}
 S4 (2014).
 \newblock Distributed stream computing platform.
-\newblock \url{http://incubator.apache.org/s4/}.
+\newblock [Online] \url{http://incubator.apache.org/s4/}.
 
 \bibitem[{Samza(2014)}]{samza}
 Samza, A. (2014).
@@ -264,7 +274,7 @@ Stonebraker, M., {\c{C}}etintemel, U., \& Zdonik, S.~B. (2005).
 \bibitem[{Storm(2014)}]{stormtwitter}
 Storm (2014).
 \newblock Distributed and fault-tolerant realtime computation.
-\newblock \url{http://storm.incubator.apache.org/}.
+\newblock [Online] \url{http://storm.incubator.apache.org/}.
 
 \bibitem[{Taylor \& Karlin(2014)}]{taylor2014introduction}
 Taylor, H.~M., \& Karlin, S. (2014).

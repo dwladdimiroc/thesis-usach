@@ -8,50 +8,51 @@ A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: chapters/1-Introduccion.aux
 A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 A level-1 auxiliary file: chapters/3-BalanceDeCarga.aux
+A level-1 auxiliary file: chapters/4-Diseno.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: apendices/Apendice-1.aux
 Database file #1: referencias.bib
 Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
-You've used 44 entries,
+You've used 46 entries,
             2804 wiz_defined-function locations,
-            846 strings with 14026 characters,
-and the built_in function-call counts, 26555 in all, are:
-= -- 2190
-> -- 1097
-< -- 40
-+ -- 420
-- -- 366
-* -- 1926
-:= -- 4106
-add.period$ -- 129
-call.type$ -- 44
-change.case$ -- 373
-chr.to.int$ -- 44
-cite$ -- 46
-duplicate$ -- 1915
-empty$ -- 1971
-format.name$ -- 498
-if$ -- 5299
+            857 strings with 14312 characters,
+and the built_in function-call counts, 27724 in all, are:
+= -- 2279
+> -- 1150
+< -- 41
++ -- 444
+- -- 384
+* -- 2014
+:= -- 4292
+add.period$ -- 135
+call.type$ -- 46
+change.case$ -- 388
+chr.to.int$ -- 46
+cite$ -- 48
+duplicate$ -- 1995
+empty$ -- 2060
+format.name$ -- 520
+if$ -- 5524
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 375
-newline$ -- 225
-num.names$ -- 176
-pop$ -- 836
+missing$ -- 394
+newline$ -- 234
+num.names$ -- 184
+pop$ -- 872
 preamble$ -- 1
-purify$ -- 298
+purify$ -- 312
 quote$ -- 0
-skip$ -- 852
+skip$ -- 883
 stack$ -- 0
-substring$ -- 1168
-swap$ -- 1006
+substring$ -- 1228
+swap$ -- 1049
 text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 375
+type$ -- 390
 warning$ -- 2
-while$ -- 200
+while$ -- 208
 width$ -- 0
-write$ -- 557
+write$ -- 581
 (There were 2 warnings)

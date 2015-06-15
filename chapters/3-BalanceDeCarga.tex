@@ -2,9 +2,11 @@
 \label{cap:estadoDelArte}
 
 \section{Perspectivas de balance de carga}
+\label{sec:perspectivasBC}
 Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}), las cuales consideran los recursos físicos o lógicos como problemas de la sobrecarga del sistema.
 
 \subsection{Recursos físicos}
+\label{subsec:recFisicosBC}
 En esta perspectiva se toma en consideración la sobrecarga del sistema dado las limitantes físicas que éste posea, ya sea por condiciones de los recursos disponibles o por el ambiente de desarrollo. Para esto, se consideran distintos parámetros como umbrales, los cuales si son sobrepasados debe aplicarse alguna estrategia para aliviar la carga del sistema. Estos umbrales pueden ser el nivel SLO, porcentaje de CPU utilizada o disponibilidad de la memoria \citep{Dong06schedulingalgorithms}.
 
 Una de las soluciones con la perspectiva anterior es el Borealis \citep{XingZH05}, donde considera la cantidad de carga de los nodos en ventanas de tiempo determinadas, las cuales serán manejadas por un coordinador centralizado. Por lo que este coordinador estará encargada de analizar los recursos del sistema, y en caso de sobrepase el umbral propuesto, se deberán emigrar los operadores que estén en ese nodo, para luego ser enviados a otro nodo candidato con menor cantidad de carga. Para elegir al nodo candidato, se realizó una análisis de la cantidad de correlación que existe entre el operador y el nodo candidato, de esta manera, no necesariamente iba a ser enviado a otro nodo con menor sobrecarga, sino también a uno que posea menor cantidad de mensajes. Dentro de los problemas que pueden existir en el sistema es la conexión entre los distintos nodos, por lo que para las pruebas se consideró un buen ancho de banda, de tal manera que aparente una red sin limitaciones de recursos.
@@ -12,6 +14,7 @@ Una de las soluciones con la perspectiva anterior es el Borealis \citep{XingZH05
 Otra de las soluciones que se han propuesto es lo realizado por Flood \citep{Alves2010flood}, el cual es un DPS (\textit{Distributed data stream processing}) que considera ciertos factores físicos para agregar o eliminar máquinas virtuales que se provee del \textit{Infrastructure-as-Service}, como Amazon EC2. Para esto, se posee un administrador que considera las estadísticas en tiempo de ejecución como la cantidad de CPU utilizada, latencia o memoria disponible, las cuales considera para ver en que rango está de los umbrales establecidos, y posteriormente agregar o eliminar recursos de manera elástica.
 
 \subsection{Recursos lógicos}
+\label{subsec:recLogicosBC}
 %A diferencia de la física, aquí se consideran los componentes lógicos del sistema, como por ejemplo, una sobrecarga en algún operador. De esta manera, en las distintas soluciones se pueden encontrar soluciones en cuanto a la carga existente en el operador o la cantidad de cola que posea, de tal manera, que estos sean los umbrales a considerar para generar una mejora en el sistema.
 
 A diferencia de la física, en esta perspectiva se consideran los componentes lógicos del sistema, como la carga de un operador. Por lo que las distintas soluciones que se presentan, analizan la componentes como el flujo de datos o el tamaño de la cola de un operador, tomando esos parámetros como umbrales en los algoritmos implementados para realizar mejoras en el sistema.
@@ -23,8 +26,8 @@ Dado esta perspectiva, se han presentando dos tipos de enfoques: el estático y 
 %El primer enfoque se centra en la confección de un modelo definido y fijo antes de iniciar el sistema y que no varía en el tiempo. En cambio, el segundo se basa en la adaptación del sistema según su estado en tiempo de ejecución.
 
 \subsection{Enfoque estático}
-
-Este enfoque se ha implementando en distintos motores de \textsl{streaming}, donde no se depende del estado del sistema \citep{stormtwitter, s4}. De esta manera, no existe una interrupción en la ejecución o un cambio debido al estado del sistema \citep{CasavantK88}. Por lo tanto, no se considera variables como la carga o cola del operador, sólo se aplican técnicas que administren el flujo de los datos en el sistema.
+\label{subsec:enfoqueEstaticoBC}
+Este enfoque se ha implementando en distintos sistemas de procesamiento de \textsl{stream}, donde no se depende del estado del sistema \citep{stormtwitter, s4}. De esta manera, no existe una interrupción en la ejecución o un cambio debido al estado del sistema \citep{CasavantK88}. Por lo tanto, no se considera variables como la carga o cola del operador, sólo se aplican técnicas que administren el flujo de los datos en el sistema.
 
 %\textsl{Storm} utiliza la técnica de distribución de operadores según alguna política, tomando el enfoque estático \citep{stormtwitter}. El sistema configura el número de operadores que son necesarios para realizar una tarea, para que después estos sean repartidos en los distintos nodos disponibles según la política de \textit{Shuffle grouping}. Esta técnica basada en algoritmos de planificación \citep{bookScheduling}, consiste en distribuir los operadores en los distintos nodos utilizando una planificación \textsl{Round-Robin}, de tal manera que la cantidad de operadores sea uniforme en los nodos del sistema \citep{bookstorm}.
 
@@ -39,6 +42,7 @@ Por otra parte, se encuentra el funcionamiento de S4, cuya política es similar 
 Una ventaja del enfoque estático es el bajo costo de la implementación de los métodos, lo cual es beneficioso para sistemas con bajos recursos. Por otra parte, una desventaja existente es la sobrecarga de un nodo u operador, debido que no asegura que la cantidad de flujo sea repartido de forma homogénea. Si bien, no es una solución óptima, es un buen complemento para un modelo con el enfoque dinámico.
 
 \subsection{Enfoque dinámico}
+\label{subsec:enfoqueDinamicoBC}
 
 %Este enfoque está basado en el estado del sistema, donde según las variables y estado de cada uno de sus atributos, genera una acción en el sistema \citep{CasavantK88}. Esto significa que si el sistema posee alguna anomalía, como una sobrecarga en un operador o latencia entre distintos nodos, se realiza un cambio en el sistema, con el fin de solucionar estos problemas. Para poder dar una solución al problema de sobrecarga, se pueden utilizar dos tipos de modelos: reactivo y predictivo.
 
@@ -55,10 +59,12 @@ Si bien estas soluciones en su mayoría son eficientes y poseen buen rendimiento
 Este modelo está basado en modelos matemáticos que calculan o estiman el comportamiento a futuro del sistema, dada cierta información que se posee del sistema, como flujo entrante o carga de la CPU. Si bien no existen modelos predictivos para SPS, si los existen en otras áreas, como se explicó anteriormente en la subsección \ref{subSec:markovTrabajo}.
 
 \section{Técnicas de balance de carga}
+\label{sec:tecnicasBC}
 
-Existen distintas técnicas de balance de carga que utilizan alguno de los dos modelos presentados anteriormente, los cuales están enfocadas en mejorar al rendimiento del sistema en caso de existir una sobrecarga. Dentro de las técnicas existentes se encuentran la planificación determinista \citep{XuCTS14, DongTS07}, \textit{load shedding} \citep{SheuC09}, migración \citep{XingZH05} y fisión \citep{GulisanoJPSV12, IshiiS11, GedikSHW14, FernandezMKP13}.
+Existen distintas técnicas de balance de carga que utilizan alguno de los dos modelos presentados anteriormente, las cuales están enfocadas en mejorar al rendimiento del sistema en caso de existir una sobrecarga \citep{HirzelSSGG13}. Dentro de las técnicas existentes se encuentran la planificación determinista \citep{XuCTS14, DongTS07}, \textit{load shedding} \citep{SheuC09}, migración \citep{XingZH05} y fisión \citep{GulisanoJPSV12, IshiiS11, GedikSHW14, FernandezMKP13}, si bien existen más, sólo se trataron estas porque se consideran las relevantes.
 
 \subsection{Planificación determinista}
+\label{sec:planificacionBC}
 %La planificación determinista \citep{DongTS07} se centra en la planificación según los recursos y estados del sistema \textit{a priori} según alguna métrica \citep{XuCTS14}. Una métrica utilizada es la frecuencia de datos estimada en un nodo u operador \citep{Ganguly09}. Esta técnica se utiliza, por ejemplo, en \textit{StreamIt} \citep{ThiesKA02}. Una de las limitaciones es que si bien realiza una predicción determinista de la frecuencia, no necesariamente es correcta a futuro, por lo que no se puede predecir las tasas de tráfico en el transcurso del procesamiento, sino sólo estimarlas al comienzo de la ejecución del sistema.
 
 La planificación determinista se centra en los conocimientos \textit{a priori} del sistema, esto significa que se consideran las variables del entorno que se poseen y respecto a esto se toma una decisión de como debe actuar el sistema. 
@@ -70,6 +76,7 @@ En otras áreas, como red de sensores, se utiliza esta técnica en el envío de 
 Una de las limitaciones es que si bien realiza una predicción determinista de la frecuencia, no necesariamente es correcta a futuro. Esto se debe a qué puede analizarse respecto al promedio, pero pueden surgir procesos anómalos en el transcurso de la ejecución que generará una sobrecarga en el sistema. Por lo tanto, la estimación al realizarse \textit{a priori}, sólo podrá considerar el inicio del sistema o ventanas de tiempo, por lo que puede existir un porcentaje de error considerable. Por otra parte, se considera que posee mejor rendimiento esta técnica si es que la frecuencia o función analizada es estacionaria.
 
 \subsection{Load Shedding}
+\label{sec:loadSheddingBC}
 %Otra estrategia está orientada a descartar eventos de un operador sobrecargado, de tal manera de no generar colas en el sistema. Esta estrategia que si bien no está implementada en el sistema por defecto de S4, puede habilitarse \citep{s4}. Otro ejemplo, es la trasmisión de vídeo \textit{streaming}, donde se descartan los datos que son de baja calidad, para procesar en su mayoría información de alta calidad \citep{SheuC09}. Esta solución está pensada para disminuir la carga, perdiendo la exactitud de la información debido a la pérdida de datos. Por lo tanto existe una menor fiabilidad en el sistema en caso de realizar operaciones de transacción \citep{bookDistrSys}.
 
 En los SPS también se encuentra la técnica de \textit{load shedding} o descarte de eventos, que consiste en descartar eventos del sistema en caso de existir un comportamiento anómalo, ya sea un máximo en la cantidad de la cola u otro factor como se puede apreciar en la Figura \ref{fig:loadShedding}. Por ejemplo, en la transmisión de \textit{video streaming}, al enviar el flujo de información existe un administrador que estará analizando el contenido a procesar, por lo que en caos de llegar datos de baja calidad, serán descartados por éste. De esta manera, al existir menor cantidad de datos que procesar, el sistema posee un mejor rendimiento, además de tener una mejor calidad en la visualización de los videos, dado que en su mayoría se procesan datos de alta calidad \citep{SheuC09}. 
@@ -86,6 +93,7 @@ En el mundo de los SPS, varios poseen este tipo de estrategia, como por ejemplo 
 Si bien esta técnica es simple y de bajo costo, siendo pensada para la disminución rápida de carga, existe una baja en la precisión y fiabilidad del procesamiento de los datos. Por ejemplo, en el caso de la transferencia de video no es trascendental, dado que son pocos los pixeles perdidos, pero en una recopilación y análisis de estadísticas, esto dará una menor precisión de los datos procesados por el sistema, dado que puede perderse información que indique comportamientos de los datos estudiados.
 
 \subsection{Migración}
+\label{sec:migracionBC}
 %También se encuentra la migración, en el cual según el estado del sistema se migran los operadores de un nodo a otro. En \citep{XingZH05} se implementa   esta técnica, y si bien genera una menor carga en distintos nodos, produce un alto costo en la transferencia de los datos. Al realizar la transferencia de los datos, existe una menor tolerancia a fallos, a raíz de lo cual, se propone el uso de un búffer en el sistema, aumentando sus costos \citep{PittauACA07}.
 
 La técnica de migración está basada en el traspaso de un operador de un nodo a otro, según el estado del sistema, como se puede apreciar en la Figura \ref{fig:migracion}. Si bien no existe alguna implementación que utilice los recursos lógicos, si existe una que utiliza los recursos físicos como es el caso de Borealis, el cual fue explicado anteriormente \citep{XingZH05}. Una de las principales críticas que se realiza a esta técnica, es la transferencia de datos, por lo que existe una menor tolerancia de fallos, por lo que se propone el uso de \textit{buffer} que tengan respaldos de la información, aumentando los costos del sistema \citep{PittauACA07}.
@@ -98,6 +106,8 @@ La técnica de migración está basada en el traspaso de un operador de un nodo 
 \end{figure}
 
 \subsection{Fisión}
+\label{sec:fisionBC}
+
 %Desde otra perspectiva, existen las técnicas de paralelización y replicación, las cuales se utilizan en caso de sobrepasar un umbral, el cual depende de la carga de un operador, nodo, entre otras variables. El primero consiste en paralelizar una tarea, la cual está determinada por un conjunto de operadores, en otro nodo físico \citep{IshiiS11}. En cambio, la replicación consiste en replicar un operador a nivel lógico del grafo \citep{MadsenTZ14}. Una de las características que existen en este tipo de soluciones es la elasticidad, que consiste en la capacidad de aumentar o disminuir la cantidad de operadores según la necesidad del sistema.
 
 Otra técnica utilizada en el balance de carga es la fisión, o también llamada replicación, particionamiento o paralelismo, la cual consiste en crear una réplica paralela del operador, sin perder el funcionamiento y estado, en caso de existe una sobrecarga en el operador. En Figura \ref{fig:fision} se puede ver que existe un operador A, el cual en primera instancia tiene un flujo de entrada $q_1$ y flujo de salida $q_2$, pero debido a la sobrecarga del operador A, se crea dos operadores extras, los cuales pasarán por un \textit{Split} y posteriormente por un \textit{Merge}, que tendrán como función distribuir y juntar la información respectivamente. En ciertos SPS se posee el planteamiento que el \textit{split} y el \textit{merge} son operadores que deben ser realizados por el programador, y no de forma automática por el sistema, como S4 o Storm. Una de las características que se posee de esta técnica es la elasticidad del sistema, donde aumenta o disminuye la cantidad de operadores según la necesidad del sistema.

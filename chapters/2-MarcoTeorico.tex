@@ -2,6 +2,7 @@
 \label{cap:marcoTeorico}
 
 \section{Streaming}
+\label{sec:streaming}
 
 Streaming es una técnica para la transferencia de datos de forma continua, de tal manera que sea temporal y secuencial, cuyo funcionamiento se basa en el envío de datos por parte de un ente externo a un sistema de procesamiento de información, donde en caso de estar ocupado el servicio, se dejan los datos en cola. Generalmente, esto es utilizado en la interacción con la Web, como redes sociales o reproducción \textit{online} de contenido multimedia. En la Figura \ref{fig:streaming} se muestra un servidor que emana un flujo de datos que llega a distintos clientes, donde cada uno de ellos procesa la información entrante, y en caso de estar ocupado el procesamiento, se guarda en un \textit{buffer} los datos para posteriormente ser procesados.
 
@@ -15,6 +16,7 @@ Streaming es una técnica para la transferencia de datos de forma continua, de t
 Este tipo de técnica es útil cuando se desea procesar información en tiempo real, siendo relevante la temporalidad de los datos, como la reproducción \textit{online} de material multimedia. Los datos emanados por el \textit{streaming} pueden ser utilizados para el análisis y procesamiento de una SPS (Sistema de Procesamiento de \textit{Stream}). Un ejemplo de esto, es el \textit{Streaming API} proporcionada por Twitter, donde esta información se puede utilizar para estudiar los \textit{trending topic} o los \textit{hashtag} más utilizados para casos específicos, como campañas electorales o desastres naturales.
 
 \section{Stream processing}
+\label{sec:streamProcessing}
 
 \textit{Stream processing} es un paradigma de programación, en el cual está orientado al procesamiento de un flujo de datos en tiempo real. El concepto se basa en programar de tal manera que la información sea procesada en el momento, utilizando de los recursos de forma paralela o distribuida, de tal manera que su procesamiento sea lo más cercano al tiempo real.
 
@@ -28,6 +30,7 @@ Dentro de las aplicaciones que se pueden ver en el procesamiento de \textit{stre
 \end{itemize}
 
 \section{Sistemas de Procesamiento de Stream}
+\label{sec:SPS}
 
 Entre los diferentes motores de procesamiento de datos masivos, existen los sistemas de procesamiento de \textsl{stream}, los cuales reciben grandes cantidades de datos que deben procesar de forma distribuida y \textsl{online}. Para realizar esto, se requiere un cambio en el paradigma \textsl{bash processing}, el cual guarda los datos en una base de datos, los que posteriormente son procesados de forma \textsl{offline} \citep{HawwashN14}, a uno que procese de forma \textsl{online}. Por lo que el paradigma cambia a uno basado en grafos, donde los operadores corresponden a las vértices del grafo, y las aristas a los flujos de datos preprocesados que salen del operador, siendo los datos proporcionados por un ente externo, ya sea \textit{streaming} de datos de redes sociales, estadísticas del monitoreo de un sistema u otra información deseada en tiempo real \citep{Shahrivari14}.
 
@@ -77,6 +80,8 @@ En cambio, en el segundo modelo se basa en la petición de datos a un operador, 
 \end{figure}
 
 \section{Elasticidad}
+\label{sec:elasticidad}
+
 La propiedad de elasticidad en el área de \textit{Cloud Computing} o \textit{SPS}, está arraigado con capacidad que el sistema se adapte dinámicamente según el rendimiento que éste posea. Esto quiere decir que aumente o disminuya los recursos que se posean, para que funcione de manera eficiente el sistema.
 
 En el caso de \textit{Cloud Computing}, se pueden ver trabajos que han realizado con esta propiedad como \citep{GongGW10, NguyenSGSW13, LehrigEB15}, donde el sistema se comporta de forma elástica, determinando dinámicamente la cantidad de máquinas virtuales necesarias en el sistema. Por otra parte, en los SPS, existen trabajos como \citep{GedikSHW14, IshiiS11, SchneiderAGBW09, MadsenTZ14, GulisanoJPSV12}, que el sistema de forma dinámica determina la cantidad de operadores necesarios para realizar una tarea en específico, como se ve representando en la Figura \ref{fig:elasticidad}, donde la cantidad de operadores B cambia dinámicamente según el rendimiento del sistema.
@@ -91,12 +96,16 @@ En el caso de \textit{Cloud Computing}, se pueden ver trabajos que han realizado
 Un ejemplo práctico de elasticidad es el supermercado, donde se debe considerar la cantidad de cajas necesarias para atender de manera eficiente los $n$ clientes que van llegando en un período de tiempo. Si se estudia el período de la mañana, en general, es tiene un bajo flujo de personas que acude al supermercado, en comparación con la tarde, pero alto con la medianoche. Por lo tanto, en los horarios de la tarde es necesario poseer una mayor cantidad de cajas disponibles que en la tarde, disminuyendo la cantidad cuando el horario borde la media noche, adaptándose de forma elástica la cantidad de cajas disponibles en el supermercado.
 
 \section{Procesos estocásticos}
+\label{sec:procesosEstocasticos}
+
 Se define proceso estocástico como una colección de variables aleatorias {$X_t$, con $t \epsilon T$}, las cuales están determinadas por algún comportamiento en el tiempo $t$. Esto significa que cada variable estará tratada de forma discreta en el tiempo, sin poseer un proceso determinístico entre sus variables, es decir, que las variables dependan de la historia \citep{taylor2014introduction}.
 
 Por lo tanto, se puede definir un estado como el posible comportamiento que puede tener una variable aleatoria en el sistema. %Por ejemplo, se posee un modelo que considere tres estados: estable, inestable y ocioso, y según el valor de la variable aleatoria pueda definirse el estado en uno de esos tres estados.
 Un ejemplo de esto sería tener un modelo que contemple tres estados: estable, inestable y ocioso, y que según el valor de la variable aleatoria vaya cambiando de un estado a otro. Un caso de estudio utilizando el concepto de estados son las cadenas de Markov, las cuales consideran distintos estados que representan un comportamiento del sistema, habiendo una probabilidad de cambiar de un estado a otro \citep{de1978calculus}.
 
 \subsection{Cadena de Markov}
+\label{subsec:cadenaMarkov}
+
 Sea $X_t$ el valor de una variable aleatoria $X$ en un tiempo $t$. El conjunto de todas los valores posibles para $X$ se llama espacio de estado \citep{ching2006markov}. La variable aleatoria es un proceso de Markov si las probabilidades de transición entre dos estados cualquiera de $\omega$ sólo depende del estado, lo cual se denota en la Ecuación \ref{eq:defMarkov} y gráficamente en la Figura \ref{fig:procesoMarkov}. Cabe destacar que este tipo de proceso es un caso específico de los procesos estocásticos.
 
 \begin{equation} \label{eq:defMarkov} 
@@ -209,6 +218,7 @@ Dentro de las aplicaciones que se han realizado con modelos predictivos, se encu
 Dentro de la misma línea de modelos predictivos, existe el sistema AGILE \citep{NguyenSGSW13} para \textit{Cloud Computing}, que modifica las máquinas virtuales de forma elástica en un \textit{Infrastructure-as-a-Service}. Lo que se realizó en este trabajo fue aplicar la transformada de Fourier \citep{falk2012first} a la carga de CPU en una ventana de tiempo determinada, donde la función resultante se analizó con distintas frecuencias, de tal manera de solicitar la predicción de la próxima ventana de tiempo a cada una de las funciones creadas. De esta manera, se sintetizan todas predicciones realizadas por cada función, para analizar el comportamiento del sistema en la próxima ventana de tiempo, y ver si es necesario aumentar o disminuir recursos de éste.
 
 \section{Teoría de colas}
+\label{sec:teoriaColas}
 
 La teoría de colas se centra en el estudio matemático de las colas existentes en un sistema, cuyo caso de estudio era el desbordamiento de peticiones por parte del cliente al servidor \citep{queueingtheory}. En la Figura \ref{fig:teoriaColas} se muestra un ejemplo de un sistema basado en teoría de colas, donde existe $n$ productores que envían cierto flujo de datos a los $m$ servidores disponibles, y en caos de no estar disponibles, se genera una cola de espera en el sistema.
 
@@ -230,7 +240,7 @@ Además de esto, se tienen ciertos componentes importantes en el sistemas, defin
 	\item \textbf{Tasa de llegada}, denotado $\lambda$, es la cantidad de datos, eventos o información que van llegando por un determinado período de tiempo, la cual está determinada por los productores que existan en el sistema.
 	\item \textbf{Tasa de procesamiento} , denotado $\mu$, es la cantidad de datos, eventos o información que salen del sistema, a producto del servicio que provisto por cada servidor.
 	\item \textbf{Tasa de rendimiento}, denotado $\rho$, es el porcentaje de utilización del sistema, donde $\rho = \frac{\lambda}{\mu}$, siendo un sistema estable si $\rho < 1$, dado que la capacidad de procesamiento es mayor que la tasa de llegada.
-	\item \textbf{Disciplina de la cola} significa el método utilizado para extraer los datos encolados en el sistema, para esto puede aplicarse los métodos \textit{FIFO},\textit{LIFO}, \textit{RSS}, entre otros.
+	\item \textbf{Disciplina de la cola} significa el método utilizado para extraer los datos encolados en el sistema, para esto puede aplicarse los métodos \textit{FIFO}, \textit{LIFO}, \textit{RSS}, entre otros.
 \end{itemize}
 
 %Pues bien, independiente del método que se utilice, existe un problema en la distribución, dado el dinamismo de los datos a procesar, pudiendo generarse sobrecargas en algún operador. Esto se produce dado que la tasa de procesamiento es menor a la tasa de llegada, generando colas en el sistema \citep{queueingtheory}. Por ejemplo, si se posee una tasa de llegada $\lambda$ y una tasa de servicio $\mu$, donde $\mu < \lambda$, se generan colas en el sistema, debido que se procesa más lento de lo que llegan los datos. Como existen colas, es necesario un aumento del rendimiento del sistema, debido que $\rho > 1 $, donde se define $\rho = \frac{\lambda}{s\mu}$, siendo $s$ la cantidad de servicios disponibles.
