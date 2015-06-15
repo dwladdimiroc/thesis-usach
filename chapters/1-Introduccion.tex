@@ -43,26 +43,26 @@ Finalmente, el sistema de procesamiento constantemente está realizando un \text
 \label{intro:objetivos}
 
 \subsection{Objetivo general}
-	Dise\~no, construcción y evaluaci\'on de un algoritmo de predicci\'on y un algoritmo de distribuci\'on de carga para motores de procesamiento de \textit{stream}.
+	Dise\~no, construcción y evaluaci\'on de un algoritmo de predicci\'on y un algoritmo de distribuci\'on de carga para sistemas de procesamiento de \textit{stream}.
 
 \subsection{Objetivos específicos}
 \begin{enumerate}
 	\item Dise\~nar e implementar un algoritmo de predicci\'on que permita estimar la carga de los operadores.
 	\item Dise\~nar e implementar un algoritmo de distribuci\'on que permita la administraci\'on de los operadores del grafo de procesamiento de forma el\'astica.
 	\item Dise\~nar y construir experimentos que permitan validar la hip\'otesis formulada.
-	\item Evaluar y analizar el rendimiento del sistema a trav\'es de aplicaciones generadas sobre procesamiento de motores de \textit{stream}.
+	\item Evaluar y analizar el rendimiento del sistema a trav\'es de aplicaciones generadas sobre sistemas de procesamiento de \textit{stream}.
 \end{enumerate}
 
 \subsection{Alcances}
 Dentro de los alcances y limitaciones que se tienen en el proyecto son:
 \begin{itemize}
-	\item La evaluación de la solución presentada se implementará sobre un solo motor de procesamiento de \textit{streaming} a definir.
+	\item La evaluación de la solución presentada se implementará sobre un solo sistema de procesamiento de \textit{stream}.
 %\item Se experimentará con diferentes aplicaciones con restricciones de tiempo de respuesta y con dinamismo en su flujo de datos.
-	\item Se evaluará con al menos dos aplicaciones bajo escenarios simulados utilizando datos reales.
-	\item La distribución de flujo de datos será a nivel de operadores y no de nodos f\'isicos, por lo que no se analizará la carga de estos \'ultimos.
+	\item Se evalúo con al menos una aplicación bajo escenarios simulados utilizando datos reales.
+	\item La distribución de flujo de datos es a nivel de operadores y no de nodos f\'isicos, por lo que no se analizó la carga de estos \'ultimos.
 	\item Los algoritmos propuestos no incluyen t\'ecnicas que garanticen el procesamiento de todo el flujo de datos.
-	\item En la evaluación de los algoritmos propuestos se considerará el costo de comunicación de manera igualitaria para todos los operadores.
-	\item Se comparará la solución con dos motores de procesamiento de \textit{stream} del estado del arte.
+	\item En la evaluación de los algoritmos propuestos se consideró el costo de comunicación de manera igualitaria para todos los operadores.
+	%\item Se comparará la solución con dos motores de procesamiento de \textit{stream} del estado del arte.
 \end{itemize}
 
 

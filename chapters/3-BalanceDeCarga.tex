@@ -1,20 +1,7 @@
-\chapter{Estado del Arte}
+\chapter{Balance de carga en SPS}
 \label{cap:estadoDelArte}
-\section{Elasticidad}
-La propiedad de elasticidad en el área de \textit{Cloud Computing} o \textit{SPS}, está arraigado con capacidad que el sistema se adapte dinámicamente según el rendimiento que éste posea. Esto quiere decir, que aumente o disminuya los recursos que se posean para que funcione de manera eficiente el sistema.
 
-En el caso de \textit{Cloud Computing}, se pueden ver trabajos que han realizado con esta propiedad como \citep{GongGW10, NguyenSGSW13, LehrigEB15}, donde el sistema se comporta de forma elástica, determinando dinámicamente la cantidad de máquinas virtuales necesarias en el sistema. Por otra parte, en los SPS, existen trabajos como \citep{GedikSHW14, IshiiS11, SchneiderAGBW09, MadsenTZ14, GulisanoJPSV12}, que el sistema de forma dinámica determina la cantidad de operadores necesarios para realizar una tarea en específico, como se ve representando en la Figura \ref{fig:elasticidad}, donde la cantidad de operadores B cambia dinámicamente según el rendimiento del sistema.
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.55]{images/Elasticidad.pdf}
-	\caption{Elasticidad en un SPS.}
-	\label{fig:elasticidad}
-\end{figure}
-
-Un ejemplo práctico de elasticidad es el supermercado, donde se debe considerar la cantidad de cajas necesarias para atender de manera eficiente los $n$ clientes que van llegando en un período de tiempo. Si se estudia el período de la mañana, en general, es tiene un bajo flujo de personas que acude al supermercado, en comparación con la tarde, pero alto con la medianoche. Por lo tanto, en los horarios de la tarde es necesario poseer una mayor cantidad de cajas disponibles que en la tarde, disminuyendo la cantidad cuando el horario borde la media noche, adaptándose de forma elástica la cantidad de cajas disponibles en el supermercado.
-
-\section{Balance de carga}
+\section{Perspectivas de balance de carga}
 Dentro de la literatura se han encontrado distintas perspectivas al problema de balance de carga en un SPS (Sistema de Procesamiento de \textsl{Streaming}), las cuales consideran los recursos físicos o lógicos como problemas de la sobrecarga del sistema.
 
 \subsection{Recursos físicos}
@@ -63,18 +50,24 @@ Este modelo está basado en la detección de sobrecargas en el sistema a través
 
 Si bien estas soluciones en su mayoría son eficientes y poseen buen rendimiento, una de los principales problemas es que no analiza el comportamiento a futuro, debido que sólo analiza y resuelve la situación en el momento. Otro problema son los falsos positivos, debido que puede ser que en un momento exista un \textit{pick} de tráfico, pero esto era sólo un caso particular de un tiempo determinado, por lo que no era necesaria la mejora en el sistema.
 
+\paragraph{Predictivo}
+
+Este modelo está basado en modelos matemáticos que calculan o estiman el comportamiento a futuro del sistema, dada cierta información que se posee del sistema, como flujo entrante o carga de la CPU. Si bien no existen modelos predictivos para SPS, si los existen en otras áreas, como se explicó anteriormente en la subsección \ref{subSec:markovTrabajo}.
+
 \section{Técnicas de balance de carga}
 
-Existen distintas técnicas de balance de carga que utilizan alguno de los dos modelos presentados anteriormente, los cuales están enfocadas en mejorar al rendimiento del sistema en caso de existir una sobrecarga. Dentro de las técnicas existentes se encuentrán la planificación determinista \citep{XuCTS14, DongTS07}, descarte de eventos \citep{SheuC09}, migración \citep{XingZH05}, fisión \citep{GulisanoJPSV12, IshiiS11, GedikSHW14, FernandezMKP13} y \textit{load balancing}. %\citep{StreamIt}.
+Existen distintas técnicas de balance de carga que utilizan alguno de los dos modelos presentados anteriormente, los cuales están enfocadas en mejorar al rendimiento del sistema en caso de existir una sobrecarga. Dentro de las técnicas existentes se encuentran la planificación determinista \citep{XuCTS14, DongTS07}, \textit{load shedding} \citep{SheuC09}, migración \citep{XingZH05} y fisión \citep{GulisanoJPSV12, IshiiS11, GedikSHW14, FernandezMKP13}.
 
 \subsection{Planificación determinista}
 %La planificación determinista \citep{DongTS07} se centra en la planificación según los recursos y estados del sistema \textit{a priori} según alguna métrica \citep{XuCTS14}. Una métrica utilizada es la frecuencia de datos estimada en un nodo u operador \citep{Ganguly09}. Esta técnica se utiliza, por ejemplo, en \textit{StreamIt} \citep{ThiesKA02}. Una de las limitaciones es que si bien realiza una predicción determinista de la frecuencia, no necesariamente es correcta a futuro, por lo que no se puede predecir las tasas de tráfico en el transcurso del procesamiento, sino sólo estimarlas al comienzo de la ejecución del sistema.
 
-La planificación determinista se centra en los conocimientos \textit{a priori} del sistema, esto significa que se consideran las variables del entorno que se poseen y respecto a esto se toma una decisión de como debe actuar el sistema. En otras áreas, como red de sensores, se utiliza esta técnica en el envío de estadísticas de dispositivos móviles, los cuales manejan información \textit{a priori} de donde están los sensores, de tal manera de determinar según la intensidad de la frecuencia, localización o clima, a dónde debe enviar la señal para que se recolecte la información correspondiente \citep{DongTS07}.
+La planificación determinista se centra en los conocimientos \textit{a priori} del sistema, esto significa que se consideran las variables del entorno que se poseen y respecto a esto se toma una decisión de como debe actuar el sistema. 
 
-En el caso de \textit{Streaming}, se han realizado varias análisis respecto al análisis de la estimación de frecuencia de \textit{data stream} en el sistema. Para poder realizar esto, se han considerado modelos matemáticos, tomando ventanas de tiempo de la frecuencia predicha y la real, para posteriormente generar con los datos una función que represente la frecuencia estimada del operador \citep{Ganguly09}. Pero no sólo se han considerado modelos matemáticos, sino también algoritmos que determinan la frecuencia del sistema dado el flujo de datos que se posee \citep{BhuvanagiriGKS06}.
+En el área de \textit{Stream processing}, se han realizado diferentes análisis de la estimación de frecuencia de \textit{data stream} en el sistema. Para poder realizar esto, se han considerado modelos matemáticos, tomando ventanas de tiempo de la frecuencia predicha y la real, para posteriormente generar con los datos una función que represente la frecuencia estimada del operador \citep{Ganguly09}. Pero no sólo se han considerado modelos matemáticos, sino también algoritmos que determinan la frecuencia del sistema dado el flujo de datos que se podría poseer \citep{BhuvanagiriGKS06}.
 
-Una de las limitaciones es que si bien realiza una predicción determinista de la frecuencia, no necesariamente es correcta a futuro. Esto se debe a qué puede analizarse respecto al promedio, pero pueden surgir procesos anómalos en el transcurso de la ejecución que generará una sobrecarga en el sistema. Por lo tanto, la estimación al realizarse \textit{a priori}, sólo podrá considerar el inicio del sistema o ventanas de tiempo, por lo que puede existir un porcentaje de error considerable. Por otra parte, se considera que posee mejor rendimiento esta técnica si es que la frecuencia es estacionaria.
+En otras áreas, como red de sensores, se utiliza esta técnica en el envío de estadísticas de dispositivos móviles, los cuales manejan información \textit{a priori} de donde están los sensores, de tal manera de determinar según la intensidad de la frecuencia, localización o clima, a dónde debe enviar la señal para que se recolecte la información correspondiente \citep{DongTS07}.
+
+Una de las limitaciones es que si bien realiza una predicción determinista de la frecuencia, no necesariamente es correcta a futuro. Esto se debe a qué puede analizarse respecto al promedio, pero pueden surgir procesos anómalos en el transcurso de la ejecución que generará una sobrecarga en el sistema. Por lo tanto, la estimación al realizarse \textit{a priori}, sólo podrá considerar el inicio del sistema o ventanas de tiempo, por lo que puede existir un porcentaje de error considerable. Por otra parte, se considera que posee mejor rendimiento esta técnica si es que la frecuencia o función analizada es estacionaria.
 
 \subsection{Load Shedding}
 %Otra estrategia está orientada a descartar eventos de un operador sobrecargado, de tal manera de no generar colas en el sistema. Esta estrategia que si bien no está implementada en el sistema por defecto de S4, puede habilitarse \citep{s4}. Otro ejemplo, es la trasmisión de vídeo \textit{streaming}, donde se descartan los datos que son de baja calidad, para procesar en su mayoría información de alta calidad \citep{SheuC09}. Esta solución está pensada para disminuir la carga, perdiendo la exactitud de la información debido a la pérdida de datos. Por lo tanto existe una menor fiabilidad en el sistema en caso de realizar operaciones de transacción \citep{bookDistrSys}.
