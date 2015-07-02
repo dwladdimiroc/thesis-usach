@@ -10,13 +10,12 @@ A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 A level-1 auxiliary file: chapters/3-BalanceDeCarga.aux
 A level-1 auxiliary file: chapters/4-Diseno.aux
 The style file: apa-good.bst
-A level-1 auxiliary file: apendices/Apendice-1.aux
 Database file #1: referencias.bib
 Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
 You've used 46 entries,
             2804 wiz_defined-function locations,
-            857 strings with 14312 characters,
+            856 strings with 14288 characters,
 and the built_in function-call counts, 27724 in all, are:
 = -- 2279
 > -- 1150

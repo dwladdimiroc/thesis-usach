@@ -1,43 +1,43 @@
-\BOOKMARK [0][]{chapter*.2}{\315ndice de Tablas}{}% 1
-\BOOKMARK [0][]{chapter*.3}{\315ndice de Figuras}{}% 2
-\BOOKMARK [0][]{chapter*.4}{\315ndice de Algoritmos}{}% 3
-\BOOKMARK [0][]{chapter.1}{1 Introducci\363n}{}% 4
-\BOOKMARK [1][]{section.1.1}{1.1 Antecedentes y motivaci\363n}{chapter.1}% 5
-\BOOKMARK [1][]{section.1.2}{1.2 Descripci\363n del problema}{chapter.1}% 6
-\BOOKMARK [1][]{section.1.3}{1.3 Soluci\363n propuesta}{chapter.1}% 7
-\BOOKMARK [1][]{section.1.4}{1.4 Objetivos y alcance del proyecto}{chapter.1}% 8
-\BOOKMARK [2][]{subsection.1.4.1}{1.4.1 Objetivo general}{section.1.4}% 9
-\BOOKMARK [2][]{subsection.1.4.2}{1.4.2 Objetivos espec\355ficos}{section.1.4}% 10
-\BOOKMARK [2][]{subsection.1.4.3}{1.4.3 Alcances}{section.1.4}% 11
-\BOOKMARK [1][]{section.1.5}{1.5 Metodolog\355a y herramientas utilizadas}{chapter.1}% 12
-\BOOKMARK [2][]{subsection.1.5.1}{1.5.1 Metodolog\355a}{section.1.5}% 13
-\BOOKMARK [2][]{subsection.1.5.2}{1.5.2 Herramientas de desarrollo}{section.1.5}% 14
-\BOOKMARK [1][]{section.1.6}{1.6 Resultados Obtenidos}{chapter.1}% 15
-\BOOKMARK [1][]{section.1.7}{1.7 Organizaci\363n del documento}{chapter.1}% 16
-\BOOKMARK [0][]{chapter.2}{2 Marco Te\363rico}{}% 17
-\BOOKMARK [1][]{section.2.1}{2.1 Streaming}{chapter.2}% 18
-\BOOKMARK [1][]{section.2.2}{2.2 Stream processing}{chapter.2}% 19
-\BOOKMARK [1][]{section.2.3}{2.3 Sistemas de Procesamiento de Stream}{chapter.2}% 20
-\BOOKMARK [1][]{section.2.4}{2.4 Elasticidad}{chapter.2}% 21
-\BOOKMARK [1][]{section.2.5}{2.5 Procesos estoc\341sticos}{chapter.2}% 22
-\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Cadena de Markov}{section.2.5}% 23
-\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Trabajo relacionado}{section.2.5}% 24
-\BOOKMARK [1][]{section.2.6}{2.6 Teor\355a de colas}{chapter.2}% 25
-\BOOKMARK [0][]{chapter.3}{3 Balance de carga en SPS}{}% 26
-\BOOKMARK [1][]{section.3.1}{3.1 Perspectivas de balance de carga}{chapter.3}% 27
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Recursos f\355sicos}{section.3.1}% 28
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Recursos l\363gicos}{section.3.1}% 29
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Enfoque est\341tico}{section.3.1}% 30
-\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Enfoque din\341mico}{section.3.1}% 31
-\BOOKMARK [1][]{section.3.2}{3.2 T\351cnicas de balance de carga}{chapter.3}% 32
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Planificaci\363n determinista}{section.3.2}% 33
-\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Load Shedding}{section.3.2}% 34
-\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Migraci\363n}{section.3.2}% 35
-\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Fisi\363n}{section.3.2}% 36
-\BOOKMARK [0][]{chapter.4}{4 Dise\361o del sistema de distribuci\363n de carga}{}% 37
-\BOOKMARK [1][]{section.4.1}{4.1 An\341lisis del sistema de distribuci\363n de carga}{chapter.4}% 38
-\BOOKMARK [0][]{chapter*.19}{Referencias}{}% 39
-\BOOKMARK [0][]{section*.20}{Ap\351ndices}{}% 40
-\BOOKMARK [0][]{appendix.Alph1}{A Manual de Usuario}{}% 41
-\BOOKMARK [1][]{section.Alph1.1}{A.1 Requerimientos}{appendix.Alph1}% 42
-\BOOKMARK [1][]{section.Alph1.2}{A.2 Instalaci\363n}{appendix.Alph1}% 43
+\BOOKMARK [0][]{chapter*.2}{\315ndice de Figuras}{}% 1
+\BOOKMARK [0][]{chapter*.3}{\315ndice de Algoritmos}{}% 2
+\BOOKMARK [0][]{chapter*.4}{Resumen}{}% 3
+\BOOKMARK [0][]{chapter*.5}{Abstract}{}% 4
+\BOOKMARK [0][]{chapter.1}{1 Introducci\363n}{}% 5
+\BOOKMARK [1][]{section.1.1}{1.1 Antecedentes y motivaci\363n}{chapter.1}% 6
+\BOOKMARK [1][]{section.1.2}{1.2 Descripci\363n del problema}{chapter.1}% 7
+\BOOKMARK [1][]{section.1.3}{1.3 Soluci\363n propuesta}{chapter.1}% 8
+\BOOKMARK [1][]{section.1.4}{1.4 Objetivos y alcance del proyecto}{chapter.1}% 9
+\BOOKMARK [2][]{subsection.1.4.1}{1.4.1 Objetivo general}{section.1.4}% 10
+\BOOKMARK [2][]{subsection.1.4.2}{1.4.2 Objetivos espec\355ficos}{section.1.4}% 11
+\BOOKMARK [2][]{subsection.1.4.3}{1.4.3 Alcances}{section.1.4}% 12
+\BOOKMARK [1][]{section.1.5}{1.5 Metodolog\355a y herramientas utilizadas}{chapter.1}% 13
+\BOOKMARK [2][]{subsection.1.5.1}{1.5.1 Metodolog\355a}{section.1.5}% 14
+\BOOKMARK [2][]{subsection.1.5.2}{1.5.2 Herramientas de desarrollo}{section.1.5}% 15
+\BOOKMARK [1][]{section.1.6}{1.6 Resultados Obtenidos}{chapter.1}% 16
+\BOOKMARK [1][]{section.1.7}{1.7 Organizaci\363n del documento}{chapter.1}% 17
+\BOOKMARK [0][]{chapter.2}{2 Marco Te\363rico}{}% 18
+\BOOKMARK [1][]{section.2.1}{2.1 Streaming}{chapter.2}% 19
+\BOOKMARK [1][]{section.2.2}{2.2 Stream processing}{chapter.2}% 20
+\BOOKMARK [1][]{section.2.3}{2.3 Sistemas de Procesamiento de Stream}{chapter.2}% 21
+\BOOKMARK [1][]{section.2.4}{2.4 Elasticidad}{chapter.2}% 22
+\BOOKMARK [1][]{section.2.5}{2.5 Procesos estoc\341sticos}{chapter.2}% 23
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Cadena de Markov}{section.2.5}% 24
+\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Trabajo relacionado}{section.2.5}% 25
+\BOOKMARK [1][]{section.2.6}{2.6 Teor\355a de colas}{chapter.2}% 26
+\BOOKMARK [0][]{chapter.3}{3 Balance de carga en SPS}{}% 27
+\BOOKMARK [1][]{section.3.1}{3.1 Perspectivas de balance de carga}{chapter.3}% 28
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Recursos f\355sicos}{section.3.1}% 29
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Recursos l\363gicos}{section.3.1}% 30
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Enfoque est\341tico}{section.3.1}% 31
+\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Enfoque din\341mico}{section.3.1}% 32
+\BOOKMARK [1][]{section.3.2}{3.2 T\351cnicas de balance de carga}{chapter.3}% 33
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Planificaci\363n determinista}{section.3.2}% 34
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Load Shedding}{section.3.2}% 35
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Migraci\363n}{section.3.2}% 36
+\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Fisi\363n}{section.3.2}% 37
+\BOOKMARK [0][]{chapter.4}{4 Dise\361o del sistema de distribuci\363n de carga}{}% 38
+\BOOKMARK [1][]{section.4.1}{4.1 An\341lisis del sistema de distribuci\363n de carga}{chapter.4}% 39
+\BOOKMARK [1][]{section.4.2}{4.2 Recolecci\363n de los datos}{chapter.4}% 40
+\BOOKMARK [1][]{section.4.3}{4.3 Algoritmo reactivo}{chapter.4}% 41
+\BOOKMARK [1][]{section.4.4}{4.4 Algoritmo predictivo}{chapter.4}% 42
+\BOOKMARK [0][]{chapter*.22}{Referencias}{}% 43

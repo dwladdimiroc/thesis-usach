@@ -1,5 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tesis}[2015/06/08 v1.4 Estilo para tesis (Daniel Wladdimiro)]
+% Estilo original para tesis de Victor Munoz
+% Agradecimiento por aportes a:
+% Rodrigo Campos
+% Hugo Meneses
+\ProvidesClass{tesis-postgrado}[2015/03/01 v1.3 Estilo para tesis (Víctor Flores)]
 \newif\ifkeys\keysfalse
 \newif\iftxfonts\txfontsfalse
 \newif\ifdosguias\dosguiasfalse
@@ -17,12 +21,18 @@
 \DeclareOption{propuesta}{\propuestatrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
-\LoadClass[oneside,10pt,letterpaper,fullpage]{book}
 
-%% TIPO DE FUENTE PRINCIPAL:
-%\usepackage{uarial}
-%\renewcommand{\familydefault}{\sfdefault}
+
+%SI SE UTILIZA LETRA ARIAL, CAMBIAR ESTO
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+
+%Load book using normal font size to 10pt
+\LoadClass[10pt,twoside,letterpaper]{book} %Cambiar oneside o twoside si se desea impresión por ambos lados
+
+%% Cambio el interlineado a 1.5:
 \renewcommand{\baselinestretch}{1.5}
+
 
 %%   Modificado desde `book.cls'.
 %%
@@ -58,7 +68,6 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amsmath}
-%\RequirePackage{mathtools}
 \RequirePackage{amsthm}
 \RequirePackage{marvosym}
 \RequirePackage{textcomp}
@@ -78,6 +87,7 @@
 %\RequirePackage{subfigure}
 \usepackage{subfig}
 \usepackage[titles,subfigure]{tocloft}
+\usepackage{color}
 %\RequirePackage{color}
 %-------Referencias
 \RequirePackage{hyperref}
@@ -146,6 +156,9 @@
 %    morekeywords={¿,?},
 }
 
+%Soporte para tablas con color
+\usepackage[table,xcdraw]{xcolor}
+
 \usepackage{color}
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray75}{gray}{.75}
@@ -156,6 +169,12 @@
     {\pagebreak[0]}
 \lstloadlanguages
 {
+    %[Visual]Basic
+    %Pascal
+    C,
+    C++,
+    XML,
+    HTML,
     Java
 }
 \lstdefinestyle{consola}
@@ -257,9 +276,28 @@
 %================================================================
 \lhead{\chaptername \thechapter. \chaptermark}
 \chead{}
-\rhead{\thepage}
+\if@twoside
+    \fancyfoot[LE,RO]{\thepage} %Numeración al lado derecho de la página en páginas del lado derecho (ajustado para twoside)
+\else
+    \fancyfoot[R]{\thepage} 
+\fi
+%Si se usa oneside, comentar la linea anterior y descomentar la siguiente linea:
+%\fancyfoot[R]{\thepage} 
+%BORRAR LAS 2 LINEAS ANTERIORES
 \cfoot{}
-\fancyheadoffset[LE,RO]{0cm}
+
+%Hace que la primera página de cada capítulo no tenga el header por defecto y que en el footer el N° de página no esté al centro
+\fancypagestyle{plain}{%
+    \fancyhf{} % clear all header and footer fields
+    \if@twoside
+        \fancyfoot[LE,RO]{\thepage}
+    \else
+        \fancyfoot[R]{\thepage} 
+    \fi
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
 % Cambios al default de spanish
 \deactivatetilden
 \decimalpoint
@@ -273,16 +311,17 @@
     \def\listtablename{Índice de Tablas}
     \def\listfigurename{Índice de Figuras}
     \def\listalgorithmname{Índice de Algoritmos}
-    \def\appendixname{Ap\'endice}
+    \def\appendixname{Anexo}
     \def\tablename{TABLA}
     \def\figurename{FIGURA}
+    \def\lstlistingname{CÓDIGO}
     \def\chaptername{Capítulo}
 }
 
 
-\renewcommand{\appendixname}{Apéndices}
-\renewcommand{\appendixtocname}{Apéndices}
-\renewcommand{\appendixpagename}{Apéndices}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
 %--------Header de los capitulos
 % by Emir
 \usepackage[compact]{titlesec}
@@ -329,11 +368,10 @@
 \renewcommand{\cfttabfont}{Tabla }
 
 
-
-%--------Margenes segun reglamento: sup=izq=4cm y inf=der=2.5cm
-\RequirePackage[letterpaper]{geometry}
+%--------Margenes segun reglamento: izq=4cm y inf=der=sup=2.5cm
+\RequirePackage[headheight=14pt, letterpaper]{geometry}
 % Márgenes en los bordes para tamaño carta
-\geometry{top=4cm, bottom=2.5cm, left=4cm, right=2.5cm}
+\geometry{top=2.5cm, bottom=2.5cm, left=4cm, right=2.5cm}
 %--------Otros margenes
 \setlength{\parindent}{2cm}%2cm Tabulación
 \setlength{\headsep}{20pt} %20
@@ -345,7 +383,7 @@
 \setlength{\pretolerance}{2000}
 \setlength{\tolerance}{3000}
 %--------pagina en blanco
-\newcommand{\paginaenblanco}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand{\paginaenblanco}{\newpage{\pagestyle{empty}\cleardoublepage\null}}
 %--------Referenciacion en la forma: 1-5
 \newcommand{\lref}[2]{\ref{#1}--\ref{#2}}
 %--------Referenciacion en la forma:  (1)
@@ -404,13 +442,12 @@
 \hypersetup
 {
     bookmarksopen, bookmarksnumbered, pdfdisplaydoctitle=true,
-    pdfborder=false,
     pdftitle=\@title,
     pdfauthor=\@autor,
-    pdfsubject=Trabajo de Título,
-    pdfkeywords=Sistemas Distribuidos,
+    pdfsubject=Tesis de grado,
+    pdfkeywords=,
     pdfcreator=Universidad de Santiago de Chile,
-    pdfproducer=Daniel Wladdimiro Cottet,
+    pdfproducer=Emir Mu\~noz and Víctor Flores,
     colorlinks=true,
     % linkcolor=red,
     % citecolor=green,
@@ -444,20 +481,20 @@
 \newcommand{\makecubierta}
 {
 \iflogo
-    \vspace*{-2.5cm}
+    \vspace*{-1.0cm}
     \begin{picture}(18,4)(0,40)
-        \put(340,-7){\includegraphics[scale=.25]{./images/LogoUsach.pdf}}
+        \put(340,-7){\includegraphics[scale=.25]{./images/LogoUsach2.png}}
     \end{picture}
 \fi
 
 \sloppy
 \thispagestyle{empty}
-\vspace*{-1.6cm}
+\vspace*{-1.5cm}
 
 \begin{center}
     {\bf \fontsize{14}{21}\selectfont UNIVERSIDAD DE SANTIAGO DE CHILE}\\
     {\bf \fontsize{12}{18}\selectfont FACULTAD DE INGENIERÍA}\\
-    {\bf \fontsize{12}{18}\selectfont DEPARTAMENTO DE INGENIERÍA INFORMÁTICA}\\
+    {\bf \fontsize{12}{18}\selectfont Departamento de Ingeniería Informática}\\
 \end{center}
 
 \ifpropuesta % si se trata de la propuesta
@@ -518,7 +555,7 @@
             \hspace{7cm} Profesor co-guía: \fontsize{10}{12} \selectfont{\@profesorcoguia}\\
         \fi
         \vspace{1cm}
-        \hspace{7cm} Trabajo de titulación presentado en\\
+        \hspace{7cm} Tesis de grado presentada en\\
         \hspace{7cm} conformidad a los requisitos para\\
         \ifdoctorado
             \hspace{7cm} obtener el grado de Doctor en\\
@@ -546,6 +583,7 @@
 } %\\end \makecubierta
 
 
+
 %-------Copyright
 % by Emir
 \newcommand{\makecopyright}
@@ -553,22 +591,25 @@
     \ifpropuesta
         % no va copyright
     \else
-        \thispagestyle{empty}
+        %\thispagestyle{empty}
         \null
 	\vfill\par
         \begin{flushleft}
-        \copyright\ \@autor \; - \@annoexamen \\ 
-	Algunos derechos reservados. Esta obra está bajo una Licencia
-	Creative Commons Atribución-Chile 3.0. Sus condiciones de uso
-	pueden ser revisadas en:
-	\textless http://creativecommons.org/licenses/by/3.0/cl/\textgreater.
+    
+    		
+    		\copyright\ 
+            \@autor \; - \@annoexamen \\ 
+            \includegraphics[height=12pt]{images/licences/cc_by.png}
+				~$\bullet$~~ Algunos derechos reservados. Esta obra está bajo una Licencia Creative Commons Atribución-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.
+    
+    
         \end{flushleft}
     \fi
 }
 %------Página de dedicatoria
 \newenvironment{dedicatoria}[1]
 {
-    \thispagestyle{empty}
+    %\thispagestyle{empty}
     \vspace*{18cm}\par
     \hspace*{5cm}
     \begin{flushright}
@@ -576,8 +617,9 @@
     \end{flushright}
 }{}
 %------Página de agradecimientos
-\newenvironment{gracias}
+\newenvironment{agradecimiento}
 {
+    %\thispagestyle{empty}
     \begin{center}
         {\Large\bf AGRADECIMIENTOS}
     \end{center}
@@ -585,27 +627,34 @@
 %------Página de resumen (castellano)
 \newcommand{\KeywordsES}[1]
 {
+    %\thispagestyle{empty}
     \par\noindent
     {\bf Palabras Claves\/}: #1
 }
 \newcommand{\resumenCastellano}[1]
 {
-    \begin{center}
-        {\Large\bf RESUMEN}
-    \end{center}
+    %\thispagestyle{empty}
+    %\begin{center}
+    %    {\Large\bf RESUMEN}
+    %\end{center}
+    \chapter*{\centerline{Resumen}}
+    \addcontentsline{toc}{chapter}{Resumen}
 #1
 }
 %------Página de abstract (ingles)
 \newcommand{\KeywordsEN}[1]
 {
+    %\thispagestyle{empty}
     \par\noindent
     {\bf Keywords\/}: #1
 }
 \newcommand{\resumenIngles}[1]
 {
-    \begin{center}
-        {\Large\bf ABSTRACT}
-    \end{center}
+    %\begin{center}
+    %    {\Large\bf ABSTRACT}
+    %\end{center}
+    \chapter*{\centerline{Abstract}}
+    \addcontentsline{toc}{chapter}{Abstract}
 #1
 }
 %------Página de glosario

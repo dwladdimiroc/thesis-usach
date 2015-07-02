@@ -10,7 +10,9 @@ Dentro del análisis realizado en la arquitectura del sistema implementando, se 
 
 Respecto al estudio de las distintas técnicas implementadas, era necesario utilizar una que no tuvieran desventajas en cuanto a la pérdida de datos, inadaptabilidad con el tiempo y costo de implementación. Por lo tanto, se consideró que la mejor opción era utilizar la técnica de fisión, utilizando el mismo modelo de replicación que Fernández \citep{FernandezMKP13}, donde según una sobrecarga en el operador era necesario generar una replica de ese operador. Dentro de las hipótesis planteadas, se pensaba que el costo de un operador iba a ser menor a la formación de las colas de datos en el sistema, lo cual podría variar según la arquitectura del SPS implementando.
 
-Para el diseño del sistema, era necesario contar con un umbral que determinara cuando el operador está o no sobrecargado, por lo que para esto se utilizaron conceptos de teoría de colas \citep{bose2013introduction}. Como los SPS están orientados en grafos, se posee tanto la tasa de llegada ($\lambda$) como la tasa de procesamiento ($\mu$) para cada uno de los operadores, como se ve representando en la Figura \ref{fig:analisisTeoriaColas}, donde la tasa de procesamiento de un operador es la misma tasa de llegada del siguiente operador en el grafo. Utilizando este tipo de conceptos, para cada operador se calculó la tasa de procesamiento ($\rho$), la cual esta definida por la tasa de llegada, la tasa de procesamiento y la cantidad de servicios disponibles en el sistema, cuyo valor nos indica el rendimiento del operador en cierta período de tiempo.
+Para el diseño del sistema, era necesario contar con un umbral que determinara cuando el operador está o no sobrecargado, por lo que para esto se utilizaron conceptos de teoría de colas \citep{bose2013introduction}. Como los SPS están orientados en grafos, se posee tanto la tasa de llegada ($\lambda$) como la tasa de procesamiento ($\mu$) para cada uno de los operadores, como se ve representando en la Figura \ref{fig:analisisTeoriaColas}, donde la tasa de procesamiento de un operador es la misma tasa de llegada del siguiente operador en el grafo. Utilizando este tipo de conceptos, para cada operador se calculó la tasa de procesamiento ($\rho$), la cual esta definida por la tasa de llegada, la tasa de procesamiento y la cantidad de servicios disponibles en el sistema ($\rho = \frac{\lambda}{\mu \rho}$), cuyo valor nos indica el rendimiento del operador en cierta período de tiempo.
+
+Dado este tipo de enfoque y la elasticidad que se deseaba por parte del sistema, es que se trataron tres tipos de estados que pudieran surgir en el sistema: ocioso, estable e inestable. El primer estado hace referencia a cuando el sistema posee mayor cantidad de recursos de lo necesario. El segundo es cuando el sistema se encuentran en un rendimiento óptimo. Y por último, el tercero hace referencia a cuando el sistema posee una sobrecarga, por lo que necesita una mayor cantidad de recursos. Definido el estado del sistema, se tomó esto como la base para las funciones que iban a desempeñar los componentes de análisis y predicción de carga.
 
 \begin{figure}[!hb]
 	\centering
@@ -19,23 +21,63 @@ Para el diseño del sistema, era necesario contar con un umbral que determinara 
 	\label{fig:analisisTeoriaColas}
 \end{figure}
 
-Por último, se consideró importante tratar con dos tipos de algoritmos, uno enfocado en el presente y otro en el futuro. Esto fue pensando, debido que el análisis en el presente no iba a encontrar algún patrón o \textit{peak} que indicara que iba a poseer el mismo comportamiento a futuro. Esto se puede ver ejemplificado en curvas exponenciales, dado que si la tasa de llegada de los datos va aumentando exponencialmente, es necesario ir aumentando paralelamente los recursos del sistema para no generar una sobrecarga. Pero, en caso que falle la predicción, existe el algoritmo reactivo que podrá mejorar el rendimiento en el momento.
+Por último, se consideró importante tratar con dos tipos de algoritmos, uno enfocado en el presente y otro en el futuro. Esto fue pensando, debido que el análisis en el presente no iba a encontrar algún patrón o \textit{peak} que indicara que iba a poseer el mismo comportamiento a futuro, a diferencia de algún algoritmo predictivo. Esto se puede ver ejemplificado en curvas exponenciales, dado que si la tasa de llegada de los datos va aumentando exponencialmente, es necesario ir aumentando paralelamente los recursos del sistema para no generar una sobrecarga. Pero, en caso que falle la predicción, existe el algoritmo reactivo que podrá mejorar el rendimiento en el momento.
 
-%Los componentes que se establecen en el sistema de distribución de carga son cuatro: monitor de carga, analizador de carga, predictor de carga y administrador de réplicas, que se pueden apreciar en la Figura \ref{fig:componentesSistemas}. 
+Al considerarse un sistema que pudiera lidiar con dos tipos de algoritmos, era necesario considerar un algoritmo que pudiera administrar la cantidad de cargas, con tal analizar el algoritmo a utilizar según el tiempo, como también la cantidad de réplicas que deben aplicarse.
 
-%\begin{figure}[hb!]
-%  \centering
-%    \includegraphics[scale=0.5]{images/Diagrama.pdf}
-%  \caption{Estructura del sistema de distribución de carga}
-%  \label{fig:componentesSistemas}
-%\end{figure}
+Dado lo anterior, se diseño un sistema de distribución de carga con cuatro componentes: monitor de carga, analizador de carga, predictor de carga y administrador de réplicas, que se pueden apreciar en la Figura \ref{fig:componentesSistemas}.
 
-\begin{algorithm}[tp]
-	\caption{Bla bla bla.}
-	\label{alg:algoritmoPrueba}
+\begin{figure}[ht!]
+  \centering
+    \includegraphics[scale=0.5]{images/Diagrama.pdf}
+  \caption{Estructura del sistema de distribución de carga.}
+  \label{fig:componentesSistemas}
+\end{figure}
+
+\paragraph{Monitor de carga} Está encargado de estar enviado las estadísticas al sistema, ya sea para recolectar las estadísticas para el algoritmo reactivo como predictivo.
+
+\paragraph{Analizador de carga} Verifica cual es la carga cada cierto período de tiempo, y respecto a eso indica si debe o no replicarse. Para esto, se considera el rendimiento de cada operador, de esta manera se compara el valor del rendimiento con el umbral propuesto, y según en que rango esté va a ser el estado que se encuentren, el cual indica si debe disminuir, aumentar o mantenerse la cantidad de réplicas.
+
+\paragraph{Predictor de carga} Realiza una predicción en base a la historia realizada en cierta ventana de tiempo, utilizando como base las cadenas de Markov. De esta manera, se realiza un cálculo de la distribución estacionaria \citep{Papoulis1984}, para determinar el estado del sistema a futuro y tomar una decisión respecto a esto.
+
+\paragraph{Administrador de réplicas} Es quién administra la cantidad de réplicas de un operador en específico, y además cual de los modelos será utilizado.
+
+\section{Recolección de los datos}
+Como se había mencionado anteriormente, el monitor de carga está encargado de recolectar la tasa de rendimiento de cada uno de los operadores, tanto del historial como los datos en el momento. Para esto, se consideró una ventana de tiempo de 1 segundo para la recolección del historial, y 5 segundos para el análisis del operador en el momento.
+
+Para la recolección del historial se consideraron muestras de 100 datos, esto fue propuesto de esta manera, debido que cada 100 segundos se realiza el algoritmo predictivo, tomando en consideración que cada un segundo recolecta una muestra. La cantidad de muestras fue determinado de esta manera, porque se consideró un número apropiado según lo indicado en la literatura \citep{ching2006markov}.
+
+En cambio, para el algoritmo reactivo, se consideran datos del momento, los cuales son obtenidos cada cinco segundos. Con esta tasa de rendimiento, el algoritmo debe analizar si es necesario o no realizar alguna modificación al sistema, es importante destacar que no siempre es necesaria, debido que en cierto período sólo se utiliza el algoritmo predictor y no el reactivo. Dentro de las consideraciones que se hicieron, es realizar un promedio de la tasa de servicio ($\mu$) en cierta ventana de tiempo, de tal manera de poseer un dinamismo en el valor del procesamiento de los datos en el operador. Un ejemplo de esto, es que puede ser que en cierto período de tiempo se procesen datos más pesados que en otro período de tiempo, llegando la misma tasa de llegada, por lo que las tasas de procesamiento son distintas. Al realizar promedios en períodos de tiempos, las tasa de procesamiento irá adaptándose con el dinamismo de los datos.
+
+\section{Algoritmo reactivo}
+Para el diseño del algoritmo reactivo, como se expresó al inicio del capítulo, se tomó en cuenta conceptos de teoría de colas, por lo que la tasa de rendimiento es el factor que se utilizó para el análisis del estado del sistema.
+
+Dentro de las definiciones de los algoritmos reactivos \citep{CasavantK88}, es necesario considerar umbrales para determinar el estado del sistema, el cual en este caso la tasa de rendimiento ($\rho$), por lo que según su valor el operador toma cierto estado. En el Algoritmo \ref{alg:reactive} se puede ver el análisis del estado de un operador según su tasa de rendimiento; en el caso que sea mayor a 1, su estado es inestable, menor a 0.5, significa que está en estado ocioso, y sino, significa que está estable. Estos datos posteriormente serán considerados por al administrador de réplicas, el cual analiza el comportamiento que debe tener el sistema según lo indicado por el algoritmo.
+
+\begin{algorithm}[!ht]
+	\caption{Algoritmo reactivo del sistema de distribución de carga.}
+	\label{alg:reactive}
 	\begin{algorithmic}[1]
-	\REQUIRE Un \textit{threshold} $\theta$, listas invertidas $L$ de los términos en la consulta
-	\ENSURE $docID$, si existe un documento $docID$ tal que $score(docID)$ $\geq$ $\theta$. de lo contrari
-	\STATE $X$
+	\REQUIRE Tasa de procesamiento $\rho$ del operador $\phi$ 
+	\ENSURE Estado del operador, donde -1 significa estado ocioso, 0 estable y 1 inestable.
+	\IF {$\rho_\phi > 1$}
+		\RETURN{1}
+	\ELSIF {$\rho_\phi < 0.5$}
+		\RETURN{-1}	
+	\ELSE
+		\RETURN{0}
+	\ENDIF
 	\end{algorithmic}
 \end{algorithm}
+
+En la Figura \ref{fig:umbrales} se muestra un ejemplo de la tasa de procesamiento, que en los primeros segundos el sistema está superior al límite superior, el cual indica que el sistema es inestable. Por lo que el sistema detecta dicha sobrecarga, e indica este problema, para que posteriormente en los 100 segundos pueda estabilizarse el sistema y quedarse entre el límite superior e inferior, el cual esta definido como sistema estable.
+
+\begin{figure}[hb!]
+  \centering
+    \includegraphics[scale=0.75]{images/Umbrales.eps}
+  \caption{Estados de la tasa de procesamiento.}
+  \label{fig:umbrales}
+\end{figure}
+
+
+\section{Algoritmo predictivo}
