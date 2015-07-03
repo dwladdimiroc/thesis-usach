@@ -68,12 +68,14 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amsmath}
+\RequirePackage{units}
 \RequirePackage{amsthm}
 \RequirePackage{marvosym}
 \RequirePackage{textcomp}
 \RequirePackage{mathcomp}
 \RequirePackage{marvosym} %Simbolos de caritas
 \RequirePackage{upgreek}
+\RequirePackage{setspace}
 \iftxfonts\RequirePackage{txfonts}\fi
 %-------Entornos, figuras
 \RequirePackage{verbatim}
@@ -108,7 +110,7 @@
 \RequirePackage[ruled,algochapter,linesnumbered]{algorithm2e}
 \renewcommand{\algorithmcfname}{Algoritmo}%
 \RequirePackage{algorithmic}
-\setlength{\algomargin}{1em}
+\setlength{\algomargin}{1.5em}
 \renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
 \renewcommand{\algorithmicensure}{\textbf{Salida:}}
 \renewcommand{\algorithmiccomment}[1]{//#1}

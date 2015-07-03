@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{49}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -20,8 +20,8 @@ Alves, D., Bizarro, P., \& Marques, P. (2010).
 \bibitem[{Andrade et~al.(2014)Andrade, Gedik, \&
   Turaga}]{andrade2014fundamentals}
 Andrade, H., Gedik, B., \& Turaga, D. (2014).
-\newblock {\em Fundamentals of Stream Processing: Application Design, Systems,
-  and Analytics\/}.
+\newblock {\em Fundamentals of {S}tream {P}rocessing: {A}pplication {D}esign,
+  {S}ystems, and {A}nalytics\/}.
 \newblock Cambridge University Press.
 
 \bibitem[{Appel et~al.(2012)Appel, Frischbier, Freudenreich, \&
@@ -41,6 +41,12 @@ Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
   Discrete Algorithms, {SODA} 2006, Miami, Florida, USA, January 22-26,
   2006\/}, (pp. 708--713).
 
+\bibitem[{Birman(2012)}]{bookDistrSys}
+Birman, K.~P. (2012).
+\newblock {\em Guide to Reliable Distributed Systems - Building High-Assurance
+  Applications and Cloud-Hosted Services\/}.
+\newblock Texts in Computer Science. Springer.
+
 \bibitem[{Bose(2013)}]{bose2013introduction}
 Bose, S.~K. (2013).
 \newblock {\em An introduction to queueing systems\/}.
@@ -54,7 +60,7 @@ Breuer, L., \& Baum, D. (2005).
 
 \bibitem[{Brucker(2004)}]{bookScheduling}
 Brucker, P. (2004).
-\newblock {\em Scheduling algorithms {(4.} ed.)\/}.
+\newblock {\em Scheduling algorithms\/}.
 \newblock Springer.
 
 \bibitem[{Casavant \& Kuhl(1988)}]{CasavantK88}
@@ -66,7 +72,7 @@ Casavant, T.~L., \& Kuhl, J.~G. (1988).
 \bibitem[{Chen \& Zhang(2014)}]{ChenZ14a}
 Chen, C. L.~P., \& Zhang, C. (2014).
 \newblock Data-intensive applications, challenges, techniques and technologies:
-  {A} survey on big data.
+  {A} survey on {B}ig {D}ata.
 \newblock {\em Inf. Sci.\/}, {\em 275\/}, 314--347.
 
 \bibitem[{Ching \& Ng(2006)}]{ching2006markov}
@@ -77,12 +83,6 @@ Ching, W.~K., \& Ng, M.~K. (2006).
 \bibitem[{De~Sapio(1978)}]{de1978calculus}
 De~Sapio, R. (1978).
 \newblock Calculus for the life sciences.
-
-\bibitem[{Documentation(2014)}]{stormtwitterdoc}
-Documentation, S. (2014).
-\newblock Understanding the parallelism of a storm topology.
-\newblock [Online]
-  \url{http://storm.incubator.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html}.
 
 \bibitem[{Dong \& Akl(2006)}]{Dong06schedulingalgorithms}
 Dong, F., \& Akl, S.~G. (2006).
@@ -173,6 +173,11 @@ Ishii, A., \& Suzumura, T. (2011).
 \newblock In {\em {IEEE} International Conference on Cloud Computing, {CLOUD}
   2011, Washington, DC, USA, 4-9 July, 2011\/}, (pp. 195--202).
 
+\bibitem[{Karp et~al.(2003)Karp, Shenker, \& Papadimitriou}]{KarpSP03}
+Karp, R.~M., Shenker, S., \& Papadimitriou, C.~H. (2003).
+\newblock A simple algorithm for finding frequent elements in streams and bags.
+\newblock {\em {ACM} Trans. Database Syst.\/}, {\em 28\/}, 51--55.
+
 \bibitem[{Lehrig et~al.(2015)Lehrig, Eikerling, \& Becker}]{LehrigEB15}
 Lehrig, S., Eikerling, H., \& Becker, S. (2015).
 \newblock Scalability, elasticity, and efficiency in cloud computing: a
@@ -216,7 +221,8 @@ Oberhelman, D. (2007).
 
 \bibitem[{Papoulis(1984)}]{Papoulis1984}
 Papoulis, A. (1984).
-\newblock {\em Probability, Random Variables, and Stochastic Processes\/}.
+\newblock {\em Probability, {R}andom {V}ariables, and {S}tochastic
+  {P}rocesses\/}.
 \newblock Mc-Graw Hill.
 
 \bibitem[{Pittau et~al.(2007)Pittau, Alimonda, Carta, \&
@@ -244,7 +250,7 @@ S4 (2014).
 \bibitem[{Samza(2014)}]{samza}
 Samza, A. (2014).
 \newblock Samza.
-\newblock \url{http://samza.incubator.apache.org/}.
+\newblock [Online] \url{http://samza.incubator.apache.org/}.
 
 \bibitem[{Schneider et~al.(2009)Schneider, Andrade, Gedik, Biem, \&
   Wu}]{SchneiderAGBW09}
@@ -275,6 +281,15 @@ Stonebraker, M., {\c{C}}etintemel, U., \& Zdonik, S.~B. (2005).
 Storm (2014).
 \newblock Distributed and fault-tolerant realtime computation.
 \newblock [Online] \url{http://storm.incubator.apache.org/}.
+
+\bibitem[{Sturm et~al.(2000)Sturm, Morris, \& Jander}]{sturm2000foundations}
+Sturm, R., Morris, W., \& Jander, M. (2000).
+\newblock Foundations of {S}ervice {L}evel {M}anagement.
+
+\bibitem[{Tanenbaum \& van Steen(2007)}]{bookTanenbaum}
+Tanenbaum, A.~S., \& van Steen, M. (2007).
+\newblock {\em Distributed {S}ystems - {P}rinciples and paradigms\/}.
+\newblock Pearson Education.
 
 \bibitem[{Taylor \& Karlin(2014)}]{taylor2014introduction}
 Taylor, H.~M., \& Karlin, S. (2014).

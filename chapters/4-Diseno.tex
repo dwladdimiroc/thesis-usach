@@ -58,7 +58,7 @@ Dentro de las definiciones de los algoritmos reactivos \citep{CasavantK88}, es n
 	\caption{Algoritmo reactivo del sistema de distribución de carga.}
 	\label{alg:reactive}
 	\begin{algorithmic}[1]
-	\REQUIRE Tasa de procesamiento $\rho$ del operador $\phi$ 
+	\REQUIRE Tasa de procesamiento $\rho$ del operador $\phi$.
 	\ENSURE Estado del operador, donde -1 significa estado ocioso, 0 estable y 1 inestable.
 	\IF {$\rho_\phi > 1$}
 		\RETURN{1}
@@ -74,10 +74,146 @@ En la Figura \ref{fig:umbrales} se muestra un ejemplo de la tasa de procesamient
 
 \begin{figure}[hb!]
   \centering
-    \includegraphics[scale=0.75]{images/Umbrales.eps}
+    \includegraphics[scale=0.8]{images/Umbrales.eps}
   \caption{Estados de la tasa de procesamiento.}
   \label{fig:umbrales}
 \end{figure}
 
 
 \section{Algoritmo predictivo}
+Para la confección del algoritmo predictivo se realizó un análisis según las cadenas de Markov \citep{ching2006markov}, por lo que es importante considerar las siguientes condiciones necesarias:
+
+\begin{itemize}
+	\item Definir tiempo discretos, los cuales fueran cambiando con el tiempo según un proceso estocástico. Para esto se consideró el cambio del estado del sistema de período a otro, es decir, las transiciones existentes entre cada uno de los estados, ya sea ocioso, estable o inestable, en período de un segundo.
+	\item Determinar los estados finitos que se van a utilizar para la conformación de la cadena, que en este caso sería los estados que puede encontrar el sistema, siendo tres los posibles estados: ocioso, estable o inestable.
+	\item Una cantidad de muestras considerables para realizar un muestreo que sea representativo según el período analizado, que en este caso fueron 100 muestras, las cuales corresponden a la tasa de rendimiento del operador analizado. Estas muestras serán independientes unas con otras, por lo que cada cierto período de tiempo se volverá a crear otra cadena de Markov independiente de los datos del pasado.
+\end{itemize}
+
+Dato esto, se presentó un cadena de Markov en base a estas bases, como se refleja en la Figura \ref{fig:cadenaMarkovPredictiva}, donde existen tres estados, los cuales pueden ser ocioso, estable o inestable, y poseen ciertas transiciones de un estado a otro, cuyas probabilidades van a estar determinadas por la historia existente en el sistema.
+
+\begin{figure}[hb!]
+  \centering
+    \includegraphics[scale=0.75]{images/CadenaMarkovPredictiva.pdf}
+  \caption{Cadena de Markov dado el modelo propuesto del sistema.}
+  \label{fig:cadenaMarkovPredictiva}
+\end{figure}
+
+Por lo tanto, para cada operador existe una cadena de Markov según la historia existente en una ventana de tiempo. Para la generación de esta cadena de Markov, se puede ver en el Apéndice \ref{apendice:matrizTransicion} el algoritmo que crea la matriz de transición según el historial del operador, la cual corresponde a la tasa de rendimiento recolectada cada un segundo en la última ventana de tiempo del operador analizado. En la Ecuación \ref{eq:matrizTransicionPredictive} se puede ver la matriz de transición que se obtiene de la cadena de Markov de la Figura \ref{fig:cadenaMarkovPredictiva}, la cual posee una probabilidad de transición desde cada uno de los estado a otro existente.
+
+\begin{equation} \label{eq:matrizTransicionPredictive}
+	P =
+	\begin{bmatrix}
+		T_{1,1} & T_{1,2} & T_{1,3} \\
+		T_{2,1} & T_{2,2} & T_{2,3} \\
+		T_{3,1} & T_{3,2} & T_{3,3}
+	\end{bmatrix}	
+\end{equation}
+
+Teniendo la matriz de transición de la cadena de Markov de un operador, se puede calcular la distribución estacionaria, la cual indica la probabilidad que a largo plazo se encuentre el sistema en cierto estado, ya sea ocioso, estable o inestable. Para el cálculo de esta, se utiliza la ecuación de Chapman-Kolmogórov \citep{Papoulis1984} expuesta en la subsección \ref{subsec:cadenaMarkov}.
+
+El Algoritmo \ref{alg:distEstacionaria} describe el cálculo de la distribución estacionaria, cuya entrada es la distribución estacionaria de un operador del SPS. Dentro de las primeras condiciones, era analizar si efectivamente existían transiciones en todos los estados, debido que podía darse que no existiera alguna transición a algún estado en un período de tiempo. Por ejemplo, podría ser que en cierto período nunca se ha encontrado ocioso el sistema, pero si estable e inestable. Como el cálculo de la distribución estacionaria requiere un estado de inicio, se verificó si efectivamente existía o no el estado, y en caso no existir, el estado de inicio será alguno existente.
+
+Al realizar las iteraciones correspondientes a cálculo, se proporcionó como entrada la cantidad que se estimaba necesario. Es importante destacar que entre mayor cantidad de iteraciones, mayor precisión existe en el cálculo, pero mayor es el tiempo de espera.
+
+\begin{algorithm}[!ht]
+	\caption{Cálculo de la distribución estacionaria de la cadena de Markov de un operador $\phi$.}
+	\label{alg:distEstacionaria}
+	\begin{algorithmic}[1]
+	\REQUIRE $\Gamma$ Matriz de transición del operador $\phi$ y $\upsilon$ cantidad de iteraciones deseadas.
+	\ENSURE $\Delta$ Distribución estacionaria de la cadena de Markov del operador $\phi$.
+	\STATE $i \leftarrow 0$ \COMMENT {Estado inicial de iteración}
+	\FOR {$j=1$ a $3$}
+		\IF {$\Gamma_{j,x} = 0 ; x={1,2,3}$}
+			\STATE {$i \leftarrow j$}
+		\ENDIF
+	\ENDFOR
+	
+	\STATE $\tau \leftarrow Arreglo[3]$ \COMMENT {Contador para la normalizaci\'on de los datos}
+	\FOR {$k=0$ a $\upsilon$}
+		\STATE $u = randomUniform(0,1)$
+		\STATE $\sigma = 0$
+		\FOR {$j=0$ a $3$}
+			\STATE $\sigma = \sigma + \Gamma_{i,j}$
+			\IF {$u \leqslant  \sigma$}
+				\STATE $\tau_{j}++$
+				\STATE $i \leftarrow j$
+				\STATE \textbf{break}
+			\ENDIF
+		\ENDFOR
+	\ENDFOR
+
+	\STATE $\Delta \leftarrow Arreglo[3]$ \COMMENT {Distribución estacionaria de la cadena de Markov del operador $\phi$}
+	\FOR{$k=0$ a $3$}
+		\STATE $\Delta_{k} \leftarrow \nicefrac{\tau_{k}}{\upsilon}$
+	\ENDFOR	
+	
+	\RETURN $\Delta$
+	
+	\end{algorithmic}
+\end{algorithm}
+
+Obtenida la distribución estacionaria, se procese a analizarla el comportamiento de esta. Para esto, se consideró que era importante que la probabilidad entre estados tuviera una desviación estándar superior a 0.25, de tal manera que se trabajen con probabilidad que no posean incertidumbre en su comportamiento a futuro. En el Algoritmo \ref{alg:predictive} se puede ver el análisis que se realiza a la distribución estacionaria, ya sea por el comportamiento estadístico o de estado del sistema, donde retornará el estado a futuro del operador, dada la probabilidad más alta de la distribución estacionaria, si es que supera la desviación estándar propuesta. Se tomó en consideración que el primer estado es el ocioso, el segundo estado es el estable y el tercer estado es el inestable.
+
+\begin{algorithm}[!ht]
+	\caption{Algoritmo predictivo del sistema de distribución de carga.}
+	\label{alg:predictive}
+	\begin{algorithmic}[1]
+	\REQUIRE$\Delta$ Distribución estacionaria de la cadena de Markov del operador $\phi$.
+	\ENSURE Estado a futuro del operador, donde -1 significa estado ocioso, 0 estable y 1 inestable.
+	\IF {$\sigma(\Delta_1,\Delta_2,\Delta_3) > 0.25$ \COMMENT {Desviaci\'on est\'andar de las probabilidades de la distribuci\'on estacionaria}} 
+		\STATE $i \leftarrow getStateMax(\Delta)$ \COMMENT {Obtención del estado con mayor probabilidad}
+		\IF {$i=1$}
+			\RETURN -1
+		\ELSIF {$i=2$}
+			\RETURN 0			
+		\ELSE
+			\RETURN 1
+		\ENDIF
+	\ENDIF
+	
+	\RETURN 0
+	
+	\end{algorithmic}
+\end{algorithm}
+
+\section{Administración del sistema}
+
+El último componente del sistema es el administrador de réplicas, cuya función es administrar la cantidad de réplicas en cada uno de los operadores según los recursos disponibles por parte del sistema y también según el comportamiento que éste posea.
+
+Para esto, se diseño un administrador que se ejecutara según el período que se encuentra el algoritmo reactivo o predictivo, cada período es de 19 ejecuciones del algoritmo reactivo y 1 del algoritmo reactivo. Esto fue pensando dado que cada 100 segundos se poseían las muestras suficientes para el análisis del algoritmo predictivo, por lo tanto, cada ejecución del algoritmo reactivo iba a ser cada 5 segundos, de esa manera al segundo 100 iba a realizarse en vez del algoritmo reactivo, el predictivo ya que posee la cantidad suficiente de muestras.
+
+\begin{algorithm}[!hb]
+	\caption{Administración de réplicas de un operador $\phi$ dado su comportamiento en el sistema de distribución de carga.}
+	\label{alg:administracion}
+	\begin{algorithmic}[1]
+	\REQUIRE Operador $\phi$ a analizar y $\iota$ período en que se encuentra el sistema de distribución de carga.
+	\ENSURE Cantidad de réplicas a modificar del operador.	
+	
+	\IF {$\iota \mod{20} \neq 0 $}
+		\STATE $\delta_{\iota} \leftarrow AlgoritmoReactivo(\phi)$
+		\IF {$\delta_{\iota}$ \AND $\delta_{\iota-1}$ son estado inestable}
+			\IF {No excede la cantidad máxima de réplicas en el sistema}
+				\RETURN Crear una réplica del operador $\phi$
+			\ENDIF
+		\ELSIF {$\delta_{\iota}$ \AND $\delta_{\iota-1}$ son estado ocioso}
+			\RETURN Remover una réplica del operador $\phi$
+		\ENDIF 
+	\ELSE
+		\STATE $\delta_{\iota} \leftarrow AlgoritmoPredictivo(\phi)$
+		\IF {$\delta_{\iota}$ es estado inestable}
+			\IF {No excede la cantidad máxima de réplicas en el sistema}
+				\RETURN Crear cinco réplicas del operador $\phi$
+			\ENDIF
+		\ELSIF {$\delta_{\iota}$ es estado ocioso}
+			\RETURN Remover cinco réplicas del operador $\phi$
+		\ENDIF
+	\ENDIF
+	
+	\RETURN No hacer nada al operador $\phi$
+	
+	\end{algorithmic}
+\end{algorithm}
+
+En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero se analiza si debe realizarse según el período el algoritmo reactivo o el predictivo. En caso de realizarse el reactivo, se analiza si existen dos alertas consecutivas del mismo estado del sistema, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Por otra parte, de ejecutarse el módulo predictivo, se analiza cual fue la predicción, por lo que si es ocioso disminuirá la cantidad de réplicas y si es inestable las aumentará. Como el proceso de predicción se realiza con menor frecuencia, se considero que debía crear o remover mayor cantidad de réplicas que en el módulo reactivo, con tal de aprovechar el costo de cómputo que conlleva éste.
+
+Dentro de las consideraciones que se tuvieron para el diseño del administrador, fue la cantidad máxima de réplicas que podían realizarse. Dado que una de las limitantes de este trabajo fue que sólo se utilizó una máquina, la cantidad de recursos son limitados, por lo que aumentar la cantidad de réplicas indefinidamente iba a generar una sobrecarga en los recursos disponibles por parte de la máquina, habiendo fallas en el funcionamiento del SPS.
