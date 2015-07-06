@@ -9,15 +9,17 @@ A level-1 auxiliary file: chapters/1-Introduccion.aux
 A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 A level-1 auxiliary file: chapters/3-BalanceDeCarga.aux
 A level-1 auxiliary file: chapters/4-Diseno.aux
+A level-1 auxiliary file: chapters/5-Experimentos.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: apendices/Apendice-1.aux
+A level-1 auxiliary file: apendices/Apendice-2.aux
 Database file #1: referencias.bib
 Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
 Warning--empty journal in sturm2000foundations
 You've used 49 entries,
             2804 wiz_defined-function locations,
-            874 strings with 14741 characters,
+            876 strings with 14792 characters,
 and the built_in function-call counts, 29379 in all, are:
 = -- 2406
 > -- 1223

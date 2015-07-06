@@ -171,19 +171,37 @@
     {\pagebreak[0]}
 \lstloadlanguages
 {
-    %[Visual]Basic
-    %Pascal
-    C,
-    C++,
-    XML,
-    HTML,
     Java
 }
-\lstdefinestyle{consola}
-{
-    basicstyle=\scriptsize\bf\ttfamily,
-    backgroundcolor=\color{gray75},
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+	language=Java,
+	captionpos=b,
+	basicstyle=\small,
+	keywordstyle=\color{javapurple}\bfseries,
+	stringstyle=\color{javared},
+	commentstyle=\color{javagreen},
+	morecomment=[s][\color{javadocblue}]{/**}{*/},
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	numbersep=10pt,
+	tabsize=4,
+	showspaces=false,
+	showstringspaces=false
 }
+
+%\lstdefinestyle{consola}
+%{
+%    basicstyle=\scriptsize\bf\ttfamily,
+%    backgroundcolor=\color{gray75},
+%}
+
 %--------Bibliografia
 %\RequirePackage{apacite}
 \RequirePackage{natbib}
@@ -314,9 +332,9 @@
     \def\listfigurename{Índice de Figuras}
     \def\listalgorithmname{Índice de Algoritmos}
     \def\appendixname{Anexo}
-    \def\tablename{TABLA}
-    \def\figurename{FIGURA}
-    \def\lstlistingname{CÓDIGO}
+    \def\tablename{Tabla}
+    \def\figurename{Figura}
+    \def\lstlistingname{Código}
     \def\chaptername{Capítulo}
 }
 

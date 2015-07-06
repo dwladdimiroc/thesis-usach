@@ -1,0 +1,70 @@
+\chapter{Modificaciones al código fuente de S4}
+\label{apendice:codigoFuenteS4}
+
+En el Código \ref{lst:monitor} se presenta la implementanción de las dos tareas existentes, donde una de ellas está a cargo de obtener las muestras para el historia, y la otra está a cargo de enviar las estadísticas de los PE existentes en el sistema.
+
+\begin{lstlisting}[caption={Tareas que ejecutan el sistema de distribución de carga.},label={lst:monitor},language=Java]
+private void startMonitor() {
+	if (runMonitor) {
+		synchronized (getBlockAdapter()) {
+			try {
+				getBlockAdapter().wait();
+			} catch (InterruptedException e) {
+				getLogger().error(e.getMessage());
+			}
+
+			ScheduledExecutorService getEventCount = Executors
+					.newSingleThreadScheduledExecutor();
+			getEventCount.scheduleAtFixedRate(new OnTimeGetEventCount(),
+					1000, 1000, TimeUnit.MILLISECONDS);
+
+			ScheduledExecutorService sendStatus = Executors
+					.newSingleThreadScheduledExecutor();
+			sendStatus.scheduleAtFixedRate(new OnTimeSendStatus(), 6000,
+					5000, TimeUnit.MILLISECONDS);
+		}
+	} else {
+		ScheduledExecutorService sendStatus = Executors
+				.newSingleThreadScheduledExecutor();
+		sendStatus.scheduleAtFixedRate(new OnTimeSendStatus(), 6000, 5000,
+				TimeUnit.MILLISECONDS);
+	}
+
+}
+\end{lstlisting}
+
+En el Código \ref{lst:add} se muestra la implementanción que realizada para añadir una réplica a un PE en específico. El tipo \textit{StatusPE} hace referencia un objeto creado en la implementanción, para almacenar los datos y estadísticas correspondientes al PE en el análisis de carga según el sistema de distribución de carga, como la cantidad de réplicas deseadas.
+
+\begin{lstlisting}[caption={Añadir r\'eplicas a un PE en S4.},label={lst:add},language=Java]
+public void addReplication(StatusPE statusPE) {
+	for (Streamable<Event> stream : getStreams()) {
+		for (ProcessingElement PEPrototype : stream.getTargetPEs()) {
+			if (PEPrototype.getClass().equals(statusPE.getPE())) {
+				for (long i = PEPrototype.getNumPEInstances(); i < statusPE
+						.getReplication(); i++) {
+					PEPrototype.getInstanceForKey(Long.toString(i));
+				}
+			}
+		}
+	}
+}
+\end{lstlisting}
+
+En el Código \ref{lst:remove} se muestra la implementanción que realizada para eliminar una réplica a un PE en específico.
+
+\begin{lstlisting}[caption={Eliminar r\'eplicas a un PE en S4.},label={lst:remove},language=Java]
+public void removeReplication(StatusPE statusPE) {
+	for (Streamable<Event> stream : getStreams()) {
+		for (ProcessingElement PEPrototype : stream.getTargetPEs()) {
+			if (statusPE.getPE().equals(PEPrototype.getClass())) {
+				for (int i = statusPE.getReplication(); i < PEPrototype
+						.getInstances().size(); i++) {
+					ProcessingElement peCurrent = PEPrototype
+							.getInstanceForKey(Integer.toString(i));
+					peCurrent.close();
+				}
+			}
+		}
+	}
+}
+\end{lstlisting}

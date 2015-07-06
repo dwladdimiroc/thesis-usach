@@ -40,14 +40,22 @@
 \contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{30}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}Dise\~no del sistema de distribuci\IeC {\'o}n de carga}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis del sistema de distribuci\IeC {\'o}n de carga}{33}{section.4.1}
-\contentsline {paragraph}{Monitor de carga}{35}{figure.caption.20}
-\contentsline {paragraph}{Analizador de carga}{36}{figure.caption.20}
-\contentsline {paragraph}{Predictor de carga}{36}{figure.caption.20}
-\contentsline {paragraph}{Administrador de r\IeC {\'e}plicas}{36}{figure.caption.20}
-\contentsline {section}{\numberline {4.2}Recolecci\IeC {\'o}n de los datos}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}Algoritmo reactivo}{37}{section.4.3}
-\contentsline {section}{\numberline {4.4}Algoritmo predictivo}{38}{section.4.4}
-\contentsline {section}{\numberline {4.5}Administraci\IeC {\'o}n del sistema}{41}{section.4.5}
-\contentsline {chapter}{Referencias}{45}{chapter*.23}
-\contentsline {chapter}{Anexos}{49}{section*.24}
-\contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{51}{appendix.Alph1}
+\contentsline {paragraph}{Monitor de carga}{37}{figure.caption.21}
+\contentsline {paragraph}{Analizador de carga}{37}{figure.caption.21}
+\contentsline {paragraph}{Predictor de carga}{37}{figure.caption.21}
+\contentsline {paragraph}{Administrador de r\IeC {\'e}plicas}{37}{figure.caption.21}
+\contentsline {section}{\numberline {4.2}Recolecci\IeC {\'o}n de los datos}{37}{section.4.2}
+\contentsline {section}{\numberline {4.3}Algoritmo reactivo}{38}{section.4.3}
+\contentsline {section}{\numberline {4.4}Algoritmo predictivo}{40}{section.4.4}
+\contentsline {section}{\numberline {4.5}Administraci\IeC {\'o}n del sistema}{43}{section.4.5}
+\contentsline {chapter}{\numberline {5}Experimentos y evaluaci\IeC {\'o}n}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementaci\IeC {\'o}n del sistema}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}Experimentos}{47}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}App 1}{47}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}App 2}{47}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}App 3}{48}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Evaluaci\IeC {\'o}n}{48}{section.5.3}
+\contentsline {chapter}{Referencias}{49}{chapter*.25}
+\contentsline {chapter}{Anexos}{53}{section*.26}
+\contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{55}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Modificaciones al c\IeC {\'o}digo fuente de S4}{57}{appendix.Alph2}
