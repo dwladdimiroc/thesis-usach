@@ -1,70 +1,192 @@
-\chapter{Modificaciones al código fuente de S4}
-\label{apendice:codigoFuenteS4}
+\chapter{Clases para la implementación del sistema de monitoreo}
+\label{apendice:clases}
 
-En el Código \ref{lst:monitor} se presenta la implementanción de las dos tareas existentes, donde una de ellas está a cargo de obtener las muestras para el historia, y la otra está a cargo de enviar las estadísticas de los PE existentes en el sistema.
+En el Código \ref{lst:statusPE} se muestra las estadísticas de un PE en específico, donde se guarda el nombre del \textit{stream} asociado al PE, la tasa de llegada ($\lambda$), tasa de servicio ($\mu * s$), tasa de servicio unitaria ($\mu$), tasa de rendimiento ($\rho$), cola, historial del PE para el cálculo predictivo, clase del PE, cantidad de réplicas, historial de alertas para la replicación según el algoritmo reactivo y cantidad total de eventos procesados.
 
-\begin{lstlisting}[caption={Tareas que ejecutan el sistema de distribución de carga.},label={lst:monitor},language=Java]
-private void startMonitor() {
-	if (runMonitor) {
-		synchronized (getBlockAdapter()) {
-			try {
-				getBlockAdapter().wait();
-			} catch (InterruptedException e) {
-				getLogger().error(e.getMessage());
-			}
+Estas estadísticas son las que se utilizan como entrada para el algoritmo reactivo o predictivo, de tal manera que puedan realizar los cálculos correspondientes.
 
-			ScheduledExecutorService getEventCount = Executors
-					.newSingleThreadScheduledExecutor();
-			getEventCount.scheduleAtFixedRate(new OnTimeGetEventCount(),
-					1000, 1000, TimeUnit.MILLISECONDS);
+\begin{lstlisting}[caption={Clase StatusPE, el cual contiene las estadísticas de un PE específico.},label={lst:statusPE},language=Java]
+public class StatusPE {
 
-			ScheduledExecutorService sendStatus = Executors
-					.newSingleThreadScheduledExecutor();
-			sendStatus.scheduleAtFixedRate(new OnTimeSendStatus(), 6000,
-					5000, TimeUnit.MILLISECONDS);
-		}
-	} else {
-		ScheduledExecutorService sendStatus = Executors
-				.newSingleThreadScheduledExecutor();
-		sendStatus.scheduleAtFixedRate(new OnTimeSendStatus(), 6000, 5000,
-				TimeUnit.MILLISECONDS);
+	private String stream;
+
+	private long recibeEvent;
+	private long sendEvent;
+	private double sendEventUnit;
+	private double processEvent;
+	private long queueEvent;
+	private Queue<Double> history;
+	private Class<? extends ProcessingElement> pe;
+	private int replication;
+	private Queue<Integer> markMap;
+	private long eventCount;
+
+	public StatusPE() {
+		stream = null;
+		recibeEvent = 0;
+		sendEvent = 0;
+		sendEventUnit = 0;
+		processEvent = 0;
+		queueEvent = 0;
+		history = new CircularFifoQueue<Double>(100);
+		pe = null;
+		replication = 0;
+		markMap = new CircularFifoQueue<Integer>(2);
+		eventCount = 0;
+	}
+
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stream) {
+		this.stream = stream;
+	}
+
+	public long getRecibeEvent() {
+		return recibeEvent;
+	}
+
+	public void setRecibeEvent(long recibeEvent) {
+		this.recibeEvent = recibeEvent;
+	}
+
+	public long getSendEvent() {
+		return sendEvent;
+	}
+
+	public void setSendEvent(long sendEvent) {
+		this.sendEvent = sendEvent;
+	}
+
+	public double getSendEventUnit() {
+		return sendEventUnit;
+	}
+
+	public void setSendEventUnit(double sendEventUnit) {
+		this.sendEventUnit = sendEventUnit;
+	}
+
+	public double getProcessEvent() {
+		return processEvent;
+	}
+
+	public void setProcessEvent(double processEvent) {
+		this.processEvent = processEvent;
+	}
+
+	public long getQueueEvent() {
+		return queueEvent;
+	}
+
+	public void setQueueEvent(long queueEvent) {
+		this.queueEvent = queueEvent;
+	}
+
+	public Queue<Double> getHistory() {
+		return history;
+	}
+
+	public void setHistory(Queue<Double> history) {
+		this.history = history;
+	}
+
+	public Class<? extends ProcessingElement> getPE() {
+		return pe;
+	}
+
+	public void setPE(Class<? extends ProcessingElement> pe) {
+		this.pe = pe;
+	}
+
+	public int getReplication() {
+		return replication;
+	}
+
+	public void setReplication(int replication) {
+		this.replication = replication;
+	}
+
+	public Queue<Integer> getMarkMap() {
+		return markMap;
+	}
+
+	public void setMarkMap(Queue<Integer> markMap) {
+		this.markMap = markMap;
+	}
+
+	public long getEventCount() {
+		return eventCount;
+	}
+
+	public void setEventCount(long eventCount) {
+		this.eventCount = eventCount;
+	}
+
+	@Override
+	public String toString() {
+		return "[PE : " + pe.toString() + " | Recibe: " + recibeEvent
+				+ " | Send: " + sendEvent + " | Replication: " + replication
+				+ "]";
 	}
 
 }
+
 \end{lstlisting}
 
-En el Código \ref{lst:add} se muestra la implementanción que realizada para añadir una réplica a un PE en específico. El tipo \textit{StatusPE} hace referencia un objeto creado en la implementanción, para almacenar los datos y estadísticas correspondientes al PE en el análisis de carga según el sistema de distribución de carga, como la cantidad de réplicas deseadas.
+En el Código \ref{lst:topologyApp} se muestra la clase que almacena una arista con sus respectivos vértices del grafo, de esta manera, se posee un mapa del grafo, siendo utilizado para saber la topología que utilizó el usuario en el grafo. De esta manera, se puede tratar la replicación por parte de un operador a otro, viendo los distintos cambios que surgen en la topología del grafo.
 
-\begin{lstlisting}[caption={Añadir r\'eplicas a un PE en S4.},label={lst:add},language=Java]
-public void addReplication(StatusPE statusPE) {
-	for (Streamable<Event> stream : getStreams()) {
-		for (ProcessingElement PEPrototype : stream.getTargetPEs()) {
-			if (PEPrototype.getClass().equals(statusPE.getPE())) {
-				for (long i = PEPrototype.getNumPEInstances(); i < statusPE
-						.getReplication(); i++) {
-					PEPrototype.getInstanceForKey(Long.toString(i));
-				}
-			}
-		}
+\begin{lstlisting}[caption={Clase TopologyApp, el cual contiene las topología del grafo diseñado por el usuario.},label={lst:topologyApp},language=Java]
+public class TopologyApp {
+	private Class<? extends AdapterApp> adapter;
+	private Class<? extends ProcessingElement> peSend;
+	private Class<? extends ProcessingElement> peRecibe;
+	private long eventSend;
+
+	public TopologyApp() {
+		adapter = null;
+		peSend = null;
+		peRecibe = null;
+		eventSend = 0;
 	}
-}
-\end{lstlisting}
 
-En el Código \ref{lst:remove} se muestra la implementanción que realizada para eliminar una réplica a un PE en específico.
+	public Class<? extends AdapterApp> getAdapter() {
+		return adapter;
+	}
 
-\begin{lstlisting}[caption={Eliminar r\'eplicas a un PE en S4.},label={lst:remove},language=Java]
-public void removeReplication(StatusPE statusPE) {
-	for (Streamable<Event> stream : getStreams()) {
-		for (ProcessingElement PEPrototype : stream.getTargetPEs()) {
-			if (statusPE.getPE().equals(PEPrototype.getClass())) {
-				for (int i = statusPE.getReplication(); i < PEPrototype
-						.getInstances().size(); i++) {
-					ProcessingElement peCurrent = PEPrototype
-							.getInstanceForKey(Integer.toString(i));
-					peCurrent.close();
-				}
-			}
-		}
+	public void setAdapter(Class<? extends AdapterApp> adapter) {
+		this.adapter = adapter;
+	}
+
+	public Class<? extends ProcessingElement> getPeSend() {
+		return peSend;
+	}
+
+	public void setPeSend(Class<? extends ProcessingElement> peSend) {
+		this.peSend = peSend;
+	}
+
+	public Class<? extends ProcessingElement> getPeRecibe() {
+		return peRecibe;
+	}
+
+	public void setPeRecibe(Class<? extends ProcessingElement> peRecibe) {
+		this.peRecibe = peRecibe;
+	}
+
+	public long getEventSend() {
+		return eventSend;
+	}
+
+	public void setEventSend(long eventSend) {
+		this.eventSend = eventSend;
+	}
+
+	@Override
+	public String toString() {
+		return this.adapter == null ? "[PE Send: " + peSend.toString() + " | PE Recibe: "
+				+ peRecibe.toString() + " | Event: " + eventSend + "]" : "[Adapter: " + adapter.toString() + " | PE Recibe: "
+						+ peRecibe.toString() + " | Event: " + eventSend + "]";
 	}
 }
 \end{lstlisting}

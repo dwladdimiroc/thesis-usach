@@ -1,8 +1,13 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{57}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{X11(2011)}]{X11cp}
+ (2011).
+\newblock Consistent hashing.
+\newblock In {\em Encyclopedia of Parallel Computing\/}, (p. 406).
 
 \bibitem[{Abadi et~al.(2003)Abadi, Carney, {\c{C}}etintemel, Cherniack, Convey,
   Lee, Stonebraker, Tatbul, \& Zdonik}]{aurora}
@@ -69,6 +74,13 @@ Casavant, T.~L., \& Kuhl, J.~G. (1988).
   systems.
 \newblock {\em {IEEE} Trans. Software Eng.\/}, {\em 14\/}(2), 141--154.
 
+\bibitem[{Chakravarthy \& Jiang(2009)}]{ChakravarthyJ09}
+Chakravarthy, S., \& Jiang, Q. (2009).
+\newblock {\em Stream Data Processing: {A} Quality of Service Perspective -
+  Modeling, Scheduling, Load Shedding, and Complex Event Processing\/}, vol.~36
+  of {\em Advances in Database Systems\/}.
+\newblock Kluwer.
+
 \bibitem[{Chen \& Zhang(2014)}]{ChenZ14a}
 Chen, C. L.~P., \& Zhang, C. (2014).
 \newblock Data-intensive applications, challenges, techniques and technologies:
@@ -79,6 +91,11 @@ Chen, C. L.~P., \& Zhang, C. (2014).
 Ching, W.~K., \& Ng, M.~K. (2006).
 \newblock {\em Markov chains\/}.
 \newblock Springer.
+
+\bibitem[{Chodorow(2013)}]{chodorow2013mongodb}
+Chodorow, K. (2013).
+\newblock {\em MongoDB: the definitive guide\/}.
+\newblock " O'Reilly Media, Inc.".
 
 \bibitem[{De~Sapio(1978)}]{de1978calculus}
 De~Sapio, R. (1978).
@@ -167,6 +184,12 @@ Hirzel, M., Soul{\'{e}}, R., Schneider, S., Gedik, B., \& Grimm, R. (2013).
 \newblock A catalog of stream processing optimizations.
 \newblock {\em {ACM} Comput. Surv.\/}, {\em 46\/}(4), 46:1--46:34.
 
+\bibitem[{Hunt et~al.(2010)Hunt, Konar, Junqueira, \& Reed}]{HuntKJR10}
+Hunt, P., Konar, M., Junqueira, F.~P., \& Reed, B. (2010).
+\newblock Zookeeper: Wait-free coordination for internet-scale systems.
+\newblock In {\em 2010 {USENIX} Annual Technical Conference, Boston, MA, USA,
+  June 23-25, 2010\/}.
+
 \bibitem[{Ishii \& Suzumura(2011)}]{IshiiS11}
 Ishii, A., \& Suzumura, T. (2011).
 \newblock Elastic stream computing with clouds.
@@ -192,12 +215,30 @@ Leibiusky, J., Eisbruch, G., \& Simonassi, D. (2012).
   with Twitter's Cluster Technology\/}.
 \newblock O'Reilly.
 
+\bibitem[{Lin \& Dyer(2010)}]{2010Lin}
+Lin, J., \& Dyer, C. (2010).
+\newblock {\em Data-Intensive Text Processing with MapReduce\/}.
+\newblock Synthesis Lectures on Human Language Technologies. Morgan {\&}
+  Claypool Publishers.
+\newline\urlprefix\url{http://dx.doi.org/10.2200/S00274ED1V01Y201006HLT007}
+
 \bibitem[{Madsen et~al.(2014)Madsen, Thyssen, \& Zhou}]{MadsenTZ14}
 Madsen, K. G.~S., Thyssen, P., \& Zhou, Y. (2014).
 \newblock Integrating fault-tolerance and elasticity in a distributed data
   stream processing system.
 \newblock In {\em Conference on Scientific and Statistical Database Management,
   {SSDBM} '14, Aalborg, Denmark, June 30 - July 02, 2014\/}, (p.~48).
+
+\bibitem[{Mattmann \& Zitting(2011)}]{mattmann2011tika}
+Mattmann, C., \& Zitting, J. (2011).
+\newblock {\em Tika in action\/}.
+\newblock Manning Publications Co.
+
+\bibitem[{Miao et~al.(2014)Miao, Yu, \& Jain}]{MiaoYJ14}
+Miao, R., Yu, M., \& Jain, N. (2014).
+\newblock {NIMBUS:} cloud-scale attack detection and mitigation.
+\newblock In {\em {ACM} {SIGCOMM} 2014 Conference, SIGCOMM'14, Chicago, IL,
+  USA, August 17-22, 2014\/}, (pp. 121--122).
 
 \bibitem[{Neumeyer et~al.(2010)Neumeyer, Robbins, Nair, \& Kesari}]{s4yahoo}
 Neumeyer, L., Robbins, B., Nair, A., \& Kesari, A. (2010).
@@ -234,13 +275,10 @@ Pittau, M., Alimonda, A., Carta, S., \& Acquaviva, A. (2007).
   Real-Time Multimedia, ESTImedia 2007, October 4-5, Salzburg, Austria,
   conjunction with {CODES+ISSS} 2007\/}, (pp. 59--64).
 
-\bibitem[{Rogaway \& Shrimpton(2004)}]{RogawayS04}
-Rogaway, P., \& Shrimpton, T. (2004).
-\newblock Cryptographic hash-function basics: Definitions, implications, and
-  separations for preimage resistance, second-preimage resistance, and
-  collision resistance.
-\newblock In {\em Fast Software Encryption, 11th International Workshop, {FSE}
-  2004, Delhi, India, February 5-7, 2004, Revised Papers\/}, (pp. 371--388).
+\bibitem[{Rushton(2010)}]{rushton2010handbook}
+Rushton, A. (2010).
+\newblock {\em The handbook of logistics and distribution management\/}.
+\newblock Kogan Page Publishers.
 
 \bibitem[{S4(2014)}]{s4}
 S4 (2014).
@@ -270,6 +308,11 @@ Sheu, T., \& Chi, Y. (2009).
 \newblock Intelligent stale-frame discards for real-time video streaming over
   wireless ad hoc networks.
 \newblock {\em {EURASIP} J. Wireless Comm. and Networking\/}, {\em 2009\/}.
+
+\bibitem[{Soong(2004)}]{soong2004fundamentals}
+Soong, T.~T. (2004).
+\newblock {\em Fundamentals of probability and statistics for engineers\/}.
+\newblock John Wiley \& Sons.
 
 \bibitem[{Stonebraker et~al.(2005)Stonebraker, {\c{C}}etintemel, \&
   Zdonik}]{StonebrakerCZ05}

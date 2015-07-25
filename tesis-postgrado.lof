@@ -3,25 +3,29 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Flujo de datos entre el servidor y los clientes.\relax }}{9}{figure.caption.6}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Ejemplo de modelo de SPS.\relax }}{12}{figure.caption.7}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo push.\relax }}{14}{figure.caption.8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Modelo pull.\relax }}{15}{figure.caption.9}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Elasticidad en un SPS.\relax }}{16}{figure.caption.10}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Proceso de Markov.\relax }}{17}{figure.caption.11}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Cadena de Markov.\relax }}{18}{figure.caption.12}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo de cadena de Markov.\relax }}{18}{figure.caption.13}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo de un sistema basado en teor\IeC {\'\i }a de colas.\relax }}{21}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo push de procesamiento.\relax }}{14}{figure.caption.8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Modelo pull de procesamiento.\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Elasticidad en un SPS.\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Proceso de Markov.\relax }}{19}{figure.caption.11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Cadena de Markov.\relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo de cadena de Markov.\relax }}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo de un sistema basado en teor\IeC {\'\i }a de colas.\relax }}{23}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Load shedding en un SPS.\relax }}{29}{figure.caption.15}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces T\IeC {\'e}cnica de migraci\IeC {\'o}n en un SPS.\relax }}{30}{figure.caption.16}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces T\IeC {\'e}cnica de fisi\IeC {\'o}n en un SPS.\relax }}{31}{figure.caption.17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Ejemplo de replicaci\IeC {\'o}n de los operadores \citep {FernandezMKP13}.\relax }}{32}{figure.caption.18}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Load shedding en un SPS.\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces T\IeC {\'e}cnica de migraci\IeC {\'o}n en un SPS.\relax }}{32}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces T\IeC {\'e}cnica de fisi\IeC {\'o}n en un SPS.\relax }}{33}{figure.caption.17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Ejemplo de replicaci\IeC {\'o}n de los operadores \citep {FernandezMKP13}.\relax }}{34}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de replicaci\IeC {\'o}n del sistema propuesto.\relax }}{34}{figure.caption.19}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Enfoque de un SPS con conceptos de teor\IeC {\'\i }a de colas.\relax }}{35}{figure.caption.20}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Estructura del sistema de distribuci\IeC {\'o}n de carga.\relax }}{36}{figure.caption.21}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Comportamiento de la tasa de procesamiento de un operador.\relax }}{39}{figure.caption.22}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Cadena de Markov dado el modelo propuesto del sistema.\relax }}{41}{figure.caption.23}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de replicaci\IeC {\'o}n del sistema propuesto.\relax }}{36}{figure.caption.19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Enfoque de un SPS con conceptos de teor\IeC {\'\i }a de colas.\relax }}{37}{figure.caption.20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Estructura del sistema de distribuci\IeC {\'o}n de carga.\relax }}{39}{figure.caption.21}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Comportamiento de la tasa de procesamiento de un operador.\relax }}{42}{figure.caption.22}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Cadena de Markov dado el modelo propuesto del sistema.\relax }}{43}{figure.caption.23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Distribuci\IeC {\'o}n de la carga entre las r\IeC {\'e}plicas.\relax }}{46}{figure.caption.24}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Distribuci\IeC {\'o}n de la carga entre las r\IeC {\'e}plicas.\relax }}{52}{figure.caption.24}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Primera aplicaci\IeC {\'o}n de prueba.\relax }}{54}{figure.caption.25}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Segunda aplicaci\IeC {\'o}n de prueba.\relax }}{55}{figure.caption.26}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

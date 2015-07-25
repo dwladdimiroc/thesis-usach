@@ -630,7 +630,7 @@
 \newenvironment{dedicatoria}[1]
 {
     %\thispagestyle{empty}
-    \vspace*{18cm}\par
+    \vspace*{17cm}\par
     \hspace*{5cm}
     \begin{flushright}
     \textit{#1}
