@@ -24,8 +24,8 @@
 
 
 %SI SE UTILIZA LETRA ARIAL, CAMBIAR ESTO
-%\renewcommand{\rmdefault}{phv} % Arial
-%\renewcommand{\sfdefault}{phv} % Arial
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
 
 %Load book using normal font size to 10pt
 \LoadClass[10pt,twoside,letterpaper]{book} %Cambiar oneside o twoside si se desea impresión por ambos lados
@@ -90,6 +90,7 @@
 \usepackage{subfig}
 \usepackage[titles,subfigure]{tocloft}
 \usepackage{color}
+%\usepackage{subcaption}
 %\RequirePackage{color}
 %-------Referencias
 \RequirePackage{hyperref}

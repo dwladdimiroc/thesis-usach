@@ -1,7 +1,7 @@
 \chapter{Modificaciones al código fuente de S4}
 \label{apendice:codigoFuenteS4}
 
-En el Código \ref{lst:monitor} se presenta la implementanción de las tareas que están a cargo del envío de estadísticas al sistema de distribución de carga, donde una de ellas está a cargo de obtener las muestras para el historia, y la otra está a cargo de enviar las estadísticas de los PE existentes en el sistema.
+En el Código \ref{lst:monitor} se presenta la implementanción de las tareas que están a cargo del envío de estadísticas al sistema de distribución de carga, donde una de ellas está a cargo de obtener las muestras para el historia, y la otra está a cargo de enviar las estadísticas de los PE existentes en el sistema. Además de esto, para la ejecución del sistema, se debe esperar que el \textit{Adapter} esté ejecutándose, por lo que espera la notificación por parte de éste para la ejecución de las tareas.
 
 \begin{lstlisting}[caption={Tareas que ejecutan el sistema de distribución de carga.},label={lst:monitor},language=Java]
 private void startMonitor() {
