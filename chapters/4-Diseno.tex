@@ -1,7 +1,7 @@
 \chapter{Dise\~no del sistema de distribución de carga}
 \label{cap:disenoSistema}
 
-Como se hizo mención en el Capítulo \ref{cap:intro}, el problema de la sobrecarga en un SPS está dado por la inflexibilidad existente en el diseño de grafo de procesamiento. Esto quiere decir, que en el momento que el sistema está en ejecución, no existen un mecanismo que permita adaptar los recursos a las necesidades actuales del sistema, por lo que se vuelve ineficiente, pudiendo generar sobrecargas en los operadores que lo componen.
+Como se hizo mención en el Capítulo \ref{cap:introduccion}, el problema de la sobrecarga en un SPS está dado por la inflexibilidad existente en el diseño de grafo de procesamiento. Esto quiere decir, que en el momento que el sistema está en ejecución, no existen un mecanismo que permita adaptar los recursos a las necesidades actuales del sistema, por lo que se vuelve ineficiente, pudiendo generar sobrecargas en los operadores que lo componen.
 
 Bajo un escenario como este, es necesario un sistema dinámico, que pueda adaptar su estructura, basándose en su carga y el flujo de datos recibidos . Con estas condiciones, se diseñó un sistema que optimiza el rendimiento, sin comprometer de manera significativa el rendimiento del sistema.
 
@@ -223,9 +223,7 @@ El último componente del sistema es el administrador de réplicas, cuya funció
 %Para esto, se diseño un administrador que se ejecutara según el período que se encuentra el algoritmo reactivo o predictivo, donde cada período es de 19 ejecuciones del algoritmo reactivo y 1 del algoritmo reactivo. Esto fue pensando dado que cada cien segundos se poseían las muestras suficientes para el análisis del algoritmo predictivo, por lo tanto, cada ejecución del algoritmo reactivo iba a ser cada cinco segundos, de esa manera al segundo cien iba a realizarse en vez del algoritmo reactivo, el predictivo ya que posee la cantidad suficiente de muestras para su análisis.
 Para esto, se diseño un administrador que ejecuta un algoritmo (reactivo o predictivo) según el período del ciclo que se encuentre el sistema. Cada ciclo posee 20 períodos, donde los primeros 19 corresponde al algoritmo reactivo y el último corresponde al algoritmo predictivo. Cada período posee un intervalo de 5 segundos, de esta manera, cada ciclo tendrá un intervalo de 100 segundos, la cantidad necesaria para obtener las muestras para el algoritmo reactivo, suponiendo que cada muestra es obtenida en 1 segundo.
 
-En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero analiza que tipo de algoritmo debe ejecutar según el período del ciclo. En caso de realizarse el reactivo, se analiza si existen dos alertas consecutivas del mismo estado del operador, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Además, se cambió el estado del operador a estable, de tal manera de no considerar ese período para el próximo análisis reactivo, esto se consideró para dejar un margen de descanso para el algoritmo reactivo. Por otra parte, de ejecutarse el módulo predictivo, se analiza cual fue la predicción, por lo que si es ocioso disminuirá la cantidad de réplicas y si es inestable las aumentará. Como el proceso de predicción se realiza con menor frecuencia y posee mayor cantidad de cómputo, se considero que debía crear o remover mayor cantidad de réplicas que en el módulo reactivo, aprovechando así el análisis de la historia del operador.
-
-\begin{algorithm}[!hb]
+\begin{algorithm}[!ht]
 	\caption{Administración de réplicas de un operador $\phi$ dado su comportamiento en el sistema de distribución de carga.}
 	\label{alg:administracion}
 	\begin{algorithmic}[1]
@@ -257,5 +255,7 @@ En el Algoritmo \ref{alg:administracion} está el procedimiento de administraci�
 	
 	\end{algorithmic}
 \end{algorithm}
+
+En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero analiza que tipo de algoritmo debe ejecutar según el período del ciclo. En caso de realizarse el reactivo, se analiza si existen dos alertas consecutivas del mismo estado del operador, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Además, se cambió el estado del operador a estable, de tal manera de no considerar ese período para el próximo análisis reactivo, esto se consideró para dejar un margen de descanso para el algoritmo reactivo. Por otra parte, de ejecutarse el módulo predictivo, se analiza cual fue la predicción, por lo que si es ocioso disminuirá la cantidad de réplicas y si es inestable las aumentará. Como el proceso de predicción se realiza con menor frecuencia y posee mayor cantidad de cómputo, se considero que debía crear o remover mayor cantidad de réplicas que en el módulo reactivo, aprovechando así el análisis de la historia del operador.
 
 Dentro de las consideraciones que se tuvieron para el diseño del administrador, fue la cantidad máxima de réplicas que podían realizarse. Dado que una de las limitantes de este trabajo fue que sólo se utilizó una máquina, la cantidad de recursos son limitados, por lo que aumentar la cantidad de réplicas indefinidamente iba a generar una sobrecarga en los recursos disponibles por parte de la máquina, habiendo fallas en el funcionamiento del SPS.

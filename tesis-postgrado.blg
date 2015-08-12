@@ -17,51 +17,48 @@ A level-1 auxiliary file: apendices/Apendice-2.aux
 A level-1 auxiliary file: apendices/Apendice-3.aux
 A level-1 auxiliary file: apendices/Apendice-4.aux
 Database file #1: referencias.bib
-Warning--to sort, need author or key in X11cp
-Warning--empty author in X11cp
-Warning--missing publisher in X11cp
 Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
 Warning--empty journal in sturm2000foundations
-You've used 57 entries,
+You've used 59 entries,
             2804 wiz_defined-function locations,
-            919 strings with 15857 characters,
-and the built_in function-call counts, 33169 in all, are:
-= -- 2698
-> -- 1353
-< -- 49
-+ -- 525
-- -- 450
-* -- 2401
-:= -- 5152
-add.period$ -- 169
-call.type$ -- 57
-change.case$ -- 461
-chr.to.int$ -- 57
-cite$ -- 65
-duplicate$ -- 2406
-empty$ -- 2510
-format.name$ -- 616
-if$ -- 6607
+            933 strings with 16420 characters,
+and the built_in function-call counts, 34563 in all, are:
+= -- 2816
+> -- 1426
+< -- 50
++ -- 551
+- -- 474
+* -- 2511
+:= -- 5384
+add.period$ -- 176
+call.type$ -- 59
+change.case$ -- 478
+chr.to.int$ -- 59
+cite$ -- 62
+duplicate$ -- 2494
+empty$ -- 2601
+format.name$ -- 651
+if$ -- 6876
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 486
-newline$ -- 289
-num.names$ -- 224
-pop$ -- 1082
+missing$ -- 507
+newline$ -- 298
+num.names$ -- 236
+pop$ -- 1120
 preamble$ -- 1
-purify$ -- 378
+purify$ -- 394
 quote$ -- 0
-skip$ -- 1066
+skip$ -- 1099
 stack$ -- 0
-substring$ -- 1380
-swap$ -- 1237
+substring$ -- 1451
+swap$ -- 1288
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 465
-warning$ -- 6
-while$ -- 241
+type$ -- 480
+warning$ -- 3
+while$ -- 254
 width$ -- 0
-write$ -- 716
-(There were 6 warnings)
+write$ -- 742
+(There were 3 warnings)

@@ -1,9 +1,9 @@
 \select@language {spanish}
 \contentsline {chapter}{\IeC {\'I}ndice de Tablas}{ix}{chapter*.2}
 \contentsline {chapter}{\IeC {\'I}ndice de Figuras}{xi}{chapter*.3}
-\contentsline {chapter}{\IeC {\'I}ndice de Algoritmos}{xv}{chapter*.4}
-\contentsline {chapter}{Resumen}{xvii}{chapter*.5}
-\contentsline {chapter}{Abstract}{xix}{chapter*.6}
+\contentsline {chapter}{\IeC {\'I}ndice de Algoritmos}{xvii}{chapter*.4}
+\contentsline {chapter}{Resumen}{xix}{chapter*.5}
+\contentsline {chapter}{Abstract}{xxi}{chapter*.6}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Antecedentes y motivaci\IeC {\'o}n}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Descripci\IeC {\'o}n del problema}{3}{section.1.2}
@@ -11,12 +11,11 @@
 \contentsline {section}{\numberline {1.4}Objetivos y alcance del proyecto}{5}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Objetivo general}{5}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Objetivos espec\IeC {\'\i }ficos}{5}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Alcances}{5}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.3}Alcances}{6}{subsection.1.4.3}
 \contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }a y herramientas utilizadas}{6}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Metodolog\IeC {\'\i }a}{6}{subsection.1.5.1}
 \contentsline {subsection}{\numberline {1.5.2}Herramientas de desarrollo}{7}{subsection.1.5.2}
-\contentsline {section}{\numberline {1.6}Resultados obtenidos}{7}{section.1.6}
-\contentsline {section}{\numberline {1.7}Organizaci\IeC {\'o}n del documento}{7}{section.1.7}
+\contentsline {section}{\numberline {1.6}Organizaci\IeC {\'o}n del documento}{8}{section.1.6}
 \contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Streaming}{9}{section.2.1}
 \contentsline {section}{\numberline {2.2}Stream processing}{10}{section.2.2}
@@ -53,26 +52,26 @@
 \contentsline {section}{\numberline {4.5}Administraci\IeC {\'o}n del sistema}{50}{section.4.5}
 \contentsline {chapter}{\numberline {5}Experimentos y evaluaci\IeC {\'o}n}{53}{chapter.5}
 \contentsline {section}{\numberline {5.1}Implementaci\IeC {\'o}n del sistema}{53}{section.5.1}
-\contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o de los experimentos}{57}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{58}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o de los experimentos}{56}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{57}{subsection.5.2.1}
 \contentsline {paragraph}{Stopword}{58}{subsection.5.2.1}
 \contentsline {paragraph}{Language}{58}{subsection.5.2.1}
 \contentsline {paragraph}{Counter}{58}{subsection.5.2.1}
 \contentsline {paragraph}{MongoDB}{58}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Contador de palabras en muestras de textos}{59}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Aplicaci\IeC {\'o}n 2: Contador de palabras en muestras de textos}{59}{subsection.5.2.2}
 \contentsline {paragraph}{Split}{59}{subsection.5.2.2}
 \contentsline {paragraph}{Counter}{59}{subsection.5.2.2}
-\contentsline {paragraph}{Merge}{60}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Aplicaci\IeC {\'o}n sint\IeC {\'e}tica}{60}{subsection.5.2.3}
+\contentsline {paragraph}{Merge}{59}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Aplicaci\IeC {\'o}n 3: Aplicaci\IeC {\'o}n sint\IeC {\'e}tica}{60}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}Evaluaci\IeC {\'o}n}{61}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Primera aplicaci\IeC {\'o}n}{62}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Segundo experimento}{64}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Tercer experimento}{71}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Conclusiones}{81}{chapter.6}
-\contentsline {section}{\numberline {6.1}Trabajo futuro}{83}{section.6.1}
-\contentsline {chapter}{Referencias}{85}{chapter*.57}
-\contentsline {chapter}{Anexos}{90}{section*.58}
-\contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{91}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Clases para la implementaci\IeC {\'o}n del sistema de monitoreo}{93}{appendix.Alph2}
-\contentsline {chapter}{\numberline {C}Modificaciones al c\IeC {\'o}digo fuente de S4}{99}{appendix.Alph3}
-\contentsline {chapter}{\numberline {D}Configuraci\IeC {\'o}n para la comunicaci\IeC {\'o}n de S4}{101}{appendix.Alph4}
+\contentsline {subsection}{\numberline {5.3.1}Aplicaci\IeC {\'o}n 1}{61}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Aplicaci\IeC {\'o}n 2}{75}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Aplicaci\IeC {\'o}n 3}{82}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Conclusiones}{93}{chapter.6}
+\contentsline {section}{\numberline {6.1}Trabajo futuro}{95}{section.6.1}
+\contentsline {chapter}{Referencias}{97}{chapter*.73}
+\contentsline {chapter}{Anexos}{102}{section*.74}
+\contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{103}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Clases para la implementaci\IeC {\'o}n del sistema de monitoreo}{105}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Modificaciones al c\IeC {\'o}digo fuente de S4}{111}{appendix.Alph3}
+\contentsline {chapter}{\numberline {D}Configuraci\IeC {\'o}n para la comunicaci\IeC {\'o}n de S4}{113}{appendix.Alph4}

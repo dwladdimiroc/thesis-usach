@@ -1,13 +1,13 @@
 \resumenCastellano{
-resumenBlaBlaBla
+En el mundo actual de la información, se trabaja con grandes cantidades de datos, las cuales deben ser procesadas en tiempo real, debido al análisis que se desee realizar, como es el caso de predicciones en la bolsa de comercio o detección de fraudes en sistemas bancarios. Para esto se utilizan sistemas de procesamiento \textit{stream} (SPS), los cuales pueden procesar en tiempo real los datos que van llegando por la fuente de datos. Debido a esto, existe un problema con la topología de la aplicación, dado que ésta al iniciar el sistema posee una determinada forma, la cual no se adapte con la cantidad de flujo de datos que va llegando, pudiendo haber sobrecarga en un operador. Dado esto, se diseñó un algoritmo reactivo, usando la técnica de fisión, y predictivo, usando cadena de Márkov, para poder detectar sobrecargas en un operador, de tal manera de indicarlo y optimizar el rendimiento del sistema. Los resultados obtenidos de los experimentos realizados en el SPS S4, se encuentra una mejora de hasta un $877,8701\%$ en el procesamiento de los eventos, con un costo asociado a un aumento de $0,0119\%$ del uso de la CPU, pero una disminución de un $1,5187\%$ con el experimento realizado. Si bien los resultados son satisfactorios, no así en la implementanción en el SPS, dado que se podría haber realizado una mejora mayor, pero debido a problemas con la sincronización de las réplicas en el uso del \textit{buffer} que posee cada operador. Además de esto, se encuentra importa realizar este sistema de distribución de carga de forma distribución en distintas máquinas, de tal manera que pueda ser utilizado en un \textit{Cloud}, para así escalar la aplicación diseñada.
 \vspace*{0.5cm}
-\KeywordsES{SPS;Elasticidad;Algoritmos reactivos}
+\KeywordsES{SPS; Elasticidad; Balance de carga; Algoritmos reactivos; Fisión; Algoritmos predictivos; Cadena de Márkov}
 }
 
 \newpage
 
 \resumenIngles{
-abstractBlaBlabla
+In today's world of information, working with large amounts of data, which must be processed in real time, because the analysis is desired, such as predictions on the stock market or fraud detection systems bank. To this stream processing systems (SPS) which can process data in real time as they arrive at the data source they are used. Because of this, there is a problem with the topology of the application, since it at system startup has a certain way, which is not adapted to the amount of data flow that is coming, he may be overloading an operator. Given this, a reactive algorithm was designed, using the technique of fission, and predictive, using Markov chain, to detect overloading an operator, so to indicate and optimize system performance. The results of experiments on the SPS S4, is improved up $877.8701\%$ processing events, with an associated cost $0.0119\%$ to increased CPU usage, but decreased in one experiment $1.5187\%$. While the results are satisfactory, but not in the implementanción in the SPS, as it could have made a greater improvement, but because of problems with synchronization of the replicas in the use of buffer held by each operator. Besides, this is matter distribution system perform load distribution on different machines form, so it can be used on a cloud, thereby scaling the application designed.
 \vspace*{0.5cm}
-\KeywordsEN{SPS;Elastic;Algorithm reactive;Algorithm predictive}
+\KeywordsEN{SPS; Elastic; Load balancing; Algorithm reactive; Fision; Algorithm predictive; Markov chain}
 }

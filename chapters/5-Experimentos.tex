@@ -2,8 +2,6 @@
 \label{cap:experimentos}
 
 \section{Implementación del sistema}
-%Acá hay que hablar de todo lo que implementaste a grandes rasgos (detalles Anexo), modelo, manejo de réplicas, etc. Redactar de nuevo
-
 Para la implementanción del sistema propuesto, se utilizó como base el motor de procesamiento de \textit{stream} S4 \citep{s4}, cuyo modelo fue explicado en la sección \ref{sec:SPS}. El funcionamiento del sistema de distribución de carga propuesto se desarrolló en Java, donde se modificó en el código fuente de S4, para incluir las funciones de este producto, de tal manera que fuera automático y transparente para el usuario del SPS.
 
 El sistema diseñado fue añadido al proyecto S4, siendo una paquete denominado \textit{monitor} que contenía las clases \textit{S4Monitor}, \textit{MarkovChain}, \textit{MonitorMetrics}, \textit{StatusPE} y \textit{TopologyApp}. La primer clase correspondía a las funcionalidades del sistema de monitoreo, ya sea la recepción de los datos del sistema, ejecución del algoritmo reactivo o predictivo y administración de las réplicas de cada operador. La segunda clase hacía alusión al modelo de cadena de Markov implementando por el algoritmo predictivo, donde posee tanto la conformación de la matriz de transición como el cálculo de la distribución estacionaria. La tercera clase se utilizó para recolectar las estadísticas de cada operador, y poder analizar los experimentos. Finalmente, la cuarta y quinta clase fueron utilizadas para la implementación del sistema de monitoreo, siendo la primera el estado de cada PE y el segundo la topología que poseía el grafo creado por el usuario, los cuales pueden verse con más detalle en el Anexo \ref{apendice:clases}.
@@ -24,7 +22,7 @@ En la Figura \ref{fig:distCarga} se explica gráficamente la distribución de la
 
 \begin{figure}[!ht]
 	\centering
-		\includegraphics[scale=0.55]{images/DistribucionCarga.pdf}
+		\includegraphics[scale=0.45]{images/DistribucionCarga.pdf}
 	\caption{Distribución de la carga entre las réplicas.}
 	\label{fig:distCarga}
 \end{figure}
@@ -47,11 +45,11 @@ Para los experimentos se diseñaron tres aplicaciones, una que realiza operacion
 
 Para la generación del \textit{stream} de la fuente de datos para la primera y segunda aplicación, se utilizaron datos de muestra utilizados fueron \textit{tweets} recolectados entre los días 27 y 28 de Febrero y 1 y 2 de Marzo de 2010, tanto en inglés, portugués y español, cuya información correspondía a la interacción entre los usuarios debido al terremoto ocurrido el 27 de Febrero en el territorio Chile.
 
-Por otra parte, el envío de los datos anteriores se realizó de dos maneras: constante y variable. La primera forma consiste en enviar 100 eventos por segundo constantemente. En cambio, la segunda forma consiste en enviar 50 eventos por segundos el primer tercio del experimento, para luego aumentar a 75 eventos por segundo, los primeros 120 segundos del segundo tercio, y seguir aumentando a 100 eventos por segundo, para posteriormente volver a 75 eventos por segundos los últimos 120 segundos del segundo tercio, y finalmente, disminuir a 50 eventos por segundos el último tercio de la ejecución.
+Por otra parte, el envío de los datos anteriores se realizó de dos maneras: constante y variable. La primera forma consiste en enviar 100 eventos por segundo constantemente. En cambio, la segunda forma consiste en enviar 50 eventos por segundos el primer tercio del experimento, para luego aumentar a a 100 eventos por segundo en el segundo tercio, y finalmente, disminuir a 50 eventos por segundos el último tercio de la ejecución.
 
 %Estos datos fueron enviados de dos formas: el primero de forma uniforme, enviado 100 eventos por segundos constantemente, y la segundo de forma variable, enviado 50 eventos por segundo el primer tercio de la ejecución del programa, para posteriormente aumentarla a 100 eventos por segundo en el segundo tercio, y finalmente disminuirla a 50 eventos por segundo en el último tercio de la ejecución del programa.
 
-\subsection{Análisis de \textit{tweets} en escenarios de desastres naturales}
+\subsection{Aplicación 1: Análisis de \textit{tweets} en escenarios de desastres naturales}
 La primera aplicación fue orientada a un caso de desastres naturales, donde se generó un grafo que pudiera realizar un filtrado de palabras y análisis de los datos. Ninguno de los operadores posee estado, por lo tanto son independientes. Para la duración de esta prueba se consideró un tiempo de 70 minutos.
 
 La aplicación consta del flujo de datos, cuyos datos serán la muestra de \textit{tweets} de prueba, y cuatro operadores, los cual son denominados \textit{Stopword}, \textit{Language}, \textit{Counter} y \textit{MongoDB}.
@@ -73,7 +71,7 @@ En la Figura \ref{fig:primeraAplicacion} se muestra un ejemplo de la aplicación
 	\label{fig:primeraAplicacion}
 \end{figure}
 
-\subsection{Contador de palabras en muestras de textos}
+\subsection{Aplicación 2: Contador de palabras en muestras de textos}
 La segunda aplicación consiste en un contador de palabras, el cual cuenta la cantidad de veces que se repite una palabra en un conjunto de datos según una bolsa de palabras establecida por el usuario. Esta aplicación se considera con estado, debido que debe existir un contador en el operador, de tal manera de contar la cantidad de veces que se repite cierta palabra de la bolsa de palabras en los datos entrantes. Con esta aplicación es posible analizar posteriormente las palabras más frecuentes emitidas por los usuarios de la red social según un listado de palabras claves. Para la duración de esta prueba se consideró un tiempo de 70 minutos.
 
 La aplicación consta del flujo de datos, cuyos datos serán la muestra de \textit{tweets} de prueba, y tres operadores, denominados \textit{Split}, \textit{Counter} y \textit{Merge}.
@@ -93,13 +91,14 @@ En la Figura \ref{fig:segundaAplicacion} se muestra un ejemplo de la segunda apl
 	\label{fig:segundaAplicacion}
 \end{figure}
 
-\subsection{Aplicación sintética}
-La tercera aplicación consta de tres operadores, los cuales duermen a la hebra asignada al operador un determinado período de tiempo. De esta manera, se genera un tiempo de espera artificial, realizando un operador sintético, de tal manera que pueda simular el comportamiento de un operador real.
+\subsection{Aplicación 3: Aplicación sintética}
+La tercera aplicación consta de tres operadores, los cuales duermen a la hebra asignada al operador un determinado período de tiempo. De esta manera, se genera un tiempo de espera artificial, realizando un operador sintético, de tal manera que pueda simular el comportamiento de un operador real. El objetivo de realizar este tipo de aplicación, fue analizar los costos que poseía el sistema implementando para la optimización del sistema.
 
 La tabla \ref{tab:app3-time} muestra el período de tiempo que duerme cada PEs a su hebra asignada. Los tiempos que se consideraron para esta prueba es para generar una sobrecarga en el primer y segundo operador, de tal manera que después afectarán al tercer operador. Para la duración de esta prueba se consideró un tiempo de 15 minutos.
 
 \begin{table}[!ht]
 \centering
+\caption{Período de tiempo que duerme la hebra asignada al PE.}
 \begin{tabular}{| c | c |}
 \hline
 PE & Tiempo (ms) \\ \hline
@@ -107,7 +106,6 @@ PE & Tiempo (ms) \\ \hline
 2 & 30 \\
 3 & 15 \\\hline
 \end{tabular}
-\caption{Período de tiempo que duerme la hebra asignada al PE.}
 \label{tab:app3-time}
 \end{table}
 
@@ -126,24 +124,24 @@ Para la ejecución de los experimentos, se utilizó un servidor con sistema oper
 
 La recolección de estadísticas fue realizada cada 5 segundos, por lo que desde ahora se hablará período un intervalo de tiempo de 5 segundos entre cada recolección de las estadísticas.
 
-\subsection{Primera aplicación}
-En la primera aplicación se procedió a realizar cuatro experimentos, donde cada par era una comparación del experimento con y sin uso del monitor. Las dos primeras se utilizó flujo constante de la fuente de datos, y las dos segundas un flujo dinámico de la fuente de datos.
+\subsection{Aplicación 1}
+En la segunda aplicación se procedió a realizar dos experimentos, donde el primero poseía un envío constante de la fuenta de dantos, y el segundo un envío dinámico. En ambos experimentos, se consideraron dos pruebas, donde la primera consistía en la ejecución de la aplicación en un sistema SPS que use el sistema de distribución de carga, y la segunda sin uso de éste.
 
-Para el análisis de los experimento se consideró la cantidad promedio de eventos procesados en un período, la cantidad total de eventos procesados y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
+Para el análisis de los experimentos, se consideró la cantidad promedio de eventos procesados en un período, la cantidad total de eventos procesados y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
 
-Para analizar el comportamiento del sistema en el primer y segundo experimento, se procedió a estudiar las estadísticas de cada uno de los PEs. En la Figura \ref{fig:app1-uniform-statusStopwordPE-cm} y \ref{fig:app1-uniform-statusStopwordPE-sm} se muestran las estadísticas del primer operador del grafo, con y sin monitoreo en la carga de los operadores respectivamente. En la tasa de llegada ($\lambda$) se puede observar como en el primer gráfico es constante, pero no así en el segundo gráfico, debido que en el segundo 2600 surge una disminución del flujo de datos. Esto se debe a la acumulación de eventos en el \textit{buffer}, por lo que se genera cola en el PE, lo cual impide almacenar mayor cantidad de eventos, dado que la cantidad de eventos que se procesan es menor que la cantidad de eventos que llegan. Por lo tanto, al llenarse el \textit{buffer}, no puede seguir almacenando eventos en la cola, siendo éste bloqueado, habiendo una cola constante como se puede apreciar.
+En el primer experimento se puede ver que en las Figuras \ref{fig:app1-uniform-statusStopwordPE-cm} y \ref{fig:app1-uniform-statusStopwordPE-sm}, se muestran las estadísticas del primer operador del grafo, con y sin monitoreo en la carga de los operadores respectivamente habiendo un envío constante de la fuente de datos. En la tasa de llegada ($\lambda$) se puede observar como en el primer gráfico es constante, pero no así en el segundo gráfico, debido que en el segundo 2600 surge una disminución del flujo de datos. Esto se debe a la acumulación de eventos en el \textit{buffer}, por lo que se genera cola en el PE, lo cual impide almacenar mayor cantidad de eventos, dado que la cantidad de eventos que se procesan es menor que la cantidad de eventos que llegan. Por lo tanto, al llenarse el \textit{buffer}, no puede seguir almacenando eventos en la cola, siendo éste bloqueado, habiendo una cola constante como se puede apreciar.
 
-Por otra parte, la tasa de rendimiento de la Figura \ref{fig:app1-uniform-statusStopwordPE-cm} se estabiliza dentro de los primeros 100 segundos, debido que el sistema de distribución de carga detectó una sobrecarga en el operador y replicó el operador, a diferencia de la Figura \ref{fig:app1-uniform-statusStopwordPE-sm}, en el cual el operador posee una tasa de rendimiento estable que bordea entre 1 y 2, hasta el segundo 2600, donde disminuye debido que la tasa de llegada es menor. Cabe destacar que en este operador se encontró una sobrecarga, debido que posee un alto costo computacional, debido que existe una gran cantidad de palabras que debe analizar con cada una de las palabras del texto, por lo que se hace necesario otra réplica en el sistema.
+Por otra parte, la tasa de rendimiento de la Figura \ref{fig:app1-uniform-statusStopwordPE-cm} se estabiliza dentro de los primeros 100 segundos, debido que el sistema de distribución de carga detectó una sobrecarga en el operador y replicó el operador, a diferencia de la Figura \ref{fig:app1-uniform-statusStopwordPE-sm}, en el cual el operador posee una tasa de rendimiento inestable que bordea entre 1 y 2, hasta el segundo 2600, donde disminuye debido que la tasa de llegada es menor. Cabe destacar que este operador posee un alto costo computacional, debido que existe una gran cantidad de palabras que debe analizar con cada una de las palabras del texto, por lo que es necesario crear otra réplica debido a la sobrecarga existente.
 
-En la Figura \ref{fig:app1-uniform-statusLanguagePE-cm} y \ref{fig:app1-uniform-statusLanguagePE-sm} se puede ver el siguiente operador del gráfico, el cual no tiene mayor inconveniente, a excepción del segundo 2400, donde el sin monitoreo disminuye considerablemente la tasa de procesamiento del PE. Si analizamos la Figura \ref{fig:app1-uniform-statusStopwordPE-sm} y \ref{fig:app1-uniform-statusLanguagePE-sm}, empiezan aproximadamente desde el rango de tiempo (2400s,2600s) los problemas de procesamiento de los operadores, por lo tanto, se puede deducir que si el problema surge en un operador no es un problema aislado, sino que también influye a los siguientes operadores.
+En las Figuras \ref{fig:app1-uniform-statusLanguagePE-cm} y \ref{fig:app1-uniform-statusLanguagePE-sm} se puede ver el siguiente operador del gráfico, el cual no tiene mayor inconveniente, a excepción del segundo 2400, donde el sin monitoreo disminuye considerablemente la tasa de procesamiento del PE. Si analizamos las Figuras \ref{fig:app1-uniform-statusStopwordPE-sm} y \ref{fig:app1-uniform-statusLanguagePE-sm}, empiezan aproximadamente desde el rango de tiempo (2400s,2600s) los problemas de procesamiento de los operadores, por lo tanto, se puede deducir que si el problema surge en un operador no es un problema aislado, sino que también influye a los siguientes operadores.
 
 Se puede observar como con el transcurso de los primeros 100 segundos en la Figura \ref{fig:app1-uniform-statusCounterPE-cm}, fue aumentando la cantidad de réplicas hasta llegar a 5, el cual fue su óptimo, para ir procesando la cantidad de eventos y disminuir la cola existente en el sistema. Esto en contra posición a la Figura \ref{fig:app1-uniform-statusCounterPE-sm}, donde la inexistencia de replicación, genera una cola la cual se mantiene constante en el segundo 2400. 
 
-Finalmente, se encuentra el último operador, el cual no presenta grandes inconvenientes tanto en la Figura \ref{fig:app1-uniform-statusMongoPE-cm} y \ref{fig:app1-uniform-statusMongoPE-sm}, esto debido que el tiempo de procesamiento es bajo, y nunca llega una cantidad de eventos considerable para existir una sobrecarga en éste. Además es importante destacar que en la Figura \ref{fig:app1-uniform-statusMongoPE-sm} llega una menor tasa de llegada, exactamente un $83,827\%$ menos de eventos que un SPS ejecutado con el sistema de distribución de carga.
+Finalmente, se encuentra el último operador, el cual no presenta grandes inconvenientes tanto en las Figuras \ref{fig:app1-uniform-statusMongoPE-cm} y \ref{fig:app1-uniform-statusMongoPE-sm}, esto debido que el tiempo de procesamiento es bajo, y nunca llega una cantidad de eventos considerable para existir una sobrecarga en éste. Además es importante destacar que en la Figura \ref{fig:app1-uniform-statusMongoPE-sm} llega una menor tasa de llegada, exactamente un promedio de $83,827\%$ menos de eventos que un SPS ejecutado con el sistema de distribución de carga.
 
-Por otra parte, también se analizó la cantidad promedio de eventos procesados en cada período, la cual está graficada en la Figura \ref{fig:app1-uniform-cm-avgEventProcess} y \ref{fig:app1-uniform-sm-avgEventProcess}. Como se puede apreciar, en los primeros 50 segundos se puede ver una mejora considerable en la cantidad de eventos procesados, donde posteriormente se procesan aproximadamente 480 eventos por período con monitoreo, a diferencia del SPS sin monitoreo, que procesa 90 eventos por período aproximadamente, habiendo una mejora del $615,38\%$. Esta mejora se debe al factor de la replicación de los operadores que posee mayor sobrecarga, por lo que al aumentar la cantidad de réplicas, aumenta la tasa de procesamiento, lo significa mayor cantidad de flujo para el próximo operador.
+Por otra parte, también se analizó la cantidad promedio de eventos procesados en cada período, la cual está graficada en las Figuras \ref{fig:app1-uniform-cm-avgEventProcess} y \ref{fig:app1-uniform-sm-avgEventProcess}. Como se puede apreciar, en los primeros 50 segundos se puede ver una mejora considerable en la cantidad de eventos procesados, donde posteriormente se procesan aproximadamente 480 eventos por período con monitoreo, a diferencia del SPS sin monitoreo, que procesa 90 eventos por período aproximadamente, habiendo una mejora del $433,33\%$. Esta mejora se debe al factor de la replicación de los operadores que posee mayor sobrecarga, por lo que al aumentar la cantidad de réplicas, aumenta la tasa de procesamiento, lo significa mayor cantidad de flujo para el próximo operador.
 
-Así también, se puede observar en la Figura \ref{fig:app1-uniform-eventCount-cm} y \ref{fig:app1-uniform-eventCount-sm} la cantidad total de eventos procesados con el transcurso de la ejecución en cada uno de los operadores, con y sin uso del monitoreo respectivamente. En el primer gráfico se denota como los cuatro operadores del SPS van aumentando casi linealmente de la misma manera, tan sólo existe una menor cantidad de eventos procesados en el tercer PE, lo cual se traslada al cuatro PE, debido que al procesar menor cantidad de eventos el tercer PE, llega menor cantidad de datos al cuarto PE. En este gráfico se llegó a un total de 401.618 eventos procesados. En cambio, en el segundo gráfico existe una curva muy distinta por los distintos operadores, lo cual se ve reflejado desde la cantidad de eventos procesados en el primer operador hasta la cantidad total de eventos procesados por el sistema, el cual es de 67.141, existiendo una mejora del $598,171\%$ con el uso del sistema de distribución de carga.
+Así también, se puede observar en las Figuras \ref{fig:app1-uniform-eventCount-cm} y \ref{fig:app1-uniform-eventCount-sm} la cantidad total de eventos procesados con el transcurso de la ejecución en cada uno de los operadores, con y sin uso del monitoreo respectivamente. En el primer gráfico se denota como los cuatro operadores del SPS van aumentando casi linealmente de la misma manera, tan sólo existe una menor cantidad de eventos procesados en el tercer PE, lo cual se traslada al cuatro PE, debido que al procesar menor cantidad de eventos el tercer PE, llega menor cantidad de datos al cuarto PE. En este gráfico se llegó a un total de 401.618 eventos procesados. En cambio, en el segundo gráfico existe una curva muy distinta por los distintos operadores, lo cual se ve reflejado desde la cantidad de eventos procesados en el primer operador hasta la cantidad total de eventos procesados por el sistema, el cual es de 67.141, existiendo una mejora del $498,171\%$ con el uso del sistema de distribución de carga.
 
 \begin{figure}[p]
 \centering
@@ -207,13 +205,13 @@ Así también, se puede observar en la Figura \ref{fig:app1-uniform-eventCount-c
 \begin{minipage}[c]{0.45\textwidth}
 \centering
     \includegraphics[width=\textwidth]{images/exp/app1/uniform/cm/avgEventProcess.eps}
-    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con una fuente de datos de distribución uniforme usando monitor.}
+    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con un envío constante de la fuente de datos usando monitor.}
     \label{fig:app1-uniform-cm-avgEventProcess}
 \end{minipage} \hspace*{1cm}
 \begin{minipage}[c]{0.45\textwidth}
 \centering
     \includegraphics[width=\textwidth]{images/exp/app1/uniform/sm/avgEventProcess.eps}
-    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con una fuente de datos de distribución uniforme no usando monitor.}
+    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con un envío constante de la fuente de datos no usando monitor.}
     \label{fig:app1-uniform-sm-avgEventProcess}
 \end{minipage}
 
@@ -225,186 +223,183 @@ Así también, se puede observar en la Figura \ref{fig:app1-uniform-eventCount-c
 \begin{minipage}[c]{0.45\textwidth}
 \centering
     \includegraphics[width=\textwidth]{images/exp/app1/uniform/cm/eventCount.eps}
-    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme usando monitor.}
+    \caption{Cantidad total de eventos procesados en la primera aplicación con un envío constante de la fuente de datos usando monitor.}
     \label{fig:app1-uniform-eventCount-cm}
 \end{minipage} \hspace*{1cm}
 \begin{minipage}[c]{0.45\textwidth}
 \centering
     \includegraphics[width=\textwidth]{images/exp/app1/uniform/sm/eventCount.eps}
-    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme no usando monitor.}
+    \caption{Cantidad total de eventos procesados en la primera aplicación con un envío constante de la fuente de datos no usando monitor.}
     \label{fig:app1-uniform-eventCount-sm}
 \end{minipage}
 
 \end{figure}
 
-El segundo experimento consistió en enviar un flujo dinámico de datos, y realizando una comparación de los sistemas con y sin monitoreo de la carga de los operadores.
+En el segundo experimento se puede apreciar que en las Figuras \ref{fig:app1-normal-statusStopwordPE-cm} y \ref{fig:app1-normal-statusStopwordPE-sm}, se muestra el comportamiento del primer operador con un envío dinámico de la fuente de datos. En las estadísticas se puede ver que existe un comportamiento estable hasta el segundo 1100, con y sin uso del monitor. Esto se debe a que el operador no posee gran cantidad de demanda dada la tasa de llegada, lo cual varía al segundo 1100, debido que aumenta la cantidad de tasa de llegada, lo cual implica que debe procesar mayor cantidad de datos, por lo que aumenta la cantidad de réplicas del operador. Luego en el segundo 3200 disminuye la tasa de llegada, por lo que la tasa de rendimiento vuelve a ser estable en el sistema con y sin monitoreo, debido que es menor la cantidad de eventos que deben ser procesados, lo que significó también la disminución de una réplica en el sistema con uso del monitoreo.
 
-En construcción...
+El comportamiento dinámico del flujo de entrada sólo se puede apreciar con mayor detalle en el primer operador cuando no se utiliza monitor, debido que la tasa de llegada del segundo depende de la tasa de procesamiento del primero, y cómo no existe un aumento de la tasa de procesamiento, sólo aumenta hasta lo que pueda procesar con un sólo operador. En las Figuras \ref{fig:app1-normal-statusLanguagePE-cm} y \ref{fig:app1-normal-statusLanguagePE-sm} se puede apreciar la diferencia en la tasa de llegada, debido que en el primer gráfico, que corresponde con el sistema con monitoreo, existe una variación clara de la tasa de llegada, a diferencia del segundo gráfico, donde existe una inestabilidad, dado que el primer operador sólo procesa la cantidad de eventos que pueda procesar, independiente si sigue aumentando o no la tasa de llegada en ese operador. Independiente del uso o no del monitor, no existe una sobrecarga en el operador, por lo que el comportamiento siempre es estable del operador.
 
-%Para analizar el comportamiento del sistema, se puede observar en la Figura \ref{fig:app1-normal-statusStopwordPE-cm} y \ref{fig:app1-normal-statusStopwordPE-sm} las estadísticas del primer operador del grafo, con y sin monitoreo en la carga de los operadores respectivamente. La tasa de llegada ($\lambda$) se puede observar como en el primer gráfico es dinámica, pero no así en el segundo gráfico, debido que en el segundo 2600 surge una disminución del flujo de datos. Esto se debe a la acumulación de eventos en el \textit{buffer}, por lo que se genera cola en el PE, lo cual impide almacenar mayor cantidad de eventos, dado que la cantidad de eventos que se procesan es menor que la cantidad de eventos que llegan.
+Luego, en las Figuras \ref{fig:app1-normal-statusCounterPE-cm} y \ref{fig:app1-normal-statusCounterPE-sm} se presenta el tercer operador, el cual existe una sobrecarga desde el inicio del sistema. Esto se debe a la gran cantidad de palabras que debe comparar, por lo que al realizar la iteración para verificar si existe o no una palabra, requiere un alto costo computacional. En el primer gráfico se puede analizar que en los primeros 100 segundos, aumenta a tres réplicas, estabilizándose el rendimiento del operador. En cambio, en el sistema sin monitoreo existe una tasa de servicio es constante, por lo que la tasa de rendimiento es inestable en el transcurso de todo el experimento. También se muestra una disminución en la cantidad de réplicas en el segundo 3200, y esto se debe que la cantidad de réplicas necesarias para el sistema son menos, dado que el envío de datos de la fuente de datos disminuyó, por lo que la tasa de llegada del PE también.
 
-%Por otra parte, la tasa de rendimiento de la Figura \ref{fig:app1-normal-statusStopwordPE-cm} se estabiliza dentro de los primeros 100 segundos, debido que el sistema de distribución de carga detectó una sobrecarga en el operador y replicó el operador, a diferencia de la Figura \ref{fig:app1-normal-statusStopwordPE-sm}, en el cual el operador posee una tasa de rendimiento estable que bordea entre 1 y 2, hasta el segundo 2600, donde disminuye debido que la tasa de llegada es menor.
+Dentro de los análisis importantes que se pueden realizar al gráfico, es que en el primer tercio de la prueba con uso del monitor, la cantidad óptima de operadores fue 4, pero en el tercer tercio fue de 5, siendo que ambos poseen la misma tasa de llegada. Esto se debió que al aumentar a 7 réplicas, al disminuir, el umbral que se posee para establecer como ocioso al sistema es de 0.5 el valor de $\rho$, lo que significa que es una tasa de rendimiento menor a la del primer tercio, debido que en esta está más cerca a 1 que de 0.5, por lo tanto posee menor cantidad de réplicas.
 
-%En la Figura \ref{fig:app1-normal-statusLanguagePE-cm} y \ref{fig:app1-normal-statusLanguagePE-sm} se puede ver el siguiente operador del gráfico, el cual no tiene mayor inconveniente, a excepción del segundo 2400, donde el sin monitoreo disminuye considerablemente la tasa de procesamiento del PE. Si analizamos la Figura \ref{fig:app1-normal-statusStopwordPE-sm} y \ref{fig:app1-normal-statusLanguagePE-sm}, empiezan aproximadamente desde el rango de tiempo (2400s,2600s) los problemas de procesamiento de los operadores, por lo tanto, se puede deducir que si el problema surge en un operador no es un problema aislado, sino que también influye a los siguientes operadores.
+Por último, en el cuarto operador se puede apreciar en las Figuras \ref{fig:app1-normal-statusMongoPE-cm} y \ref{fig:app1-normal-statusMongoPE-sm} el comportamiento con y sin monitoreo. En ambos casos se muestra una tasa de rendimiento estable, la diferencia está en la tasa de llegada que posee cada uno de los sistemas, donde en el primer gráfico la tasa de llegada es dinámico, y en el segundo es constante, por lo que existe una menor tasa de servicio, lo que significa que la cantidad de datos procesados es menor.
 
-%Por otra parte, en la Figura \ref{fig:app1-normal-statusCounterPE-cm}, se puede observar como con el transcurs de los primeros 100 segundos fue aumentando la cantidad de réplicas hasta llegar a 5, el cual fue su óptimo, para ir procesando la cantidad de eventos y disminuir la cola existente en el sistema. Esto en contra posición a la Figura \ref{fig:app1-normal-statusCounterPE-sm}, donde la inexistencia de replicación, genera una cola la cual se mantiene constante en el segundo 2400. Esto se debe a que la cantidad de eventos almacenados en el \textit{buffer} está lleno, por lo que no pueden agregarse más eventos y bloqueando el \textit{buffer}.
+Como se había explicado anterior, la cantidad de datos procesados en el sistema sin monitoreo es menor, y esto se puede apreciar en la cantidad promedio de eventos procesados en cada período como se muestra en las Figuras \ref{fig:app1-normal-cm-avgEventProcess} y \ref{fig:app1-normal-sm-avgEventProcess}. En el primer gráfico existe un promedio de 225 eventos por período, el cual aumenta a un promedio de 438 eventos por período en el segundo 1100, debido que el flujo de la fuente de datos aumenta, para que luego disminuya a un promedio de 332 eventos por período en el segundo 3200 debido a la disminución de la tasa de llegada. En cambio, en el segundo gráfico la cantidad promedio de eventos procesados es constante, debido que no existe alguna optimización en el sistema, por lo que en todo el experimento se procesan 98 eventos por período aproximadamente. Dado esto, en el primer tramo existe una mejora de $129,59\%$ en el primer período, luego en el segundo tramo una mejora de $346,94\%$, y por último, tercer tramo una mejora de $238,78$.
 
-%Finalmente, se encuentra el último operador, el cual no presenta grandes inconvenientes tanto en la Figura \ref{fig:app1-normal-statusMongoPE-cm} y \ref{fig:app1-normal-statusMongoPE-sm}, esto debido que el tiempo de procesamiento es bajo, y nunca llega una cantidad de eventos considerable para existir una sobrecarga en éste. Además es importante destacar que en la Figura \ref{fig:app1-normal-statusMongoPE-sm} llega una menor tasa de llegada, exactamente un $83,827\%$ menos de eventos que un SPS ejecutado con el sistema de distribución de carga.
+Finalmente, la cantidad total de eventos procesados en cada experimento, se puede ver en las Figuras \ref{fig:app1-normal-eventCount-cm} y \ref{fig:app1-normal-eventCount-sm}. En el primer gráfico se puede ver dos variaciones de la curva, en el segundo 1100 y 3200, lo cual son los segundos en los cuales hubo una variación en el flujo de la fuente de datos, por lo que aumento y disminuyo respectivamente en esos segundos la tasa de llegada del sistema. En cambio, en el segundo gráfico no se denota esto, debido que independiente de la tasa de llegada, el procesamiento del sistema siempre es constante, debido que no se adapta a la carga que posea cada operador con el transcurso del tiempo. El sistema con uso del monitor procesa un total de $303.156$, contra $82.770$ eventos en total sin uso del monitor, lo cual significa un aumento del $266,2631\%$ de eventos procesados.
 
-%Por otra parte, también se analizó la cantidad promedio de eventos procesados en cada período, la cual está graficada en la Figura \ref{fig:app1-normal-avgEventProcess}. Como se puede apreciar, en los primeros 50 segundos se puede ver una mejora considerable en la cantidad de eventos procesados, donde posteriormente se procesan aproximadamente 480 eventos por período con monitoreo, a diferencia del SPS sin monitoreo, que procesa 90 eventos por período aproximadamente, habiendo una mejora del $615,38\%$. Esta mejora se debe al factor de la replicación de los operadores que posee mayor sobrecarga, por lo que al aumentar la cantidad de réplicas, aumenta la tasa de procesamiento, lo significa mayor cantidad de flujo para el próximo operador.
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/cm/statusStopwordPE.eps}
+    \caption{Estadísticas del PE Stopword en la primera aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app1-normal-statusStopwordPE-cm}
+\end{figure}
 
-%Así también, se puede observar en la Figura \ref{fig:app1-normal-eventCount-cm} y \ref{fig:app1-normal-eventCount-sm} la cantidad total de eventos procesados con el transcurso de la ejecución en cada uno de los operadores, con y sin uso del monitoreo respectivamente. En el primer gráfico se denota como los cuatro operadores del SPS van aumentando casi linealmente de la misma manera, tan sólo existe una menor cantidad de eventos procesados en el tercer PE, lo cual se traslada al cuatro PE, debido que al procesar menor cantidad de eventos el tercer PE, llega menor cantidad de datos al cuarto PE. En este gráfico se llegó a un total de 401.618 eventos procesados. En cambio, en el segundo gráfico existe una curva muy distinta por los distintos operadores, lo cual se ve reflejado desde la cantidad de eventos procesados en el primer operador hasta la cantidad total de eventos procesados por el sistema, el cual es de 67.141, existiendo una mejora del $598,171\%$ con el uso del sistema de distribución de carga.
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusStopwordPE.eps}
+    \caption{Estadísticas del PE Stopword en la primera aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app1-normal-statusStopwordPE-sm}
+\end{figure}
 
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1.1]{images/exp/app1/normal/cm/statusStopwordPE.eps}
-%    \caption{Estadísticas del PE Stopword en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-%    \label{fig:app1-uniform-statusStopwordPE-cm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1.1]{images/exp/app1/normal/sm/statusStopwordPE.eps}
-%    \caption{Estadísticas del PE Stopword en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-%    \label{fig:app1-uniform-statusStopwordPE-sm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1]{images/exp/app1/normal/cm/statusLanguagePE.eps}
-%    \caption{Estadísticas del PE Language en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-%    \label{fig:app1-uniform-statusLanguagePE-cm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusLanguagePE.eps}
-%    \caption{Estadísticas del PE Language en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-%    \label{fig:app1-uniform-statusLanguagePE-sm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1]{images/exp/app1/uniform/cm/statusCounterPE.eps}
-%    \caption{Estadísticas del PE Counter en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-%    \label{fig:app1-uniform-statusCounterPE-cm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusCounterPE.eps}
-%    \caption{Estadísticas del PE Counter en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-%    \label{fig:app1-uniform-statusCounterPE-sm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1]{images/exp/app1/normal/cm/statusMongoPE.eps}
-%    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-%    \label{fig:app1-uniform-statusMongoPE-cm}
-%\end{figure}
-%
-%\begin{figure}[p]
-%\centering
-%    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusMongoPE.eps}
-%    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-%    \label{fig:app1-uniform-statusMongoPE-sm}
-%\end{figure}
-%
-%\begin{figure}[ht]
-%\centering
-%
-%\begin{minipage}[c]{0.45\textwidth}
-%\centering
-%    \includegraphics[width=\textwidth]{images/exp/app1/normal/avgTimeTotal.eps}
-%    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con una fuente de datos de distribución uniforme.}
-%    \label{fig:app1-uniform-avgTimeTotal}
-%\end{minipage} \hspace*{1cm}
-%\begin{minipage}[c]{0.45\textwidth}
-%\centering
-%    \includegraphics[width=\textwidth]{images/exp/app1/normal/avgEventProcess.eps}
-%    \caption{Cantidad promedio de eventos procesados en un período de tiempo en la primera aplicación con una fuente de datos de distribución uniforme.}
-%    \label{fig:app1-uniform-avgEventProcess}
-%\end{minipage}
-%
-%\end{figure}
-%
-%\begin{figure}[ht]
-%\centering
-%
-%\begin{minipage}[c]{0.45\textwidth}
-%\centering
-%    \includegraphics[width=\textwidth]{images/exp/app1/normal/cm/eventCount.eps}
-%    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme usando monitor.}
-%    \label{fig:app1-uniform-eventCount-cm}
-%\end{minipage} \hspace*{1cm}
-%\begin{minipage}[c]{0.45\textwidth}
-%\centering
-%    \includegraphics[width=\textwidth]{images/exp/app1/normal/sm/eventCount.eps}
-%    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme no usando monitor.}
-%    \label{fig:app1-uniform-eventCount-sm}
-%\end{minipage}
-%
-%\end{figure}
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/cm/statusLanguagePE.eps}
+    \caption{Estadísticas del PE Language en la primera aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app1-normal-statusLanguagePE-cm}
+\end{figure}
 
-\subsection{Segundo experimento}
-En la segunda aplicación se procedió a realizar cuatro experimentos distintos, donde cada par era una comparación del experimento con y sin uso del monitor. Las dos primeras se consideró un envío constante de la fuente de datos, y las dos segundas se consideró un envío dinámico de la fuente de datos.
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusLanguagePE.eps}
+    \caption{Estadísticas del PE Language en la primera aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app1-normal-statusLanguagePE-sm}
+\end{figure}
 
-Para el análisis de los experimento se consideró la cantidad total de eventos y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/cm/statusCounterPE.eps}
+    \caption{Estadísticas del PE Counter en la primera aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app1-normal-statusCounterPE-cm}
+\end{figure}
 
-Para analizar el comportamiento del sistema, se puede observar en la Figura \ref{fig:app2-uniform-statusSplitPE-cm} y \ref{fig:app2-uniform-statusSplitPE-sm} las estadísticas del primer operador del grafo, con y sin monitoreo en la carga de los operadores respectivamente. En el primer gráfico la tasa de llegada ($\lambda$) en los primeros 200 segundos se encuentran ciertos \textit{peak}, los cuales se deben al \textit{delay} en la toma de estadísticas, producto de la replicación del siguiente PE en el sistema, como se puede demostrar en la Figura \ref{fig:app2-uniform-statusCounterPE-cm}. Independiente del uso del monitoreo, se puede denotar que el comportamiento entre los dos PEs es prácticamente igual, y esto se debe a que la carga que posee este PE es casi nula, debido que es un PE auxiliar para el PE Counter, dado que sólo separa la cantidad de palabras para que el PE Counter cuente la frecuencia de cada palabra en la información entrante.
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusCounterPE.eps}
+    \caption{Estadísticas del PE Counter en la primera aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app1-normal-statusCounterPE-sm}
+\end{figure}
 
-En cambio, en la Figura \ref{fig:app2-uniform-statusCounterPE-cm} y \ref{fig:app2-uniform-statusCounterPE-sm} se puede observar una diferencia en los rendimientos del PE. Esto se debe, a que este operador posee una carga una alta carga, dado que posee una gran bolsa de palabras para comparar con las palabras del \textit{tweets}. Debido a esto, al generar las réplicas, se produce una mejora considerable del operador en los primeros 100 segundo.
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/cm/statusMongoPE.eps}
+    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app1-normal-statusMongoPE-cm}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app1/normal/sm/statusMongoPE.eps}
+    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app1-normal-statusMongoPE-sm}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app1/normal/cm/avgEventProcess.eps}
+    \caption{Cantidad promedio de eventos procesados en cada período en la primera aplicación con un envío dinámico de la fuente de datos usando monitor.}
+    \label{fig:app1-normal-cm-avgEventProcess}
+\end{minipage}
+\hspace*{1cm}
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app1/normal/sm/avgEventProcess.eps}
+    \caption{Cantidad promedio de eventos procesados en cada período en la primera aplicación con un envío dinámico de la fuente de datos no usando monitor.}
+    \label{fig:app1-normal-sm-avgEventProcess}
+\end{minipage}
+
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app1/normal/cm/eventCount.eps}
+    \caption{Cantidad total de eventos procesados en la primera aplicación con un envío dinámico de la fuente de datos usando monitor.}
+    \label{fig:app1-normal-eventCount-cm}
+\end{minipage} \hspace*{1cm}
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app1/normal/sm/eventCount.eps}
+    \caption{Cantidad total de eventos procesados en la primera aplicación con un envío dinámico de la fuente de datos no usando monitor.}
+    \label{fig:app1-normal-eventCount-sm}
+\end{minipage}
+
+\end{figure}
+
+\subsection{Aplicación 2}
+En la segunda aplicación se procedió a realizar dos experimentos, donde el primero poseía un envío constante de la fuenta de dantos, y el segundo un envío dinámico. En ambos experimentos, se consideraron dos pruebas, donde la primera consistía en la ejecución de la aplicación en un sistema SPS que use el sistema de distribución de carga, y la segunda sin uso de éste.
+
+Para ambos experimentos, se consideró la cantidad total de eventos y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
+
+Para analizar el comportamiento del sistema con flujo constante de la fuente de datos, se puede observar en las Figuras \ref{fig:app2-uniform-statusSplitPE-cm} y \ref{fig:app2-uniform-statusSplitPE-sm} las estadísticas del primer operador del grafo, con y sin monitoreo en la carga de los operadores respectivamente. En el primer gráfico la tasa de llegada ($\lambda$) en los primeros 200 segundos se encuentran ciertos \textit{peak}, los cuales se deben al \textit{delay} en la toma de estadísticas, producto de la replicación del siguiente PE en el sistema, como se puede demostrar en la Figura \ref{fig:app2-uniform-statusCounterPE-cm}. Independiente del uso del monitoreo, se puede denotar que el comportamiento entre los dos PEs es prácticamente igual, y esto se debe a que la carga que posee este PE es casi nula, debido que es un PE auxiliar para el PE Counter, dado que sólo separa la cantidad de palabras para que el PE Counter cuente la frecuencia de cada palabra en la información entrante.
+
+En cambio, en las Figuras \ref{fig:app2-uniform-statusCounterPE-cm} y \ref{fig:app2-uniform-statusCounterPE-sm} se puede observar una diferencia en los rendimientos del PE. Esto se debe, a que este operador posee una carga una alta carga, dado que posee una gran bolsa de palabras para comparar con las palabras del \textit{tweets}. Debido a esto, al generar las réplicas, se produce una mejora considerable del operador en los primeros 100 segundo.
 
 En este caso, el predictor se activó, dado que se realiza un aumento de 9 a 14 réplicas. Si bien, la cantidad de réplicas fue mayor a lo necesario, dado que el promedio de tasa de procesamiento posterior al segundo 100 es de 0.63, no se considera el operador en estado ocioso, por lo que no se disminuye la cantidad de réplicas.
 
 Un detalle importante a destacar, es que independiente que se generen más réplicas, el sistema no procesa mayor cantidad de eventos, como se puede observar en la cola del operador. Este problema fue detectado por la implementanción realizada en el SPS de S4, dado que posterior a un período de tiempo, la tasa de procesamiento disminuye considerablemente. La hipótesis que se posee de este problema es que el sistema no elimina los eventos procesados, por lo que independiente de si es procesado o no, continúa en el \textit{buffer}, de esta manera, la cola sigue aumentando, sin ser removido por el \textit{garbage collector} de Java.
 
-En el último PE, se puede ver que existe una baja cantidad de eventos entrantes, como se muestra en la Figura \ref{fig:app2-uniform-statusMergePE-cm} y \ref{fig:app2-uniform-statusMergePE-sm}. Esto se debe, a que los eventos entrantes sólo son enviados cada 10 segundos por el PE Counter, por lo que son una pequeña cantidad de eventos los que son enviados. En el primer gráfico, se puede ver que la tasa de llegada aumenta posterior a los 100 segundos, esto se debe a que se realizaron réplicas, por lo que cada una de las réplicas envía un evento cada 10 segundos, habiendo mayor flujo. En cambio, en el segundo gráfico, el flujo de entrada sólo se condiciona por una réplica, por lo que no se procesa la misma cantidad de eventos. Cabe destacar, que como la tasa de llegada es pequeña, no existe un problema en la tasa de rendimiento del operador, aunque posea un alto cómputo de ejecución su tarea.
+En el último PE, se puede ver que existe una baja cantidad de eventos entrantes, como se muestra en las Figuras \ref{fig:app2-uniform-statusMergePE-cm} y \ref{fig:app2-uniform-statusMergePE-sm}. Esto se debe, a que los eventos entrantes sólo son enviados cada 10 segundos por el PE Counter, por lo que son una pequeña cantidad de eventos los que son enviados. En el primer gráfico, se puede ver que la tasa de llegada aumenta posterior a los 100 segundos, esto se debe a que se realizaron réplicas, por lo que cada una de las réplicas envía un evento cada 10 segundos, habiendo mayor flujo. En cambio, en el segundo gráfico, el flujo de entrada sólo se condiciona por una réplica, por lo que no se procesa la misma cantidad de eventos. Cabe destacar, que como la tasa de llegada es pequeña, no existe un problema en la tasa de rendimiento del operador, aunque posea un alto cómputo de ejecución su tarea.
 
-Finalmente, en la Figura \ref{fig:app2-uniform-eventCount-cm} y \ref{fig:app2-uniform-eventCount-sm} se muestra la cantidad total de eventos procesados. En el primer gráfico se puede analizar que la diferencia de la pendiente entre las rectas del primer y segundo PE, es menor que en el segundo gráfico. Esto se debe al aumento de la cantidad de réplicas, de esta manera puede procesar mayor cantidad de eventos, siendo un procesamiento de 181114 con uso el monitor contra 30049 sin uso del monitor, habiendo una mejora del $602,7288\%$. El tercer PE procesa pocos eventos, debido que sólo le llega un evento por réplica cada 10 segundos.
+Finalmente, en las Figuras \ref{fig:app2-uniform-eventCount-cm} y \ref{fig:app2-uniform-eventCount-sm} se muestra la cantidad total de eventos procesados. En el primer gráfico se puede analizar que la diferencia de la pendiente entre las rectas del primer y segundo PE, es menor que en el segundo gráfico. Esto se debe al aumento de la cantidad de réplicas, de esta manera puede procesar mayor cantidad de eventos, siendo un procesamiento de 275.290 con uso el monitor contra 28.152 sin uso del monitor, habiendo una mejora del $877,8701\%$. El tercer PE procesa pocos eventos, debido que sólo le llega un evento por réplica cada 10 segundos.
 
-Dentro de los análisis importantes a realizar por parte de este experimento, es que en el gráfico \ref{fig:app1-uniform-eventCount-cm} no existe una mejora por parte del segundo PE de manera paralela al flujo de datos emanado por el primer PE. Esto se debió al funcionamiento de la herramienta S4, debido que después de un período de tiempo no procesa la misma cantidad de eventos, por lo que independiente que se siga replicando, no existe una mejora en el sistema. Este problema se debe a la forma en que esta implementando el \textit{buffer} de S4, debido que éste se va llenando, pero no se libera, por lo que al llenarse bloquea el envió de los datos por parte del sistema, generando una demora en el procesamiento.
+Dentro de los análisis importantes a realizar por parte de este experimento, es que en el gráfico \ref{fig:app2-uniform-eventCount-cm} no existe una mejora por parte del segundo PE de manera paralela al flujo de datos emanado por el primer PE. Esto se debió al funcionamiento de la herramienta S4, debido que después de un período de tiempo no procesa la misma cantidad de eventos, por lo que independiente que se siga replicando, no existe una mejora en el sistema. Este problema se debe a la forma en que esta implementando el \textit{buffer} de S4, debido que éste se va llenando, pero no se libera, por lo que al llenarse bloquea el envió de los datos por parte del sistema, generando una demora en el procesamiento.
 
 \begin{figure}[p]
 \centering
     \includegraphics[scale=1.1]{images/exp/app2/uniform/cm/statusSplitPE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
+    \caption{Estadísticas del PE Split en la segunda aplicación con un envío constante de la fuente de datos con uso del monitor.}
     \label{fig:app2-uniform-statusSplitPE-cm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
     \includegraphics[scale=1.1]{images/exp/app2/uniform/sm/statusSplitPE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
+    \caption{Estadísticas del PE Split en la segunda aplicación con un envío constante de la fuente de datos sin uso del monitor.}
     \label{fig:app2-uniform-statusSplitPE-sm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
     \includegraphics[scale=1.1]{images/exp/app2/uniform/cm/statusCounterPE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
+    \caption{Estadísticas del PE Counter en la segunda aplicación con un envío constante de la fuente de datos con uso del monitor.}
     \label{fig:app2-uniform-statusCounterPE-cm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
     \includegraphics[scale=1.1]{images/exp/app2/uniform/sm/statusCounterPE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
+    \caption{Estadísticas del PE Counter en la segunda aplicación con un envío constante de la fuente de datos sin uso del monitor.}
     \label{fig:app2-uniform-statusCounterPE-sm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
     \includegraphics[scale=1.1]{images/exp/app2/uniform/cm/statusMergePE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
+    \caption{Estadísticas del PE Merge en la segunda aplicación con un envío constante de la fuente de datos con uso del monitor.}
     \label{fig:app2-uniform-statusMergePE-cm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
     \includegraphics[scale=1.1]{images/exp/app2/uniform/sm/statusMergePE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
+    \caption{Estadísticas del PE Merge en la segunda aplicación con un envío constante de la fuente de datos sin uso del monitor.}
     \label{fig:app2-uniform-statusMergePE-sm}
 \end{figure}
 
@@ -414,77 +409,70 @@ Dentro de los análisis importantes a realizar por parte de este experimento, es
 \begin{minipage}[c]{0.45\textwidth}
 \centering
     \includegraphics[width=\textwidth]{images/exp/app2/uniform/cm/eventCount.eps}
-    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme usando monitor.}
+    \caption{Cantidad total de eventos procesados en la segunda aplicación con un envío constante de la fuente de datos no usando usando monitor.}
     \label{fig:app2-uniform-eventCount-cm}
 \end{minipage} \hspace*{1cm}
 \begin{minipage}[c]{0.45\textwidth}
 \centering
     \includegraphics[width=\textwidth]{images/exp/app2/uniform/sm/eventCount.eps}
-    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme no usando monitor.}
+    \caption{Cantidad total de eventos procesados en la segunda aplicación con un envío constante de la fuente de datos no usando no usando monitor.}
     \label{fig:app2-uniform-eventCount-sm}
 \end{minipage}
 
 \end{figure}
 
-\subsection{Tercer experimento}
-En la tercera aplicación se procedió a realizar dos experimentos, ambos con envío constante de la fuente de datos, donde el SPS funciona con y sin uso del monitor.
+Para analizar el comportamiento del sistema con flujo dinámico de la fuente de datos, se puede observar en las Figuras \ref{fig:app2-normal-statusSplitPE-cm} y \ref{fig:app2-normal-statusSplitPE-sm} las estadísticas del primer operador del grafo, con y sin monitoreo en la carga de los operadores respectivamente. Como se había explicado en el primer experimento, en las estadísticas con monitor se puede ver ciertos \textit{peaks}, los cuales son provocados por el sistema de monitoreo existente, dado que estos sólo se pueden ver en el primer gráfico y no así en el segundo. Aunque estos sean representados gráficamente, no presentan un problema a la hora de realizar una análisis del sistema por parte del sistema de monitoreo en este experimento. Debido que el PE posee baja nivel de cómputo, dada la tarea que realiza, no existe una tasa de rendimiento que sea inestable, tanto para el sistema con y sin uso del monitoreo, por lo que no existen mayores problemas en éste.
 
-Para el análisis de los experimento se consideró el consumo de RAM, el uso de la CPU, la cantidad total de eventos, la cantidad promedio de eventos procesados por período y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
+A diferencia del anterior PE, en el segundo PE si existe un nivel de sobrecarga importante, como se puede apreciar en las Figuras \ref{fig:app2-uniform-normal-cm} y \ref{fig:app2-uniform-normal-sm}. En los primeros 100 segundo existe una inestabilidad en el sistema, el cual se estabiliza en posteriormente en el sistema con uso del monitor, dado que réplica el operador. Esta inestabilidad se vuelve apreciar en el segundo 1100, cuando aumenta el envío de datos desde la fuente de datos, lo cual hace que la cantidad de réplicas existentes sean insuficientes, por lo que el sistema debe volver a replicar. Para que en el último tramo, en el segundo 3200 disminuya la cantidad de réplicas, debido que el envío de datos disminuyó por parte de la fuente de datos.
+
+Como se había explicado en el mismo experimento de envío dinámico de la fuente de datos en la aplicación 1, la cantidad óptima de operadores en el primer tramo es distinta a la del tercer tramo. Esto se debe a que en el primer tramo van aumentando la cantidad de réplicas para ir convergiendo $\rho$ a un valor de 1, en cambio, en el tercer tramo se va disminuye la cantidad de réplicas para ir convergiendo $\rho$ a 0.5, límite inferior para definir el estado estable.
+
+Otro dato importante a analizar, es que en este experimento no se activó el predictor, y esto se debe a que la replicación fue paulatina, por lo que alcanzó a generar una convergencia de la cantidad de operadores necesarios antes que el predictor pudiera detectar que existe una inestabilidad en el operador.
+
+En el tercer PE, se puede analizar que la tasa de llegada es baja tanto en las Figuras \ref{fig:app2-normal-statusMergePE-cm} y \ref{fig:app2-normal-statusMergePE-sm}, y esto se debe a que este PE es auxiliar, por lo que sólo le llegan eventos de los emitidos por cada PE Counter en cierto rango de tiempo. El análisis realizados es el mismo explicado en el anterior experimento, donde las tasas de llegada son distintas, y eso se debe a la cantidad de operadores que van a estar enviando datos a este operador, y es por esto que el sistema con monitoreo posee mayor tasa de llegada que el sistema sin monitoreo.
+
+Finalmente, en las Figuras \ref{fig:app2-uniform-eventCount-cm} y \ref{fig:app2-uniform-eventCount-sm} se muestra la cantidad total de eventos procesados. En el primer gráfico se puede apreciar que la curva del primer PE y el segundo PE es más cercana que las que se observan en el segundo gráfico, y esto se debe a la replicación que efectúo el sistema de distribución de carga. Por parte del sistema con uso del monitor realizó un procesamiento de $228.942$ eventos, y sin uso del monitor un procesamiento de $27.751$ eventos, lo cual da una mejora de un $724,9865\%$.
 
 \begin{figure}[p]
 \centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/cm/statusStopwordPE.eps}
-    \caption{Estadísticas del PE Stopword en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-    \label{fig:app1-uniform-statusStopwordPE-cm}
+    \includegraphics[scale=1.1]{images/exp/app2/normal/cm/statusSplitPE.eps}
+    \caption{Estadísticas del PE Split en la segunda aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app2-normal-statusSplitPE-cm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/sm/statusStopwordPE.eps}
-    \caption{Estadísticas del PE Stopword en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-    \label{fig:app1-uniform-statusStopwordPE-sm}
+    \includegraphics[scale=1.1]{images/exp/app2/normal/sm/statusSplitPE.eps}
+    \caption{Estadísticas del PE Split en la segunda aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app2-normal-statusSplitPE-sm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/cm/statusLanguagePE.eps}
-    \caption{Estadísticas del PE Language en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-    \label{fig:app1-uniform-statusLanguagePE-cm}
+    \includegraphics[scale=1.1]{images/exp/app2/normal/cm/statusCounterPE.eps}
+    \caption{Estadísticas del PE Counter en la segunda aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app2-normal-statusCounterPE-cm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/sm/statusLanguagePE.eps}
-    \caption{Estadísticas del PE Language en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-    \label{fig:app1-uniform-statusLanguagePE-sm}
+    \includegraphics[scale=1.1]{images/exp/app2/normal/sm/statusCounterPE.eps}
+    \caption{Estadísticas del PE Counter en la segunda aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app2-normal-statusCounterPE-sm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/cm/statusCounterPE.eps}
-    \caption{Estadísticas del PE Counter en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-    \label{fig:app1-uniform-statusCounterPE-cm}
+    \includegraphics[scale=1.1]{images/exp/app2/normal/cm/statusMergePE.eps}
+    \caption{Estadísticas del PE Merge en la segunda aplicación con un envío dinámico de la fuente de datos con uso del monitor.}
+    \label{fig:app2-normal-statusMergePE-cm}
 \end{figure}
 
 \begin{figure}[p]
 \centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/sm/statusCounterPE.eps}
-    \caption{Estadísticas del PE Counter en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-    \label{fig:app1-uniform-statusCounterPE-sm}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/cm/statusMongoPE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos con uso del monitor.}
-    \label{fig:app1-uniform-statusMongoPE-cm}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-    \includegraphics[scale=1.1]{images/exp/app1/uniform/sm/statusMongoPE.eps}
-    \caption{Estadísticas del PE Mongo en la primera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
-    \label{fig:app1-uniform-statusMongoPE-sm}
+    \includegraphics[scale=1.1]{images/exp/app2/normal/sm/statusMergePE.eps}
+    \caption{Estadísticas del PE Merge en la segunda aplicación con un envío dinámico de la fuente de datos sin uso del monitor.}
+    \label{fig:app2-normal-statusMergePE-sm}
 \end{figure}
 
 \begin{figure}[ht]
@@ -492,33 +480,126 @@ Para el análisis de los experimento se consideró el consumo de RAM, el uso de 
 
 \begin{minipage}[c]{0.45\textwidth}
 \centering
-    \includegraphics[width=\textwidth]{images/exp/app1/uniform/cm/avgEventProcess.eps}
-    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con una fuente de datos de distribución uniforme usando monitor.}
-    \label{fig:app1-uniform-cm-avgEventProcess}
+    \includegraphics[width=\textwidth]{images/exp/app2/normal/cm/eventCount.eps}
+    \caption{Cantidad total de eventos procesados en la segunda aplicación con un envío dinámico de la fuente de datos usando monitor.}
+    \label{fig:app2-normal-eventCount-cm}
 \end{minipage} \hspace*{1cm}
 \begin{minipage}[c]{0.45\textwidth}
 \centering
-    \includegraphics[width=\textwidth]{images/exp/app1/uniform/sm/avgEventProcess.eps}
-    \caption{Tiempo promedio de procesamiento de un evento en la primera aplicación con una fuente de datos de distribución uniforme no usando monitor.}
-    \label{fig:app1-uniform-sm-avgEventProcess}
+    \includegraphics[width=\textwidth]{images/exp/app2/normal/sm/eventCount.eps}
+    \caption{Cantidad total de eventos procesados en la segunda aplicación con un envío dinámico de la fuente de datos no usando monitor.}
+    \label{fig:app2-normal-eventCount-sm}
 \end{minipage}
 
 \end{figure}
 
-\begin{figure}[ht]
+\subsection{Aplicación 3}
+En la tercera aplicación se procedió a realizar dos experimentos, ambos con envío constante de 100 eventos por segundo de la fuente de datos, donde el SPS funciona con y sin uso del monitor.
+
+Para el análisis de los experimento se consideró el consumo de RAM, el uso de la CPU, la cantidad total de eventos y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
+
+Respecto a la utilización de CPU, se puede observar en las Figuras \ref{fig:app3-consumeCPU-cm} y \ref{fig:app3-consumeCPU-sm} el porcentaje de uso con y sin monitoreo. En el primer caso existe un $0.621\%$ de utilización de CPU, contra un $0.6091\%$ del segundo caso, habiendo un aumento del $0,0119\%$ de utilización promedio de CPU. Dentro de los primeros 10 segundo existe un alto uso de CPU en ambos gráficos, y eso se debe que es el \textit{deploy} y compilación de la aplicación en el sistema de S4.
+
+Por otra parte, el consumo de memoria RAM está dado por las Figuras \ref{fig:app3-consumeRAM-cm} y \ref{fig:app3-consumeRAM-sm}, donde la primera es con uso de monitoreo y la segundo no. En el primer gráfico existe un consumo promedio de $264,8033$ MB, contra $268,8667$ MB del segundo gráfico, habiendo una disminución del $1,5187\%$ de consumo de memoria RAM. En el primer gráfico se puede observar un aumento del consumo de memoria en el segundo 200, a diferencia del segundo gráfico, y esto se debe a que al consumir mayor cantidad de eventos, existe un mayor consumo de memoria por parte del sistema. Pero posterior al segundo 600, por parte del sistema sin monitoreo, se muestra un aumento del consumo de memoria, lo cual se debe a la cantidad de eventos en cola que existen en el sistema, a diferencia del primer gráfico que hubo una convergencia en el consumo de la memoria.
+
+En cuanto a la cantidad total de eventos procesos, en la comparación que se puede realizar de las Figuras \ref{fig:app3-eventCount-cm} y \ref{fig:app3-eventCount-sm}, se puede apreciar que la cantidad de eventos procesados es mayor en el gráfico con uso del monitor. En el primer gráfico existe un total de $88.169$ eventos procesados y en el segundo un total de $29.714$ eventos procesados, existiendo una mejora del $196.73\%$.
+
+Finalmente, en las Figuras \ref{fig:app3-statusOnePE-cm} y \ref{fig:app3-statusOnePE-sm} se presentan las estadísticas del primer PE, el cual se muestra una diferencia en la tasa de procesamiento en los experimentos con y sin monitor, lo cual afecta en la tasa de llegada del segundo PE como muestra las Figura \ref{fig:app3-statusTwoPE-cm} y \ref{fig:app3-statusTwoPE-sm}. Finalmente, en las Figuras \ref{fig:app3-statusThreePE-cm} y \ref{fig:app3-statusThreePE-sm} se presenta el tercer PE, el cual la tasa de rendimiento no surge variación en ninguno de los dos casos, debido que en el experimento sin monitoreo recibe una menor tasa de llegada, dado la tasa de procesamiento del PE anterior.
+
+\begin{figure}[!hptb]
 \centering
 
 \begin{minipage}[c]{0.45\textwidth}
 \centering
-    \includegraphics[width=\textwidth]{images/exp/app1/uniform/cm/eventCount.eps}
-    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme usando monitor.}
-    \label{fig:app1-uniform-eventCount-cm}
+    \includegraphics[width=\textwidth]{images/exp/app3/cm/fisical/consumeCPU.eps}
+    \caption{Porcentaje de utilización de la CPU en la tercera aplicación usando monitor.}
+    \label{fig:app3-consumeCPU-cm}
 \end{minipage} \hspace*{1cm}
 \begin{minipage}[c]{0.45\textwidth}
 \centering
-    \includegraphics[width=\textwidth]{images/exp/app1/uniform/sm/eventCount.eps}
-    \caption{Cantidad total de eventos procesados en la primera aplicación con una fuente de datos de distribución uniforme no usando monitor.}
-    \label{fig:app1-uniform-eventCount-sm}
+    \includegraphics[width=\textwidth]{images/exp/app3/sm/fisical/consumeCPU.eps}
+    \caption{Porcentaje de utilización de la CPU en la tercera aplicación no usando monitor.}
+    \label{fig:app3-consumeCPU-sm}
 \end{minipage}
 
 \end{figure}
+
+\begin{figure}[!hptb]
+\centering
+
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app3/cm/fisical/consumeRAM.eps}
+    \caption{Consumo de memoria RAM en la tercera aplicación usando monitor.}
+    \label{fig:app3-consumeRAM-cm}
+\end{minipage} \hspace*{1cm}
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app3/sm/fisical/consumeRAM.eps}
+    \caption{Consumo de memoria RAM en la tercera aplicación no usando monitor.}
+    \label{fig:app3-consumeRAM-sm}
+\end{minipage}
+
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app3/cm/logical/eventCount.eps}
+    \caption{Cantidad de eventos procesados en la tercera aplicación usando monitor.}
+    \label{fig:app3-eventCount-cm}
+\end{minipage} \hspace*{1cm}
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{images/exp/app3/sm/logical/eventCount.eps}
+    \caption{Cantidad de eventos procesados en la tercera aplicación no usando monitor.}
+    \label{fig:app3-eventCount-sm}
+\end{minipage}
+
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app3/cm/logical/statusOnePE.eps}
+    \caption{Estadísticas del primer PE en la tercera aplicación con un envío constante de la fuente de datos con uso del monitor.}
+    \label{fig:app3-statusOnePE-cm}
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app3/sm/logical/statusOnePE.eps}
+    \caption{Estadísticas del primer PE en la tercera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
+    \label{fig:app3-statusOnePE-sm}
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+  uniform  \includegraphics[scale=1.1]{images/exp/app3/cm/logical/statusTwoPE.eps}
+    \caption{Estadísticas del segundo PE en la tercera aplicación con un envío constante de la fuente de datos con uso del monitor.}
+    \label{fig:app3-statusTwoPE-cm}
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app3/sm/logical/statusTwoPE.eps}
+    \caption{Estadísticas del segundo PE en la tercera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
+    \label{fig:app3-statusTwoPE-sm}
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app3/cm/logical/statusThreePE.eps}
+    \caption{Estadísticas del tercer PE en la tercera aplicación con un envío constante de la fuente de datos con uso del monitor.}
+    \label{fig:app3-statusThreePE-cm}
+\end{figure}
+
+\begin{figure}[!hptb]
+\centering
+    \includegraphics[scale=1.1]{images/exp/app3/sm/logical/statusThreePE.eps}
+    \caption{Estadísticas del tercer PE en la tercera aplicación con un envío constante de la fuente de datos sin uso del monitor.}
+    \label{fig:app3-statusThreePE-sm}
+\end{figure}
+
+\vspace*{15cm}

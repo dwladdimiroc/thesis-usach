@@ -1,13 +1,8 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{59}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-
-\bibitem[{X11(2011)}]{X11cp}
- (2011).
-\newblock Consistent hashing.
-\newblock In {\em Encyclopedia of Parallel Computing\/}, (p. 406).
 
 \bibitem[{Abadi et~al.(2003)Abadi, Carney, {\c{C}}etintemel, Cherniack, Convey,
   Lee, Stonebraker, Tatbul, \& Zdonik}]{aurora}
@@ -220,7 +215,6 @@ Lin, J., \& Dyer, C. (2010).
 \newblock {\em Data-Intensive Text Processing with MapReduce\/}.
 \newblock Synthesis Lectures on Human Language Technologies. Morgan {\&}
   Claypool Publishers.
-\newline\urlprefix\url{http://dx.doi.org/10.2200/S00274ED1V01Y201006HLT007}
 
 \bibitem[{Madsen et~al.(2014)Madsen, Thyssen, \& Zhou}]{MadsenTZ14}
 Madsen, K. G.~S., Thyssen, P., \& Zhou, Y. (2014).
@@ -239,6 +233,11 @@ Miao, R., Yu, M., \& Jain, N. (2014).
 \newblock {NIMBUS:} cloud-scale attack detection and mitigation.
 \newblock In {\em {ACM} {SIGCOMM} 2014 Conference, SIGCOMM'14, Chicago, IL,
   USA, August 17-22, 2014\/}, (pp. 121--122).
+
+\bibitem[{Mohri et~al.(2012)Mohri, Rostamizadeh, \& Talwalkar}]{bookMohri2012}
+Mohri, M., Rostamizadeh, A., \& Talwalkar, A. (2012).
+\newblock {\em Foundations of Machine Learning\/}.
+\newblock Adaptive computation and machine learning. {MIT} Press.
 
 \bibitem[{Neumeyer et~al.(2010)Neumeyer, Robbins, Nair, \& Kesari}]{s4yahoo}
 Neumeyer, L., Robbins, B., Nair, A., \& Kesari, A. (2010).
@@ -338,6 +337,20 @@ Tanenbaum, A.~S., \& van Steen, M. (2007).
 Taylor, H.~M., \& Karlin, S. (2014).
 \newblock {\em An introduction to stochastic modeling\/}.
 \newblock Academic press.
+
+\bibitem[{Thies et~al.(2002)Thies, Karczmarek, \& Amarasinghe}]{ThiesKA02}
+Thies, W., Karczmarek, M., \& Amarasinghe, S.~P. (2002).
+\newblock Streamit: {A} language for streaming applications.
+\newblock In {\em Compiler Construction, 11th International Conference, {CC}
+  2002, Held as Part of the Joint European Conferences on Theory and Practice
+  of Software, {ETAPS} 2002, Grenoble, France, April 8-12, 2002,
+  Proceedings\/}, (pp. 179--196).
+
+\bibitem[{Wang \& Loguinov(2007)}]{X11cp}
+Wang, X., \& Loguinov, D. (2007).
+\newblock Load-balancing performance of consistent hashing: asymptotic analysis
+  of random node join.
+\newblock {\em {IEEE/ACM} Trans. Netw.\/}, {\em 15\/}(4), 892--905.
 
 \bibitem[{Wenzel(2014)}]{Wenzel14}
 Wenzel, S. (2014).
