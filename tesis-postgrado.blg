@@ -20,45 +20,45 @@ Database file #1: referencias.bib
 Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
 Warning--empty journal in sturm2000foundations
-You've used 59 entries,
+You've used 60 entries,
             2804 wiz_defined-function locations,
-            933 strings with 16420 characters,
-and the built_in function-call counts, 34563 in all, are:
-= -- 2816
-> -- 1426
-< -- 50
-+ -- 551
-- -- 474
-* -- 2511
-:= -- 5384
-add.period$ -- 176
-call.type$ -- 59
-change.case$ -- 478
-chr.to.int$ -- 59
-cite$ -- 62
-duplicate$ -- 2494
-empty$ -- 2601
-format.name$ -- 651
-if$ -- 6876
+            937 strings with 16483 characters,
+and the built_in function-call counts, 34959 in all, are:
+= -- 2846
+> -- 1436
+< -- 51
++ -- 557
+- -- 477
+* -- 2531
+:= -- 5452
+add.period$ -- 179
+call.type$ -- 60
+change.case$ -- 483
+chr.to.int$ -- 60
+cite$ -- 63
+duplicate$ -- 2524
+empty$ -- 2638
+format.name$ -- 655
+if$ -- 6955
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 507
-newline$ -- 298
-num.names$ -- 236
-pop$ -- 1120
+missing$ -- 514
+newline$ -- 303
+num.names$ -- 240
+pop$ -- 1135
 preamble$ -- 1
-purify$ -- 394
+purify$ -- 399
 quote$ -- 0
-skip$ -- 1099
+skip$ -- 1115
 stack$ -- 0
-substring$ -- 1451
-swap$ -- 1288
+substring$ -- 1464
+swap$ -- 1299
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 480
+type$ -- 486
 warning$ -- 3
-while$ -- 254
+while$ -- 257
 width$ -- 0
-write$ -- 742
+write$ -- 754
 (There were 3 warnings)
