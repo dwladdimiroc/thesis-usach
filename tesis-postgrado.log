@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  19 AUG 2015 18:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.15)  20 AUG 2015 01:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3652,10 +3652,10 @@ Overfull \hbox (15.00002pt too wide) detected at line 93
  []
 
 Package epstopdf Info: Source file: <images/Umbrales.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-02 00:37:28
 (epstopdf)                    size: 20567 bytes
 (epstopdf)             Output file: <images/Umbrales-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-27 18:44:21
 (epstopdf)                    size: 6645 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Umbrales-eps-conver
 ted-to.pdf images/Umbrales.eps>
@@ -4342,74 +4342,74 @@ Underfull \hbox (badness 1603) in paragraph at lines 130--131
 tidad
  []
 
-LaTeX Info: Redefining \. on input line 137.
-LaTeX Info: Redefining \% on input line 137.
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 137.
+(babel)             in language  on input line 135.
 [62]
 Underfull \vbox (badness 3199) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 145.
-LaTeX Info: Redefining \% on input line 145.
+LaTeX Info: Redefining \. on input line 143.
+LaTeX Info: Redefining \% on input line 143.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
  [63]
 Package epstopdf Info: Source file: <images/exp/app1/uniform/cm/statusStopwordP
 E.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 52726 bytes
+(epstopdf)                    date: 2015-08-20 00:50:55
+(epstopdf)                    size: 52302 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/cm/statusStopwordP
 E-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 13197 bytes
+(epstopdf)                    date: 2015-08-20 01:22:47
+(epstopdf)                    size: 10350 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/cm
 /statusStopwordPE-eps-converted-to.pdf images/exp/app1/uniform/cm/statusStopwor
 dPE.eps>
-(epstopdf)             \includegraphics on input line 150.
+(epstopdf)             \includegraphics on input line 148.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/cm/statusStopwordPE-eps-converted-to.pdf, id=1504, 361
@@ -4419,20 +4419,20 @@ file (type pdf)
 
 <use images/exp/app1/uniform/cm/statusStopwordPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/cm/statusStopwordPE-eps-conver
-ted-to.pdf used on input line 150.
+ted-to.pdf used on input line 148.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/sm/statusStopwordP
 E.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:51:03
 (epstopdf)                    size: 53372 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/sm/statusStopwordP
 E-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:47
 (epstopdf)                    size: 18029 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/sm
 /statusStopwordPE-eps-converted-to.pdf images/exp/app1/uniform/sm/statusStopwor
 dPE.eps>
-(epstopdf)             \includegraphics on input line 157.
+(epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/sm/statusStopwordPE-eps-converted-to.pdf, id=1505, 361
@@ -4442,20 +4442,20 @@ file (type pdf)
 
 <use images/exp/app1/uniform/sm/statusStopwordPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/sm/statusStopwordPE-eps-conver
-ted-to.pdf used on input line 157.
+ted-to.pdf used on input line 155.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/cm/statusLanguageP
 E.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:50:55
 (epstopdf)                    size: 53194 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/cm/statusLanguageP
 E-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:47
 (epstopdf)                    size: 15717 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/cm
 /statusLanguagePE-eps-converted-to.pdf images/exp/app1/uniform/cm/statusLanguag
 ePE.eps>
-(epstopdf)             \includegraphics on input line 164.
+(epstopdf)             \includegraphics on input line 162.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/cm/statusLanguagePE-eps-converted-to.pdf, id=1506, 361
@@ -4465,20 +4465,20 @@ file (type pdf)
 
 <use images/exp/app1/uniform/cm/statusLanguagePE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/cm/statusLanguagePE-eps-conver
-ted-to.pdf used on input line 164.
+ted-to.pdf used on input line 162.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/sm/statusLanguageP
 E.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:51:03
 (epstopdf)                    size: 53607 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/sm/statusLanguageP
 E-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:48
 (epstopdf)                    size: 19267 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/sm
 /statusLanguagePE-eps-converted-to.pdf images/exp/app1/uniform/sm/statusLanguag
 ePE.eps>
-(epstopdf)             \includegraphics on input line 171.
+(epstopdf)             \includegraphics on input line 169.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/sm/statusLanguagePE-eps-converted-to.pdf, id=1507, 361
@@ -4488,20 +4488,20 @@ file (type pdf)
 
 <use images/exp/app1/uniform/sm/statusLanguagePE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/sm/statusLanguagePE-eps-conver
-ted-to.pdf used on input line 171.
+ted-to.pdf used on input line 169.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/cm/statusCounterPE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 53733 bytes
+(epstopdf)                    date: 2015-08-20 00:50:55
+(epstopdf)                    size: 53228 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/cm/statusCounterPE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 17516 bytes
+(epstopdf)                    date: 2015-08-20 01:22:48
+(epstopdf)                    size: 14704 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/cm
 /statusCounterPE-eps-converted-to.pdf images/exp/app1/uniform/cm/statusCounterP
 E.eps>
-(epstopdf)             \includegraphics on input line 178.
+(epstopdf)             \includegraphics on input line 176.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/cm/statusCounterPE-eps-converted-to.pdf, id=1508, 361.
@@ -4511,20 +4511,20 @@ ile (type pdf)
 
 <use images/exp/app1/uniform/cm/statusCounterPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/cm/statusCounterPE-eps-convert
-ed-to.pdf used on input line 178.
+ed-to.pdf used on input line 176.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/sm/statusCounterPE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:51:03
 (epstopdf)                    size: 53473 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/sm/statusCounterPE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:49
 (epstopdf)                    size: 18653 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/sm
 /statusCounterPE-eps-converted-to.pdf images/exp/app1/uniform/sm/statusCounterP
 E.eps>
-(epstopdf)             \includegraphics on input line 185.
+(epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/sm/statusCounterPE-eps-converted-to.pdf, id=1509, 361.
@@ -4534,20 +4534,20 @@ ile (type pdf)
 
 <use images/exp/app1/uniform/sm/statusCounterPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/sm/statusCounterPE-eps-convert
-ed-to.pdf used on input line 185.
+ed-to.pdf used on input line 183.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/cm/statusMongoPE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:50:55
 (epstopdf)                    size: 53461 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/cm/statusMongoPE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:49
 (epstopdf)                    size: 15930 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/cm
 /statusMongoPE-eps-converted-to.pdf images/exp/app1/uniform/cm/statusMongoPE.ep
 s>
-(epstopdf)             \includegraphics on input line 192.
+(epstopdf)             \includegraphics on input line 190.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/cm/statusMongoPE-eps-converted-to.pdf, id=1510, 361.35
@@ -4557,20 +4557,20 @@ e (type pdf)
 
 <use images/exp/app1/uniform/cm/statusMongoPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/cm/statusMongoPE-eps-converted
--to.pdf used on input line 192.
+-to.pdf used on input line 190.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/sm/statusMongoPE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:51:03
 (epstopdf)                    size: 52536 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/sm/statusMongoPE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:50
 (epstopdf)                    size: 15813 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/sm
 /statusMongoPE-eps-converted-to.pdf images/exp/app1/uniform/sm/statusMongoPE.ep
 s>
-(epstopdf)             \includegraphics on input line 199.
+(epstopdf)             \includegraphics on input line 197.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/sm/statusMongoPE-eps-converted-to.pdf, id=1511, 361.35
@@ -4580,20 +4580,20 @@ e (type pdf)
 
 <use images/exp/app1/uniform/sm/statusMongoPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/sm/statusMongoPE-eps-converted
--to.pdf used on input line 199.
+-to.pdf used on input line 197.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/cm/avgEventProcess
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-28 15:28:27
 (epstopdf)                    size: 25576 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/cm/avgEventProcess
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-30 18:53:16
 (epstopdf)                    size: 10291 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/cm
 /avgEventProcess-eps-converted-to.pdf images/exp/app1/uniform/cm/avgEventProces
 s.eps>
-(epstopdf)             \includegraphics on input line 209.
+(epstopdf)             \includegraphics on input line 207.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/cm/avgEventProcess-eps-converted-to.pdf, id=1512, 361.
@@ -4603,20 +4603,20 @@ ile (type pdf)
 
 <use images/exp/app1/uniform/cm/avgEventProcess-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/cm/avgEventProcess-eps-convert
-ed-to.pdf used on input line 209.
+ed-to.pdf used on input line 207.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/sm/avgEventProcess
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-28 14:50:49
 (epstopdf)                    size: 24971 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/sm/avgEventProcess
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-30 18:53:16
 (epstopdf)                    size: 9814 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/sm
 /avgEventProcess-eps-converted-to.pdf images/exp/app1/uniform/sm/avgEventProces
 s.eps>
-(epstopdf)             \includegraphics on input line 215.
+(epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/sm/avgEventProcess-eps-converted-to.pdf, id=1513, 361.
@@ -4626,19 +4626,19 @@ ile (type pdf)
 
 <use images/exp/app1/uniform/sm/avgEventProcess-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/sm/avgEventProcess-eps-convert
-ed-to.pdf used on input line 215.
+ed-to.pdf used on input line 213.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/cm/eventCount.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-28 15:28:27
 (epstopdf)                    size: 40990 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/cm/eventCount-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-28 15:29:15
 (epstopdf)                    size: 15971 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/cm
 /eventCount-eps-converted-to.pdf images/exp/app1/uniform/cm/eventCount.eps>
-(epstopdf)             \includegraphics on input line 227.
+(epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/cm/eventCount-eps-converted-to.pdf, id=1514, 361.35pt 
@@ -4647,19 +4647,19 @@ File: images/exp/app1/uniform/cm/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
  <use images/exp/app1/uniform/cm/eventCount-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/cm/eventCount-eps-converted-to
-.pdf used on input line 227.
+.pdf used on input line 225.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app1/uniform/sm/eventCount.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-28 14:50:49
 (epstopdf)                    size: 40955 bytes
 (epstopdf)             Output file: <images/exp/app1/uniform/sm/eventCount-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-07-30 18:59:00
 (epstopdf)                    size: 16892 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/uniform/sm
 /eventCount-eps-converted-to.pdf images/exp/app1/uniform/sm/eventCount.eps>
-(epstopdf)             \includegraphics on input line 233.
+(epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/uniform/sm/eventCount-eps-converted-to.pdf, id=1515, 361.35pt 
@@ -4668,224 +4668,224 @@ File: images/exp/app1/uniform/sm/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
  <use images/exp/app1/uniform/sm/eventCount-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/uniform/sm/eventCount-eps-converted-to
-.pdf used on input line 233.
+.pdf used on input line 231.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 
 Underfull \vbox (badness 7576) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
+LaTeX Info: Redefining \. on input line 241.
+LaTeX Info: Redefining \% on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
  [64]
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
+LaTeX Info: Redefining \. on input line 241.
+LaTeX Info: Redefining \% on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 
 [65 <./images/exp/app1/uniform/cm/statusStopwordPE-eps-converted-to.pdf> <./ima
 ges/exp/app1/uniform/sm/statusStopwordPE-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
+LaTeX Info: Redefining \. on input line 241.
+LaTeX Info: Redefining \% on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
  [66 <./images/exp/app1/uniform/cm/statusLanguagePE-eps-converted-to.pdf> <./im
 ages/exp/app1/uniform/sm/statusLanguagePE-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
+LaTeX Info: Redefining \. on input line 241.
+LaTeX Info: Redefining \% on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
  [67 <./images/exp/app1/uniform/cm/statusCounterPE-eps-converted-to.pdf> <./ima
 ges/exp/app1/uniform/sm/statusCounterPE-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
+LaTeX Info: Redefining \. on input line 241.
+LaTeX Info: Redefining \% on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 241.
  [68 <./images/exp/app1/uniform/cm/statusMongoPE-eps-converted-to.pdf> <./image
 s/exp/app1/uniform/sm/statusMongoPE-eps-converted-to.pdf>]
 Underfull \vbox (badness 2293) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 245.
-LaTeX Info: Redefining \% on input line 245.
+LaTeX Info: Redefining \. on input line 243.
+LaTeX Info: Redefining \% on input line 243.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 245.
+(babel)             in language  on input line 243.
  [69 <./images/exp/app1/uniform/cm/avgEventProcess-eps-converted-to.pdf> <./ima
 ges/exp/app1/uniform/sm/avgEventProcess-eps-converted-to.pdf> <./images/exp/app
 1/uniform/cm/eventCount-eps-converted-to.pdf> <./images/exp/app1/uniform/sm/eve
 ntCount-eps-converted-to.pdf>]
 Underfull \vbox (badness 7576) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 251.
-LaTeX Info: Redefining \% on input line 251.
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
  [70]
 Package epstopdf Info: Source file: <images/exp/app1/normal/cm/statusStopwordPE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 52705 bytes
+(epstopdf)                    date: 2015-08-20 00:45:01
+(epstopdf)                    size: 52307 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/cm/statusStopwordPE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 14980 bytes
+(epstopdf)                    date: 2015-08-20 01:22:50
+(epstopdf)                    size: 12413 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/cm/
 statusStopwordPE-eps-converted-to.pdf images/exp/app1/normal/cm/statusStopwordP
 E.eps>
-(epstopdf)             \includegraphics on input line 256.
+(epstopdf)             \includegraphics on input line 254.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/cm/statusStopwordPE-eps-converted-to.pdf, id=1618, 361.
@@ -4895,20 +4895,20 @@ ile (type pdf)
 
 <use images/exp/app1/normal/cm/statusStopwordPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/cm/statusStopwordPE-eps-convert
-ed-to.pdf used on input line 256.
+ed-to.pdf used on input line 254.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/sm/statusStopwordPE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:45:09
 (epstopdf)                    size: 53362 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/sm/statusStopwordPE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:51
 (epstopdf)                    size: 18434 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/sm/
 statusStopwordPE-eps-converted-to.pdf images/exp/app1/normal/sm/statusStopwordP
 E.eps>
-(epstopdf)             \includegraphics on input line 263.
+(epstopdf)             \includegraphics on input line 261.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/sm/statusStopwordPE-eps-converted-to.pdf, id=1619, 361.
@@ -4918,20 +4918,20 @@ ile (type pdf)
 
 <use images/exp/app1/normal/sm/statusStopwordPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/sm/statusStopwordPE-eps-convert
-ed-to.pdf used on input line 263.
+ed-to.pdf used on input line 261.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/cm/statusLanguagePE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:45:01
 (epstopdf)                    size: 53078 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/cm/statusLanguagePE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:51
 (epstopdf)                    size: 15855 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/cm/
 statusLanguagePE-eps-converted-to.pdf images/exp/app1/normal/cm/statusLanguageP
 E.eps>
-(epstopdf)             \includegraphics on input line 270.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/cm/statusLanguagePE-eps-converted-to.pdf, id=1620, 361.
@@ -4941,20 +4941,20 @@ ile (type pdf)
 
 <use images/exp/app1/normal/cm/statusLanguagePE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/cm/statusLanguagePE-eps-convert
-ed-to.pdf used on input line 270.
+ed-to.pdf used on input line 268.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/sm/statusLanguagePE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:45:09
 (epstopdf)                    size: 53496 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/sm/statusLanguagePE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:51
 (epstopdf)                    size: 17237 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/sm/
 statusLanguagePE-eps-converted-to.pdf images/exp/app1/normal/sm/statusLanguageP
 E.eps>
-(epstopdf)             \includegraphics on input line 277.
+(epstopdf)             \includegraphics on input line 275.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/sm/statusLanguagePE-eps-converted-to.pdf, id=1621, 361.
@@ -4964,20 +4964,20 @@ ile (type pdf)
 
 <use images/exp/app1/normal/sm/statusLanguagePE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/sm/statusLanguagePE-eps-convert
-ed-to.pdf used on input line 277.
+ed-to.pdf used on input line 275.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/cm/statusCounterPE.
 eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 52940 bytes
+(epstopdf)                    date: 2015-08-20 00:45:01
+(epstopdf)                    size: 52785 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/cm/statusCounterPE-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 16500 bytes
+(epstopdf)                    date: 2015-08-20 01:22:52
+(epstopdf)                    size: 14371 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/cm/
 statusCounterPE-eps-converted-to.pdf images/exp/app1/normal/cm/statusCounterPE.
 eps>
-(epstopdf)             \includegraphics on input line 284.
+(epstopdf)             \includegraphics on input line 282.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/cm/statusCounterPE-eps-converted-to.pdf, id=1622, 361.3
@@ -4987,20 +4987,20 @@ le (type pdf)
 
 <use images/exp/app1/normal/cm/statusCounterPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/cm/statusCounterPE-eps-converte
-d-to.pdf used on input line 284.
+d-to.pdf used on input line 282.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/sm/statusCounterPE.
 eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:45:09
 (epstopdf)                    size: 53572 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/sm/statusCounterPE-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:52
 (epstopdf)                    size: 20449 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/sm/
 statusCounterPE-eps-converted-to.pdf images/exp/app1/normal/sm/statusCounterPE.
 eps>
-(epstopdf)             \includegraphics on input line 291.
+(epstopdf)             \includegraphics on input line 289.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/sm/statusCounterPE-eps-converted-to.pdf, id=1623, 361.3
@@ -5010,20 +5010,20 @@ le (type pdf)
 
 <use images/exp/app1/normal/sm/statusCounterPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/sm/statusCounterPE-eps-converte
-d-to.pdf used on input line 291.
+d-to.pdf used on input line 289.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/cm/statusMongoPE.ep
 s>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:45:01
 (epstopdf)                    size: 53223 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/cm/statusMongoPE-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:53
 (epstopdf)                    size: 16835 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/cm/
 statusMongoPE-eps-converted-to.pdf images/exp/app1/normal/cm/statusMongoPE.eps>
 
-(epstopdf)             \includegraphics on input line 298.
+(epstopdf)             \includegraphics on input line 296.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf, id=1624, 361.35p
@@ -5033,20 +5033,20 @@ File: images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf Graphic file
 
 <use images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/cm/statusMongoPE-eps-converted-
-to.pdf used on input line 298.
+to.pdf used on input line 296.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/sm/statusMongoPE.ep
 s>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 00:45:09
 (epstopdf)                    size: 52916 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/sm/statusMongoPE-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:53
 (epstopdf)                    size: 17169 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/sm/
 statusMongoPE-eps-converted-to.pdf images/exp/app1/normal/sm/statusMongoPE.eps>
 
-(epstopdf)             \includegraphics on input line 305.
+(epstopdf)             \includegraphics on input line 303.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf, id=1625, 361.35p
@@ -5056,20 +5056,20 @@ File: images/exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf Graphic file
 
 <use images/exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/sm/statusMongoPE-eps-converted-
-to.pdf used on input line 305.
+to.pdf used on input line 303.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/cm/avgEventProcess.
 eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-10 15:00:16
 (epstopdf)                    size: 25446 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/cm/avgEventProcess-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-10 15:38:33
 (epstopdf)                    size: 10435 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/cm/
 avgEventProcess-eps-converted-to.pdf images/exp/app1/normal/cm/avgEventProcess.
 eps>
-(epstopdf)             \includegraphics on input line 315.
+(epstopdf)             \includegraphics on input line 313.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/cm/avgEventProcess-eps-converted-to.pdf, id=1626, 361.3
@@ -5079,20 +5079,20 @@ le (type pdf)
 
 <use images/exp/app1/normal/cm/avgEventProcess-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/cm/avgEventProcess-eps-converte
-d-to.pdf used on input line 315.
+d-to.pdf used on input line 313.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/sm/avgEventProcess.
 eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-11 21:12:37
 (epstopdf)                    size: 25013 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/sm/avgEventProcess-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-11 22:02:02
 (epstopdf)                    size: 9870 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/sm/
 avgEventProcess-eps-converted-to.pdf images/exp/app1/normal/sm/avgEventProcess.
 eps>
-(epstopdf)             \includegraphics on input line 322.
+(epstopdf)             \includegraphics on input line 320.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/sm/avgEventProcess-eps-converted-to.pdf, id=1627, 361.3
@@ -5102,18 +5102,18 @@ le (type pdf)
 
 <use images/exp/app1/normal/sm/avgEventProcess-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/sm/avgEventProcess-eps-converte
-d-to.pdf used on input line 322.
+d-to.pdf used on input line 320.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/cm/eventCount.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-10 15:00:16
 (epstopdf)                    size: 40704 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/cm/eventCount-eps-c
 onverted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-10 15:38:34
 (epstopdf)                    size: 16516 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/cm/
 eventCount-eps-converted-to.pdf images/exp/app1/normal/cm/eventCount.eps>
-(epstopdf)             \includegraphics on input line 334.
+(epstopdf)             \includegraphics on input line 332.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/cm/eventCount-eps-converted-to.pdf, id=1628, 361.35pt x
@@ -5122,18 +5122,18 @@ File: images/exp/app1/normal/cm/eventCount-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use images/exp/app1/normal/cm/eventCount-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/cm/eventCount-eps-converted-to.
-pdf used on input line 334.
+pdf used on input line 332.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app1/normal/sm/eventCount.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-11 21:12:37
 (epstopdf)                    size: 40643 bytes
 (epstopdf)             Output file: <images/exp/app1/normal/sm/eventCount-eps-c
 onverted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-11 22:14:08
 (epstopdf)                    size: 16539 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app1/normal/sm/
 eventCount-eps-converted-to.pdf images/exp/app1/normal/sm/eventCount.eps>
-(epstopdf)             \includegraphics on input line 340.
+(epstopdf)             \includegraphics on input line 338.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/exp/app1/normal/sm/eventCount-eps-converted-to.pdf, id=1629, 361.35pt x
@@ -5142,220 +5142,220 @@ File: images/exp/app1/normal/sm/eventCount-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use images/exp/app1/normal/sm/eventCount-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app1/normal/sm/eventCount-eps-converted-to.
-pdf used on input line 340.
+pdf used on input line 338.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 345.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 345.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 345.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 345.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 345.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 347.
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+(babel)             in language  on input line 345.
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 
 [71]
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
  [72 <./images/exp/app1/normal/cm/statusStopwordPE-eps-converted-to.pdf> <./ima
 ges/exp/app1/normal/sm/statusStopwordPE-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
  [73 <./images/exp/app1/normal/cm/statusLanguagePE-eps-converted-to.pdf> <./ima
 ges/exp/app1/normal/sm/statusLanguagePE-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
  [74 <./images/exp/app1/normal/cm/statusCounterPE-eps-converted-to.pdf> <./imag
 es/exp/app1/normal/sm/statusCounterPE-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 349.
  [75 <./images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf> <./images
 /exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf>]
 Underfull \vbox (badness 2293) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 353.
-LaTeX Info: Redefining \% on input line 353.
+LaTeX Info: Redefining \. on input line 351.
+LaTeX Info: Redefining \% on input line 351.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 351.
  [76 <./images/exp/app1/normal/cm/avgEventProcess-eps-converted-to.pdf> <./imag
 es/exp/app1/normal/sm/avgEventProcess-eps-converted-to.pdf> <./images/exp/app1/
 normal/cm/eventCount-eps-converted-to.pdf> <./images/exp/app1/normal/sm/eventCo
 unt-eps-converted-to.pdf>]
 Underfull \vbox (badness 3199) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 361.
-LaTeX Info: Redefining \% on input line 361.
+LaTeX Info: Redefining \. on input line 360.
+LaTeX Info: Redefining \% on input line 360.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 360.
  [77]
 Underfull \hbox (badness 1077) in paragraph at lines 364--365
 []\OT1/phv/m/n/12 Dentro de los an[]alisis importantes a realizar por parte de 
@@ -5364,12 +5364,12 @@ este
 
 Package epstopdf Info: Source file: <images/exp/app2/uniform/cm/statusSplitPE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 51551 bytes
+(epstopdf)                    date: 2015-08-20 01:10:22
+(epstopdf)                    size: 51888 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/cm/statusSplitPE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 11013 bytes
+(epstopdf)                    date: 2015-08-20 01:22:54
+(epstopdf)                    size: 11087 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/cm
 /statusSplitPE-eps-converted-to.pdf images/exp/app2/uniform/cm/statusSplitPE.ep
 s>
@@ -5387,12 +5387,12 @@ Package pdftex.def Info: images/exp/app2/uniform/cm/statusSplitPE-eps-converted
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/sm/statusSplitPE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 51594 bytes
+(epstopdf)                    date: 2015-08-20 01:18:32
+(epstopdf)                    size: 51931 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/sm/statusSplitPE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 11126 bytes
+(epstopdf)                    date: 2015-08-20 01:22:54
+(epstopdf)                    size: 11196 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/sm
 /statusSplitPE-eps-converted-to.pdf images/exp/app2/uniform/sm/statusSplitPE.ep
 s>
@@ -5410,12 +5410,12 @@ Package pdftex.def Info: images/exp/app2/uniform/sm/statusSplitPE-eps-converted
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/cm/statusCounterPE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:10:22
 (epstopdf)                    size: 52087 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/cm/statusCounterPE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 12194 bytes
+(epstopdf)                    date: 2015-08-20 01:22:54
+(epstopdf)                    size: 11397 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/cm
 /statusCounterPE-eps-converted-to.pdf images/exp/app2/uniform/cm/statusCounterP
 E.eps>
@@ -5433,11 +5433,11 @@ ed-to.pdf used on input line 382.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/sm/statusCounterPE
 .eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:18:32
 (epstopdf)                    size: 53148 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/sm/statusCounterPE
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:55
 (epstopdf)                    size: 18105 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/sm
 /statusCounterPE-eps-converted-to.pdf images/exp/app2/uniform/sm/statusCounterP
@@ -5456,12 +5456,12 @@ ed-to.pdf used on input line 389.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/cm/statusMergePE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 49074 bytes
+(epstopdf)                    date: 2015-08-20 01:10:22
+(epstopdf)                    size: 53979 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/cm/statusMergePE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 15450 bytes
+(epstopdf)                    date: 2015-08-20 01:22:55
+(epstopdf)                    size: 15547 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/cm
 /statusMergePE-eps-converted-to.pdf images/exp/app2/uniform/cm/statusMergePE.ep
 s>
@@ -5479,12 +5479,12 @@ Package pdftex.def Info: images/exp/app2/uniform/cm/statusMergePE-eps-converted
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/sm/statusMergePE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 46654 bytes
+(epstopdf)                    date: 2015-08-20 01:18:32
+(epstopdf)                    size: 51926 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/sm/statusMergePE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 9195 bytes
+(epstopdf)                    date: 2015-08-20 01:22:56
+(epstopdf)                    size: 9408 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/sm
 /statusMergePE-eps-converted-to.pdf images/exp/app2/uniform/sm/statusMergePE.ep
 s>
@@ -5502,11 +5502,11 @@ Package pdftex.def Info: images/exp/app2/uniform/sm/statusMergePE-eps-converted
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/cm/eventCount.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:45:12
 (epstopdf)                    size: 35269 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/cm/eventCount-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:51:59
 (epstopdf)                    size: 15587 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/cm
 /eventCount-eps-converted-to.pdf images/exp/app2/uniform/cm/eventCount.eps>
@@ -5523,11 +5523,11 @@ Package pdftex.def Info: images/exp/app2/uniform/cm/eventCount-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app2/uniform/sm/eventCount.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:46:04
 (epstopdf)                    size: 35281 bytes
 (epstopdf)             Output file: <images/exp/app2/uniform/sm/eventCount-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:52:00
 (epstopdf)                    size: 13182 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/uniform/sm
 /eventCount-eps-converted-to.pdf images/exp/app2/uniform/sm/eventCount.eps>
@@ -5657,6 +5657,8 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 427.
  [81 <./images/exp/app2/uniform/cm/statusMergePE-eps-converted-to.pdf> <./image
 s/exp/app2/uniform/sm/statusMergePE-eps-converted-to.pdf>]
+Underfull \vbox (badness 1320) has occurred while \output is active []
+
 LaTeX Info: Redefining \. on input line 433.
 LaTeX Info: Redefining \% on input line 433.
 Package babel Info: Redefining spanish shorthand <<
@@ -5687,12 +5689,12 @@ Package babel Info: Redefining spanish shorthand "?
 xp/app2/uniform/sm/eventCount-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/exp/app2/normal/cm/statusSplitPE.ep
 s>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 51511 bytes
+(epstopdf)                    date: 2015-08-20 01:16:09
+(epstopdf)                    size: 51848 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/cm/statusSplitPE-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 10530 bytes
+(epstopdf)                    date: 2015-08-20 01:22:56
+(epstopdf)                    size: 10597 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/cm/
 statusSplitPE-eps-converted-to.pdf images/exp/app2/normal/cm/statusSplitPE.eps>
 
@@ -5710,11 +5712,11 @@ to.pdf used on input line 440.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/sm/statusSplitPE.ep
 s>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:16:57
 (epstopdf)                    size: 51782 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/sm/statusSplitPE-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:56
 (epstopdf)                    size: 10032 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/sm/
 statusSplitPE-eps-converted-to.pdf images/exp/app2/normal/sm/statusSplitPE.eps>
@@ -5733,12 +5735,12 @@ to.pdf used on input line 447.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/cm/statusCounterPE.
 eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 52007 bytes
+(epstopdf)                    date: 2015-08-20 01:16:09
+(epstopdf)                    size: 52003 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/cm/statusCounterPE-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 11815 bytes
+(epstopdf)                    date: 2015-08-20 01:22:57
+(epstopdf)                    size: 11311 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/cm/
 statusCounterPE-eps-converted-to.pdf images/exp/app2/normal/cm/statusCounterPE.
 eps>
@@ -5756,11 +5758,11 @@ d-to.pdf used on input line 454.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/sm/statusCounterPE.
 eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:16:57
 (epstopdf)                    size: 52896 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/sm/statusCounterPE-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:57
 (epstopdf)                    size: 16855 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/sm/
 statusCounterPE-eps-converted-to.pdf images/exp/app2/normal/sm/statusCounterPE.
@@ -5779,12 +5781,12 @@ d-to.pdf used on input line 461.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/cm/statusMergePE.ep
 s>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 48954 bytes
+(epstopdf)                    date: 2015-08-20 01:16:09
+(epstopdf)                    size: 53873 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/cm/statusMergePE-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 14287 bytes
+(epstopdf)                    date: 2015-08-20 01:22:58
+(epstopdf)                    size: 14454 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/cm/
 statusMergePE-eps-converted-to.pdf images/exp/app2/normal/cm/statusMergePE.eps>
 
@@ -5802,12 +5804,12 @@ to.pdf used on input line 468.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/sm/statusMergePE.ep
 s>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 46995 bytes
+(epstopdf)                    date: 2015-08-20 01:16:57
+(epstopdf)                    size: 51924 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/sm/statusMergePE-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 9317 bytes
+(epstopdf)                    date: 2015-08-20 01:22:58
+(epstopdf)                    size: 9516 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/sm/
 statusMergePE-eps-converted-to.pdf images/exp/app2/normal/sm/statusMergePE.eps>
 
@@ -5824,11 +5826,11 @@ Package pdftex.def Info: images/exp/app2/normal/sm/statusMergePE-eps-converted-
 to.pdf used on input line 475.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/cm/eventCount.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-11 23:13:44
 (epstopdf)                    size: 34958 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/cm/eventCount-eps-c
 onverted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-12 00:31:51
 (epstopdf)                    size: 15393 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/cm/
 eventCount-eps-converted-to.pdf images/exp/app2/normal/cm/eventCount.eps>
@@ -5844,11 +5846,11 @@ Package pdftex.def Info: images/exp/app2/normal/cm/eventCount-eps-converted-to.
 pdf used on input line 485.
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app2/normal/sm/eventCount.eps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-10 15:22:43
 (epstopdf)                    size: 34930 bytes
 (epstopdf)             Output file: <images/exp/app2/normal/sm/eventCount-eps-c
 onverted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-12 00:31:51
 (epstopdf)                    size: 13581 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app2/normal/sm/
 eventCount-eps-converted-to.pdf images/exp/app2/normal/sm/eventCount.eps>
@@ -5989,41 +5991,41 @@ Package babel Info: Redefining spanish shorthand "?
 /exp/app2/normal/sm/statusMergePE-eps-converted-to.pdf>]
 Underfull \vbox (badness 1320) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 509.
-LaTeX Info: Redefining \% on input line 509.
+LaTeX Info: Redefining \. on input line 508.
+LaTeX Info: Redefining \% on input line 508.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 509.
+(babel)             in language  on input line 508.
  [87 <./images/exp/app2/normal/cm/eventCount-eps-converted-to.pdf> <./images/ex
 p/app2/normal/sm/eventCount-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/exp/app3/cm/fisical/consumeCPU.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-05 16:19:56
 (epstopdf)                    size: 25498 bytes
 (epstopdf)             Output file: <images/exp/app3/cm/fisical/consumeCPU-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 00:10:35
 (epstopdf)                    size: 10838 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/fisical
 /consumeCPU-eps-converted-to.pdf images/exp/app3/cm/fisical/consumeCPU.eps>
@@ -6040,11 +6042,11 @@ Package pdftex.def Info: images/exp/app3/cm/fisical/consumeCPU-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app3/sm/fisical/consumeCPU.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 00:19:22
 (epstopdf)                    size: 25465 bytes
 (epstopdf)             Output file: <images/exp/app3/sm/fisical/consumeCPU-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 00:34:39
 (epstopdf)                    size: 10752 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/fisical
 /consumeCPU-eps-converted-to.pdf images/exp/app3/sm/fisical/consumeCPU.eps>
@@ -6061,11 +6063,11 @@ Package pdftex.def Info: images/exp/app3/sm/fisical/consumeCPU-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app3/cm/fisical/consumeRAM.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-05 16:19:56
 (epstopdf)                    size: 24056 bytes
 (epstopdf)             Output file: <images/exp/app3/cm/fisical/consumeRAM-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 00:10:36
 (epstopdf)                    size: 8008 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/fisical
 /consumeRAM-eps-converted-to.pdf images/exp/app3/cm/fisical/consumeRAM.eps>
@@ -6082,11 +6084,11 @@ Package pdftex.def Info: images/exp/app3/cm/fisical/consumeRAM-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app3/sm/fisical/consumeRAM.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 00:19:22
 (epstopdf)                    size: 23993 bytes
 (epstopdf)             Output file: <images/exp/app3/sm/fisical/consumeRAM-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 00:34:39
 (epstopdf)                    size: 7699 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/fisical
 /consumeRAM-eps-converted-to.pdf images/exp/app3/sm/fisical/consumeRAM.eps>
@@ -6103,11 +6105,11 @@ Package pdftex.def Info: images/exp/app3/sm/fisical/consumeRAM-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app3/cm/logical/eventCount.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:47:54
 (epstopdf)                    size: 23811 bytes
 (epstopdf)             Output file: <images/exp/app3/cm/logical/eventCount-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:52:00
 (epstopdf)                    size: 10661 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/logical
 /eventCount-eps-converted-to.pdf images/exp/app3/cm/logical/eventCount.eps>
@@ -6124,11 +6126,11 @@ Package pdftex.def Info: images/exp/app3/cm/logical/eventCount-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app3/sm/logical/eventCount.eps>
 
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:49:12
 (epstopdf)                    size: 23422 bytes
 (epstopdf)             Output file: <images/exp/app3/sm/logical/eventCount-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-06 03:52:01
 (epstopdf)                    size: 10749 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/logical
 /eventCount-eps-converted-to.pdf images/exp/app3/sm/logical/eventCount.eps>
@@ -6145,12 +6147,12 @@ Package pdftex.def Info: images/exp/app3/sm/logical/eventCount-eps-converted-to
 (pdftex.def)             Requested size: 193.20712pt x 135.24512pt.
 Package epstopdf Info: Source file: <images/exp/app3/cm/logical/statusOnePE.eps
 >
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 32537 bytes
+(epstopdf)                    date: 2015-08-20 01:21:14
+(epstopdf)                    size: 32394 bytes
 (epstopdf)             Output file: <images/exp/app3/cm/logical/statusOnePE-eps
 -converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 9974 bytes
+(epstopdf)                    date: 2015-08-20 01:22:59
+(epstopdf)                    size: 9230 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/logical
 /statusOnePE-eps-converted-to.pdf images/exp/app3/cm/logical/statusOnePE.eps>
 (epstopdf)             \includegraphics on input line 567.
@@ -6167,11 +6169,11 @@ o.pdf used on input line 567.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app3/sm/logical/statusOnePE.eps
 >
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:21:07
 (epstopdf)                    size: 32261 bytes
 (epstopdf)             Output file: <images/exp/app3/sm/logical/statusOnePE-eps
 -converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:22:59
 (epstopdf)                    size: 10501 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/logical
 /statusOnePE-eps-converted-to.pdf images/exp/app3/sm/logical/statusOnePE.eps>
@@ -6189,12 +6191,12 @@ o.pdf used on input line 574.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app3/cm/logical/statusTwoPE.eps
 >
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 32210 bytes
+(epstopdf)                    date: 2015-08-20 01:21:14
+(epstopdf)                    size: 32120 bytes
 (epstopdf)             Output file: <images/exp/app3/cm/logical/statusTwoPE-eps
 -converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
-(epstopdf)                    size: 10328 bytes
+(epstopdf)                    date: 2015-08-20 01:22:59
+(epstopdf)                    size: 9695 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/logical
 /statusTwoPE-eps-converted-to.pdf images/exp/app3/cm/logical/statusTwoPE.eps>
 (epstopdf)             \includegraphics on input line 581.
@@ -6211,11 +6213,11 @@ o.pdf used on input line 581.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app3/sm/logical/statusTwoPE.eps
 >
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:21:07
 (epstopdf)                    size: 32130 bytes
 (epstopdf)             Output file: <images/exp/app3/sm/logical/statusTwoPE-eps
 -converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:23:00
 (epstopdf)                    size: 10679 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/logical
 /statusTwoPE-eps-converted-to.pdf images/exp/app3/sm/logical/statusTwoPE.eps>
@@ -6233,11 +6235,11 @@ o.pdf used on input line 588.
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app3/cm/logical/statusThreePE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:21:14
 (epstopdf)                    size: 32310 bytes
 (epstopdf)             Output file: <images/exp/app3/cm/logical/statusThreePE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:23:00
 (epstopdf)                    size: 9974 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/logical
 /statusThreePE-eps-converted-to.pdf images/exp/app3/cm/logical/statusThreePE.ep
@@ -6256,11 +6258,11 @@ Package pdftex.def Info: images/exp/app3/cm/logical/statusThreePE-eps-converted
 (pdftex.def)             Requested size: 397.48624pt x 278.24036pt.
 Package epstopdf Info: Source file: <images/exp/app3/sm/logical/statusThreePE.e
 ps>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:21:07
 (epstopdf)                    size: 32078 bytes
 (epstopdf)             Output file: <images/exp/app3/sm/logical/statusThreePE-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-18 11:38:13
+(epstopdf)                    date: 2015-08-20 01:23:01
 (epstopdf)                    size: 9346 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/logical
 /statusThreePE-eps-converted-to.pdf images/exp/app3/sm/logical/statusThreePE.ep
@@ -7204,7 +7206,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
 Here is how much of TeX's memory you used:
  18477 strings out of 493304
  276281 string characters out of 6139871
- 512173 words of memory out of 5000000
+ 513173 words of memory out of 5000000
  20734 multiletter control sequences out of 15000+600000
  43891 words of font info for 100 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -7229,7 +7231,7 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
 lvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on tesis-postgrado.pdf (135 pages, 1746741 bytes).
+Output written on tesis-postgrado.pdf (135 pages, 1734666 bytes).
 PDF statistics:
  2591 PDF objects out of 2984 (max. 8388607)
  2243 compressed objects within 23 object streams
