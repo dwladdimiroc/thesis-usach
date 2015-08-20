@@ -66,7 +66,6 @@
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amsfonts}
 \RequirePackage{stmaryrd}
-\RequirePackage{amssymb,latexsym}
 \RequirePackage{amsmath}
 \RequirePackage{units}
 \RequirePackage{amsthm}
@@ -322,23 +321,24 @@
 % Cambios al default de spanish
 \deactivatetilden
 \decimalpoint
+
 % Headings
 \markboth{}{}
+
 % Renombre de los titulos por defecto
 \addto\captionsspanish
 {
     \def\bibname{Referencias}
-    \def\contentsname{Tabla de Contenido}
-    \def\listtablename{Índice de Tablas}
-    \def\listfigurename{Índice de Figuras}
-    \def\listalgorithmname{Índice de Algoritmos}
+    \def\contentsname{\hfill\bfseries\Large Tabla de contenido \hfill}
+    \def\listtablename{Índice de tablas}
+    \def\listfigurename{Índice de ilustraciones}
+    \def\listalgorithmname{Índice de algoritmos}
     \def\appendixname{Anexo}
     \def\tablename{Tabla}
     \def\figurename{Figura}
     \def\lstlistingname{Código}
     \def\chaptername{Capítulo}
 }
-
 
 \renewcommand{\appendixname}{Anexos}
 \renewcommand{\appendixtocname}{Anexos}
@@ -385,8 +385,13 @@
 %Se agrega la palabra 'Figura' al índice de figuras
 \usepackage{tocloft}
 \renewcommand{\cftfigfont}{Figura }
+%Espacio entre los números y el caption de la Figura
+\setlength{\cftfignumwidth}{2.75em}
+
 %Lo mismo para el índice de tablas
 \renewcommand{\cfttabfont}{Tabla }
+%Espacio entre los números y el caption de la Tabla
+\setlength{\cfttabnumwidth}{2em}
 
 
 %--------Margenes segun reglamento: izq=4cm y inf=der=sup=2.5cm

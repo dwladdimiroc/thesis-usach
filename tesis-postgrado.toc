@@ -1,6 +1,6 @@
 \select@language {spanish}
-\contentsline {chapter}{\IeC {\'I}ndice de Tablas}{ix}{chapter*.2}
-\contentsline {chapter}{\IeC {\'I}ndice de Figuras}{xi}{chapter*.3}
+\contentsline {chapter}{\IeC {\'I}ndice de tablas}{ix}{chapter*.2}
+\contentsline {chapter}{\IeC {\'I}ndice de ilustraciones}{xi}{chapter*.3}
 \contentsline {chapter}{\IeC {\'I}ndice de Algoritmos}{xvii}{chapter*.4}
 \contentsline {chapter}{Resumen}{xix}{chapter*.5}
 \contentsline {chapter}{Abstract}{xxi}{chapter*.6}
