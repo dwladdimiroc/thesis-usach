@@ -46,7 +46,7 @@ El predictor de carga consiste en un método proactivo, el cual analiza la carga
 
 El administrador de réplicas se alimenta de la información entregada por los dos módulos anteriores, y así toma una decisión de la administración de cada una de las réplicas de los distintos operadores. Por lo tanto, verifica cuántas réplicas son necesarias según la cantidad de tráfico de cierto operador.
 
-Finalmente, el sistema de procesamiento constantemente está realizando un \textit{feedback} al sistema de optimización, de tal manera que pueda administrar las réplicas necesarias. De esta manera, se dispondrá de un sistema capaz de procesar información de manera más rápida, a través de este sistema de optimización con bajo \textit{overhead}.
+Finalmente, el sistema de procesamiento constantemente está realizando un \textit{feedback} al sistema de optimización, de tal manera que pueda administrar las réplicas necesarias. De esta manera, se dispone de un sistema capaz de procesar información de manera más rápida, a través de este sistema de optimización con bajo \textit{overhead}.
 
 
 \section{Objetivos y alcance del proyecto}
@@ -57,6 +57,7 @@ Finalmente, el sistema de procesamiento constantemente está realizando un \text
 
 \subsection{Objetivos específicos}
 \begin{enumerate}
+	\item Dise\~nar e implementar un algoritmo reactivo que permita analizar en el momento la carga de los operadores.
 	\item Dise\~nar e implementar un algoritmo de predicci\'on que permita estimar la carga de los operadores.
 	\item Dise\~nar e implementar un algoritmo de distribuci\'on que permita la administraci\'on de los operadores del grafo de procesamiento de forma el\'astica.
 	\item Dise\~nar y construir experimentos que permitan validar la hip\'otesis formulada.
@@ -67,6 +68,7 @@ Finalmente, el sistema de procesamiento constantemente está realizando un \text
 Dentro de los alcances y limitaciones que se tienen en el proyecto son:
 \begin{itemize}
 	\item La evaluación de la solución presentada se implementará sobre un solo sistema de procesamiento de \textit{stream}.
+	\item Los datos emitidos de la fuente de datos son homogéneos, teniendo una tasa de servicio similar.
 	\item La distribución de flujo de datos es a nivel de operadores y no de nodos f\'isicos, por lo que no se analizó la carga de estos \'ultimos.
 	\item Los algoritmos propuestos no incluyen t\'ecnicas que garanticen el procesamiento de todo el flujo de datos.
 	\item En la evaluación de los algoritmos propuestos se consideró el costo de comunicación de manera igualitaria para todos los operadores.
@@ -81,7 +83,7 @@ Dentro de los alcances y limitaciones que se tienen en el proyecto son:
 Dado el carácter de investigación de la propuesta de tesis, se propone utilizar el método científico para la realización de ésta. Dentro de las etapas propuesta por \citep{hernandez2010metodologia} están:
 
 \begin{enumerate}
-	\item Formulación de la hipótesis: ``La utilización de un sistema de distribución de carga, el cual contenga un modelo reacitivo y predictivo, de tal manera que permitirá mejorar la distribución de carga entre los operadores de manera dinámica, logrando reducir los tiempos de procesamiento y pérdida de eventos".
+	\item Formulación de la hipótesis: ``La utilización de un sistema de distribución de carga, el cual contenga un modelo reactivo y predictivo, de tal manera que permita mejorar la distribución de carga entre los operadores de manera dinámica, logrando aumentar el rendimiento del SPS, de tal manera que aumente la cantidad de eventos procesados".
 	\item Elaboración del marco teórico: Exponer las investigaciones que existen sobre problemas de sobrecarga en los operadores de SPS. Así mismo, los conceptos fundamentales de estos sistemas.
 	\item Seleccionar el diseño apropiado de investigación: Diseñar el experimento para el problema de balance de carga a nivel lógico en un SPS, vale decir, los algoritmos de predicción y distribución. Cada ejecución de los experimentos se basan según los principios de un SPS.
 	\item Analizar los resultados: De deberá analizar los resultados según las estadísticas entregadas y el modelo propuesto.
@@ -94,4 +96,4 @@ Para el procesamiento de \textit{stream} se utilizó Apache S4 0.6.0, por lo que
 
 \section{Organización del documento}
 \label{intro:organizacion}
-En el presente documento se divide en seis capítulos. En el primer capítulo se presenta la problemática y la solución propuesta, conjunto con los objetivos y la metodología utilizada. En el segundo capítulo se exponen los conceptos teóricos involucrados. Posteriormente, el tercer capítulo aborda los distintos enfoques y técnicas que se han brindado en la literatura para dar soluciones al problema planteado. Luego, el cuarto capítulo se describen el diseño de los algoritmos utilizados en el sistema propuesto, explicando las distintas decisiones que se tomaron para el diseño de éste. En el quinto capítulo se presentan los distintos experimentos realizados para evaluar el sistema diseñado, donde se explica su implementanción y evaluación según los experimentos diseñados. Finalmente, el sexto capítulo se exponen las respectivas conclusiones obtenidas a partir del presente trabajo.
+En el presente documento se divide en seis capítulos. En el primer capítulo se presenta la problemática y la solución propuesta, conjunto con los objetivos y la metodología utilizada. En el segundo capítulo se exponen los conceptos teóricos involucrados. Posteriormente, el tercer capítulo aborda los distintos enfoques y técnicas que se han brindado en la literatura para dar soluciones al problema planteado. Luego, el cuarto capítulo se describen el diseño de los algoritmos utilizados en el sistema propuesto, explicando las distintas decisiones que se tomaron para el diseño de éste. En el quinto capítulo se presentan los distintos experimentos realizados para evaluar el sistema diseñado, donde se explica su implementación y evaluación según los experimentos diseñados. Finalmente, el sexto capítulo se exponen las respectivas conclusiones obtenidas a partir del presente trabajo.
