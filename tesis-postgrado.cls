@@ -578,7 +578,7 @@
         \normalsize
         \hspace{7cm} Profesor guía: \fontsize{10}{12} \selectfont {\@profesorguia}\\
         \ifdosguias
-            \hspace{7cm} Profesor co-guía: \fontsize{10}{12} \selectfont{\@profesorcoguia}\\
+            \hspace{7cm} Profesora co-guía: \fontsize{10}{12} \selectfont{\@profesorcoguia}\\
         \fi
         \vspace{1cm}
         \hspace{7cm} Tesis de grado presentada en\\
