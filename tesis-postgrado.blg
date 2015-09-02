@@ -12,17 +12,17 @@ A level-1 auxiliary file: chapters/4-Diseno.aux
 A level-1 auxiliary file: chapters/5-Experimentos.aux
 A level-1 auxiliary file: chapters/6-Conclusiones.aux
 The style file: apa-good.bst
-A level-1 auxiliary file: apendices/Apendice-1.aux
-A level-1 auxiliary file: apendices/Apendice-2.aux
-A level-1 auxiliary file: apendices/Apendice-3.aux
-A level-1 auxiliary file: apendices/Apendice-4.aux
+A level-1 auxiliary file: anexos/Anexo-1.aux
+A level-1 auxiliary file: anexos/Anexo-2.aux
+A level-1 auxiliary file: anexos/Anexo-3.aux
+A level-1 auxiliary file: anexos/Anexo-4.aux
 Database file #1: referencias.bib
 Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
 Warning--empty journal in sturm2000foundations
 You've used 60 entries,
             2804 wiz_defined-function locations,
-            937 strings with 16483 characters,
+            937 strings with 16459 characters,
 and the built_in function-call counts, 34959 in all, are:
 = -- 2846
 > -- 1436

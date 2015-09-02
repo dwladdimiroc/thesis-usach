@@ -1,0 +1,192 @@
+\chapter{Clases para la implementación del sistema de monitoreo}
+\label{apendice:clases}
+
+En el Código \ref{lst:statusPE} se muestra las estadísticas de un PE en específico, donde se guarda el nombre del \textit{stream} asociado al PE, la tasa de llegada ($\lambda$), tasa de servicio ($\mu * s$), tasa de servicio unitaria ($\mu$), tasa de rendimiento ($\rho$), cola, historial del PE para el cálculo predictivo, clase del PE, cantidad de réplicas, historial de alertas para la replicación según el algoritmo reactivo y cantidad total de eventos procesados.
+
+Estas estadísticas son las que se utilizan como entrada para el algoritmo reactivo o predictivo, de tal manera que puedan realizar los cálculos correspondientes.
+
+\begin{lstlisting}[caption={Clase StatusPE, el cual contiene las estadísticas de un PE específico.},label={lst:statusPE},language=Java]
+public class StatusPE {
+
+	private String stream;
+
+	private long recibeEvent;
+	private long sendEvent;
+	private double sendEventUnit;
+	private double processEvent;
+	private long queueEvent;
+	private Queue<Double> history;
+	private Class<? extends ProcessingElement> pe;
+	private int replication;
+	private Queue<Integer> markMap;
+	private long eventCount;
+
+	public StatusPE() {
+		stream = null;
+		recibeEvent = 0;
+		sendEvent = 0;
+		sendEventUnit = 0;
+		processEvent = 0;
+		queueEvent = 0;
+		history = new CircularFifoQueue<Double>(100);
+		pe = null;
+		replication = 0;
+		markMap = new CircularFifoQueue<Integer>(2);
+		eventCount = 0;
+	}
+
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stream) {
+		this.stream = stream;
+	}
+
+	public long getRecibeEvent() {
+		return recibeEvent;
+	}
+
+	public void setRecibeEvent(long recibeEvent) {
+		this.recibeEvent = recibeEvent;
+	}
+
+	public long getSendEvent() {
+		return sendEvent;
+	}
+
+	public void setSendEvent(long sendEvent) {
+		this.sendEvent = sendEvent;
+	}
+
+	public double getSendEventUnit() {
+		return sendEventUnit;
+	}
+
+	public void setSendEventUnit(double sendEventUnit) {
+		this.sendEventUnit = sendEventUnit;
+	}
+
+	public double getProcessEvent() {
+		return processEvent;
+	}
+
+	public void setProcessEvent(double processEvent) {
+		this.processEvent = processEvent;
+	}
+
+	public long getQueueEvent() {
+		return queueEvent;
+	}
+
+	public void setQueueEvent(long queueEvent) {
+		this.queueEvent = queueEvent;
+	}
+
+	public Queue<Double> getHistory() {
+		return history;
+	}
+
+	public void setHistory(Queue<Double> history) {
+		this.history = history;
+	}
+
+	public Class<? extends ProcessingElement> getPE() {
+		return pe;
+	}
+
+	public void setPE(Class<? extends ProcessingElement> pe) {
+		this.pe = pe;
+	}
+
+	public int getReplication() {
+		return replication;
+	}
+
+	public void setReplication(int replication) {
+		this.replication = replication;
+	}
+
+	public Queue<Integer> getMarkMap() {
+		return markMap;
+	}
+
+	public void setMarkMap(Queue<Integer> markMap) {
+		this.markMap = markMap;
+	}
+
+	public long getEventCount() {
+		return eventCount;
+	}
+
+	public void setEventCount(long eventCount) {
+		this.eventCount = eventCount;
+	}
+
+	@Override
+	public String toString() {
+		return "[PE : " + pe.toString() + " | Recibe: " + recibeEvent
+				+ " | Send: " + sendEvent + " | Replication: " + replication
+				+ "]";
+	}
+
+}
+
+\end{lstlisting}
+
+En el Código \ref{lst:topologyApp} se muestra la clase que almacena una arista con sus respectivos vértices del grafo, de esta manera, se posee un mapa del grafo, siendo utilizado para saber la topología que utilizó el usuario en el grafo. De esta manera, se puede tratar la replicación por parte de un operador a otro, viendo los distintos cambios que surgen en la topología del grafo.
+
+\begin{lstlisting}[caption={Clase TopologyApp, el cual contiene las topología del grafo diseñado por el usuario.},label={lst:topologyApp},language=Java]
+public class TopologyApp {
+	private Class<? extends AdapterApp> adapter;
+	private Class<? extends ProcessingElement> peSend;
+	private Class<? extends ProcessingElement> peRecibe;
+	private long eventSend;
+
+	public TopologyApp() {
+		adapter = null;
+		peSend = null;
+		peRecibe = null;
+		eventSend = 0;
+	}
+
+	public Class<? extends AdapterApp> getAdapter() {
+		return adapter;
+	}
+
+	public void setAdapter(Class<? extends AdapterApp> adapter) {
+		this.adapter = adapter;
+	}
+
+	public Class<? extends ProcessingElement> getPeSend() {
+		return peSend;
+	}
+
+	public void setPeSend(Class<? extends ProcessingElement> peSend) {
+		this.peSend = peSend;
+	}
+
+	public Class<? extends ProcessingElement> getPeRecibe() {
+		return peRecibe;
+	}
+
+	public void setPeRecibe(Class<? extends ProcessingElement> peRecibe) {
+		this.peRecibe = peRecibe;
+	}
+
+	public long getEventSend() {
+		return eventSend;
+	}
+
+	public void setEventSend(long eventSend) {
+		this.eventSend = eventSend;
+	}
+
+	@Override
+	public String toString() {
+		return this.adapter == null ? "[PE Send: " + peSend.toString() + " | PE Recibe: "
+				+ peRecibe.toString() + " | Event: " + eventSend + "]" : "[Adapter: " + adapter.toString() + " | PE Recibe: "
+						+ peRecibe.toString() + " | Event: " + eventSend + "]";
+	}
+}
+\end{lstlisting}

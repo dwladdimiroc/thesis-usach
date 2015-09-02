@@ -1,9 +1,9 @@
 \select@language {spanish}
-\contentsline {chapter}{\IeC {\'I}ndice de tablas}{ix}{chapter*.2}
-\contentsline {chapter}{\IeC {\'I}ndice de ilustraciones}{xi}{chapter*.3}
-\contentsline {chapter}{\IeC {\'I}ndice de Algoritmos}{xvii}{chapter*.4}
-\contentsline {chapter}{Resumen}{xix}{chapter*.5}
-\contentsline {chapter}{Abstract}{xxi}{chapter*.6}
+\contentsline {chapter}{\IeC {\'I}ndice de tablas}{xi}{chapter*.3}
+\contentsline {chapter}{\IeC {\'I}ndice de ilustraciones}{xvii}{chapter*.4}
+\contentsline {chapter}{\IeC {\'I}ndice de algoritmos}{xix}{chapter*.5}
+\contentsline {chapter}{Resumen}{xxi}{chapter*.6}
+\contentsline {chapter}{Abstract}{xxiii}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Antecedentes y motivaci\IeC {\'o}n}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Descripci\IeC {\'o}n del problema}{4}{section.1.2}
@@ -42,10 +42,10 @@
 \contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{35}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}Dise\~no del sistema de distribuci\IeC {\'o}n de carga}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis del sistema de distribuci\IeC {\'o}n de carga}{39}{section.4.1}
-\contentsline {paragraph}{Monitor de carga:}{42}{figure.caption.22}
-\contentsline {paragraph}{Analizador de carga:}{42}{figure.caption.22}
-\contentsline {paragraph}{Predictor de carga:}{43}{figure.caption.22}
-\contentsline {paragraph}{Administrador de r\IeC {\'e}plicas:}{43}{figure.caption.22}
+\contentsline {paragraph}{Monitor de carga:}{42}{figure.caption.23}
+\contentsline {paragraph}{Analizador de carga:}{42}{figure.caption.23}
+\contentsline {paragraph}{Predictor de carga:}{43}{figure.caption.23}
+\contentsline {paragraph}{Administrador de r\IeC {\'e}plicas:}{43}{figure.caption.23}
 \contentsline {section}{\numberline {4.2}Recolecci\IeC {\'o}n de los datos}{44}{section.4.2}
 \contentsline {section}{\numberline {4.3}Algoritmo reactivo}{45}{section.4.3}
 \contentsline {section}{\numberline {4.4}Algoritmo predictivo}{46}{section.4.4}
@@ -71,8 +71,8 @@
 \contentsline {section}{\numberline {6.1}Detalles de la contribuci\IeC {\'o}n}{93}{section.6.1}
 \contentsline {section}{\numberline {6.2}Discusiones}{94}{section.6.2}
 \contentsline {section}{\numberline {6.3}Trabajo futuro}{96}{section.6.3}
-\contentsline {chapter}{Referencias}{99}{chapter*.73}
-\contentsline {chapter}{Anexos}{104}{section*.74}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{104}{chapter*.74}
+\contentsline {chapter}{Anexos}{104}{section*.75}
 \contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{105}{appendix.Alph1}
 \contentsline {chapter}{\numberline {B}Clases para la implementaci\IeC {\'o}n del sistema de monitoreo}{107}{appendix.Alph2}
 \contentsline {chapter}{\numberline {C}Modificaciones al c\IeC {\'o}digo fuente de S4}{113}{appendix.Alph3}

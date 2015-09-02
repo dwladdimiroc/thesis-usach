@@ -1,9 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
-% Estilo original para tesis de Victor Munoz
-% Agradecimiento por aportes a:
-% Rodrigo Campos
-% Hugo Meneses
-\ProvidesClass{tesis-postgrado}[2015/03/01 v1.3 Estilo para tesis (Víctor Flores)]
+\ProvidesClass{tesis-postgrado}[2015/08/31 Template Thesis USACH]
+
+% Agradecimiento a todos los que ayudaron a realizar este template versión estandarizada de la Universidad de Santiago de Chile, entre ellos Emir Muñoz, Rodrigo Campos, Hugo Meneses, Víctor Flores, Pablo González y Daniel Wladdimiro :)
+
 \newif\ifkeys\keysfalse
 \newif\iftxfonts\txfontsfalse
 \newif\ifdosguias\dosguiasfalse
@@ -22,162 +21,131 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 
+% Letra tamaño 10pt, hoja carta y formato de dos planas
+\LoadClass[10pt,twoside,letterpaper]{book}
 
-%SI SE UTILIZA LETRA ARIAL, CAMBIAR ESTO
-\renewcommand{\rmdefault}{phv} % Arial
-\renewcommand{\sfdefault}{phv} % Arial
+% Letra Arial
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
 
-%Load book using normal font size to 10pt
-\LoadClass[10pt,twoside,letterpaper]{book} %Cambiar oneside o twoside si se desea impresión por ambos lados
-
-%% Cambio el interlineado a 1.5:
+% Interlineado de 1.5:
 \renewcommand{\baselinestretch}{1.5}
 
+% #### Init file 'tesis-postgrado.cls' ####
 
-%%   Modificado desde `book.cls'.
-%%
-%%   Modificado para que 
-%%   1) El default sea `oneside,10pt'
-%%   2) Los nombres de secciones aparezcan en castellano
-%%   3) La fecha aparezca en castellano
-%%   4) Bibliografia aparezca bien acentuada en heading
-%%   5) Los headings contengan el numero de pagina y capitulo.
-%%   6) Los margenes sean: Superior = 4cm, Inferior = 2.5cm, Izquierdo = 4cm, Derecho = 2,5cm.
-%%   7) El argumento opcional de \chapter vaya a Indice.
-%%   8) Las Referencias aparezcan en Indice.
-%%   9) Indice General -> Indice
-%%   
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% tesis.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%--------Archivos suplementarios
+% Archivos suplementarios
 \RequirePackage[spanish]{babel}
-\RequirePackage[utf8x]{inputenc}
-% \RequirePackage[latin1]{inputenc}
-% \RequirePackage[T1]{fontenc}
-% \RequirePackage{lmodern}
+\RequirePackage[utf8]{inputenc}
 \ifkeys\RequirePackage[notref,notcite]{showkeys}\fi
-%--------Configuracion de header y footer
+
+% Configuración de header y footer
 \RequirePackage{fancybox}
 \RequirePackage{fancyhdr}
 \RequirePackage{float}
-%--------Simbolos y fuentes
-\RequirePackage{amstext}
-\RequirePackage{amssymb,latexsym}
+
+% Símbolos y fuentes
 \RequirePackage{amsfonts}
-\RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
-\RequirePackage{units}
+\RequirePackage{amssymb,latexsym}
+\RequirePackage{amstext}
 \RequirePackage{amsthm}
 \RequirePackage{marvosym}
-\RequirePackage{textcomp}
 \RequirePackage{mathcomp}
-\RequirePackage{marvosym} %Simbolos de caritas
-\RequirePackage{upgreek}
 \RequirePackage{setspace}
+\RequirePackage{stmaryrd}
+\RequirePackage{textcomp}
+\RequirePackage{units}
+\RequirePackage{upgreek}
+
 \iftxfonts\RequirePackage{txfonts}\fi
-%-------Entornos, figuras
+
+% Entornos y figuras
 \RequirePackage{verbatim}
 \RequirePackage{fancyvrb}
 \RequirePackage{enumerate}
-%-------Imagenes GNU Plot
+
+% Imágenes y comandos para figuras de GNUPlot
 \RequirePackage{graphicx}
 \RequirePackage{epsf}
 \RequirePackage{psfrag}
-\RequirePackage{epic,eepic} % para imagenes
-%\RequirePackage{subfigure}
+\RequirePackage{epic,eepic}
 \usepackage{subfig}
 \usepackage[titles,subfigure]{tocloft}
 \usepackage{color}
-%\usepackage{subcaption}
-%\RequirePackage{color}
-%-------Referencias
+
+% Referencias
 \RequirePackage{hyperref}
-\RequirePackage{url} %citacion de URL
 \RequirePackage[all]{hypcap}
-%--------Tablas
-%\RequirePackage{colortbl} % Darle color a las tablas
-\RequirePackage{multirow} % Multiples filas en Tablas
+\RequirePackage{url}
+
+% Tablas
+\RequirePackage{multirow}	% Multiples filas en Tablas
 \RequirePackage{array}
 \RequirePackage{caption}
 \captionsetup[table]{position=top,belowskip=4pt,aboveskip=4pt}
-\RequirePackage{longtable} % Para cortar tablas grandes
+\RequirePackage{longtable}	% Para cortar tablas grandes
 \RequirePackage{lscape}
-%--------Apendice y tabla de contenidos
+
+% Anexos
 \RequirePackage{appendix}
-\RequirePackage[nottoc]{tocbibind}
+
+% Tabla de contenidos
+\RequirePackage[nottoc,notlot,notlof,notbib]{tocbibind}
+
 %--------Algoritmos
 \RequirePackage[ruled,algochapter,linesnumbered]{algorithm2e}
-\renewcommand{\algorithmcfname}{Algoritmo}%
+\renewcommand{\algorithmcfname}{Algoritmo}
 \RequirePackage{algorithmic}
 \setlength{\algomargin}{1.5em}
 \renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
 \renewcommand{\algorithmicensure}{\textbf{Salida:}}
 \renewcommand{\algorithmiccomment}[1]{//#1}
-%--------Configuracion indice de algoritmos
-\renewcommand{\listofalgorithms}{
-    \begingroup
-    \tocfile{Índice de Algoritmos}{loa}
-    \endgroup
-}
-%--------Package para la numeracion
-% by Emir
-\RequirePackage{thesis_em}
-%--------Listing de código
+
+% Enumeración de cada figura y algoritmo
+\RequirePackage{tesis-enumeracion}
+
+% Listing de código
 \RequirePackage{listings} % For insert code in the paper
 \lstset{ 
-%    language=[Visual]C++,
     frame=Ltb,
     framerule=0pt,
-    aboveskip=0.2cm,%0.5cm
-    framextopmargin=1pt, %3pt
-    framexbottommargin=1pt, %4pt
+    aboveskip=0.2cm,			%0.5cm
+    framextopmargin=1pt,		%3pt
+    framexbottommargin=1pt,	%4pt
     framexleftmargin=0cm,
     framesep=0pt,
     rulesep=.4pt,
     backgroundcolor=\color{gray97},
     rulesepcolor=\color{black},
-    %
     stringstyle=\ttfamily,
     showstringspaces=false,
-    basicstyle=\scriptsize\ttfamily, %\small \scriptsize
+    basicstyle=\scriptsize\ttfamily,	%\small \scriptsize
     commentstyle=\color{gray45},
     keywordstyle=\bfseries,
-    %
     numbers=left,
-    numbersep=4pt,%15pt
+    numbersep=4pt,			%15pt
     numberstyle=\tiny,
     numberfirstline=false,
     breaklines=true,
-    %
     tabsize=4,
     upquote=true,
     extendedchars=true,
     morecomment=[s]{/**\<}{*/},
     morecomment=[s]{/*}{*/},
-%    morekeywords={¿,?},
 }
 
-%Soporte para tablas con color
-\usepackage[table,xcdraw]{xcolor}
-
-\usepackage{color}
-\definecolor{gray97}{gray}{.97}
-\definecolor{gray75}{gray}{.75}
-\definecolor{gray45}{gray}{.45}
-% minimizar fragmentado de listados
+% Minimizar fragmentado de listados
 \lstnewenvironment{listing}[1][]
     {\lstset{#1}\pagebreak[0]}
     {\pagebreak[0]}
-\lstloadlanguages
-{
-    Java
-}
 
-\definecolor{javared}{rgb}{0.6,0,0} % for strings
-\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
-\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
-\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+% Estilo para código Java    
+\lstloadlanguages{Java}
+
+\definecolor{javared}{rgb}{0.6,0,0}				% For strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35}		% Comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35}		% Keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}	% Javadoc
 
 \lstset{
 	language=Java,
@@ -196,58 +164,58 @@
 	showstringspaces=false
 }
 
-%\lstdefinestyle{consola}
-%{
-%    basicstyle=\scriptsize\bf\ttfamily,
-%    backgroundcolor=\color{gray75},
-%}
+% Soporte para tablas con color
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{color}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
 
-%--------Bibliografia
-%\RequirePackage{apacite}
+% Bibliografia
 \RequirePackage{natbib}
-\RequirePackage{tocbibind} % Agregar referencias al índice
 \RequirePackage[fixlanguage]{babelbib}
 \selectbiblanguage{spanish}
 \bibpunct{(}{)}{;}{}{,}{,}
-\setcounter{secnumdepth}{3} %Mostrar numeración en las subsubsecciones
-\setcounter{tocdepth}{3} %Mostrar las subsubsecciones en el índice
-%--------Teoremas, definiciones, ejemplos, lemas, etc
-\newtheoremstyle{teorema}{\topsep}{\topsep}%
-    {\normalfont} % Body font
-    {} % Indent amount (empty = no indent, \parindent = para indent)
-    {\bfseries} % Theorem head font
-    {} % Punctuation after theorem head
-    { } % Space after theorem head (\newline = linebreak)
+\setcounter{secnumdepth}{3}	%Mostrar numeración en las subsubsecciones
+\setcounter{tocdepth}{3}		%Mostrar las subsubsecciones en el índice
+
+% Teoremas, definiciones, ejemplos y lemas
+\newtheoremstyle{teorema}{\topsep}{\topsep}
+    {\normalfont}	% Body font
+    {}				% Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries}		% Theorem head font
+    {}				% Punctuation after theorem head
+    { }				% Space after theorem head (\newline = linebreak)
     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}} % Thm head spec
 \theoremstyle{teorema}
 \newtheorem{teorema}{Teorema}[chapter]
 
-\newtheoremstyle{ejemplo}{\topsep}{\topsep}%
-    {\normalfont} % Body font
-    {} % Indent amount (empty = no indent, \parindent = para indent)
-    {\bfseries} % Theorem head font
-    {} % Punctuation after theorem head
-    { } % Space after theorem head (\newline = linebreak)
+\newtheoremstyle{ejemplo}{\topsep}{\topsep}
+    {\normalfont}	% Body font
+    {}				% Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries}		% Theorem head font
+    {}				% Punctuation after theorem head
+    { }				% Space after theorem head (\newline = linebreak)
     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}} % Thm head spec
 \theoremstyle{ejemplo}
 \newtheorem{ejemplo}{Caso}[chapter]%Ejemplo
 
 \newtheoremstyle{definicion}{\topsep}{\topsep}%
-    {\normalfont} % Body font
-    {} % Indent amount (empty = no indent, \parindent = para indent)
-    {\bfseries} % Theorem head font
-    {} % Punctuation after theorem head
-    { } % Space after theorem head (\newline = linebreak)
+    {\normalfont}	% Body font
+    {}				% Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries}		% Theorem head font
+    {}				% Punctuation after theorem head
+    { }				% Space after theorem head (\newline = linebreak)
     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}} % Thm head spec
 \theoremstyle{definicion}
 \newtheorem{definicion}{Definici\'on}[chapter]
 
 \newtheoremstyle{lema}{\topsep}{\topsep}%
-    {\normalfont} % Body font
-    {} % Indent amount (empty = no indent, \parindent = para indent)
-    {\bfseries} % Theorem head font
-    {} % Punctuation after theorem head
-    { } % Space after theorem head (\newline = linebreak)
+    {\normalfont}	% Body font
+    {}				% Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries}		% Theorem head font
+    {}				% Punctuation after theorem head
+    { }				% Space after theorem head (\newline = linebreak)
     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}} % Thm head spec
 \theoremstyle{lema}
 \newtheorem{lema}{Lema}[chapter]
@@ -267,20 +235,18 @@
 }
 
 
-%================================================================
 % Notaciones Generales
-%================================================================
 \newcommand{\textrev}[1]{\textbf{#1}}
 \newcommand{\emphrule}[1]{\emph{#1}}
 \newcommand{\normlen}[1]{\ensuremath{\left |#1\right |}}
-%----------------------------------------------------------------
+
 \newcommand\ie{i.e.\@\xspace}
 \newcommand\eg{e.g.\@\xspace}
 \newcommand\cf{cf.\@\xspace}
 \newcommand\ds{\slash\hspace*{-.6ex}\slash}
 \newcommand{\bra}[1]{[\hspace{-.4ex}[#1]\hspace{-.4ex}]}
-%----------------------------------------------------------------
-% Notaciones para mi tesis
+
+% Notaciones específicas
 \newcommand{\keyclass}[4][*]{\ensuremath{\mathcal{K}^{\scriptscriptstyle#2}_{\scriptscriptstyle #3,#4^{#1}}}}
 \newcommand{\keyclassl}[4][+]{\ensuremath{\mathcal{K}(PL^{\{#2\}}, PL^{\{#3\}}, PL^{\{#4\}}_{#1})}}
 \newcommand{\labels}{\ensuremath{\mathcal L}}
@@ -291,70 +257,58 @@
 \newcommand{\dipath}{\ensuremath{D}}
 \newcommand{\pin}{\ensuremath{\lesssim}}
 \newcommand{\pathexp}[2]{\ensuremath{#1}\textlbrackdbl\ensuremath{{#2}}\textrbrackdbl}
-%================================================================
+
 % Definición del estilo del header y footer
-%================================================================
 \lhead{\chaptername \thechapter. \chaptermark}
 \chead{}
-\if@twoside
-    \fancyfoot[LE,RO]{\thepage} %Numeración al lado derecho de la página en páginas del lado derecho (ajustado para twoside)
-\else
-    \fancyfoot[R]{\thepage} 
-\fi
-%Si se usa oneside, comentar la linea anterior y descomentar la siguiente linea:
-%\fancyfoot[R]{\thepage} 
-%BORRAR LAS 2 LINEAS ANTERIORES
+    \fancyfoot[LE,RO]{\thepage}
 \cfoot{}
 
 %Hace que la primera página de cada capítulo no tenga el header por defecto y que en el footer el N° de página no esté al centro
-\fancypagestyle{plain}{%
-    \fancyhf{} % clear all header and footer fields
-    \if@twoside
-        \fancyfoot[LE,RO]{\thepage}
-    \else
-        \fancyfoot[R]{\thepage} 
-    \fi
+\fancypagestyle{plain}{
+    \fancyhf{}	% Clear all header and footer fields
+	\fancyfoot[LE,RO]{\thepage}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
 
 % Cambios al default de spanish
-\deactivatetilden
-\decimalpoint
+%\deactivatetilden
+%\decimalpoint
 
 % Headings
 \markboth{}{}
 
-% Renombre de los titulos por defecto
-\addto\captionsspanish
-{
-    \def\bibname{Referencias}
-    \def\contentsname{\hfill\bfseries\Large Tabla de contenido \hfill}
-    \def\listtablename{Índice de tablas}
-    \def\listfigurename{Índice de ilustraciones}
-    \def\listalgorithmname{Índice de algoritmos}
-    \def\appendixname{Anexo}
-    \def\tablename{Tabla}
-    \def\figurename{Figura}
-    \def\lstlistingname{Código}
-    \def\chaptername{Capítulo}
-}
+% Renombre de los títulos por defecto
+\renewcommand\captionsspanish{}
 
-\renewcommand{\appendixname}{Anexos}
+\renewcommand{\contentsname}{\centerline{Tabla de contenido}}
+\renewcommand{\listtablename}{\centerline{Índice de tablas}}
+\renewcommand{\listfigurename}{\centerline{Índice de ilustraciones}}
+\renewcommand{\listalgorithmcfname}{\centerline{Índice de algoritmos}}
+
+\renewcommand{\bibname}{\centerline{Bibliografía}}
+
+\renewcommand{\appendixname}{Anexo}
 \renewcommand{\appendixtocname}{Anexos}
-\renewcommand{\appendixpagename}{Anexos}
-%--------Header de los capitulos
-% by Emir
+\renewcommand{\appendixpagename}{Anexo}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\chaptername}{Capítulo}
+
+% Header de los capítulos
 \usepackage[compact]{titlesec}
 \titleformat{\chapter}
-{\bfseries\Large\vspace*{-4.0cm}} %Formato título
-{ % Contenido de la etiqueta
+{\bfseries\Large\vspace*{-4.0cm}}	% Formato título
+{	% Contenido de la etiqueta
     \filright
     \Large\MakeUppercase\chaptertitlename\ \thechapter.\ 
-} %Contenido de la etiqueta
-{0pt} % espacio mínimo entre etiqueta y cuerpo
-{\filright\MakeUppercase} %código que precede al cuerpo del título
-[\vspace{1.5pt}] %1,5
+}
+{0pt} % Espacio mínimo entre etiqueta y cuerpo
+{\filright\MakeUppercase} % Código que precede al cuerpo del título
+[\vspace{1.5pt}] % Margen de 1.5pt
 
 \titleformat{\section}
 {\bfseries\large\vspace{2pt}}
@@ -382,65 +336,62 @@
 \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
 
-%Se agrega la palabra 'Figura' al índice de figuras
-\usepackage{tocloft}
-\renewcommand{\cftfigfont}{Figura }
-%Espacio entre los números y el caption de la Figura
+% Se agrega la palabra 'Figura' al índice de figuras
+\renewcommand{\cftfigfont}{Figura~}
+% Espacio entre los números y el caption de la Figura
 \setlength{\cftfignumwidth}{2.75em}
 
-%Lo mismo para el índice de tablas
-\renewcommand{\cfttabfont}{Tabla }
-%Espacio entre los números y el caption de la Tabla
+% Lo mismo para el índice de tablas
+\renewcommand{\cfttabfont}{Tabla~}
+% Espacio entre los números y el caption de la Tabla
 \setlength{\cfttabnumwidth}{2em}
 
 
-%--------Margenes segun reglamento: izq=4cm y inf=der=sup=2.5cm
+% Margenes según el reglamento en tamaño carta
 \RequirePackage[headheight=14pt, letterpaper]{geometry}
-% Márgenes en los bordes para tamaño carta
 \geometry{top=2.5cm, bottom=2.5cm, left=4cm, right=2.5cm}
-%--------Otros margenes
-\setlength{\parindent}{2cm}%2cm Tabulación
-\setlength{\headsep}{20pt} %20
+
+% Otro tipo de márgenes
+\setlength{\parindent}{2cm}	%2cm Tabulación
+\setlength{\headsep}{20pt}	%20
 \setlength{\voffset}{0.0cm}
 \setlength{\hoffset}{0.0cm}
-\setlength{\footskip}{20pt} %20
-%--------Evitar que corte las palabras al final
-% by Emir
+\setlength{\footskip}{20pt}	%20
+
+% Evitar que corte las palabras al final
 \setlength{\pretolerance}{2000}
 \setlength{\tolerance}{3000}
-%--------pagina en blanco
+
+% Página en blanco
 \newcommand{\paginaenblanco}{\newpage{\pagestyle{empty}\cleardoublepage\null}}
-%--------Referenciacion en la forma: 1-5
+
+% Referenciacion en la forma: 1-5
 \newcommand{\lref}[2]{\ref{#1}--\ref{#2}}
-%--------Referenciacion en la forma:  (1)
+% Referenciacion en la forma:  (1)
 \newcommand{\cref}[1]{(\ref{#1})}
-%--------Referenciacion en la forma:  (1)-(5)
+% Referenciacion en la forma:  (1)-(5)
 \newcommand{\clref}[2]{(\ref{#1})--(\ref{#2})}
-%--------Otras referencias
+% Otras referencias
 \newcommand{\Ref}[1]{Ref.\ \cite{#1}}
 \newcommand{\dRef}[2]{Refs.\ \cite{#1},\cite{#2}}
-%================================================================
-% Comandos matematicos
-%================================================================
-% Parte real e imaginaria
-\newcommand{\Real}{\mbox{Re }}
-\newcommand{\Imag}{\mbox{Im }}
-% Mayor/menor o igual y aproximado
-\newfont{\msamfnt}{msam10}
+
+% Comandos Matemáticos
+\newcommand{\Real}{\mbox{Re }}	% Parte real
+\newcommand{\Imag}{\mbox{Im }}	% Parte imaginiaria
+\newfont{\msamfnt}{msam10} % Mayor/menor o igual y aproximado
 \newcommand{\msam}[1]{\mbox{ \msamfnt #1}\ }
 \newcommand{\simgeq}{\msam \&}
 \newcommand{\simleq}{\msam .}
-%--------Abreviaciones
+
+% Abreviaciones
 \newcommand{\Capt}[1]{Cap.\ \ref{#1}}
 \newcommand{\Fig}[1]{Fig.\ \ref{#1}}
 \newcommand{\Sec}[1]{Sec.\ \ref{#1}}
-%--------Otros
+
+% Comando de espaciado
 \newcommand{\salto}{\vspace{.5cm}}
 
-%================================================================
-% Caratula y Portada
-%================================================================
-%--------Comandos
+% Carátula y Portada
 \def\@title{} \def\@autor{} \def\@fecha{} \def\@profesorguia{} \def\@profesorcoguia{} \def\@nombreuno{} \def\@nombredos{} \def\@nombretres{}
 \def\@ciudad{} \def\@pais{} \def\@run{} \def\@telefono{} \def\@email{} \def\@annoingreso{}
 \newcommand{\keywords}[1]{\def\keywords{#1}}
@@ -464,7 +415,8 @@
 \def\telefono#1{\gdef\@telefono{#1}}
 \def\email#1{\gdef\@email{#1}}
 \def\annoingreso#1{\gdef\@annoingreso{#1}}
-%--------Información del documento PDF
+
+% Información del documento PDF
 \hypersetup
 {
     bookmarksopen, bookmarksnumbered, pdfdisplaydoctitle=true,
@@ -473,12 +425,8 @@
     pdfsubject=Tesis de grado,
     pdfkeywords=,
     pdfcreator=Universidad de Santiago de Chile,
-    pdfproducer=Emir Mu\~noz and Víctor Flores,
+    pdfproducer=Departamento de Ingenier\'ia Inform\'atica,
     colorlinks=true,
-    % linkcolor=red,
-    % citecolor=green,
-    % filecolor=magenta,
-    % urlcolor=cyan,
     linkcolor=black,
     citecolor=black,
     filecolor=black,
@@ -502,8 +450,7 @@
        \savebox{\GradoOtorgadoTapa}{\large Magíster en Ingeniería Informática} %\large
 \fi
 
-%-------Cubierta
-% by Emir
+% Cubierta
 \newcommand{\makecubierta}
 {
 \iflogo
@@ -523,7 +470,7 @@
     {\bf \fontsize{12}{18}\selectfont Departamento de Ingeniería Informática}\\
 \end{center}
 
-\ifpropuesta % si se trata de la propuesta
+\ifpropuesta		% Si se trata de la propuesta
     \vspace*{5cm}
     \@titleMay\par
     \vspace{1cm}
@@ -559,7 +506,7 @@
         \vspace{1.5cm}
         \@diasemana, \@diaexamen\ de \@mesexamen\ de \@annoexamen
     \end{center}
-\else % si se trata del documento final
+\else	% Si se trata del documento final
     \vspace*{4cm}
     \@titleMay\par
     \vspace{1cm}
@@ -572,7 +519,6 @@
             {\bf \fontsize{10}{12} \selectfont{\@autor}}\\[1.5cm]
         \fi
 
-        %Datos profesor(es)
         \vspace*{3cm}
         \begin{flushleft}
         \normalsize
@@ -606,85 +552,70 @@
 	\fi
     
 \fi
-} %\\end \makecubierta
+} % End \makecubierta
 
 
 
-%-------Copyright
-% by Emir
+% Copyright
 \newcommand{\makecopyright}
 {
     \ifpropuesta
         % no va copyright
     \else
-        %\thispagestyle{empty}
         \null
-	\vfill\par
+		\vfill\par
         \begin{flushleft}
-    
-    		
-    		\copyright\ 
-            \@autor \; - \@annoexamen \\ 
-            \includegraphics[height=12pt]{images/licences/cc_by.png}
-				~$\bullet$~~ Algunos derechos reservados. Esta obra está bajo una Licencia Creative Commons Atribución-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.
-    
-    
+			\copyright\ 
+			\@autor \; - \@annoexamen \\ 
+			\includegraphics[height=12pt]{images/licences/cc_by.png}
+				~$\bullet$~~ Algunos derechos reservados. Esta obra está bajo una Licencia Creative Commons Atribución-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.      
         \end{flushleft}
     \fi
 }
-%------Página de dedicatoria
+
+% Dedicatoria
 \newenvironment{dedicatoria}[1]
 {
-    %\thispagestyle{empty}
     \vspace*{17cm}\par
     \hspace*{5cm}
     \begin{flushright}
     \textit{#1}
     \end{flushright}
 }{}
-%------Página de agradecimientos
+
+% Agradecimientos
 \newenvironment{agradecimiento}
 {
-    %\thispagestyle{empty}
-    \begin{center}
-        {\Large\bf AGRADECIMIENTOS}
-    \end{center}
+    \chapter*{\centerline{AGRADECIMIENTOS}}
 }{}
-%------Página de resumen (castellano)
+
+% Resumen
 \newcommand{\KeywordsES}[1]
 {
-    %\thispagestyle{empty}
     \par\noindent
     {\bf Palabras Claves\/}: #1
 }
 \newcommand{\resumenCastellano}[1]
 {
-    %\thispagestyle{empty}
-    %\begin{center}
-    %    {\Large\bf RESUMEN}
-    %\end{center}
     \chapter*{\centerline{Resumen}}
     \addcontentsline{toc}{chapter}{Resumen}
 #1
 }
-%------Página de abstract (ingles)
+
+% Abstract
 \newcommand{\KeywordsEN}[1]
 {
-    %\thispagestyle{empty}
     \par\noindent
     {\bf Keywords\/}: #1
 }
 \newcommand{\resumenIngles}[1]
 {
-    %\begin{center}
-    %    {\Large\bf ABSTRACT}
-    %\end{center}
     \chapter*{\centerline{Abstract}}
     \addcontentsline{toc}{chapter}{Abstract}
 #1
 }
-%------Página de glosario
-% by Hugo Meneses
+
+% Glosario
 \newenvironment{glosario}
 {
     \begin{center}
@@ -693,5 +624,5 @@
 }{}
 
 \endinput
-%% 
-%% End of file `tesis.cls'.
+
+% #### End file 'tesis-postgrado.cls' ####
