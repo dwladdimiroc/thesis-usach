@@ -6,17 +6,10 @@
 \newif\ifkeys\keysfalse
 \newif\iftxfonts\txfontsfalse
 \newif\ifdosguias\dosguiasfalse
-\newif\iflogo\logofalse
 \newif\ifpropuesta\propuestafalse
-\newif\ifdoctorado\doctoradofalse
-\newif\ifmagister\magisterfalse
 \DeclareOption{keys}{\keystrue}
-\DeclareOption{doctorado}{\doctoradotrue}
-\DeclareOption{magister}{\magistertrue}
 \DeclareOption{txfonts}{\txfontstrue}
 \DeclareOption{dosguias}{\dosguiastrue}
-\DeclareOption{logo}{\logotrue}
-\DeclareOption{nologo}{\logofalse}
 \DeclareOption{propuesta}{\propuestatrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -287,7 +280,7 @@
 \renewcommand{\listfigurename}{\centerline{Índice de ilustraciones}}
 \renewcommand{\listalgorithmcfname}{\centerline{Índice de algoritmos}}
 
-\renewcommand{\bibname}{\centerline{Bibliografía}}
+\renewcommand{\bibname}{Bibliografía}
 
 \renewcommand{\appendixname}{Anexo}
 \renewcommand{\appendixtocname}{Anexos}
@@ -392,9 +385,13 @@
 \newcommand{\salto}{\vspace{.5cm}}
 
 % Carátula y Portada
+\def\@facultad{} \def\@departamento \def\@grado
 \def\@title{} \def\@autor{} \def\@fecha{} \def\@profesorguia{} \def\@profesorcoguia{} \def\@nombreuno{} \def\@nombredos{} \def\@nombretres{}
 \def\@ciudad{} \def\@pais{} \def\@run{} \def\@telefono{} \def\@email{} \def\@annoingreso{}
 \newcommand{\keywords}[1]{\def\keywords{#1}}
+\def\facultad#1{\gdef\@facultad{#1}}
+\def\departamento#1{\gdef\@departamento{#1}}
+\def\grado#1{\gdef\@grado{#1}}
 \def\titulo#1{\gdef\@title{\begin{center}{\LARGE\bf#1}%
 \end{center}}\gdef\@titleMay{\begin{center}{\fontsize{12}{18} \selectfont \bf#1}%
 \end{center}}}
@@ -435,30 +432,13 @@
     citebordercolor={0 1 0}
 }
 
-\newsavebox{\GradoTesis}
-\newsavebox{\Gradotesis}
-\newsavebox{\GradoOtorgado}
-\newsavebox{\GradoOtorgadoTapa}
-
-\ifdoctorado\savebox{\GradoTesis}{DOCTORADO}
-            \savebox{\Gradotesis}{Doctorado}
-            \savebox{\GradoOtorgado}{Doctor en Ciencias de la Computaci\'on}
-            \savebox{\GradoOtorgadoTapa}{\large Doctor en Ciencias de la Computaci\'on}
-\else\savebox{\GradoTesis}{MAGÍSTER}
-       \savebox{\Gradotesis}{Magíster}
-       \savebox{\GradoOtorgado}{Magíster en Ingeniería Informática}
-       \savebox{\GradoOtorgadoTapa}{\large Magíster en Ingeniería Informática} %\large
-\fi
-
 % Cubierta
 \newcommand{\makecubierta}
 {
-\iflogo
-    \vspace*{-1.0cm}
-    \begin{picture}(18,4)(0,40)
-        \put(340,-7){\includegraphics[scale=.25]{./images/LogoUsach2.png}}
-    \end{picture}
-\fi
+\vspace*{-1.0cm}
+\begin{picture}(18,4)(0,40)
+	\put(340,-7){\includegraphics[scale=.25]{./images/LogoUsach.png}}
+\end{picture}
 
 \sloppy
 \thispagestyle{empty}
@@ -466,8 +446,8 @@
 
 \begin{center}
     {\bf \fontsize{14}{21}\selectfont UNIVERSIDAD DE SANTIAGO DE CHILE}\\
-    {\bf \fontsize{12}{18}\selectfont FACULTAD DE INGENIERÍA}\\
-    {\bf \fontsize{12}{18}\selectfont Departamento de Ingeniería Informática}\\
+    {\bf \fontsize{12}{18}\selectfont FACULTAD DE \MakeUppercase{\@facultad}}\\
+    {\bf \fontsize{12}{18}\selectfont Departamento de \@departamento}\\
 \end{center}
 
 \ifpropuesta		% Si se trata de la propuesta
@@ -476,12 +456,6 @@
     \vspace{1cm}
     \begin{center}
     \large
-    \ifdoctorado
-        Propuesta de Trabajo de Título para Doctor en Ingeniería Informática
-    \fi
-    \ifmagister
-        Propuesta de Trabajo de Título para Magíster en Ingeniería Informática
-    \fi
     \end{center}
     \vspace{2.5cm}
     \begin{flushright}
@@ -513,11 +487,7 @@
     \large
         \begin{center}
         \vspace*{2cm}
-        \iflogo
-            {\bf \fontsize{10}{12} \selectfont{\@autor}}\\[1cm]
-        \else
-            {\bf \fontsize{10}{12} \selectfont{\@autor}}\\[1.5cm]
-        \fi
+		{\bf \fontsize{10}{12} \selectfont{\@autor}}\\[1cm]
 
         \vspace*{3cm}
         \begin{flushleft}
@@ -527,16 +497,10 @@
             \hspace{7cm} Profesora co-guía: \fontsize{10}{12} \selectfont{\@profesorcoguia}\\
         \fi
         \vspace{1cm}
-        \hspace{7cm} Tesis de grado presentada en\\
-        \hspace{7cm} conformidad a los requisitos para\\
-        \ifdoctorado
-            \hspace{7cm} obtener el grado de Doctor en\\
-            \hspace{7cm} Ingeniería Informática\\
-        \fi
-        \ifmagister
-            \hspace{7cm} obtener el grado de Magíster en \\
-            \hspace{7cm} Ingeniería Informática\\
-        \fi
+        \hspace{6.8cm}
+		\begin{tabular}{p{5.5cm}}
+			Tesis de grado presentada en conformidad a los requisitos \mbox{para obtener el grado de} \@grado
+		\end{tabular}
         \end{flushleft}
 
         %\vspace*{3.5cm}
@@ -545,11 +509,7 @@
         \fontsize{10}{12} \selectfont{\@ciudad\ -- \@pais}\\
         \@annoexamen
         \end{center}\par
-        \iflogo 
-	  \vspace{.9cm}
-	\else
-	  \vspace{1cm}
-	\fi
+	\vspace{.9cm}
     
 \fi
 } % End \makecubierta
