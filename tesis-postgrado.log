@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  3 SEP 2015 16:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  4 SEP 2015 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4439,6 +4439,8 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 43.
 
 [56 <./images/DistribucionCarga.pdf>]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 44.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10> not available
 (Font)              Font shape `OT1/phv/b/it' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10> not available
@@ -4482,39 +4484,38 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 50.
  [57]
-<images/App1.pdf, id=1468, 568.1225pt x 91.34125pt>
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 62.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 62.
+ [58]
+<images/App1.pdf, id=1477, 568.1225pt x 91.34125pt>
 File: images/App1.pdf Graphic file (type pdf)
  <use images/App1.pdf>
 Package pdftex.def Info: images/App1.pdf used on input line 65.
 (pdftex.def)             Requested size: 426.09082pt x 68.50575pt.
-LaTeX Info: Redefining \. on input line 68.
-LaTeX Info: Redefining \% on input line 68.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 68.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 68.
-
-[58]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 70.
 Package babel Info: Redefining spanish shorthand >>
@@ -4553,13 +4554,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 78.
- [59 <./images/App1.pdf>]
+
+[59 <./images/App1.pdf>]
 Underfull \hbox (badness 1005) in paragraph at lines 79--80
 [] []\OT1/phv/b/n/10 Merge:[] \OT1/phv/m/n/12 est[]a encargado de unir las dist
 intas estad[]^^Psticas enviadas por las
  []
 
-<images/App2.pdf, id=1485, 457.71pt x 91.34125pt>
+<images/App2.pdf, id=1487, 457.71pt x 91.34125pt>
 File: images/App2.pdf Graphic file (type pdf)
  <use images/App2.pdf>
 Package pdftex.def Info: images/App2.pdf used on input line 85.
@@ -4576,34 +4578,34 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 90.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 90.
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
+LaTeX Info: Redefining \. on input line 106.
+LaTeX Info: Redefining \% on input line 106.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 106.
 
-[60 <./images/App2.pdf>] <images/App3.pdf, id=1495, 457.71pt x 91.34125pt>
+[60 <./images/App2.pdf>] <images/App3.pdf, id=1497, 457.71pt x 91.34125pt>
 File: images/App3.pdf Graphic file (type pdf)
 
 <use images/App3.pdf>
@@ -4634,7 +4636,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 123.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6236) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 125.
 LaTeX Info: Redefining \% on input line 125.
@@ -4738,7 +4740,7 @@ dPE.eps>
 (epstopdf)             \includegraphics on input line 146.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/cm/statusStopwordPE-eps-converted-to.pdf, id=1530, 361
+<images/exp/app1/uniform/cm/statusStopwordPE-eps-converted-to.pdf, id=1532, 361
 .35pt x 252.945pt>
 File: images/exp/app1/uniform/cm/statusStopwordPE-eps-converted-to.pdf Graphic 
 file (type pdf)
@@ -4761,7 +4763,7 @@ dPE.eps>
 (epstopdf)             \includegraphics on input line 153.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/sm/statusStopwordPE-eps-converted-to.pdf, id=1531, 361
+<images/exp/app1/uniform/sm/statusStopwordPE-eps-converted-to.pdf, id=1533, 361
 .35pt x 252.945pt>
 File: images/exp/app1/uniform/sm/statusStopwordPE-eps-converted-to.pdf Graphic 
 file (type pdf)
@@ -4784,7 +4786,7 @@ ePE.eps>
 (epstopdf)             \includegraphics on input line 160.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/cm/statusLanguagePE-eps-converted-to.pdf, id=1532, 361
+<images/exp/app1/uniform/cm/statusLanguagePE-eps-converted-to.pdf, id=1534, 361
 .35pt x 252.945pt>
 File: images/exp/app1/uniform/cm/statusLanguagePE-eps-converted-to.pdf Graphic 
 file (type pdf)
@@ -4807,7 +4809,7 @@ ePE.eps>
 (epstopdf)             \includegraphics on input line 167.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/sm/statusLanguagePE-eps-converted-to.pdf, id=1533, 361
+<images/exp/app1/uniform/sm/statusLanguagePE-eps-converted-to.pdf, id=1535, 361
 .35pt x 252.945pt>
 File: images/exp/app1/uniform/sm/statusLanguagePE-eps-converted-to.pdf Graphic 
 file (type pdf)
@@ -4830,7 +4832,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 174.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/cm/statusCounterPE-eps-converted-to.pdf, id=1534, 361.
+<images/exp/app1/uniform/cm/statusCounterPE-eps-converted-to.pdf, id=1536, 361.
 35pt x 252.945pt>
 File: images/exp/app1/uniform/cm/statusCounterPE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -4853,7 +4855,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 181.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/sm/statusCounterPE-eps-converted-to.pdf, id=1535, 361.
+<images/exp/app1/uniform/sm/statusCounterPE-eps-converted-to.pdf, id=1537, 361.
 35pt x 252.945pt>
 File: images/exp/app1/uniform/sm/statusCounterPE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -4876,7 +4878,7 @@ s>
 (epstopdf)             \includegraphics on input line 188.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/cm/statusMongoPE-eps-converted-to.pdf, id=1536, 361.35
+<images/exp/app1/uniform/cm/statusMongoPE-eps-converted-to.pdf, id=1538, 361.35
 pt x 252.945pt>
 File: images/exp/app1/uniform/cm/statusMongoPE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -4899,7 +4901,7 @@ s>
 (epstopdf)             \includegraphics on input line 195.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/sm/statusMongoPE-eps-converted-to.pdf, id=1537, 361.35
+<images/exp/app1/uniform/sm/statusMongoPE-eps-converted-to.pdf, id=1539, 361.35
 pt x 252.945pt>
 File: images/exp/app1/uniform/sm/statusMongoPE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -4922,7 +4924,7 @@ s.eps>
 (epstopdf)             \includegraphics on input line 205.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/cm/avgEventProcess-eps-converted-to.pdf, id=1538, 361.
+<images/exp/app1/uniform/cm/avgEventProcess-eps-converted-to.pdf, id=1540, 361.
 35pt x 252.945pt>
 File: images/exp/app1/uniform/cm/avgEventProcess-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -4945,7 +4947,7 @@ s.eps>
 (epstopdf)             \includegraphics on input line 211.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/sm/avgEventProcess-eps-converted-to.pdf, id=1539, 361.
+<images/exp/app1/uniform/sm/avgEventProcess-eps-converted-to.pdf, id=1541, 361.
 35pt x 252.945pt>
 File: images/exp/app1/uniform/sm/avgEventProcess-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -4967,7 +4969,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 223.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/cm/eventCount-eps-converted-to.pdf, id=1540, 361.35pt 
+<images/exp/app1/uniform/cm/eventCount-eps-converted-to.pdf, id=1542, 361.35pt 
 x 252.945pt>
 File: images/exp/app1/uniform/cm/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -4988,7 +4990,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 229.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/uniform/sm/eventCount-eps-converted-to.pdf, id=1541, 361.35pt 
+<images/exp/app1/uniform/sm/eventCount-eps-converted-to.pdf, id=1543, 361.35pt 
 x 252.945pt>
 File: images/exp/app1/uniform/sm/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -5214,7 +5216,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 252.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/cm/statusStopwordPE-eps-converted-to.pdf, id=1644, 361.
+<images/exp/app1/normal/cm/statusStopwordPE-eps-converted-to.pdf, id=1646, 361.
 35pt x 252.945pt>
 File: images/exp/app1/normal/cm/statusStopwordPE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -5237,7 +5239,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 259.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/sm/statusStopwordPE-eps-converted-to.pdf, id=1645, 361.
+<images/exp/app1/normal/sm/statusStopwordPE-eps-converted-to.pdf, id=1647, 361.
 35pt x 252.945pt>
 File: images/exp/app1/normal/sm/statusStopwordPE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -5260,7 +5262,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 266.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/cm/statusLanguagePE-eps-converted-to.pdf, id=1646, 361.
+<images/exp/app1/normal/cm/statusLanguagePE-eps-converted-to.pdf, id=1648, 361.
 35pt x 252.945pt>
 File: images/exp/app1/normal/cm/statusLanguagePE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -5283,7 +5285,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 273.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/sm/statusLanguagePE-eps-converted-to.pdf, id=1647, 361.
+<images/exp/app1/normal/sm/statusLanguagePE-eps-converted-to.pdf, id=1649, 361.
 35pt x 252.945pt>
 File: images/exp/app1/normal/sm/statusLanguagePE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -5306,7 +5308,7 @@ eps>
 (epstopdf)             \includegraphics on input line 280.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/cm/statusCounterPE-eps-converted-to.pdf, id=1648, 361.3
+<images/exp/app1/normal/cm/statusCounterPE-eps-converted-to.pdf, id=1650, 361.3
 5pt x 252.945pt>
 File: images/exp/app1/normal/cm/statusCounterPE-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -5329,7 +5331,7 @@ eps>
 (epstopdf)             \includegraphics on input line 287.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/sm/statusCounterPE-eps-converted-to.pdf, id=1649, 361.3
+<images/exp/app1/normal/sm/statusCounterPE-eps-converted-to.pdf, id=1651, 361.3
 5pt x 252.945pt>
 File: images/exp/app1/normal/sm/statusCounterPE-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -5352,7 +5354,7 @@ statusMongoPE-eps-converted-to.pdf images/exp/app1/normal/cm/statusMongoPE.eps>
 (epstopdf)             \includegraphics on input line 294.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf, id=1650, 361.35p
+<images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf, id=1652, 361.35p
 t x 252.945pt>
 File: images/exp/app1/normal/cm/statusMongoPE-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -5375,7 +5377,7 @@ statusMongoPE-eps-converted-to.pdf images/exp/app1/normal/sm/statusMongoPE.eps>
 (epstopdf)             \includegraphics on input line 301.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf, id=1651, 361.35p
+<images/exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf, id=1653, 361.35p
 t x 252.945pt>
 File: images/exp/app1/normal/sm/statusMongoPE-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -5398,7 +5400,7 @@ eps>
 (epstopdf)             \includegraphics on input line 311.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/cm/avgEventProcess-eps-converted-to.pdf, id=1652, 361.3
+<images/exp/app1/normal/cm/avgEventProcess-eps-converted-to.pdf, id=1654, 361.3
 5pt x 252.945pt>
 File: images/exp/app1/normal/cm/avgEventProcess-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -5421,7 +5423,7 @@ eps>
 (epstopdf)             \includegraphics on input line 318.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/sm/avgEventProcess-eps-converted-to.pdf, id=1653, 361.3
+<images/exp/app1/normal/sm/avgEventProcess-eps-converted-to.pdf, id=1655, 361.3
 5pt x 252.945pt>
 File: images/exp/app1/normal/sm/avgEventProcess-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -5442,7 +5444,7 @@ eventCount-eps-converted-to.pdf images/exp/app1/normal/cm/eventCount.eps>
 (epstopdf)             \includegraphics on input line 330.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/cm/eventCount-eps-converted-to.pdf, id=1654, 361.35pt x
+<images/exp/app1/normal/cm/eventCount-eps-converted-to.pdf, id=1656, 361.35pt x
  252.945pt>
 File: images/exp/app1/normal/cm/eventCount-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -5462,7 +5464,7 @@ eventCount-eps-converted-to.pdf images/exp/app1/normal/sm/eventCount.eps>
 (epstopdf)             \includegraphics on input line 336.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app1/normal/sm/eventCount-eps-converted-to.pdf, id=1655, 361.35pt x
+<images/exp/app1/normal/sm/eventCount-eps-converted-to.pdf, id=1657, 361.35pt x
  252.945pt>
 File: images/exp/app1/normal/sm/eventCount-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -5702,7 +5704,7 @@ s>
 (epstopdf)             \includegraphics on input line 364.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/cm/statusSplitPE-eps-converted-to.pdf, id=1756, 361.35
+<images/exp/app2/uniform/cm/statusSplitPE-eps-converted-to.pdf, id=1758, 361.35
 pt x 252.945pt>
 File: images/exp/app2/uniform/cm/statusSplitPE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -5725,7 +5727,7 @@ s>
 (epstopdf)             \includegraphics on input line 371.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/sm/statusSplitPE-eps-converted-to.pdf, id=1757, 361.35
+<images/exp/app2/uniform/sm/statusSplitPE-eps-converted-to.pdf, id=1759, 361.35
 pt x 252.945pt>
 File: images/exp/app2/uniform/sm/statusSplitPE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -5748,7 +5750,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 378.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/cm/statusCounterPE-eps-converted-to.pdf, id=1758, 361.
+<images/exp/app2/uniform/cm/statusCounterPE-eps-converted-to.pdf, id=1760, 361.
 35pt x 252.945pt>
 File: images/exp/app2/uniform/cm/statusCounterPE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -5771,7 +5773,7 @@ E.eps>
 (epstopdf)             \includegraphics on input line 385.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/sm/statusCounterPE-eps-converted-to.pdf, id=1759, 361.
+<images/exp/app2/uniform/sm/statusCounterPE-eps-converted-to.pdf, id=1761, 361.
 35pt x 252.945pt>
 File: images/exp/app2/uniform/sm/statusCounterPE-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -5794,7 +5796,7 @@ s>
 (epstopdf)             \includegraphics on input line 392.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/cm/statusMergePE-eps-converted-to.pdf, id=1760, 361.35
+<images/exp/app2/uniform/cm/statusMergePE-eps-converted-to.pdf, id=1762, 361.35
 pt x 252.945pt>
 File: images/exp/app2/uniform/cm/statusMergePE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -5817,7 +5819,7 @@ s>
 (epstopdf)             \includegraphics on input line 399.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/sm/statusMergePE-eps-converted-to.pdf, id=1761, 361.35
+<images/exp/app2/uniform/sm/statusMergePE-eps-converted-to.pdf, id=1763, 361.35
 pt x 252.945pt>
 File: images/exp/app2/uniform/sm/statusMergePE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -5839,7 +5841,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 409.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/cm/eventCount-eps-converted-to.pdf, id=1762, 361.35pt 
+<images/exp/app2/uniform/cm/eventCount-eps-converted-to.pdf, id=1764, 361.35pt 
 x 252.945pt>
 File: images/exp/app2/uniform/cm/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -5860,7 +5862,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 415.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/uniform/sm/eventCount-eps-converted-to.pdf, id=1763, 361.35pt 
+<images/exp/app2/uniform/sm/eventCount-eps-converted-to.pdf, id=1765, 361.35pt 
 x 252.945pt>
 File: images/exp/app2/uniform/sm/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6033,7 +6035,7 @@ statusSplitPE-eps-converted-to.pdf images/exp/app2/normal/cm/statusSplitPE.eps>
 (epstopdf)             \includegraphics on input line 436.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/cm/statusSplitPE-eps-converted-to.pdf, id=1833, 361.35p
+<images/exp/app2/normal/cm/statusSplitPE-eps-converted-to.pdf, id=1835, 361.35p
 t x 252.945pt>
 File: images/exp/app2/normal/cm/statusSplitPE-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -6056,7 +6058,7 @@ statusSplitPE-eps-converted-to.pdf images/exp/app2/normal/sm/statusSplitPE.eps>
 (epstopdf)             \includegraphics on input line 443.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/sm/statusSplitPE-eps-converted-to.pdf, id=1834, 361.35p
+<images/exp/app2/normal/sm/statusSplitPE-eps-converted-to.pdf, id=1836, 361.35p
 t x 252.945pt>
 File: images/exp/app2/normal/sm/statusSplitPE-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -6079,7 +6081,7 @@ eps>
 (epstopdf)             \includegraphics on input line 450.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/cm/statusCounterPE-eps-converted-to.pdf, id=1835, 361.3
+<images/exp/app2/normal/cm/statusCounterPE-eps-converted-to.pdf, id=1837, 361.3
 5pt x 252.945pt>
 File: images/exp/app2/normal/cm/statusCounterPE-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -6102,7 +6104,7 @@ eps>
 (epstopdf)             \includegraphics on input line 457.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/sm/statusCounterPE-eps-converted-to.pdf, id=1836, 361.3
+<images/exp/app2/normal/sm/statusCounterPE-eps-converted-to.pdf, id=1838, 361.3
 5pt x 252.945pt>
 File: images/exp/app2/normal/sm/statusCounterPE-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -6125,7 +6127,7 @@ statusMergePE-eps-converted-to.pdf images/exp/app2/normal/cm/statusMergePE.eps>
 (epstopdf)             \includegraphics on input line 464.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/cm/statusMergePE-eps-converted-to.pdf, id=1837, 361.35p
+<images/exp/app2/normal/cm/statusMergePE-eps-converted-to.pdf, id=1839, 361.35p
 t x 252.945pt>
 File: images/exp/app2/normal/cm/statusMergePE-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -6148,7 +6150,7 @@ statusMergePE-eps-converted-to.pdf images/exp/app2/normal/sm/statusMergePE.eps>
 (epstopdf)             \includegraphics on input line 471.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/sm/statusMergePE-eps-converted-to.pdf, id=1838, 361.35p
+<images/exp/app2/normal/sm/statusMergePE-eps-converted-to.pdf, id=1840, 361.35p
 t x 252.945pt>
 File: images/exp/app2/normal/sm/statusMergePE-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -6169,7 +6171,7 @@ eventCount-eps-converted-to.pdf images/exp/app2/normal/cm/eventCount.eps>
 (epstopdf)             \includegraphics on input line 481.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/cm/eventCount-eps-converted-to.pdf, id=1839, 361.35pt x
+<images/exp/app2/normal/cm/eventCount-eps-converted-to.pdf, id=1841, 361.35pt x
  252.945pt>
 File: images/exp/app2/normal/cm/eventCount-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -6189,7 +6191,7 @@ eventCount-eps-converted-to.pdf images/exp/app2/normal/sm/eventCount.eps>
 (epstopdf)             \includegraphics on input line 487.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app2/normal/sm/eventCount-eps-converted-to.pdf, id=1840, 361.35pt x
+<images/exp/app2/normal/sm/eventCount-eps-converted-to.pdf, id=1842, 361.35pt x
  252.945pt>
 File: images/exp/app2/normal/sm/eventCount-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -6364,7 +6366,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 512.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/fisical/consumeCPU-eps-converted-to.pdf, id=1915, 361.35pt 
+<images/exp/app3/cm/fisical/consumeCPU-eps-converted-to.pdf, id=1917, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/cm/fisical/consumeCPU-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6385,7 +6387,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 518.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/fisical/consumeCPU-eps-converted-to.pdf, id=1916, 361.35pt 
+<images/exp/app3/sm/fisical/consumeCPU-eps-converted-to.pdf, id=1918, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/sm/fisical/consumeCPU-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6406,7 +6408,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 530.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/fisical/consumeRAM-eps-converted-to.pdf, id=1917, 361.35pt 
+<images/exp/app3/cm/fisical/consumeRAM-eps-converted-to.pdf, id=1919, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/cm/fisical/consumeRAM-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6427,7 +6429,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/fisical/consumeRAM-eps-converted-to.pdf, id=1918, 361.35pt 
+<images/exp/app3/sm/fisical/consumeRAM-eps-converted-to.pdf, id=1920, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/sm/fisical/consumeRAM-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6448,7 +6450,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 548.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf, id=1919, 361.35pt 
+<images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf, id=1921, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6469,7 +6471,7 @@ converted-to.pdf>
 (epstopdf)             \includegraphics on input line 554.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf, id=1920, 361.35pt 
+<images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf, id=1922, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -6490,7 +6492,7 @@ Package epstopdf Info: Source file: <images/exp/app3/cm/logical/statusOnePE.eps
 (epstopdf)             \includegraphics on input line 563.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/logical/statusOnePE-eps-converted-to.pdf, id=1921, 361.35pt
+<images/exp/app3/cm/logical/statusOnePE-eps-converted-to.pdf, id=1923, 361.35pt
  x 252.945pt>
 File: images/exp/app3/cm/logical/statusOnePE-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -6512,7 +6514,7 @@ Package epstopdf Info: Source file: <images/exp/app3/sm/logical/statusOnePE.eps
 (epstopdf)             \includegraphics on input line 570.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/logical/statusOnePE-eps-converted-to.pdf, id=1922, 361.35pt
+<images/exp/app3/sm/logical/statusOnePE-eps-converted-to.pdf, id=1924, 361.35pt
  x 252.945pt>
 File: images/exp/app3/sm/logical/statusOnePE-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -6534,7 +6536,7 @@ Package epstopdf Info: Source file: <images/exp/app3/cm/logical/statusTwoPE.eps
 (epstopdf)             \includegraphics on input line 577.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/logical/statusTwoPE-eps-converted-to.pdf, id=1923, 361.35pt
+<images/exp/app3/cm/logical/statusTwoPE-eps-converted-to.pdf, id=1925, 361.35pt
  x 252.945pt>
 File: images/exp/app3/cm/logical/statusTwoPE-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -6556,7 +6558,7 @@ Package epstopdf Info: Source file: <images/exp/app3/sm/logical/statusTwoPE.eps
 (epstopdf)             \includegraphics on input line 584.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/logical/statusTwoPE-eps-converted-to.pdf, id=1924, 361.35pt
+<images/exp/app3/sm/logical/statusTwoPE-eps-converted-to.pdf, id=1926, 361.35pt
  x 252.945pt>
 File: images/exp/app3/sm/logical/statusTwoPE-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -6579,7 +6581,7 @@ s>
 (epstopdf)             \includegraphics on input line 591.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/logical/statusThreePE-eps-converted-to.pdf, id=1925, 361.35
+<images/exp/app3/cm/logical/statusThreePE-eps-converted-to.pdf, id=1927, 361.35
 pt x 252.945pt>
 File: images/exp/app3/cm/logical/statusThreePE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -6602,7 +6604,7 @@ s>
 (epstopdf)             \includegraphics on input line 598.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/logical/statusThreePE-eps-converted-to.pdf, id=1926, 361.35
+<images/exp/app3/sm/logical/statusThreePE-eps-converted-to.pdf, id=1928, 361.35
 pt x 252.945pt>
 File: images/exp/app3/sm/logical/statusThreePE-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -8390,11 +8392,11 @@ Package rerunfilecheck Info: File `tesis-postgrado.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 17830 strings out of 493304
- 265675 string characters out of 6139871
+ 17834 strings out of 493304
+ 265721 string characters out of 6139871
  481224 words of memory out of 5000000
- 20088 multiletter control sequences out of 15000+600000
- 43285 words of font info for 99 fonts, out of 8000000 for 9000
+ 20090 multiletter control sequences out of 15000+600000
+ 45171 words of font info for 101 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  51i,24n,48p,1893b,2080s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -8417,10 +8419,10 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
 lvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on tesis-postgrado.pdf (139 pages, 1737574 bytes).
+Output written on tesis-postgrado.pdf (139 pages, 1738099 bytes).
 PDF statistics:
- 2629 PDF objects out of 2984 (max. 8388607)
- 2277 compressed objects within 23 object streams
- 708 named destinations out of 1000 (max. 500000)
+ 2632 PDF objects out of 2984 (max. 8388607)
+ 2280 compressed objects within 23 object streams
+ 709 named destinations out of 1000 (max. 500000)
  901 words of extra memory for PDF output out of 10000 (max. 10000000)
 
