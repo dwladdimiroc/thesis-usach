@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{61}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -301,6 +301,11 @@ Schneider, S., Andrade, H., Gedik, B., Biem, A., \& Wu, K. (2009).
 \newblock In {\em 23rd {IEEE} International Symposium on Parallel and
   Distributed Processing, {IPDPS} 2009, Rome, Italy, May 23-29, 2009\/}, (pp.
   1--12).
+
+\bibitem[{Services(2015)}]{amazonec2}
+Services, A.~W. (2015).
+\newblock Amazon elastic compute cloud (ec2).
+\newblock [Online] \url{https://aws.amazon.com/ec2/}.
 
 \bibitem[{Shahrivari(2014)}]{Shahrivari14}
 Shahrivari, S. (2014).
