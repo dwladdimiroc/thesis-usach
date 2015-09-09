@@ -392,8 +392,7 @@
 \def\facultad#1{\gdef\@facultad{#1}}
 \def\departamento#1{\gdef\@departamento{#1}}
 \def\grado#1{\gdef\@grado{#1}}
-\def\titulo#1{\gdef\@title{\begin{center}{\large\bf#1}%
-\end{center}}\gdef\@titleMay{\begin{center}{\large\bf#1}%
+\def\titulo#1{\gdef\@title{#1}\gdef\@titleMay{\begin{center}{\large\bf#1}%
 \end{center}}}
 \def\autor#1{\gdef\@autor{{\bfseries #1}}\gdef\@autorn{#1}}
 \def\fecha#1#2#3#4{\gdef\@diasemana{#1}\gdef\@diaexamen{#2}\gdef\@mesexamen{#3}%
@@ -417,8 +416,8 @@
 \hypersetup
 {
     bookmarksopen, bookmarksnumbered, pdfdisplaydoctitle=true,
-    pdftitle=\@title,
-    pdfauthor=\@autor,
+    pdftitle=Modelo el\'astico de replicaci\'on para el grafo l\'ogico de un sistema de procesamiento de stream en tiempo real,
+    pdfauthor=Daniel Pedro Pablo Wladdimiro Cottet,
     pdfsubject=Tesis de grado,
     pdfkeywords=,
     pdfcreator=Universidad de Santiago de Chile,

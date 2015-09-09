@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  9 SEP 2015 15:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  9 SEP 2015 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1081,12 +1081,12 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutvoffset=\dimen170
 \Gm@dimlist=\toks44
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 433.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 433.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 432.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 432.
 
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 433
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 432
 .
-Package hyperref Info: Option `colorlinks' set `true' on input line 433.
+Package hyperref Info: Option `colorlinks' set `true' on input line 432.
 )
 (./tesis-postgrado.aux (./preliminares/cubierta.aux)
 LaTeX Info: Redefining \. on input line 24.
@@ -1247,8 +1247,6 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 19.
-LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <12> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 19.
 LaTeX Font Info:    Try loading font information for U+msa on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1317,7 +1315,7 @@ LaTeX Font Info:    Try loading font information for TS1+phv on input line 20.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
-<images/licences/cc_by.png, id=276, 88.33pt x 31.11626pt>
+<images/licences/cc_by.png, id=275, 88.33pt x 31.11626pt>
 File: images/licences/cc_by.png Graphic file (type png)
 
 <use images/licences/cc_by.png>
@@ -2341,7 +2339,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 4.
-<images/Streaming.pdf, id=718, 308.15125pt x 196.735pt>
+<images/Streaming.pdf, id=717, 308.15125pt x 196.735pt>
 File: images/Streaming.pdf Graphic file (type pdf)
 
 <use images/Streaming.pdf>
@@ -2426,7 +2424,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 32.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 32.
- <images/SPS.pdf, id=800, 311.1625pt x 137.51375pt>
+ <images/SPS.pdf, id=799, 311.1625pt x 137.51375pt>
 File: images/SPS.pdf Graphic file (type pdf)
 
 <use images/SPS.pdf>
@@ -2517,14 +2515,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 59.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 59.
-[13] <images/SPS-Push.pdf, id=833, 179.67125pt x 50.1875pt>
+[13] <images/SPS-Push.pdf, id=832, 179.67125pt x 50.1875pt>
 File: images/SPS-Push.pdf Graphic file (type pdf)
 
 <use images/SPS-Push.pdf>
 Package pdftex.def Info: images/SPS-Push.pdf used on input line 67.
 (pdftex.def)             Requested size: 179.67079pt x 50.18736pt.
 
-<images/SPS-Pull.pdf, id=837, 205.76875pt x 115.43124pt>
+<images/SPS-Pull.pdf, id=836, 205.76875pt x 115.43124pt>
 File: images/SPS-Pull.pdf Graphic file (type pdf)
 
 <use images/SPS-Pull.pdf>
@@ -2624,7 +2622,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 87.
 
-<images/Elasticidad.pdf, id=895, 347.2975pt x 402.50375pt>
+<images/Elasticidad.pdf, id=894, 347.2975pt x 402.50375pt>
 File: images/Elasticidad.pdf Graphic file (type pdf)
 
 <use images/Elasticidad.pdf>
@@ -2709,7 +2707,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 114.
 
-<images/ProcesoMarkov.pdf, id=930, 517.935pt x 91.34125pt>
+<images/ProcesoMarkov.pdf, id=929, 517.935pt x 91.34125pt>
 File: images/ProcesoMarkov.pdf Graphic file (type pdf)
 
 <use images/ProcesoMarkov.pdf>
@@ -2742,14 +2740,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 134.
  [18]
-<images/CadenaMarkov.pdf, id=945, 246.9225pt x 138.5175pt>
+<images/CadenaMarkov.pdf, id=944, 246.9225pt x 138.5175pt>
 File: images/CadenaMarkov.pdf Graphic file (type pdf)
 
 <use images/CadenaMarkov.pdf>
 Package pdftex.def Info: images/CadenaMarkov.pdf used on input line 144.
 (pdftex.def)             Requested size: 148.15462pt x 83.11113pt.
 
-<images/EjCadenaMarkov.pdf, id=949, 390.45876pt x 284.06125pt>
+<images/EjCadenaMarkov.pdf, id=948, 390.45876pt x 284.06125pt>
 File: images/EjCadenaMarkov.pdf Graphic file (type pdf)
 
 <use images/EjCadenaMarkov.pdf>
@@ -2897,7 +2895,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 228.
 
-<images/TeoriaColas.pdf, id=996, 564.1075pt x 397.485pt>
+<images/TeoriaColas.pdf, id=995, 564.1075pt x 397.485pt>
 File: images/TeoriaColas.pdf Graphic file (type pdf)
 
 <use images/TeoriaColas.pdf>
@@ -3269,7 +3267,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 83.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 83.
- [30] <images/LoadShedding.pdf, id=1130, 631.35875pt x 92.345pt>
+ [30] <images/LoadShedding.pdf, id=1129, 631.35875pt x 92.345pt>
 File: images/LoadShedding.pdf Graphic file (type pdf)
 
 <use images/LoadShedding.pdf>
@@ -3314,7 +3312,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 102.
  [31 <./images/LoadShedding.pdf>]
-<images/Migracion.pdf, id=1149, 676.5275pt x 234.8775pt>
+<images/Migracion.pdf, id=1148, 676.5275pt x 234.8775pt>
 File: images/Migracion.pdf Graphic file (type pdf)
 
 <use images/Migracion.pdf>
@@ -3333,7 +3331,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 110.
 
-<images/Fision.pdf, id=1151, 593.21625pt x 272.01625pt>
+<images/Fision.pdf, id=1150, 593.21625pt x 272.01625pt>
 File: images/Fision.pdf Graphic file (type pdf)
 
 <use images/Fision.pdf>
@@ -3392,7 +3390,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 132.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 132.
- [33 <./images/Fision.pdf>] <images/EjFision.png, id=1178, 818.05624pt x 641.39
+ [33 <./images/Fision.pdf>] <images/EjFision.png, id=1177, 818.05624pt x 641.39
 626pt>
 File: images/EjFision.png Graphic file (type png)
 
@@ -3484,7 +3482,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 
 
-] <images/EjReplicacion.pdf, id=1200, 474.77374pt x 637.38126pt>
+] <images/EjReplicacion.pdf, id=1199, 474.77374pt x 637.38126pt>
 File: images/EjReplicacion.pdf Graphic file (type pdf)
 
 <use images/EjReplicacion.pdf>
@@ -3517,7 +3515,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 27.
  [36 <./images/EjReplicacion.pdf>]
-<images/AnalisisTeoriaColas.pdf, id=1211, 654.445pt x 91.34125pt>
+<images/AnalisisTeoriaColas.pdf, id=1210, 654.445pt x 91.34125pt>
 File: images/AnalisisTeoriaColas.pdf Graphic file (type pdf)
 
 <use images/AnalisisTeoriaColas.pdf>
@@ -3550,7 +3548,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 40.
  [37 <./images/AnalisisTeoriaColas.pdf>]
-<images/Diagrama.pdf, id=1221, 711.65875pt x 700.6175pt>
+<images/Diagrama.pdf, id=1220, 711.65875pt x 700.6175pt>
 File: images/Diagrama.pdf Graphic file (type pdf)
 
 <use images/Diagrama.pdf>
@@ -3675,7 +3673,7 @@ Package epstopdf Info: Source file: <images/Umbrales.eps>
 ted-to.pdf images/Umbrales.eps>
 (epstopdf)             \includegraphics on input line 103.
 Package epstopdf Info: Output file is already uptodate.
-<images/Umbrales-eps-converted-to.pdf, id=1243, 361.35pt x 252.945pt>
+<images/Umbrales-eps-converted-to.pdf, id=1242, 361.35pt x 252.945pt>
 File: images/Umbrales-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Umbrales-eps-converted-to.pdf>
@@ -3721,7 +3719,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 115.
  [41]
-<images/CadenaMarkovPredictiva.pdf, id=1263, 348.30125pt x 279.0425pt>
+<images/CadenaMarkovPredictiva.pdf, id=1262, 348.30125pt x 279.0425pt>
 File: images/CadenaMarkovPredictiva.pdf Graphic file (type pdf)
 
 <use images/CadenaMarkovPredictiva.pdf>
@@ -3985,7 +3983,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 17.
  [48]
-<images/DistribucionCarga.pdf, id=1388, 514.92375pt x 1104.125pt>
+<images/DistribucionCarga.pdf, id=1387, 514.92375pt x 1104.125pt>
 File: images/DistribucionCarga.pdf Graphic file (type pdf)
 
 <use images/DistribucionCarga.pdf>
@@ -7863,11 +7861,11 @@ Package rerunfilecheck Info: File `tesis-postgrado.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
  ) 
 Here is how much of TeX's memory you used:
- 17806 strings out of 493304
- 265455 string characters out of 6139871
- 515108 words of memory out of 5000000
- 20080 multiletter control sequences out of 15000+600000
- 39176 words of font info for 87 fonts, out of 8000000 for 9000
+ 17803 strings out of 493304
+ 265417 string characters out of 6139871
+ 515238 words of memory out of 5000000
+ 20078 multiletter control sequences out of 15000+600000
+ 37417 words of font info for 85 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  51i,24n,49p,1893b,2166s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -7886,7 +7884,7 @@ xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
 lvetic/uhvro8a.pfb>
-Output written on tesis-postgrado.pdf (125 pages, 1687220 bytes).
+Output written on tesis-postgrado.pdf (125 pages, 1686114 bytes).
 PDF statistics:
  2544 PDF objects out of 2984 (max. 8388607)
  2211 compressed objects within 23 object streams
