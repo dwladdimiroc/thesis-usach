@@ -2,15 +2,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {4.1}{\ignorespaces Algoritmo reactivo del sistema de distribuci\IeC {\'o}n de carga.\relax }}{45}{algocf.4.1}
-\contentsline {algocf}{\numberline {4.2}{\ignorespaces C\IeC {\'a}lculo de la distribuci\IeC {\'o}n estacionaria de la cadena de Markov de un operador $\phi $.\relax }}{49}{algocf.4.2}
-\contentsline {algocf}{\numberline {4.3}{\ignorespaces Algoritmo predictivo del sistema de distribuci\IeC {\'o}n de carga.\relax }}{50}{algocf.4.3}
-\contentsline {algocf}{\numberline {4.4}{\ignorespaces Administraci\IeC {\'o}n de r\IeC {\'e}plicas de un operador $\phi $ dado su comportamiento en el sistema de distribuci\IeC {\'o}n de carga.\relax }}{51}{algocf.4.4}
+\contentsline {algocf}{\numberline {4.1}{\ignorespaces Algoritmo reactivo del modelo el\IeC {\'a}stico.\relax }}{41}{algocf.4.1}
+\contentsline {algocf}{\numberline {4.2}{\ignorespaces C\IeC {\'a}lculo de la distribuci\IeC {\'o}n estacionaria de la cadena de Markov de un operador $\phi $.\relax }}{44}{algocf.4.2}
+\contentsline {algocf}{\numberline {4.3}{\ignorespaces Algoritmo predictivo del modelo el\IeC {\'a}stico.\relax }}{45}{algocf.4.3}
+\contentsline {algocf}{\numberline {4.4}{\ignorespaces Administraci\IeC {\'o}n de r\IeC {\'e}plicas de un operador $\phi $ dado su comportamiento en el modelo el\IeC {\'a}stico.\relax }}{46}{algocf.4.4}
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {5.1}{\ignorespaces Distribuci\IeC {\'o}n de carga entre las r\IeC {\'e}plicas de un operador.\relax }}{55}{algocf.5.1}
+\contentsline {algocf}{\numberline {5.1}{\ignorespaces Distribuci\IeC {\'o}n de carga entre las r\IeC {\'e}plicas de un operador.\relax }}{49}{algocf.5.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {A.1}{\ignorespaces Algoritmo para la conformaci\IeC {\'o}n de la matriz de transici\IeC {\'o}n.\relax }}{105}{algocf.Alph1.1}
+\contentsline {algocf}{\numberline {A.1}{\ignorespaces Algoritmo para la conformaci\IeC {\'o}n de la matriz de transici\IeC {\'o}n.\relax }}{97}{algocf.Alph1.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

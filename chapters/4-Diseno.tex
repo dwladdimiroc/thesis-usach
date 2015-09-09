@@ -1,4 +1,4 @@
-\chapter{Dise\~no del sistema de distribución de carga}
+\chapter{Dise\~no del modelo elástico}
 \label{cap:disenoSistema}
 
 % Profe Erika: Pequeño resumen del capítulo
@@ -7,7 +7,7 @@ Como se hizo mención en el Capítulo \ref{cap:introduccion}, el problema de la 
 
 Bajo un escenario como este, es necesario un sistema dinámico, que pueda adaptar su estructura, dependiendo de la carga y el flujo de datos recibidos. Considerando esta problemática, se diseñó un sistema que se adapta de manera automática a las condiciones de tráfico y carga, logrando optimizar su rendimiento, sin comprometer de manera significativa el rendimiento del sistema.
 
-\section{Análisis del sistema de distribución de carga}
+\section{Análisis del módelo elástico}
 Dentro del análisis realizado en la arquitectura del sistema implementado, se utiliza una perspectiva basado en los recursos lógicos del sistema según el enfoque dinámico, las cuales fueron explicadas en la Sección \ref{sec:perspectivasBC}, para el balance de carga del SPS. El presente trabajo no se enfoca en el análisis del comportamiento de cada uno de los nodos físicos del sistema, sino que más bien en el estado de cada uno de los operadores del grafo diseñado, siendo un problema de carácter lógico y no físico.
 
 Respecto al estudio de las distintas técnicas implementadas, es necesario utilizar una que no pierda o minimice la pérdida de datos, que fuera capaz de adaptarse a las condiciones dinámicas del tráfico, y que introduzca un bajo \textit{overhead} al sistema, de tal manera que sea escalable. Bajo estas restricciones, se considera que la mejor opción es utilizar la técnica de fisión, utilizando el modelo de replicación de Fernández \citep{FernandezMKP13}, donde basándose en el nivel de carga del operador se genera o no una réplica para este. Dentro de las hipótesis, se plantea que el costo de un operador es menor a la formación de las colas de datos en el sistema, lo cual puede variar según la arquitectura del SPS implementando.
@@ -17,7 +17,7 @@ En la Figura \ref{fig:ejReplicacion} se muestra un ejemplo de la replicación pr
 \begin{figure}[!hb]
 	\centering
 		\includegraphics[scale=0.6]{images/EjReplicacion.pdf}
-	\caption{Ejemplo de replicación del sistema propuesto.}
+	\caption{Ejemplo de replicación del modelo propuesto.}
 	\label{fig:ejReplicacion}
 \end{figure}
 
@@ -32,9 +32,9 @@ Para la detección del nivel de carga de un operador es necesario contar con un 
 	\label{fig:analisisTeoriaColas}
 \end{figure}
 
-Tomando en consideración el enfoque dinámico en el algoritmo de balance de carga y la elasticidad que se pretendía por parte del sistema, es que se trataron tres posibles estados en el sistema: ocioso, estable e inestable. El primer estado corresponde a un exceso en la cantidad de recursos asignados. El segundo está definido por el rendimiento óptimo del sistema. Y por último, el tercero hace referencia a un sistema sobrecargado, donde es necesario una mayor cantidad de recursos por parte de éste. Los posibles estados de cada operador, son la base para el análisis y predicción de la carga en el sistema de distribución de la misma.
+Tomando en consideración el enfoque dinámico en el algoritmo de balance de carga y la elasticidad que se pretendía por parte del modelo, es que se trataron tres posibles estados en el sistema: ocioso, estable e inestable. El primer estado corresponde a un exceso en la cantidad de recursos asignados. El segundo está definido por el rendimiento óptimo del sistema. Y por último, el tercero hace referencia a un sistema sobrecargado, donde es necesario una mayor cantidad de recursos por parte de éste. Los posibles estados de cada operador, son la base para el análisis y predicción de la carga en el sistema de distribución de la misma.
 
-Para el sistema propuesto, se consideraron dos tipos de algoritmos: predictivo, enfocado en el futuro basado en la historia del operador, y reactivo, analizando el comportamiento del momento. Este diseño tiene la finalidad de analizar dos factores: los \textit{peaks} existentes en la historia del operador, dado el algoritmo predictivo, y analizar el comportamiento en el momento, haciendo uso del algoritmo reactivo, de tal manera de solucionar los comportamientos que no son detectados con la predicción.
+Para el modelo propuesto, se consideraron dos tipos de algoritmos: predictivo, enfocado en el futuro basado en la historia del operador, y reactivo, analizando el comportamiento del momento. Este diseño tiene la finalidad de analizar dos factores: los \textit{peaks} existentes en la historia del operador, dado el algoritmo predictivo, y analizar el comportamiento en el momento, haciendo uso del algoritmo reactivo, de tal manera de solucionar los comportamientos que no son detectados con la predicción.
 
 Es importante denotar que dependiendo del tipo de caso es que un algoritmo va a funcionar mejor. Por ejemplo, si existe una variación muy alta en un período de tiempo considerable, el algoritmo predictivo puede detectar este tipo de \textit{peaks}. De esta manera, la predicción es más asertiva que el análisis en el momento. Pero en casos que no exista este tipo de casos, y sólo hayan variaciones en ciertos instantes de la ejecución, se encuentra el algoritmo reactivo para analizar el estado del operador.
 
@@ -44,12 +44,12 @@ Además de lo anterior, se considera que es necesario trabajar con los dos algor
 
 Como se diseñaron dos tipos de algoritmos que se complementan, es necesario considerar un algoritmo que administre cual de los dos algoritmos se va a utilizar según el período analizado, como también la cantidad de réplicas que deben crearse o eliminar según el resultado del algoritmo utilizado.
 
-Dado lo anterior, se ha diseñado un sistema elástico de distribución de carga con cuatro componentes: monitor de carga, analizador de carga, predictor de carga y administrador de réplicas, que se pueden apreciar en la Figura \ref{fig:componentesSistemas}.
+Dado lo anterior, se ha diseñado un modelo elástico de distribución de carga con cuatro componentes: monitor de carga, analizador de carga, predictor de carga y administrador de réplicas, que se pueden apreciar en la Figura \ref{fig:componentesSistemas}.
 
 \begin{figure}[ht!]
   \centering
     \includegraphics[scale=0.5]{images/Diagrama.pdf}
-  \caption{Estructura del sistema de distribución de carga.}
+  \caption{Estructura del modelo elástico.}
   \label{fig:componentesSistemas}
 \end{figure}
 
@@ -66,7 +66,7 @@ En las siguientes secciones se profundiza en el diseño propuesto para cada uno 
 \section{Recolección de los datos}
 %Como se había mencionado anteriormente, el monitor de carga está encargado de recolectar la tasa de rendimiento de cada uno de los operadores, tanto del historial como los datos en el momento. Para esto, se consideró una ventana de tiempo de 1 segundo para la recolección del historial, y 5 segundos para el análisis del operador en el momento.
 
-Como se había mencionado anteriormente, el monitor de carga está encargado de recolectar los datos necesarios para el funcionamiento del sistema de distribución de carga, tanto el historial para el algoritmo predictivo, como la tasa de rendimiento para el algoritmo reactivo. Para esto se consideraron ventanas de tiempo de un segundo para la recolección de muestras para el análisis predictivo, y cinco segundos para el análisis reactivo.
+Como se había mencionado anteriormente, el monitor de carga está encargado de recolectar los datos necesarios para el funcionamiento del modelo elástico, tanto el historial para el algoritmo predictivo, como la tasa de rendimiento para el algoritmo reactivo. Para esto se consideraron ventanas de tiempo de un segundo para la recolección de muestras para el análisis predictivo, y cinco segundos para el análisis reactivo.
 
 La recolección de muestras para el algoritmo predictivo se realiza cada un segundo, debido que se considera tiempo suficiente para obtener una muestra representativa del operador. De esta manera, se espera que existan cien muestras para que se ejecute el algoritmo predictivo, por lo que existe una ventana de tiempo de cien segundos entre cada ejecución del algoritmo. La cantidad de muestras fue determinado según la literatura, debido que se consideraba un número apropiado para realizar una predicción del operador \citep{ching2006markov}, de tal manera de no existir una deficiencia en la cantidad de muestras para la predicción deseada.
 
@@ -81,7 +81,7 @@ El diseño del algoritmo reactivo se basa en el tipo de análisis del estado del
 En el Algoritmo \ref{alg:reactive} se puede ver el algoritmo que analiza el estado de un operador según su tasa de rendimiento; que en el caso que sea mayor a 1, su estado es inestable, menor a 0.5, significa que está en estado ocioso, y en otro caso, significa que está estable. Estos datos posteriormente son considerados por el administrador de réplicas, el cual analiza el comportamiento que debe tener el sistema según lo indicado por el algoritmo.
 
 \begin{algorithm}[!ht]
-	\caption{Algoritmo reactivo del sistema de distribución de carga.}
+	\caption{Algoritmo reactivo del modelo elástico.}
 	\label{alg:reactive}
 	\begin{algorithmic}[1]
 	\REQUIRE Tasa de procesamiento $\rho$ del operador $\phi$.
@@ -187,7 +187,7 @@ La cantidad de iteraciones que debe realizarse para el cálculo correspondiente,
 Obtenida la distribución estacionaria, se procede a analizar las probabilidades obtenidas y como es el comportamiento del operador. Para esto, se ha considerado que las probabilidades tuvieron una desviación estándar superior a 0.25, lo que indice que que la probabilidad mayor de la distribución estacionaria no posee incertidumbre \citep{soong2004fundamentals}, porque en caso que no supere la desviación estándar, puede ser que dos probabilidades sean muy parecidas y la probabilidad no sea un comportamiento determinante. El Algoritmo \ref{alg:predictive} detalla el análisis que se realiza a la distribución estacionaria, siendo en primer lugar el análisis estadístico de las probabilidades, y en segundo lugar la obtención del estado con mayor valor de las probabilidades, retornando finalmente el estado del operador. Cabe destacar que el primer estado se ha considerado ocioso, el segundo estable, y el tercero inestable.
 
 \begin{algorithm}[!ht]
-	\caption{Algoritmo predictivo del sistema de distribución de carga.}
+	\caption{Algoritmo predictivo del modelo elástico.}
 	\label{alg:predictive}
 	\begin{algorithmic}[1]
 	\REQUIRE$\Delta$ Distribución estacionaria de la cadena de Markov del operador $\phi$.
@@ -210,15 +210,15 @@ Obtenida la distribución estacionaria, se procede a analizar las probabilidades
 
 \section{Administración del sistema}
 
-El último componente del sistema es el administrador de réplicas, cuya función es administrar la cantidad de réplicas en cada uno de los operadores según los recursos disponibles en el sistema y según el estado que adopte un operador, ya sea a futuro o en el momento.
+El último componente del modelo es el administrador de réplicas, cuya función es administrar la cantidad de réplicas en cada uno de los operadores según los recursos disponibles en el sistema y según el estado que adopte un operador, ya sea a futuro o en el momento.
 
 Para esto, se ha diseñado un administrador que ejecuta uno de los algoritmos (reactivo o predictivo) según el período del ciclo que se encuentre el sistema. Cada ciclo posee 20 períodos, donde los primeros 19 corresponden al algoritmo reactivo y el último corresponde al algoritmo predictivo. Cada período posee un intervalo de 5 segundos, de esta manera, cada ciclo tendrá un intervalo de 100 segundos, la cantidad necesaria para obtener las muestras para el algoritmo reactivo, suponiendo que cada muestra es obtenida cada 1 segundo.
 
 \begin{algorithm}[!ht]
-	\caption{Administración de réplicas de un operador $\phi$ dado su comportamiento en el sistema de distribución de carga.}
+	\caption{Administración de réplicas de un operador $\phi$ dado su comportamiento en el modelo elástico.}
 	\label{alg:administracion}
 	\begin{algorithmic}[1]
-	\REQUIRE Operador $\phi$ a analizar y $\iota$ período en que se encuentra el sistema de distribución de carga.
+	\REQUIRE Operador $\phi$ a analizar y $\iota$ período en que se encuentra el modelo elástico.
 	\ENSURE Cantidad de réplicas a modificar del operador.	
 	
 	\IF {$\iota \mod{20} \neq 0 $}
