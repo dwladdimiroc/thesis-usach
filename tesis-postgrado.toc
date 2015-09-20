@@ -7,9 +7,9 @@
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Antecedentes y motivaci\IeC {\'o}n}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Descripci\IeC {\'o}n del problema}{3}{section.1.2}
-\contentsline {section}{\numberline {1.3}Soluci\IeC {\'o}n propuesta}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}Objetivos y alcance del proyecto}{5}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Objetivo general}{5}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.3}Soluci\IeC {\'o}n propuesta}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Objetivos y alcance del proyecto}{4}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Objetivo general}{4}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Objetivos espec\IeC {\'\i }ficos}{5}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Alcances}{5}{subsection.1.4.3}
 \contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }a y herramientas utilizadas}{6}{section.1.5}
@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {2.1}Streaming}{9}{section.2.1}
 \contentsline {section}{\numberline {2.2}Stream processing}{10}{section.2.2}
 \contentsline {section}{\numberline {2.3}Sistemas de procesamiento de stream}{11}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Simple Scalable Streaming System (S4)}{15}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}S4}{15}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Storm}{15}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Elasticidad}{16}{section.2.4}
 \contentsline {section}{\numberline {2.5}Procesos estoc\IeC {\'a}sticos}{17}{section.2.5}
@@ -42,19 +42,19 @@
 \contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{32}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}Dise\~no del modelo el\IeC {\'a}stico}{35}{chapter.4}
 \contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis del m\IeC {\'o}delo el\IeC {\'a}stico}{35}{section.4.1}
-\contentsline {paragraph}{Monitor de carga:}{38}{figure.caption.23}
-\contentsline {paragraph}{Analizador de carga:}{38}{figure.caption.23}
-\contentsline {paragraph}{Predictor de carga:}{38}{figure.caption.23}
+\contentsline {paragraph}{Monitor de carga:}{39}{figure.caption.23}
+\contentsline {paragraph}{Analizador de carga:}{39}{figure.caption.23}
+\contentsline {paragraph}{Predictor de carga:}{39}{figure.caption.23}
 \contentsline {paragraph}{Administrador de r\IeC {\'e}plicas:}{39}{figure.caption.23}
 \contentsline {section}{\numberline {4.2}Recolecci\IeC {\'o}n de los datos}{39}{section.4.2}
 \contentsline {section}{\numberline {4.3}Algoritmo reactivo}{40}{section.4.3}
-\contentsline {section}{\numberline {4.4}Algoritmo predictivo}{41}{section.4.4}
+\contentsline {section}{\numberline {4.4}Algoritmo predictivo}{42}{section.4.4}
 \contentsline {section}{\numberline {4.5}Administraci\IeC {\'o}n del sistema}{45}{section.4.5}
 \contentsline {chapter}{\numberline {5}Experimentos y evaluaci\IeC {\'o}n}{47}{chapter.5}
 \contentsline {section}{\numberline {5.1}Implementaci\IeC {\'o}n del sistema}{47}{section.5.1}
 \contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o de los experimentos}{49}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{51}{subsection.5.2.1}
-\contentsline {paragraph}{Stopword:}{52}{subsection.5.2.1}
+\contentsline {paragraph}{Stopword:}{51}{subsection.5.2.1}
 \contentsline {paragraph}{Language:}{52}{subsection.5.2.1}
 \contentsline {paragraph}{Counter:}{52}{subsection.5.2.1}
 \contentsline {paragraph}{MongoDB:}{52}{subsection.5.2.1}

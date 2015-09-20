@@ -1,15 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tesis-usach}[2015/08/31 Template Thesis USACH]
+\ProvidesClass{tesis-postgrado}[2015/08/31 Template Thesis USACH]
 
 % Agradecimiento a todos los que ayudaron a realizar este template versión estandarizada de la Universidad de Santiago de Chile, entre ellos Emir Muñoz, Rodrigo Campos, Hugo Meneses, Víctor Flores, Pablo González y Daniel Wladdimiro :)
 
 \newif\ifkeys\keysfalse
-\newif\iftxfonts\txfontsfalse
-\newif\ifdosguias\dosguiasfalse
 \newif\ifpropuesta\propuestafalse
 \DeclareOption{keys}{\keystrue}
-\DeclareOption{txfonts}{\txfontstrue}
-\DeclareOption{dosguias}{\dosguiastrue}
 \DeclareOption{propuesta}{\propuestatrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -50,7 +46,6 @@
 \RequirePackage{units}
 \RequirePackage{upgreek}
 
-\iftxfonts\RequirePackage{txfonts}\fi
 
 % Entornos y figuras
 \RequirePackage{verbatim}
@@ -392,7 +387,8 @@
 \def\facultad#1{\gdef\@facultad{#1}}
 \def\departamento#1{\gdef\@departamento{#1}}
 \def\grado#1{\gdef\@grado{#1}}
-\def\titulo#1{\gdef\@title{#1}\gdef\@titleMay{\begin{center}{\large\bf#1}%
+\def\titulo#1{\gdef\@title{\begin{center}{\large\bf#1}%
+\end{center}}\gdef\@titleMay{\begin{center}{\large\bf#1}%
 \end{center}}}
 \def\autor#1{\gdef\@autor{{\bfseries #1}}\gdef\@autorn{#1}}
 \def\fecha#1#2#3#4{\gdef\@diasemana{#1}\gdef\@diaexamen{#2}\gdef\@mesexamen{#3}%
@@ -416,8 +412,8 @@
 \hypersetup
 {
     bookmarksopen, bookmarksnumbered, pdfdisplaydoctitle=true,
-    pdftitle=Modelo el\'astico de replicaci\'on para el grafo l\'ogico de un sistema de procesamiento de stream en tiempo real,
-    pdfauthor=Daniel Pedro Pablo Wladdimiro Cottet,
+    pdftitle=\@title,
+    pdfauthor=\@autor,
     pdfsubject=Tesis de grado,
     pdfkeywords=,
     pdfcreator=Universidad de Santiago de Chile,
@@ -462,13 +458,7 @@
             A\~no Ingreso: & \@annoingreso \\
             Teléfono: & \@telefono \\
             E-mail: & \@email \\
-            \ifdosguias Profesores: \else Profesor: \fi &
-            \ifdosguias
-                {\normalfont \@profesorguia} \\ 
-                & {\normalfont \@profesorcoguia} \\
-            \else
-                \@profesorguia \\
-            \fi
+            Profesor: & \@profesorguia \\ 
         \end{tabular}
     \end{flushright}
     \begin{center}
@@ -484,9 +474,6 @@
 			\vspace*{2.5cm}
 			\begin{flushleft}
 				{\normalsize \hspace{7cm} Profesor guía: \@profesorguia}\\
-				\ifdosguias
-				{\normalsize \hspace{7cm} Profesora co-guía: \@profesorcoguia}\\
-				\fi
 				\vspace{1cm}
 				\hspace{6.8cm}
 				{\normalsize
