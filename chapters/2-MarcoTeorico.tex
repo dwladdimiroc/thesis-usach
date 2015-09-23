@@ -60,7 +60,7 @@ Las principales aplicaciones que se le dan a estos SPS, están orientadas al man
 
 Cada sistema de procesamiento de \textsl{streaming} está basado en un modelo de procesamiento en particular. Por ejemplo, S4 utiliza el modelo de procesamiento \textsl{push} \citep{s4yahoo}, y Storm el modelo \textsl{pull} \citep{stormtwitter}.
 
-El primer modelo llamado \textit{push}, consiste en el envío de datos desde el operador. La ventaja de este modelo empleado por S4 radica en la abstracción en el envío de datos, sin embargo no asegura el procesamiento de estos, debido a que no existe un mensaje de respuesta al ser entregado al operador. En la Figura \ref{fig:sps-push} se puede ver el Operador A como envía los datos al Operador B, donde en caso que esté procesando un dato el Operador B, éste lo guarda en cola. Debido a la forma en como se realiza el envío del evento, éste no asegura que llegue efectivamente, en caso que suceda una falla en la comunicación, habiendo una abstracción en el envío de los eventos por parte del operador emisor.
+El primer modelo llamado \textit{push}, consiste en el envío de datos desde el operador. La ventaja de este modelo empleado por S4 radica en la abstracción en el envío de datos, sin embargo no asegura el procesamiento de estos, debido a que no existe un mensaje de respuesta al ser entregado al operador. En la Figura \ref{fig:sps-push} se puede ver el Operador A como envía los datos al Operador B, donde en caso que el Operador B esté procesando un dato, éste lo guarda en cola. Debido a la forma en como se realiza el envío del evento, éste no asegura que llegue efectivamente, en caso que suceda una falla en la comunicación, habiendo una abstracción en el envío de los eventos por parte del operador emisor.
 
 \begin{figure}[ht!]
   \centering
@@ -159,9 +159,9 @@ En la Ecuación \ref{eq:matrizTransicion} se presenta una matriz de transición 
 	\hspace*{1cm} \sum_{j=1}^{n} P_{ij} = 1 ; \forall i
 \end{equation}
 
-En la Figura \ref{fig:ejCadenaMarkov} se muestra un ejemplo de una cadena de Markov simple, donde se analiza la probabilidad del clima de mañana dado el clima de hoy día. Como se puede observar, no se considera la historia del clima en la semana, sólo en el caso actual, lo cual es definido en los procesos estocásticos. Dada las probabilidades que transite de un clima a otro, se puede ver en la Ecuación \ref{eq:ejCadenaMarkov} la matriz de transición resultante.
+En la Figura \ref{fig:ejCadenaMarkov} se muestra un ejemplo de una cadena de Markov simple, donde se analiza la probabilidad del clima de mañana dado el clima de hoy día. Como se puede observar, no se considera la historia del clima en la semana, sólo el del caso actual, lo cual es definido en los procesos estocásticos. Dada las probabilidades que transite de un clima a otro, se puede ver en la Ecuación \ref{eq:ejCadenaMarkov} la matriz de transición resultante.
 
-\begin{figure}[hb!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=0.5]{images/EjCadenaMarkov.pdf}
 	\caption{Ejemplo de cadena de Markov.}

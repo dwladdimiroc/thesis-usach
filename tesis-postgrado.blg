@@ -17,42 +17,42 @@ A level-1 auxiliary file: anexos/Anexo-2.aux
 A level-1 auxiliary file: anexos/Anexo-3.aux
 A level-1 auxiliary file: anexos/Anexo-4.aux
 Database file #1: bibliografia.bib
-Warning--empty journal in de1978calculus
 Warning--empty journal in falk2012first
+Warning--empty journal in de1978calculus
 Warning--empty journal in sturm2000foundations
 You've used 61 entries,
             2804 wiz_defined-function locations,
-            941 strings with 16564 characters,
-and the built_in function-call counts, 35306 in all, are:
-= -- 2878
-> -- 1446
+            941 strings with 16563 characters,
+and the built_in function-call counts, 35388 in all, are:
+= -- 2885
+> -- 1455
 < -- 52
-+ -- 561
-- -- 480
-* -- 2547
-:= -- 5518
++ -- 564
+- -- 483
+* -- 2560
+:= -- 5527
 add.period$ -- 182
 call.type$ -- 61
-change.case$ -- 489
+change.case$ -- 490
 chr.to.int$ -- 61
 cite$ -- 64
-duplicate$ -- 2549
-empty$ -- 2663
-format.name$ -- 659
-if$ -- 7021
+duplicate$ -- 2553
+empty$ -- 2664
+format.name$ -- 666
+if$ -- 7036
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 518
+missing$ -- 519
 newline$ -- 308
 num.names$ -- 244
-pop$ -- 1143
+pop$ -- 1147
 preamble$ -- 1
-purify$ -- 404
+purify$ -- 405
 quote$ -- 0
 skip$ -- 1128
 stack$ -- 0
 substring$ -- 1475
-swap$ -- 1308
+swap$ -- 1312
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
