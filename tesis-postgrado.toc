@@ -31,49 +31,49 @@
 \contentsline {section}{\numberline {3.1}Perspectivas de balance de carga}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Recursos f\IeC {\'\i }sicos}{25}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Recursos l\IeC {\'o}gicos}{26}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Enfoque est\IeC {\'a}tico}{26}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}Enfoque est\IeC {\'a}tico}{27}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Enfoque din\IeC {\'a}mico}{28}{subsection.3.1.4}
 \contentsline {paragraph}{Reactivo:}{28}{subsection.3.1.4}
 \contentsline {paragraph}{Predictivo:}{29}{subsection.3.1.4}
 \contentsline {section}{\numberline {3.2}T\IeC {\'e}cnicas de balance de carga}{29}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Planificaci\IeC {\'o}n determinista}{29}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Load Shedding}{30}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Migraci\IeC {\'o}n}{31}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Migraci\IeC {\'o}n}{32}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{32}{subsection.3.2.4}
-\contentsline {chapter}{\numberline {4}Dise\~no del modelo el\IeC {\'a}stico}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis del m\IeC {\'o}delo el\IeC {\'a}stico}{35}{section.4.1}
-\contentsline {paragraph}{Monitor de carga:}{39}{figure.caption.23}
-\contentsline {paragraph}{Analizador de carga:}{39}{figure.caption.23}
-\contentsline {paragraph}{Predictor de carga:}{39}{figure.caption.23}
-\contentsline {paragraph}{Administrador de r\IeC {\'e}plicas:}{39}{figure.caption.23}
-\contentsline {section}{\numberline {4.2}Recolecci\IeC {\'o}n de los datos}{39}{section.4.2}
-\contentsline {section}{\numberline {4.3}Algoritmo reactivo}{40}{section.4.3}
-\contentsline {section}{\numberline {4.4}Algoritmo predictivo}{42}{section.4.4}
-\contentsline {section}{\numberline {4.5}Administraci\IeC {\'o}n del sistema}{45}{section.4.5}
-\contentsline {chapter}{\numberline {5}Experimentos y evaluaci\IeC {\'o}n}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementaci\IeC {\'o}n del sistema}{47}{section.5.1}
-\contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o de los experimentos}{49}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{51}{subsection.5.2.1}
-\contentsline {paragraph}{Stopword:}{52}{subsection.5.2.1}
-\contentsline {paragraph}{Language:}{52}{subsection.5.2.1}
-\contentsline {paragraph}{Counter:}{52}{subsection.5.2.1}
-\contentsline {paragraph}{MongoDB:}{52}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Aplicaci\IeC {\'o}n 2: Contador de palabras en muestras de textos}{53}{subsection.5.2.2}
-\contentsline {paragraph}{Split:}{53}{subsection.5.2.2}
-\contentsline {paragraph}{Counter:}{53}{subsection.5.2.2}
-\contentsline {paragraph}{Merge:}{53}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Aplicaci\IeC {\'o}n 3: Aplicaci\IeC {\'o}n sint\IeC {\'e}tica}{54}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Evaluaci\IeC {\'o}n}{55}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{55}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Aplicaci\IeC {\'o}n 2: Contador de palabras en muestras de textos}{64}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Aplicaci\IeC {\'o}n 3: Aplicaci\IeC {\'o}n sint\IeC {\'e}tica}{76}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Conclusiones}{85}{chapter.6}
-\contentsline {section}{\numberline {6.1}Detalles de la contribuci\IeC {\'o}n}{85}{section.6.1}
-\contentsline {section}{\numberline {6.2}Discusiones}{86}{section.6.2}
-\contentsline {section}{\numberline {6.3}Trabajo futuro}{88}{section.6.3}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{92}{chapter*.74}
-\contentsline {chapter}{Anexos}{92}{section*.75}
-\contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{93}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Clases para la implementaci\IeC {\'o}n del sistema de monitoreo}{95}{appendix.Alph2}
-\contentsline {chapter}{\numberline {C}Modificaciones al c\IeC {\'o}digo fuente de S4}{99}{appendix.Alph3}
-\contentsline {chapter}{\numberline {D}Configuraci\IeC {\'o}n para la comunicaci\IeC {\'o}n de S4}{101}{appendix.Alph4}
+\contentsline {chapter}{\numberline {4}Dise\~no del modelo el\IeC {\'a}stico}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}An\IeC {\'a}lisis del m\IeC {\'o}delo el\IeC {\'a}stico}{37}{section.4.1}
+\contentsline {paragraph}{Monitor de carga:}{40}{figure.caption.23}
+\contentsline {paragraph}{Analizador de carga:}{41}{figure.caption.23}
+\contentsline {paragraph}{Predictor de carga:}{41}{figure.caption.23}
+\contentsline {paragraph}{Administrador de r\IeC {\'e}plicas:}{41}{figure.caption.23}
+\contentsline {section}{\numberline {4.2}Recolecci\IeC {\'o}n de los datos}{41}{section.4.2}
+\contentsline {section}{\numberline {4.3}Algoritmo reactivo}{42}{section.4.3}
+\contentsline {section}{\numberline {4.4}Algoritmo predictivo}{44}{section.4.4}
+\contentsline {section}{\numberline {4.5}Administraci\IeC {\'o}n del sistema}{47}{section.4.5}
+\contentsline {chapter}{\numberline {5}Experimentos y evaluaci\IeC {\'o}n}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementaci\IeC {\'o}n del sistema}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o de los experimentos}{51}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{53}{subsection.5.2.1}
+\contentsline {paragraph}{Stopword:}{53}{subsection.5.2.1}
+\contentsline {paragraph}{Language:}{54}{subsection.5.2.1}
+\contentsline {paragraph}{Counter:}{54}{subsection.5.2.1}
+\contentsline {paragraph}{MongoDB:}{54}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Aplicaci\IeC {\'o}n 2: Contador de palabras en muestras de textos}{54}{subsection.5.2.2}
+\contentsline {paragraph}{Split:}{55}{subsection.5.2.2}
+\contentsline {paragraph}{Counter:}{55}{subsection.5.2.2}
+\contentsline {paragraph}{Merge:}{55}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Aplicaci\IeC {\'o}n 3: Aplicaci\IeC {\'o}n sint\IeC {\'e}tica}{56}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Evaluaci\IeC {\'o}n}{57}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales}{57}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Aplicaci\IeC {\'o}n 2: Contador de palabras en muestras de textos}{66}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Aplicaci\IeC {\'o}n 3: Aplicaci\IeC {\'o}n sint\IeC {\'e}tica}{78}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Conclusiones}{87}{chapter.6}
+\contentsline {section}{\numberline {6.1}Detalles de la contribuci\IeC {\'o}n}{87}{section.6.1}
+\contentsline {section}{\numberline {6.2}Discusiones}{88}{section.6.2}
+\contentsline {section}{\numberline {6.3}Trabajo futuro}{89}{section.6.3}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{94}{chapter*.73}
+\contentsline {chapter}{Anexos}{94}{section*.74}
+\contentsline {chapter}{\numberline {A}Conformaci\IeC {\'o}n de matriz de transici\IeC {\'o}n}{95}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Clases para la implementaci\IeC {\'o}n del sistema de monitoreo}{97}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Modificaciones al c\IeC {\'o}digo fuente de S4}{101}{appendix.Alph3}
+\contentsline {chapter}{\numberline {D}Configuraci\IeC {\'o}n para la comunicaci\IeC {\'o}n de S4}{103}{appendix.Alph4}

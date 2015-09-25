@@ -41,12 +41,6 @@ Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
   Discrete Algorithms, {SODA} 2006, Miami, Florida, USA, January 22-26,
   2006\/}, (pp. 708--713).
 
-\bibitem[{Birman(2012)}]{bookDistrSys}
-Birman, K.~P. (2012).
-\newblock {\em Guide to Reliable Distributed Systems - Building High-Assurance
-  Applications and Cloud-Hosted Services\/}.
-\newblock Texts in Computer Science. Springer.
-
 \bibitem[{Bose(2013)}]{bose2013introduction}
 Bose, S.~K. (2013).
 \newblock {\em An introduction to queueing systems\/}.
@@ -131,6 +125,11 @@ Gedik, B., Schneider, S., Hirzel, M., \& Wu, K. (2014).
 \newblock Elastic scaling for data stream processing.
 \newblock {\em {IEEE} Trans. Parallel Distrib. Syst.\/}, {\em 25\/}(6),
   1447--1463.
+
+\bibitem[{Goetsch(2014)}]{kelly2014elasticity}
+Goetsch, K. (2014).
+\newblock {\em eCommerce in the Cloud - Bringing Elasticity to eCommerce\/}.
+\newblock O'Reilly.
 
 \bibitem[{Gong et~al.(2010)Gong, Gu, \& Wilkes}]{GongGW10}
 Gong, Z., Gu, X., \& Wilkes, J. (2010).

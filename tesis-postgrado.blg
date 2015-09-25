@@ -22,16 +22,16 @@ Warning--empty journal in de1978calculus
 Warning--empty journal in sturm2000foundations
 You've used 61 entries,
             2804 wiz_defined-function locations,
-            941 strings with 16563 characters,
-and the built_in function-call counts, 35388 in all, are:
-= -- 2885
+            939 strings with 16484 characters,
+and the built_in function-call counts, 35376 in all, are:
+= -- 2881
 > -- 1455
 < -- 52
 + -- 564
 - -- 483
-* -- 2560
-:= -- 5527
-add.period$ -- 182
+* -- 2559
+:= -- 5524
+add.period$ -- 181
 call.type$ -- 61
 change.case$ -- 490
 chr.to.int$ -- 61
@@ -39,13 +39,13 @@ cite$ -- 64
 duplicate$ -- 2553
 empty$ -- 2664
 format.name$ -- 666
-if$ -- 7036
+if$ -- 7032
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 519
 newline$ -- 308
 num.names$ -- 244
-pop$ -- 1147
+pop$ -- 1149
 preamble$ -- 1
 purify$ -- 405
 quote$ -- 0
@@ -60,5 +60,5 @@ type$ -- 495
 warning$ -- 3
 while$ -- 260
 width$ -- 0
-write$ -- 766
+write$ -- 765
 (There were 3 warnings)
