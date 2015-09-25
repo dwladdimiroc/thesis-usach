@@ -37,7 +37,7 @@
 \contentsline {paragraph}{Predictivo:}{29}{subsection.3.1.4}
 \contentsline {section}{\numberline {3.2}T\IeC {\'e}cnicas de balance de carga}{29}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Planificaci\IeC {\'o}n determinista}{29}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Load Shedding}{30}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Load Shedding}{31}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Migraci\IeC {\'o}n}{32}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Fisi\IeC {\'o}n}{32}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}Dise\~no del modelo el\IeC {\'a}stico}{37}{chapter.4}
