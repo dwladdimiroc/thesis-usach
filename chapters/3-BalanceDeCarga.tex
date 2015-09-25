@@ -139,6 +139,8 @@ Otros trabajos como \citep{GedikSHW14, SchneiderAGBW09} también aplican este m�
 
 En \citep{FernandezMKP13}, aplican fisión en el caso que exista un cuello de botella en un operador. Para la detección de estas situaciones, se posee un monitor, el cual está consultando cada cierto período de tiempo el estado de cada uno de los operadores. De esta manera, en caso que un operador sobrepase el umbral de carga establecido, el cual está determinado por la utilización de CPU se replique el operador. En la Figura \ref{fig:ejFision} se puede ver un sistema, en el cual el operador \textit{u} está enviando un flujo de datos al operador \textit{o}. Una vez \textit{o} se sobrecarga (cuello de botella), éste se debe replicar, hasta reducir la carga hasta el umbral deseado, en otras palabras, llega a la cantidad de réplicas necesarias, por lo que no es necesario seguir replicando.
 
+Dentro de las desventajas existentes por parte de estos trabajos realizados, es que no utilizan la historia del operador para analizar el comportamiento a futuro de la carga. El uso de sistemas de predicción puede estabilizar el sistema cuando existen \textit{peaks} en el tráfico, debido que estos son detectados en el pasado, y se verifica si pueden ocurrir en el futuro. Otro desventaja, es que en algunos trabajos es necesario detener la ejecución de la aplicación, cambiar el número de réplicas y volver a iniciar, lo cual genera una pérdida de eventos.
+
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.3]{images/EjFision.png}
@@ -146,4 +148,4 @@ En \citep{FernandezMKP13}, aplican fisión en el caso que exista un cuello de bo
 	\label{fig:ejFision}
 \end{figure}
 
-Dentro de las desventajas existentes por parte de estos trabajos realizados, es que no utilizan la historia del operador para analizar el comportamiento a futuro de la carga. El uso de sistemas de predicción puede estabilizar el sistema cuando existen \textit{peaks} en el tráfico, debido que estos son detectados en el pasado, y se verifica si pueden ocurrir en el futuro. Otro desventaja, es que en algunos trabajos es necesario detener la ejecución de la aplicación, cambiar el número de réplicas y volver a iniciar, lo cual genera una pérdida de eventos.
+\vspace*{15cm}
