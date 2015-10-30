@@ -6,7 +6,7 @@ En este capítulo se aborda el análisis del modelo elástico de replicación de
 \section{Análisis del módelo elástico}
 Dentro del análisis realizado en la arquitectura del sistema implementado, se utiliza una perspectiva basada en los recursos lógicos del sistema según el enfoque dinámico, la cual es explicada en la Sección \ref{subsec:recLogicosBC}, para el balance de carga del SPS. El presente trabajo no se enfoca en el análisis del comportamiento de cada uno de los nodos físicos del sistema, sino más bien en el estado de cada uno de los operadores del grafo diseñado, siendo un problema de carácter lógico y no físico.
 
-Respecto al estudio de las distintas técnicas implementadas, es necesario utilizar una que minimice la pérdida de datos, que sea capaz de adaptarse a las condiciones dinámicas del tráfico, y que introduzca un bajo \textit{overhead} al sistema, de tal manera que sea escalable. Bajo estas restricciones, se considera que la mejor opción es utilizar la técnica de fisión, utilizando el modelo de replicación de \citep{FernandezMKP13}, donde basándose en el nivel de carga del operador, se evalúa la generación de una réplica para este. Dentro de las hipótesis, se plantea que el costo de un operador es menor a la formación de las colas de datos en el sistema, lo cual puede variar según la arquitectura del SPS implementando.
+Respecto al estudio de las distintas técnicas implementadas, es necesario utilizar una que minimice la pérdida de datos, que sea capaz de adaptarse a las condiciones dinámicas del tráfico, y que sea de bajo \textit{overhead} para el sistema, de tal manera que sea escalable. Bajo estas restricciones, se considera que la mejor opción es utilizar la técnica de fisión, utilizando el modelo de replicación de \citep{FernandezMKP13}, donde basándose en el nivel de carga del operador, se evalúa la generación de una réplica para este. Dentro de las hipótesis, se plantea que el costo de un operador es menor a la formación de las colas de datos en el sistema, lo cual puede variar según la arquitectura del SPS implementando.
 
 En la Figura \ref{fig:ejReplicacion} se muestra un ejemplo de la replicación propuesta. La Figura \ref{fig:ejReplicacion} (a) se presentan tres operadores, donde en el operador B existe una sobrecarga representada por una doble circunferencia, por lo que es necesario replicar el operador. En la Figura \ref{fig:ejReplicacion} (b) se presenta el mismo operador ya replicado, pero todavía persiste la sobrecarga en éste, por lo que se vuelve a realizar el mismo procedimiento, hasta que finalmente converge a la cantidad óptima de réplicas deseadas en el sistema en el período de tiempo analizado, como se muestra en la Figura \ref{fig:ejReplicacion} (c).
 
@@ -66,12 +66,12 @@ En las siguientes secciones se profundiza en el diseño propuesto para cada uno 
 
 Como se había mencionado anteriormente, el monitor de carga está encargado de recolectar los datos necesarios para el funcionamiento del modelo elástico, tanto el historial para el algoritmo predictivo, como la tasa de rendimiento para el algoritmo reactivo.
 
-La recolección de muestras para el algoritmo predictivo se realiza cada un segundo, debido que se considera tiempo suficiente para obtener una muestra representativa del operador. De esta manera, se espera que existan cien muestras para que se ejecute el algoritmo predictivo, por lo que existe una ventana de tiempo de cien segundos entre cada ejecución del algoritmo. La cantidad de muestras fue determinado según la literatura, debido que se considera un número apropiado para realizar una predicción del operador \citep{ching2006markov}.
+La recolección de muestras para el algoritmo predictivo se realiza cada un segundo, debido que se considera tiempo suficiente para obtener una muestra representativa del operador. De esta manera, se espera que existan $n$ muestras para que se ejecute el algoritmo predictivo, por lo que existe una ventana de tiempo $T_p$ entre cada ejecución del algoritmo. La cantidad de muestras fue determinado según la literatura, debido que se considera un número apropiado para realizar una predicción del operador \citep{GongGW10}.
 
-%Analizar con más detalle el tema de mu, porque quizá es erróneo lo descrito aquí
-Por otra parte, para la obtención de muestras para el algoritmo reactivo, se consideran muestras obtenidas en períodos de cinco segundos. La muestra está compuesta por la tasa de rendimiento del operador en ese período, la cual es utilizada por el algoritmo reactivo para determinar el estado del operador según los umbrales propuestos. Dentro de las consideraciones realizadas para la recolección de datos para el algoritmo reactivo, está el considerar que la tasa de procesamiento ($\mu$) es homogénea con el transcurso del tiempo, considerando que los datos procesados son homogéneos, por lo tanto, se considera un valor promedio de la tasa de procesamiento según los primeros datos procesados. 
+%Analizar con más detalle el tema de mu, porque quizá es erróneo lo descrito aquís
+Por otra parte, para la obtención de muestras para el algoritmo reactivo, se consideran muestras obtenidas en períodos de $T_r$. La muestra está compuesta por la tasa de rendimiento del operador en ese período, la cual es utilizada por el algoritmo reactivo para determinar el estado del operador según los umbrales propuestos. Dentro de las consideraciones realizadas para la recolección de datos para el algoritmo reactivo, está el considerar que la tasa de procesamiento ($\mu$) es homogénea con el transcurso del tiempo, considerando que los datos procesados son homogéneos, por lo tanto, se considera un valor promedio de la tasa de procesamiento según los primeros datos procesados. 
 
-Cabe destacar que cuando el algoritmo predictivo se ejecuta, no es necesaria la recolección de los datos del período, debido que el algoritmo reactivo no se ejecuta en el mismo período que el predictivo. Sólo la recolección del historial es realizada en todo momento, dado que estás son guardadas para posteriormente ser analizadas por el algoritmo predictivo. Debido a los algoritmos utilizados, es que se ha considerado ventanas de tiempo de un segundo para la recolección de muestras para el análisis predictivo, y cinco segundos para el análisis reactivo.
+Cabe destacar que cuando el algoritmo predictivo se ejecuta, no es necesaria la recolección de los datos del período, debido que el algoritmo reactivo no se ejecuta en el mismo período que el predictivo. Sólo la recolección del historial es realizada en todo momento, dado que estás son guardadas para posteriormente ser analizadas por el algoritmo predictivo. Debido a los algoritmos utilizados, es que se ha considerado ventanas de tiempo de un segundo para la recolección de muestras para el análisis predictivo, y $T_p$ para el análisis reactivo.
 
 \section{Algoritmo reactivo}
 El diseño del algoritmo reactivo se basa en el análisis del estado del operador en un período determinado, siendo definido su estado por una variable del operador, el cual depende del rango en que se encuentre dado los umbrales que se establecen. Este diseño analiza según la tasa de rendimiento ($\rho$), donde el estado del operador depende del valor que éste posea según los parámetros del algoritmo.
@@ -110,7 +110,7 @@ Para la confección del algoritmo predictivo se ha realizado un análisis según
 \begin{itemize}
 	\item Definir muestras en tiempos discretos, las cuales cambian con el tiempo según un proceso estocástico. Las muestras se definieron como la tasa de procesamiento ($\rho$) del operador, la cual dependiendo de su valor, otorgar un estado al operador.
 	\item Determinar los estados finitos que se utilizan para la conformación de la cadena, que son los estados que se puede encontrar el operador: ocioso, estable o inestable.
-	\item Obtener una cantidad representativa de muestras para la construcción de la cadena de Markov en el período analizado. Estas muestras son independientes entre un período y otro, por lo que los valores de la cadena de Markov cambian en cada período de tiempo. Para la implementación del algoritmo, se ha considerado cien muestras por cada período, cuyos intervalos de tiempo son de cien segundos, valor establecido en base al trabajo de \citep{GongGW10}.
+	\item Obtener una cantidad representativa de muestras para la construcción de la cadena de Markov en el período analizado. Estas muestras son independientes entre un período y otro, por lo que los valores de la cadena de Markov cambian en cada período de tiempo. %Para la implementación del algoritmo, se ha considerado cien muestras por cada período, cuyos intervalos de tiempo son de cien segundos, valor establecido en base al trabajo de \citep{GongGW10}.
 \end{itemize}
 
 Tomando las bases anteriores, se ha diseñado una cadena de Markov en base a tres posibles estados: ocioso, estable e inestable, como se muestra en la Figura \ref{fig:cadenaMarkovPredictiva}. Cada uno de los estados posee una probabilidad de transición hacia algún estado, cuyas probabilidades están definidas por las muestras obtenidas en el período de tiempo analizado.
@@ -124,7 +124,7 @@ Tomando las bases anteriores, se ha diseñado una cadena de Markov en base a tre
 
 %Por lo tanto, para cada operador existe una cadena de Markov según la historia existente en una ventana de tiempo. Para la generación de esta cadena de Markov, se puede ver en el Apéndice \ref{apendice:matrizTransicion} el algoritmo que crea la matriz de transición según el historial del operador, la cual corresponde a la tasa de rendimiento recolectada cada un segundo en la última ventana de tiempo del operador analizado. En la Ecuación \ref{eq:matrizTransicionPredictive} se puede ver la matriz de transición que se obtiene de la cadena de Markov de la Figura \ref{fig:cadenaMarkovPredictiva}, la cual posee una probabilidad de transición desde cada uno de los estado a otro existente.
 
-Por lo tanto, para cada operador se construye una cadena de Markov según el historial obtenido en la ventana de tiempo, cuyo período es de 100 segundos. Para la conformación de la cadena de Markov se ha considerado las muestras de la historia de los operadores, por lo que el comportamiento del estado entre una muestra a otra representa una transición, las cuales dan origen a la matriz de transición. En el Anexo \ref{apendice:matrizTransicion} se presenta el algoritmo que se ha empleado para construir esta matriz. En la ecuación \ref{eq:matrizTransicionPredictive} se muestra la matriz de transición que se obtiene de la cadena de Markov de la Figura \ref{fig:cadenaMarkovPredictiva}.
+Por lo tanto, para cada operador se construye una cadena de Markov según el historial obtenido en la ventana de tiempo $T_p$. Para la conformación de la cadena de Markov se ha considerado las muestras de la historia de los operadores, por lo que el comportamiento del estado entre una muestra a otra representa una transición, las cuales dan origen a la matriz de transición. En el Anexo \ref{apendice:matrizTransicion} se presenta el algoritmo que se ha empleado para construir esta matriz. En la ecuación \ref{eq:matrizTransicionPredictive} se muestra la matriz de transición que se obtiene de la cadena de Markov de la Figura \ref{fig:cadenaMarkovPredictiva}.
 
 \begin{equation} \label{eq:matrizTransicionPredictive}
 	P =
@@ -139,13 +139,7 @@ Obtenida la matriz de transición se puede calcular la distribución estacionari
 
 El Algoritmo \ref{alg:distEstacionaria} describe el cálculo de la distribución estacionaria, cuya entrada es la matriz de transición de un operador del SPS. 
 
-%Antes de realizar el cálculo, es importante analizar si efectivamente existen transiciones en todos los estados, debido a que existe la posibilidad que no haya una transición a un estado en particular en un período de tiempo. Por ejemplo, puede ocurrir que en una ventana de tiempo nunca se ha alcanzado el estado ocioso en el sistema, pero si el estable o inestable. Como el cálculo de la distribución estacionaria requiere un estado de inicio, se ha verificado si efectivamente existe o no el estado, y en caso no existir, el estado de inicio es alguno existente.
-
-Antes de realizar el cálculo, es importante definir el estado inicial para el proceso de iteración. Es por esto que se escoge la última muestra obtenida, y según el estado que ésta se encuentre es el estado inicial que se utiliza para el cálculo de la distribución estacionaria.
-
-La cantidad de iteraciones que debe realizarse para el cálculo correspondiente, es un parámetro entrada del algoritmo. Es importante destacar que entre mayor es la cantidad de iteraciones, mayor es la precisión del valor predicho. Esto implica a su vez un mayor tiempo de cómputo, por lo que se ha considerado un punto medio, de tal manera de lograr un bajo margen de error, pero con bajo costo en el tiempo de ejecución. La cantidad de iteraciones escogida para la implementación fue de 100.000.
-
-\begin{algorithm}[!ht]
+\begin{algorithm}[!t]
 	\caption{Cálculo de la distribución estacionaria de la cadena de Markov de un operador $\phi$.}
 	\label{alg:distEstacionaria}
 	\begin{algorithmic}[1]
@@ -184,9 +178,17 @@ La cantidad de iteraciones que debe realizarse para el cálculo correspondiente,
 	\end{algorithmic}
 \end{algorithm}
 
+%Antes de realizar el cálculo, es importante analizar si efectivamente existen transiciones en todos los estados, debido a que existe la posibilidad que no haya una transición a un estado en particular en un período de tiempo. Por ejemplo, puede ocurrir que en una ventana de tiempo nunca se ha alcanzado el estado ocioso en el sistema, pero si el estable o inestable. Como el cálculo de la distribución estacionaria requiere un estado de inicio, se ha verificado si efectivamente existe o no el estado, y en caso no existir, el estado de inicio es alguno existente.
+
+Antes de realizar el cálculo, es importante definir el estado inicial para el proceso de iteración. Es por esto que se escoge la última muestra obtenida, y según el estado que ésta se encuentre es el estado inicial que se utiliza para el cálculo de la distribución estacionaria.
+
+La cantidad de iteraciones $\upsilon$ que debe realizarse para el cálculo correspondiente, es un parámetro entrada del algoritmo. Es importante destacar que entre mayor es la cantidad de iteraciones, mayor es la precisión del valor predicho. Esto implica a su vez un mayor tiempo de cómputo, por lo que se ha considerado un punto medio, de tal manera de lograr un bajo margen de error, pero con bajo costo en el tiempo de ejecución. %La cantidad de iteraciones escogida para la implementación fue de 100.000.
+
+%\vspace{-2cm}
+
 Obtenida la distribución estacionaria, se procede a analizar las probabilidades obtenidas y como es el comportamiento del operador. Para esto, se ha considerado que las probabilidades tengan una desviación estándar superior a 0.25, lo que indica que la probabilidad mayor de la distribución estacionaria no posea incertidumbre. En el caso que no supere la desviación estándar, puede ser que dos probabilidades sean muy parecidas y la probabilidad no sea un comportamiento determinante \citep{soong2004fundamentals}. El Algoritmo \ref{alg:predictive} detalla el análisis que se realiza a la distribución estacionaria, siendo en primer lugar el análisis estadístico de las probabilidades, y en segundo lugar la obtención del estado con mayor valor de las probabilidades, retornando finalmente el estado del operador. Cabe destacar que el primer estado se ha considerado ocioso, el segundo estable, y el tercero inestable.
 
-\begin{algorithm}[!ht]
+\begin{algorithm}[t]
 	\caption{Algoritmo predictivo del modelo elástico.}
 	\label{alg:predictive}
 	\begin{algorithmic}[1]
@@ -212,7 +214,10 @@ Obtenida la distribución estacionaria, se procede a analizar las probabilidades
 
 El último componente del modelo es el administrador de réplicas, cuya función es administrar la cantidad de réplicas en cada uno de los operadores según los recursos disponibles en el sistema y según el estado que adopte un operador, ya sea a futuro o en el momento.
 
-Para esto, se ha diseñado un administrador que ejecuta uno de los algoritmos (reactivo o predictivo) según el período del ciclo que se encuentre el sistema. Cada ciclo posee 20 períodos, donde los primeros 19 corresponden al algoritmo reactivo y el último corresponde al algoritmo predictivo. Cada período posee un intervalo de 5 segundos, de esta manera, cada ciclo tiene un intervalo de 100 segundos, la cantidad necesaria para obtener las muestras para el algoritmo predictivo, suponiendo que cada muestra es obtenida cada 1 segundo.
+%Para esto, se ha diseñado un administrador que ejecuta uno de los algoritmos (reactivo o predictivo) según el período del ciclo que se encuentre el sistema. Cada ciclo posee 20 períodos, donde los primeros 19 corresponden al algoritmo reactivo y el último corresponde al algoritmo predictivo. Cada período posee un intervalo de 5 segundos, de esta manera, cada ciclo tiene un intervalo de 100 segundos, la cantidad necesaria para obtener las muestras para el algoritmo predictivo, suponiendo que cada muestra es obtenida cada 1 segundo.
+
+Para esto, se ha diseñado un administrador que ejecuta el algoritmo reactivo en un período de $T_r$ y el algoritmo predictivo en un período de $T_p$. Cabe destacar, que la ventana de tiempo utilizada para el algoritmo reactivo es mayor que la del predictivo, esto debido que uno analiza el comportamiento en el momento y otro a futuro según la historia.
+
 
 \begin{algorithm}[!ht]
 	\caption{Administración de réplicas de un operador $\phi$ dado su comportamiento en el modelo elástico.}
@@ -221,26 +226,26 @@ Para esto, se ha diseñado un administrador que ejecuta uno de los algoritmos (r
 	\REQUIRE Operador $\phi$ a analizar y $\iota$ período en que se encuentra el modelo elástico.
 	\ENSURE Cantidad de réplicas a modificar del operador.	
 	
-	\IF {$\iota \mod{20} \neq 0 $}
+	\IF {$\iota$ es $T_p$}
+		\STATE $\delta_{\iota} \leftarrow AlgoritmoPredictivo(\phi)$
+		\IF {$\delta_{\iota}$ es estado inestable}
+			\IF {No excede la cantidad máxima de réplicas en el sistema}
+				\RETURN Crear $\theta$ réplicas del operador $\phi$
+			\ENDIF
+		\ELSIF {$\delta_{\iota}$ es estado ocioso}
+			\RETURN Remover $\theta$ réplicas del operador $\phi$
+		\ENDIF
+	\ELSE[$\iota$ es $T_r$]
 		\STATE $\delta_{\iota} \leftarrow AlgoritmoReactivo(\phi)$
 		\IF {$\delta_{\iota}$ \AND $\delta_{\iota-1}$ son estado inestable}
 			\IF {No excede la cantidad máxima de réplicas en el sistema}
 				\STATE $\delta_{\iota} \leftarrow \text{estado estable}$ 
-				\RETURN Crear una réplica del operador $\phi$
+				\RETURN Crear $\omega$ réplica del operador $\phi$
 			\ENDIF
 		\ELSIF {$\delta_{\iota}$ \AND $\delta_{\iota-1}$ son estado ocioso}
 			\STATE $\delta_{\iota} \leftarrow \text{estado estable}$ 
-			\RETURN Remover una réplica del operador $\phi$
+			\RETURN Remover $\omega$ réplica del operador $\phi$
 		\ENDIF 
-	\ELSE
-		\STATE $\delta_{\iota} \leftarrow AlgoritmoPredictivo(\phi)$
-		\IF {$\delta_{\iota}$ es estado inestable}
-			\IF {No excede la cantidad máxima de réplicas en el sistema}
-				\RETURN Crear cinco réplicas del operador $\phi$
-			\ENDIF
-		\ELSIF {$\delta_{\iota}$ es estado ocioso}
-			\RETURN Remover cinco réplicas del operador $\phi$
-		\ENDIF
 	\ENDIF
 	
 	\RETURN No hacer nada al operador $\phi$
@@ -248,6 +253,6 @@ Para esto, se ha diseñado un administrador que ejecuta uno de los algoritmos (r
 	\end{algorithmic}
 \end{algorithm}
 
-En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero se analiza que tipo de algoritmo se debe ejecutar según el período del ciclo. En caso de realizarse el algoritmo reactivo, se analiza si existen dos alertas consecutivas del mismo estado del operador, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Además, se cambia el estado actual del operador a estable, de tal manera de no considerar ese período para el próximo análisis reactivo. Esto se realiza para dejar un margen de descanso para el algoritmo reactivo. Por otra parte, de ejecutarse el módulo predictivo, se analiza cual es la predicción, por lo que si el estado es ocioso el sistema disminuye la cantidad de réplicas y si es inestable las aumenta. Como el proceso de predicción se realiza con menor frecuencia y posee mayor cantidad de cómputo, se ha considerado que se debe crear o remover una mayor cantidad de réplicas que en el módulo reactivo, aprovechando así el análisis de la historia del operador, la cual es de cinco réplicas.
+En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero se analiza que tipo de algoritmo se debe ejecutar según el período del ciclo. En caso de ejecutarse el módulo predictivo, se analiza cual es la predicción, por lo que si el estado es ocioso el sistema disminuye la cantidad de réplicas y si es inestable las aumenta. Como el proceso de predicción se realiza con menor frecuencia y posee mayor cantidad de cómputo, se ha considerado que se debe crear o remover una mayor cantidad de réplicas que en el módulo reactivo, aprovechando así el análisis de la historia del operador. Por otra parte, de realizarse el algoritmo reactivo se analiza si existen dos alertas consecutivas del mismo estado del operador, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Además, se cambia el estado actual del operador a estable, de tal manera de no considerar ese período para el próximo análisis reactivo. Esto se realiza para dejar un margen de descanso al algoritmo reactivo
 
 Dentro de las consideraciones que se han tenido para el diseño del administrador, es limitar la cantidad máxima de réplicas que pueden realizarse. Esto se debe a que una de las limitantes de este trabajo es que se ha  utilizado solo una máquina, y por ende la cantidad de recursos son limitados, por lo que al aumentar la cantidad de réplicas indefinidamente genera una sobrecarga en los recursos disponibles por parte de la máquina.
