@@ -1,4 +1,4 @@
-\begin{thebibliography}{61}
+\begin{thebibliography}{64}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -33,6 +33,15 @@ Appel, S., Frischbier, S., Freudenreich, T., \& Buchmann, A.~P. (2012).
   Service-Oriented Computing and Applications (SOCA), Taipei, Taiwan, Diciembre
   17-19, 2012\/}, (pp. 1--9).
 
+\bibitem[{Arasu et~al.(2004)Arasu, Cherniack, Galvez, Maier, Maskey, Ryvkina,
+  Stonebraker, \& Tibbetts}]{ArasuCGMMRST04}
+Arasu, A., Cherniack, M., Galvez, E.~F., Maier, D., Maskey, A., Ryvkina, E.,
+  Stonebraker, M., \& Tibbetts, R. (2004).
+\newblock Linear road: {A} stream data management benchmark.
+\newblock In {\em (e)Proceedings of the Thirtieth International Conference on
+  Very Large Data Bases, Toronto, Canada, August 31 - September 3 2004\/}, (pp.
+  480--491).
+
 \bibitem[{Bhuvanagiri et~al.(2006)Bhuvanagiri, Ganguly, Kesh, \&
   Saha}]{BhuvanagiriGKS06}
 Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
@@ -45,12 +54,6 @@ Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
 Bose, S.~K. (2013).
 \newblock {\em An introduction to queueing systems\/}.
 \newblock Springer Science \& Business Media.
-
-\bibitem[{Breuer \& Baum(2005)}]{queueingtheory}
-Breuer, L., \& Baum, D. (2005).
-\newblock {\em An introduction to queueing theory and matrix-analytic
-  methods\/}.
-\newblock Springer.
 
 \bibitem[{Brucker(2004)}]{bookScheduling}
 Brucker, P. (2004).
@@ -85,6 +88,10 @@ Ching, W.~K., \& Ng, M.~K. (2006).
 Chodorow, K. (2013).
 \newblock {\em MongoDB: The definitive guide\/}.
 \newblock O'Reilly Media, Inc.
+
+\bibitem[{Cooper(1972)}]{cooper1972introduction}
+Cooper, R.~B. (1972).
+\newblock Introduction to queueing theory.
 
 \bibitem[{Dong \& Akl(2006)}]{Dong06schedulingalgorithms}
 Dong, F., \& Akl, S.~G. (2006).
@@ -179,10 +186,22 @@ Ishii, A., \& Suzumura, T. (2011).
 \newblock In {\em {IEEE} International Conference on Cloud Computing, {CLOUD}
   2011, Washington, DC, USA, 4-9 July, 2011\/}, (pp. 195--202).
 
+\bibitem[{Jacob et~al.(2004)Jacob, Lanyon-Hogg, Nadgir, \&
+  Yassin}]{jacob2004practical}
+Jacob, B., Lanyon-Hogg, R., Nadgir, D.~K., \& Yassin, A.~F. (2004).
+\newblock A practical guide to the ibm autonomic computing toolkit.
+
 \bibitem[{Karp et~al.(2003)Karp, Shenker, \& Papadimitriou}]{KarpSP03}
 Karp, R.~M., Shenker, S., \& Papadimitriou, C.~H. (2003).
 \newblock A simple algorithm for finding frequent elements in streams and bags.
 \newblock {\em {ACM} Trans. Database Syst.\/}, {\em 28\/}, 51--55.
+
+\bibitem[{Kephart et~al.(2005)Kephart, Kephart, Chess, Boutilier, Das, Kephart,
+  \& Walsh}]{ibm2005architectural}
+Kephart, J., Kephart, J., Chess, D., Boutilier, C., Das, R., Kephart, J.~O., \&
+  Walsh, W.~E. (2005).
+\newblock An architectural blueprint for autonomic computing.
+\newblock {\em IBM White paper\/}.
 
 \bibitem[{Lehrig et~al.(2015)Lehrig, Eikerling, \& Becker}]{LehrigEB15}
 Lehrig, S., Eikerling, H., \& Becker, S. (2015).

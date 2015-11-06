@@ -45,6 +45,7 @@
 \RequirePackage{textcomp}
 \RequirePackage{units}
 \RequirePackage{upgreek}
+\RequirePackage{soulutf8}				% Resaltar en amarillo un texto
 
 
 % Entornos y figuras
