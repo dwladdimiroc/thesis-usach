@@ -1,4 +1,4 @@
-\begin{thebibliography}{64}
+\begin{thebibliography}{65}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -385,6 +385,14 @@ Wenzel, S. (2014).
   data business applications.
 \newblock In {\em Business Information Systems - 17th International Conference,
   {BIS} 2014, Larnaca, Cyprus, Mayo 22-23, 2014. Proceedings\/}, (pp. 61--72).
+
+\bibitem[{Wu et~al.(2012)Wu, Kumar, Wu, \& Ooi}]{WuKWO12}
+Wu, S., Kumar, V., Wu, K., \& Ooi, B.~C. (2012).
+\newblock Parallelizing stateful operators in a distributed stream processing
+  system: how, should you and how much?
+\newblock In {\em Proceedings of the Sixth {ACM} International Conference on
+  Distributed Event-Based Systems, {DEBS} 2012, Berlin, Germany, July 16-20,
+  2012\/}, (pp. 278--289).
 
 \bibitem[{Xing et~al.(2005)Xing, Zdonik, \& Hwang}]{XingZH05}
 Xing, Y., Zdonik, S.~B., \& Hwang, J. (2005).

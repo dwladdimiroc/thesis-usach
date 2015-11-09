@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesis-postgrado.aux
 A level-1 auxiliary file: preliminares/cubierta.aux
@@ -21,45 +21,45 @@ Warning--empty journal in cooper1972introduction
 Warning--empty journal in falk2012first
 Warning--empty journal in de1978calculus
 Warning--empty journal in sturm2000foundations
-You've used 64 entries,
+You've used 65 entries,
             2804 wiz_defined-function locations,
-            955 strings with 17223 characters,
-and the built_in function-call counts, 37547 in all, are:
-= -- 3038
-> -- 1607
-< -- 53
-+ -- 623
-- -- 537
-* -- 2737
-:= -- 5879
-add.period$ -- 188
-call.type$ -- 64
-change.case$ -- 526
-chr.to.int$ -- 64
-cite$ -- 68
-duplicate$ -- 2694
-empty$ -- 2784
-format.name$ -- 725
-if$ -- 7439
+            961 strings with 17548 characters,
+and the built_in function-call counts, 38347 in all, are:
+= -- 3106
+> -- 1642
+< -- 54
++ -- 636
+- -- 549
+* -- 2797
+:= -- 5994
+add.period$ -- 191
+call.type$ -- 65
+change.case$ -- 537
+chr.to.int$ -- 65
+cite$ -- 69
+duplicate$ -- 2750
+empty$ -- 2842
+format.name$ -- 740
+if$ -- 7605
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 550
-newline$ -- 321
-num.names$ -- 256
-pop$ -- 1225
+missing$ -- 560
+newline$ -- 326
+num.names$ -- 260
+pop$ -- 1249
 preamble$ -- 1
-purify$ -- 435
+purify$ -- 443
 quote$ -- 0
-skip$ -- 1181
+skip$ -- 1209
 stack$ -- 0
-substring$ -- 1542
-swap$ -- 1388
-text.length$ -- 21
+substring$ -- 1585
+swap$ -- 1421
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 525
+type$ -- 534
 warning$ -- 4
-while$ -- 272
+while$ -- 278
 width$ -- 0
-write$ -- 798
+write$ -- 811
 (There were 4 warnings)
