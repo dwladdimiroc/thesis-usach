@@ -4,17 +4,19 @@
 \section{Implementación del sistema}
 Para la implementación del sistema propuesto, se ha utilizado como base el sistema de procesamiento de \textit{stream} S4 \citep{s4}, cuyo modelo fue explicado en la Sección \ref{sec:SPS}. El desarrollo del modelo elástico de replicación de operadores de un SPS se ha implementando en Java, modificándose el código fuente de S4 para incluir las funcionalidades de la solución propuesta, de tal manera que sea automático y transparente para el usuario del SPS.
 
-El sistema diseñado se ha añadido al proyecto S4, generando un paquete denominado \textit{modelo} que contiene las clases: \textit{S4Monitor}, \textit{MarkovChain}, \textit{modeloMetrics}, \textit{StatusPE} y \textit{\mbox{TopologyApp}}. La primera clase corresponde a la implementación de las funcionalidades del modelo propuesto, ya sea la recepción de los datos del sistema, ejecución del algoritmo reactivo o predictivo y administración de las réplicas de cada operador. La segunda clase implementa el modelo de cadena de Markov usando el algoritmo predictivo, donde se encuentra tanto la conformación de la matriz de transición como el cálculo de la distribución estacionaria. La tercera clase se utiliza para recolectar las estadísticas de cada operador, y analizar los experimentos. Finalmente, la cuarta y quinta clase son utilizadas para la implementación del modelo, siendo la primera el estado de cada PE y la segunda la topología que posee el grafo creado por el usuario, los cuales están más detalladas en el Anexo \ref{apendice:clases}.
+El sistema diseñado se ha añadido al proyecto S4, generando un paquete denominado \textit{modelo} que contiene las clases: \textit{S4Monitor}, \textit{MarkovChain}, \textit{modeloMetrics}, \textit{StatusPE} y \textit{\mbox{TopologyApp}}, para mayor información véase el Anexo \ref{apendice:clases}.
 
-Para la ejecución del SPS en conjunto con el modelo, se debe en primer lugar registrar los PEs. Para esto, se ha implementado una función que tiene como parámetros dos PEs, donde el primero es el PE emisor y el segundo el PE receptor. Analizar el grafo se hace importante para el manejo de la topología \textit{a posteriori}, dado que con esta información se puede realizar un análisis previo del rendimiento de los PEs.
+Para la ejecución del SPS en conjunto con el modelo, se debe en primer lugar registrar los PEs. Además de esto, se ha añadido a cada PE como atributo la cantidad de eventos y salientes, y también un boolean en caso que se desee sólo una réplica del operador.
 
-Además de lo anterior, para el análisis de cada uno de los PEs, se ha añadido los atributos correspondientes a la cantidad de eventos entrantes y salientes en un período de un segundo. Esto es utilizado posteriormente para las estadísticas utilizadas por el algoritmo reactivo y predictivo. Además, se ha agregado un atributo booleano, el cual indica si el PE puede aumentar o disminuir la cantidad de réplicas que posee. Este atributo es necesario para aquellos operadores que al replicar se hace necesario un operador auxiliar, de tal manera que éste junte las respuestas que entrega cada réplica, por lo que con este atributo el operador es único, sin poder replicarse.
+%Además de lo anterior, para el análisis de cada uno de los PEs, se ha añadido los atributos correspondientes a la cantidad de eventos entrantes y salientes en un período de un segundo. Esto es utilizado posteriormente para las estadísticas utilizadas por el algoritmo reactivo y predictivo. Además, se ha agregado un atributo booleano, el cual indica si el PE puede aumentar o disminuir la cantidad de réplicas que posee. Este atributo es necesario para aquellos operadores que al replicar se hace necesario un operador auxiliar, de tal manera que éste junte las respuestas que entrega cada réplica, por lo que con este atributo el operador es único, sin poder replicarse.
 
-Para el funcionamiento del modelo se ejecutan dos tareas en la aplicación de S4: una tarea que guarda las muestras para el historial del operador y otra que envía las estadísticas del operador, las cuales poseen un intervalo de ejecución de 1 y 5 segundos respectivamente. La primera tarea analiza cada uno de los PEs, tomando en consideración las estadísticas de eventos entrantes y salientes, de tal manera de obtener la tasa de llegada ($\lambda$) y procesamiento ($\mu$), para posteriormente calcular la tasa de rendimiento en la ventana de tiempo analizada, guardando así la muestra en el historial. La segunda tarea obtiene las estadísticas de cada uno de los PEs, la tasa de llegada y procesamiento, dado los eventos entrantes y salientes, cantidad de eventos totales e historial del PE, los cuales son enviados al modelo de carga, para ejecutar el algoritmo que corresponda según la ventana de tiempo. Finalmente el módulo de administración de réplicas aumenta o disminuye las réplicas necesarias en cada operador. El código de la implementación se puede observar en el Anexo \ref{apendice:codigoFuenteS4}.
+%Para el funcionamiento del modelo se ejecutan dos tareas en la aplicación de S4: una tarea que guarda las muestras para el historial del operador y otra que envía las estadísticas del operador, las cuales poseen un intervalo de ejecución de 1 y 5 segundos respectivamente. La primera tarea analiza cada uno de los PEs, tomando en consideración las estadísticas de eventos entrantes y salientes, de tal manera de obtener la tasa de llegada ($\lambda$) y procesamiento ($\mu$), para posteriormente calcular la tasa de rendimiento en la ventana de tiempo analizada, guardando así la muestra en el historial. La segunda tarea obtiene las estadísticas de cada uno de los PEs, la tasa de llegada y procesamiento, dado los eventos entrantes y salientes, cantidad de eventos totales e historial del PE, los cuales son enviados al modelo de carga, para ejecutar el algoritmo que corresponda según la ventana de tiempo. Finalmente el módulo de administración de réplicas aumenta o disminuye las réplicas necesarias en cada operador. El código de la implementación se puede observar en el Anexo \ref{apendice:codigoFuenteS4}.
+%
+%En el caso del envío de las estadísticas, después de ser enviadas, se consulta el estado de cada uno de los operadores, y en caso de ser necesario, se realiza las modificaciones en el sistema, ya sea para crear o eliminar réplicas de un operador. Por lo que se consulta la cantidad de réplicas que estima el modelo elástico que deben existir, y en caso de ser un número de réplicas mayor que el actual, se crea la cantidad de réplicas faltantes. Por otra parte, si el número de réplicas estimado es menor, se eliminan las réplicas sobrantes, por lo que se finaliza la ejecución de las réplicas sobrantes y posteriormente las remueve. Los códigos asociados a los de creación o eliminación de réplicas se presentan en el Anexo \ref{apendice:codigoFuenteS4}.
 
-En el caso del envío de las estadísticas, después de ser enviadas, se consulta el estado de cada uno de los operadores, y en caso de ser necesario, se realiza las modificaciones en el sistema, ya sea para crear o eliminar réplicas de un operador. Por lo que se consulta la cantidad de réplicas que estima el modelo elástico que deben existir, y en caso de ser un número de réplicas mayor que el actual, se crea la cantidad de réplicas faltantes. Por otra parte, si el número de réplicas estimado es menor, se eliminan las réplicas sobrantes, por lo que se finaliza la ejecución de las réplicas sobrantes y posteriormente las remueve. Los códigos asociados a los de creación o eliminación de réplicas se presentan en el Anexo \ref{apendice:codigoFuenteS4}.
+Para el funcionamiento del modelo se ejecutan dos tareas en la aplicación de S4: una tarea que recolecta los datos y otra que recupera los resultados obtenidos por el modelo elástico. En caso que el administrador de réplicas indique se requiere modificar la cantidad de réplica, la segunda tarea realiza los cambios correspondientes al PE expresado. Los códigos asociados a los de creación o eliminación de réplicas se presentan en el Anexo \ref{apendice:codigoFuenteS4}.
 
-Dado que en el diseño se propuso un mecanismo de balance de carga basado en la técnica de replicación, se hace necesario modificar S4, de manera de poder manejar las réplicas de los operadores. Para la distribución de eventos cuando existe más de una réplica, se aplica una política basada en el largo de la cola de los operadores, donde aquel que posea menor largo es el candidato para recibir el evento entrante. \normalsize{El componente que escoge esto, es el \textit{pipeline} que existe entre los dos operadores, el cual analiza a qué operador debe enviar el dato, según la política explicada anteriormente.}
+Dado que en el diseño se propuso un mecanismo de balance de carga basado en la técnica de replicación, se hace necesario modificar S4, de manera de poder manejar las réplicas de los operadores. Para la distribución de eventos cuando existe más de una réplica, se aplica una política basada en el largo de la cola de los operadores, donde aquel que posea menor largo es el candidato para recibir el evento entrante. \normalsize{El componente que escoge esto, es el \textit{pipeline} que existe entre los dos operadores, el cual analiza a qué operador debe enviar el dato, según la política explicada anteriormente. Este pipeline es una clase llamada \textit{Stream}, el cual va a actuar como intermediario entre el operador emisor y receptor, de tal manera que en caso que se envíe el evento, va a pasar por esta clase y encola el evento para ser procesado posteriormente en alguna de réplicas disponibles.}
 
 En la Figura \ref{fig:distCarga} se explica gráficamente la distribución de la carga. En la Figura \ref{fig:distCarga} (a) el operador A envía un evento al operador B, el cual posee tres réplicas, siendo \normalsize{las colas de menor tamaño} las que están en la réplica 2 y 3. Dado que el tamaño de las colas son iguales, se escoge la primera réplica disponible, es decir, la réplica 2. Posteriormente, como la réplica 2 aumenta su cola, la réplica 3 es la que posee menor cantidad de eventos en cola, como se demuestra en la Figura \ref{fig:distCarga} (b), por lo tanto, ésta es la réplica candidata a recibir el evento enviado. Finalmente, en la Figura \ref{fig:distCarga} (c) todas las réplicas poseen el mismo tamaño de la cola, por lo tanto, se procede a enviar a la primera réplica.
 
@@ -25,21 +27,23 @@ En la Figura \ref{fig:distCarga} se explica gráficamente la distribución de la
 	\label{fig:distCarga}
 \end{figure}
 
-En el Algoritmo \ref{alg:distCarga} se describe la distribución de carga planteada anteriormente, el cual se ha implementado en S4 para ejecutar los experimentos.
+%En el Algoritmo \ref{alg:distCarga} se describe la distribución de carga planteada anteriormente, el cual se ha implementado en S4 para ejecutar los experimentos.
 
-\begin{algorithm}[!ht]
-	\caption{Distribución de carga entre las réplicas de un operador.}
-	\label{alg:distCarga}
-	\begin{algorithmic}[1]
-	\REQUIRE Evento $\epsilon$ y operador $\phi$.
-	\ENSURE Envío del evento a la réplica disponible del operador $\phi$.
-	\STATE $\theta \leftarrow minTamanoCola(\phi)$ \COMMENT Se escoge la réplica que posea menor cola
-	\STATE $envioEvento(\epsilon,\theta$)
-	\end{algorithmic}
-\end{algorithm}
+%\begin{algorithm}[!ht]
+%	\caption{Distribución de carga entre las réplicas de un operador.}
+%	\label{alg:distCarga}
+%	\begin{algorithmic}[1]
+%	\REQUIRE Evento $\epsilon$ y operador $\phi$.
+%	\ENSURE Envío del evento a la réplica disponible del operador $\phi$.
+%	\STATE $\theta \leftarrow minTamanoCola(\phi)$ \COMMENT Se escoge la réplica que posea menor cola
+%	\STATE $envioEvento(\epsilon,\theta$)
+%	\end{algorithmic}
+%\end{algorithm}
 
 \section{Diseño de los experimentos}
-Para los experimentos se han diseñado tres aplicaciones: una que realiza operaciones con estado, otra que realiza operaciones sin estado, y otra aplicación sintética. En el caso que la aplicación posea estado, significa que el operador guarda variables al procesar con el transcurso del tiempo, las cuales son entregadas cada cierto tiempo o al finalizar la ejecución del sistema. Este tipo de aplicaciones son las más utilizadas, dado que utilizan contadores o variables globales, las cuales son necesarias para el análisis de los datos. Un ejemplo de esto, es un sistema que cuenta las palabras de un texto y que envía la cantidad de palabras contadas cada cierto tiempo. Si bien, las aplicaciones sin estado no son tan utilizadas, se consideraron importantes para la validación del modelo, dado que son las aplicaciones más simples y básicas de diseñar y ejecutar. Por otra parte, la aplicación sintética se refiere a un sistema cuyos operadores sólo generan tiempo de demora artificial, en el caso de este experimento, se deja durmiendo la hebra asignada al operador un período determinado de tiempo.
+Para los experimentos se han diseñado tres aplicaciones: una que realiza operaciones con estado, otra que realiza operaciones sin estado, y otra aplicación sintética. En el caso que la aplicación posea estado, significa que el operador guarda variables al procesar con el transcurso del tiempo, las cuales son entregadas cada cierto tiempo o al finalizar la ejecución del sistema. Este tipo de aplicaciones son las más utilizadas, dado que utilizan contadores o variables globales, las cuales son necesarias para el análisis de los datos. Un ejemplo de esto, es un sistema que cuenta las palabras de un texto y que envía la cantidad de palabras contadas cada cierto tiempo. Si bien, las aplicaciones sin estado no son tan utilizadas, se consideraron importantes para la validación del modelo, dado que son las aplicaciones más simples y básicas de diseñar y ejecutar. Por otra parte, se ha generado una aplicación sintética, la cual simula el procesamiento de datos por medio de la introducción de retrasos de cada uno de los operadores. Cada operador es una hebra de procesamiento, para reflejar el tiempo de ejecución, por lo que se procede a dormir la hebra por un tiempo predefinido, el cual está determinado por la complejidad del operador. Los operadores más complejos son dormidos por una mayor cantidad de tiempo.
+
+%Se genero una aplicacion sintetica donde se simula el procesamiento de datos por medio de la introduccion de retrasos en cada uno de los operadores. Cada operador es una hebra de procesamiento, para reflejar el tiempo de procesamiento, se procede a dormir la hebra por un tiempo predefinido determinado por la complejidad del operador. Operadores mas complejos serán dormidos una mayor cantidad de tiempo. 
 
 Para la generación del \textit{stream} de la fuente de datos para la primera y segunda aplicación, se ha utilizado un conjunto de 4.5 millones de \textit{tweets}\footnote{Un \textit{tweet} es una publicación o actualización de estado realizada en la red social \textit{Twitter}. Como tal, un \textit{tweet} es un mensaje cuyo límite de extensión son 140 caracteres. Puede contener letras, números, signos y enlaces.}, los cuales fueron recolectados entre los días 27-28 de Febrero y 1-2 de Marzo de 2010, tanto en inglés, portugués y español. Estos contienen información correspondiente a la interacción entre los usuarios durante el terremoto ocurrido el 27 de Febrero en Chile.
 
@@ -88,9 +92,15 @@ En la Figura \ref{fig:segundaAplicacion} se muestra un ejemplo de la segunda apl
 \end{figure}
 
 \subsection{Aplicación 3: Aplicación sintética}
-La tercera aplicación consta de tres operadores sintéticos, los cuales duermen a la hebra asignada al operador un determinado período de tiempo, simulando el tiempo de procesamiento le toma al operador, \normalsize{cuya duración está basada en el \textit{benchmark} confeccionado por} \citep{ArasuCGMMRST04}. El objetivo de este tipo de aplicación, es analizar los costos que posee el sistema implementando.
+%La tercera aplicación consta de tres operadores sintéticos, los cuales duermen a la hebra asignada al operador un determinado período de tiempo, simulando el tiempo de procesamiento le toma al operador, \normalsize{cuya duración está basada en el \textit{benchmark} confeccionado por} \citep{ArasuCGMMRST04}. El objetivo de este tipo de aplicación, es analizar los costos que posee el sistema implementando.
 
-La Tabla \ref{tab:app3-time} muestra el período de tiempo que duerme cada PE \normalsize{la hebra que tiene asignada}. Los tiempos que se han considerado para esta prueba son para generar una sobrecarga en el primer y segundo operador, de tal manera que después afecten al tercer operador. Para la duración de esta prueba se ha considerado un tiempo de 15 minutos.
+La tercera aplicación conste de tres operadores sintéticos, los cuales son hebras de procesamiento que llevan a cabo una tarea específica, dependiendo del tipo de operador que representa. Para simular el procesamiento de eventos, se procede a dormir la hebra en el momento que recibe el evento por un tiempo determinado experimental de acuerdo a la complejidad del operador. Esto quiere decir, los operadores más complejos toman mayor tiempo en procesar cada evento, por ende la hebra debe ser dormida un mayor tiempo para simular dicho comportamiento. El objetivo de este experimento es evaluar los costos en términos de memoria y uso de la CPU que posee el modelo elástico propuesto.
+
+%La Tabla \ref{tab:app3-time} muestra el período de tiempo que duerme cada PE \normalsize{la hebra que tiene asignada}. Los tiempos que se han considerado para esta prueba son para generar una sobrecarga en el primer y segundo operador, de tal manera que después afecten al tercer operador. Para la duración de esta prueba se ha considerado un tiempo de 15 minutos.
+
+Para definir los tiempos de procesamientos de las hebras, se crearon operadores reales con complejidades diferentes y midiendo el tiempo que tarda en procesar un evento. Con esto tiempos promedios obtenidos, se ha definido el período de tiempo que duerme la hebra en cada uno de los PEs, los cuales se presentan en la Tabla \ref{tab:app3-time}.
+
+%Para definir los tiempos de procesamiento de las hebras, se crearon operadores reales con complejidades diferentes y se midio el tiempo que tomaba el procesamiento desde que un evento ingresaba al operador hasta que salía procesado. Los tiempos promedios obtenidos para los operadores analizados se presentan en la tabla 5.1
 
 \begin{table}[!ht]
 \centering
@@ -117,10 +127,10 @@ En la Figura \ref{fig:terceraAplicacion} se muestra un ejemplo de la tercera apl
 \section{Evaluación}
 Para la ejecución de los experimentos, se ha utilizado un servidor con sistema operativo Ubuntu 14.04.2 LTS, cuyo procesador es un Intel Xeon CPU E5-2650 v2 de 2.60 GHz y con 32 GB de RAM. Cabe recalcar, que el lenguaje de programación es Java, debido a la integración del sistema propuesto en el SPS utilizado. La configuración de S4 es detallada en el Anexo \ref{apendice:config-comm-S4}.
 
-Para la ventana de tiempo del recolector de datos se utiliza un valor de $T_m = 1seg$. Respecto al número de réplicas que el administrador debe cambiar dado el análisis algoritmo reactivo es de $\omega = 1$, y $\theta = 5$ en el caso del algoritmo predictivo. Las ventanas de tiempo entre las ejecuciones de los algoritmos son $T_r = 5seg$ y $T_p = 100seg$. Los parámetros del algoritmo predictivo para estos experimentos son $n = 100$ y $\upsilon = 100000$.
+Para la ventana de tiempo del recolector de datos se utiliza un valor de $T_m = 1seg$. Para el administrador de replicas los parámetros del numero de replicas a crear por cada algoritmo se definieron con los valores $\omega = 1$ (reactivo), y $\theta = 5$ (predictivo). Las ventanas de tiempo entre las ejecuciones de los algoritmos son $T_r = 5seg$ y $T_p = 100seg$ respectivamente. Los parámetros del algoritmo predictivo para estos experimentos son una cantidad de muestras de $n = 100$, una cantidad de iteraciones para el cálculo de la distribución estacionaria de $\upsilon = 100000$ y una desviación estándar de $\alpha = 0.25$ entre las variables aleatorias obtenidas por la distribución estacionaria. La cantidad de alertas consecutivas para activar el análisis del algoritmo reactivo es de $\beta = 2$.
 
 \subsection{Aplicación 1: Análisis de \textit{tweets} en escenarios de desastres naturales}
-Con la primera aplicación se efectuaron dos experimentos, donde el primero consta de un envío constante de eventos, y el segundo de un envío variable. En ambos experimentos, se han considerado dos pruebas, donde la primera consiste en la ejecución de la aplicación en un sistema SPS con el uso del modelo elástico, y la segunda sin el uso de éste.
+Con la primera aplicación se efectuaron dos experimentos, donde el primero consta de un envío constante de eventos, y el segundo de un envío variable. En ambos experimentos, se han considerado dos pruebas, la primera consiste en la ejecución de la aplicación en un sistema SPS con el uso del modelo elástico, y la segunda sin el uso de éste.
 
 %Para el análisis de los experimentos, se ha considerado la cantidad promdio de eventos procesados en un período, la cantidad total de eventos procesados y las estadísticas de cada PE en el transcurso de la ejecución de la aplicación.
 
@@ -198,7 +208,7 @@ Para el análisis de los experimentos, se ha considerado \normalsize{el rendimie
 
 %%% EXP1-CONSTANTE PERFORMANCE %%%
 
-Las Figuras \ref{fig:app1-uniform-processSystem-cm} y \ref{fig:app1-uniform-processSystem-sm} \normalsize{corresponden al primer experimento y muestra el rendimiento que posee el sistema, y como varía la cantidad de réplicas totales del grafo según el flujo constante de datos.} En la Figura \ref{fig:app1-uniform-processSystem-cm} \normalsize{se observa que en los primero segundos existe una sobrecarga en el grafo, específicamente en los PE Stopword y Counter, por lo que el modelo detecta esta inestabilidad en el sistema y aumenta la cantidad de réplicas de los operadores} (véase Anexo \ref{apendice:estadisticas-operadores}), \normalsize{habiendo un procesamiento promedio de  98 eventos por segundo.} En el caso de la Figura \ref{fig:app1-uniform-processSystem-sm} \normalsize{no existe un aumento en la cantidad de réplicas, por lo tanto, no existe un aumento de la cantidad de datos procesados, habiendo un promedio de 16 eventos procesados por segundo, por lo que posterior a la mitad de la ejecución de la aplicación, disminuye considerablemente la tasa de entrada del grafo, dado que se ha llenado el \textit{buffer} de los datos entrantes al sistema. Por lo tanto, se puede concluir que existe una mejora de 5 veces más eventos procesados con el uso del modelo elástico.}
+Las Figuras \ref{fig:app1-uniform-processSystem-cm} y \ref{fig:app1-uniform-processSystem-sm} \normalsize{corresponden al primer experimento y muestra el rendimiento que posee el sistema, y como varía la cantidad de réplicas totales del grafo según el flujo constante de datos.} En la Figura \ref{fig:app1-uniform-processSystem-cm} \normalsize{se observa que en los primero segundos existe una sobrecarga en el grafo, específicamente en los PE Stopword y Counter, por lo que el modelo detecta esta inestabilidad en el sistema y aumenta la cantidad de réplicas de los operadores} (véase Anexo \ref{apendice:estadisticas-operadores}), \normalsize{logrando un procesamiento promedio de  98 eventos por segundo.} En el caso de la Figura \ref{fig:app1-uniform-processSystem-sm} \normalsize{no existe un aumento en la cantidad de réplicas, por lo tanto, no existe un aumento de la cantidad de datos procesados, alcanzando un promedio de 16 eventos procesados por segundo. Se puede observar que en esta figura en el segundo 2600 la tasa de entrada disminuye considerablemente, esto es resultado de la sobrecarga del sistema. Comparando ambos escenarios se puede observar que la utilización del modelo elástico para esta aplicación ha logrado mejorar el rendimiento del sistema, logrando incrementar 5 veces el numero total de eventos procesados.}
 
 \begin{figure}[!ht]
 	\centering
@@ -237,7 +247,7 @@ Las Figuras \ref{fig:app1-uniform-processSystem-cm} y \ref{fig:app1-uniform-proc
 %\end{figure}
 
 %%% EXP1-CONSTANTE EVENTOS TOTALES PROCESADOS %%%
-Así también, se puede observar en las Figuras \ref{fig:app1-uniform-eventCount-cm} y \ref{fig:app1-uniform-eventCount-sm} la cantidad total de eventos procesados en el transcurso de la ejecución en cada uno de los operadores, con y sin uso del modelo respectivamente. En el primer gráfico los cuatro operadores del SPS van aumentando la cantidad total de eventos procesados linealmente y con la misma pendiente, tan sólo existe una menor cantidad de eventos procesados en el tercer PE, lo cual se traslada al cuarto PE, debido a que al procesar menor cantidad de eventos en el tercer PE, llega una menor cantidad de eventos al cuarto PE. En este gráfico se alcanza un total de 401.618 eventos procesados. En cambio, en el segundo gráfico las curvas de cantidad de eventos procesados son muy distintas entre los distintos operadores, lo cual se ve reflejado desde la cantidad de eventos procesados en el primer operador hasta la cantidad total de eventos procesados por el sistema, el que alcanza un total de 67.141 eventos. Por lo que con el uso del modelo elástico se ha procesado 6 veces más eventos que los procesados durante el mismo período de tiempo sin el uso de éste.
+En las Figuras \ref{fig:app1-uniform-eventCount-cm} y \ref{fig:app1-uniform-eventCount-sm} se presenta la cantidad total de eventos procesados en el transcurso de la ejecución en cada uno de los operadores, con y sin uso del modelo respectivamente. En el primer gráfico los cuatro operadores del SPS van aumentando la cantidad total de eventos procesados linealmente y con la misma pendiente, tan sólo existe una menor cantidad de eventos procesados en el tercer PE, lo cual se traslada al cuarto PE, debido a que al procesar menor cantidad de eventos en el tercer PE, llega una menor cantidad de eventos al cuarto PE. En este gráfico se alcanza un total de 401.618 eventos procesados. En cambio, en el segundo gráfico las curvas de cantidad de eventos procesados son muy distintas entre los distintos operadores, lo cual se ve reflejado desde la cantidad de eventos procesados en el primer operador hasta la cantidad total de eventos procesados por el sistema, el que alcanza un total de 67.141 eventos. Por lo que con el uso del modelo elástico se ha procesado 6 veces más eventos que los procesados durante el mismo período de tiempo sin el uso de éste.
 
 \begin{figure}[!ht]
 	\centering
@@ -347,7 +357,7 @@ Así también, se puede observar en las Figuras \ref{fig:app1-uniform-eventCount
 %\end{figure}
 
 %%% EXP1-VARIABLE PERFORMANCE %%%
-Las Figuras \ref{fig:app1-normal-processSystem-cm} y \ref{fig:app1-normal-processSystem-sm} \normalsize{corresponden al segundo experimento y muestra el rendimiento que posee el sistema, y como varía la cantidad de réplicas totales del grafo según el flujo de datos.} En la Figura \ref{fig:app1-normal-processSystem-cm} \normalsize{se muestra como el sistema fue adaptando la cantidad de réplicas según la tasa de entrada, de tal manera de modificar la cantidad de réplicas según la necesidad que se posea. Por ejemplo, en el primer y segundo tercio aumenta la cantidad de réplicas, no así en el último, donde disminuye la cantidad de réplicas, porque existen una mayor cantidad de recursos según la tasa de entrada, habiendo un promedio de 72 eventos por segundo.} Por otra parte, en la Figura \ref{fig:app1-normal-processSystem-sm} \normalsize{existe una tasa de salida constante, lo cual refleja la nula adaptabilidad del sistema según el flujo entrante, habiendo un promedio de 19 eventos procesados por segundo. De esta manera, existe una mejora 3 veces más eventos procesados con el uso del modelo.}
+Las Figuras \ref{fig:app1-normal-processSystem-cm} y \ref{fig:app1-normal-processSystem-sm} \normalsize{corresponden al segundo experimento y muestra el rendimiento que posee el sistema, y como varía la cantidad de réplicas totales del grafo según el flujo de datos.} En la Figura \ref{fig:app1-normal-processSystem-cm} \normalsize{se muestra como el sistema fue adaptando la cantidad de réplicas según la tasa de entrada, de tal manera de modificar la cantidad de réplicas según la necesidad que se posea. Por ejemplo, en el primer y segundo tercio aumenta la cantidad de réplicas, no así en el último, donde disminuye la cantidad de réplicas, debido que existe un exceso en la cantidad de recursos. El promedio en la tasa de salida en esta prueba es de 72 eventos por segundo.} Por otra parte, en la Figura \ref{fig:app1-normal-processSystem-sm} \normalsize{existe una tasa de salida constante, lo cual refleja la nula adaptabilidad del sistema según el flujo entrante, habiendo un promedio de 19 eventos procesados por segundo. De los resultados presentados, se puede observar una clara mejora en el rendimiento, alcanzado a procesar hasta 3 veces más eventos que la versión sin el modelo elástico.}
 
 \begin{figure}[!ht]
 	\centering
@@ -381,7 +391,7 @@ Por otra parte, la cantidad total de eventos procesados en el experimento, se ob
 \end{figure}
 
 \subsection{Aplicación 2: Contador de palabras en muestras de textos}
-En la segunda aplicación se ha procedido a realizar dos experimentos, los cuales son similares a los anteriores experimentos, donde el primero se realiza un envío constante de los eventos, y el segundo de un envío variable. En ambos experimentos, se han realizado dos pruebas, donde la primera consiste en la ejecución de la aplicación en un sistema SPS que usa el modelo elástico, y la segunda sin el uso de éste.
+En la segunda aplicación se ha procedido a realizar dos experimentos, los cuales son similares a los anteriores. En el primer experimento se realiza un envío constante de los eventos, y en el segundo, un envío variable. En ambos experimentos, se han realizado dos pruebas, donde la primera consiste en la ejecución de la aplicación en un sistema SPS que usa el modelo elástico, y la segunda sin el uso de éste.
 
 \normalsize{Para el análisis de los experimentos, se ha considerado el rendimiento y la cantidad de réplicas del grafo y la cantidad total de eventos procesados. En el Anexo} \ref{apendice:estadisticas-operadores} \normalsize{se presentan las estadísticas de cada uno de los operadores.}
 
@@ -441,7 +451,7 @@ En la segunda aplicación se ha procedido a realizar dos experimentos, los cuale
 
 %%% EXP2 CONSTANTE - PERFORMANCE %%%
 
-La Figuras \ref{fig:app2-uniform-processSystem-cm} \normalsize{corresponde al primer experimento y muestra el flujo de datos entrantes del sistema, y como varía la cantidad de réplicas totales del grafo según el flujo de datos.} En la Figura \ref{fig:app1-normal-processSystem-cm} \normalsize{se observa que al principio de la ejecución de la aplicación, existen altas variaciones con el flujo de eventos entrante, y eso se debe a que al crear una réplica del operador sobrecargado, el PE Counter} (véase Anexo \ref{apendice:estadisticas-operadores}), \normalsize{genera una sobrecarga a nivel físico en la máquina, habiendo retrasos en el procesamiento de los datos. Es por esto, que el algoritmo predictivo indica ese comportamiento dada la historia del operador, por lo que se replica una mayor cantidad de réplicas en este experimento en una ventana de tiempo.}
+La Figura \ref{fig:app2-uniform-processSystem-cm} \normalsize{corresponde al primer experimento y muestra el flujo de datos entrantes del sistema, y como varía la cantidad de réplicas totales del grafo según el flujo de datos.} En esta figura \normalsize{se observa que al principio de la ejecución de la aplicación, existen altas variaciones con el flujo de eventos entrante, y eso se debe a que al crear una réplica del operador sobrecargado, el PE Counter} (véase Anexo \ref{apendice:estadisticas-operadores}), \normalsize{genera una sobrecarga a nivel físico en la máquina, habiendo retrasos en el procesamiento de los datos, lo cual no afecta en el análisis del grafo lógico. Por otra parte, en este experimento se muestra una replicación basado en el algoritmo predictivo, lo cual se debe al análisis del rendimiento del operador según la tasa de rendimiento del PE Counter.}
 
 \begin{figure}[!ht]
 	\centering
@@ -459,9 +469,11 @@ La Figuras \ref{fig:app2-uniform-processSystem-cm} \normalsize{corresponde al pr
 
 %%% EXP2 CONSTANTE - EVENTOS TOTALES %%%
 
-Por otra parte, en las Figuras \ref{fig:app2-uniform-eventCount-cm} y \ref{fig:app2-uniform-eventCount-sm} se muestra la cantidad total de eventos procesados. En el primer gráfico se observa que la diferencia de la pendiente entre las rectas del primer y segundo PE, es menor que en el segundo gráfico. Esto se debe al aumento de la cantidad de réplicas, por lo que se puede procesar mayor cantidad de eventos, siendo un procesamiento de 275.290 eventos con uso el modelo contra 28.152 sin uso del modelo, habiendo una mejora de 9 veces más eventos. El tercer PE procesa pocos eventos, debido que sólo le llega un evento por réplica cada 10 segundos.
+Por otra parte, en las Figuras \ref{fig:app2-uniform-eventCount-cm} y \ref{fig:app2-uniform-eventCount-sm} se muestra la cantidad total de eventos procesados. En el primer gráfico se observa que la diferencia de la pendiente entre las rectas del primer y segundo PE, es menor que en el segundo gráfico. Esto se debe al aumento de la cantidad de réplicas, por lo que se puede procesar mayor cantidad de eventos, alcanzando un total de 275.290 eventos con uso el modelo contra 28.152 sin uso del modelo. En este caso se logro procesar hasta 9 veces mas eventos haciendo uso del modelo elástico.
 
-Dentro de las observaciones importantes está lo ocurrido en la Figura \ref{fig:app2-uniform-eventCount-cm}, donde no existe una mejora por parte del segundo PE de manera paralela al flujo de datos emanado por el primer PE. Como se había explicado anteriormente, independiente que se generen más réplicas, los operadores igualmente van a encolar cierta cantidad de eventos debido a la sobrecarga surgida por parte de la máquina física.
+Dentro de las observaciones importantes está lo ocurrido en la Figura \ref{fig:app2-uniform-eventCount-cm}, donde no existe una mejora por parte del segundo PE de manera paralela al flujo de datos emanado por el primer PE. Como se había explicado anteriormente, independiente que se generen más réplicas, los operadores igualmente van a encolar debido a la sobrecarga surgida por parte de la máquina física.
+
+En el PE 3 (PE Merge) se presenta una baja cantidad de eventos procesados, lo cual se observa en las Figuras \ref{fig:app2-uniform-eventCount-cm} y \ref{fig:app2-uniform-eventCount-sm}. Esto se debe a su condición de operador auxiliar. Cabe recordar que se denomina operador auxiliar a los PEs predecesor y sucesores de un operador con estado, de esta manera, estos operadores se dedican a dividir la información para enviarla a las distintas réplicas del operador, y posteriormente juntar la información obtenida por las distintas réplicas de éste. La baja cantidad de eventos entrantes se debe a que los eventos entrantes sólo son enviados cada 10 segundos por el PE 2 (PE Counter), y en caso de procesar mayor cantidad de datos y poseer mayor cantidad de réplicas de este operador, mayor es la cantidad de eventos procesados por el PE 3. Por último, en la aplicación con uso del modelo elástico se han procesado 3.491 eventos, contra 34 eventos procesados sin el modelo elástico.
 
 \begin{figure}[!ht]
 \centering
@@ -533,7 +545,7 @@ Dentro de las observaciones importantes está lo ocurrido en la Figura \ref{fig:
 
 %%% EXP2-VARIABLE PERFORMANCE %%%
 
-La Figuras \ref{fig:app2-normal-processSystem-cm} \normalsize{corresponde al primer experimento y muestra el flujo de datos entrantes del sistema, y como varía la cantidad de réplicas totales del grafo según el flujo de datos.} En la Figura \ref{fig:app1-normal-processSystem-cm} \normalsize{que según el flujo de datos que va llegando al grafo, va adaptándose la cantidad de réplicas. En el primer y segundo tercio se muestra un aumento de réplicas, pero posteriormente en el último disminuye, aprovechando los recursos que se disponen. A diferencia del experimento anterior, en éste no se activa el algoritmo predictivo, y eso se debe a qué no existe una posible sobrecarga a futuro, dado que se estabiliza el sistema antes de este análisis dado el algoritmo reactivo.}
+La Figura \ref{fig:app2-normal-processSystem-cm} \normalsize{corresponde al primer experimento y muestra el flujo de datos entrantes del sistema, y como varía la cantidad de réplicas totales del grafo según el flujo de datos.} En esta figura \normalsize{se puede observar como el número de réplicas se adapta al tráfico recibido. En el primer y segundo tercio se muestra un aumento de réplicas, pero posteriormente en el último disminuye, aprovechando los recursos que se disponen. A diferencia del experimento anterior, en éste no se activa el algoritmo predictivo, y eso se debe a qué no existe una posible sobrecarga a futuro, dado que se estabiliza el sistema antes de este análisis debido al algoritmo reactivo.}
 
 \begin{figure}[!ht]
 	\centering
@@ -545,6 +557,8 @@ La Figuras \ref{fig:app2-normal-processSystem-cm} \normalsize{corresponde al pri
 %%% EXP2-VARIABLE EVENTOS TOTALES %%%
 
 Por otro lado, en las Figuras \ref{fig:app2-normal-eventCount-cm} y \ref{fig:app2-normal-eventCount-sm} se muestra la cantidad total de eventos procesados. En el primer gráfico se aprecia que la curva del primer PE y el segundo PE es más cercana que las del segundo gráfico, y esto se debe a la replicación que se ha efectuado en el sistema. Cabe destacar que el sistema con uso del modelo ha procesado un total de 228.942 eventos, mientras que el sistema sin uso del modelo ha procesado 27.751 eventos. Por lo que la solución permite aumentar en más de 8 veces la cantidad de eventos procesados.
+
+El análisis que se realiza en el PE 3 (PE Merge) es el mismo explicado en el anterior experimento, donde la cantidad de eventos procesados va a depender de la cantidad de réplicas existentes en el PE 2 (PE Counter). Por último, se ha realizado un procesamiento de 1.578 eventos con uso del modelo, y 27 eventos sin uso del modelo.
 
 \begin{figure}[!ht]
 	\centering
@@ -563,7 +577,7 @@ Por otro lado, en las Figuras \ref{fig:app2-normal-eventCount-cm} y \ref{fig:app
 \subsection{Aplicación 3: Aplicación sintética}
 En la tercera aplicación se ha procedido a realizar un experimento que consta de dos pruebas, al igual que en las anteriores pruebas, donde una de ellas hace uso del modelo elástico y la otra no. Ambas pruebas se han realizado con un envío constante de 100 eventos por segundo desde la fuente de datos.
 
-Para el análisis de los experimentos, se ha considerado el consumo de memoria, el uso de la CPU, \normalsize{el rendimiento y la cantidad de réplicas del grafo} y la cantidad total de eventos procesados. En el Anexo \ref{apendice:estadisticas-operadores} \normalsize{se presentan las estadísticas de cada uno de los operadores.}
+Para el análisis de los experimentos, se ha considerado el consumo de memoria, el uso de la CPU, \normalsize{el rendimiento, la cantidad de réplicas del grafo} y la cantidad total de eventos procesados. En el Anexo \ref{apendice:estadisticas-operadores} \normalsize{se presentan las estadísticas de cada uno de los operadores.}
 
 %%% EXP3 - CPU %%%
 
@@ -585,7 +599,7 @@ Respecto a la utilización de CPU, se puede observar en las Figuras \ref{fig:app
 
 %%% EXP3 - RAM %%%
 
-Por otra parte, el consumo de memoria RAM está dado por las Figuras \ref{fig:app3-consumeRAM-cm} y \ref{fig:app3-consumeRAM-sm}, donde la primera es con uso de modelo y la segunda sin uso. En el primer gráfico existe un consumo promedio de $264$ MB versus $268$ MB del segundo gráfico, habiendo una disminución del $1,5\%$ de consumo de memoria RAM. En el primer gráfico se observa un aumento del consumo de memoria en el segundo 200, a diferencia del segundo gráfico, debido al mayor consumo de eventos y creación de nuevos operadores. Posterior al segundo 600, por parte del sistema sin uso del modelo, se muestra un aumento del consumo de memoria, lo cual se debe a la cantidad de eventos en la cola que existen en el sistema, a diferencia del primer gráfico que hubo una convergencia en el consumo de la memoria, por lo que posteriormente al reducir las colas, reduce igualmente el consumo de memoria principal en la ejecución.
+Por otra parte, el consumo de memoria RAM es presentado por las Figuras \ref{fig:app3-consumeRAM-cm} y \ref{fig:app3-consumeRAM-sm}, donde la primera es con uso de modelo y la segunda sin uso. En el primer gráfico existe un consumo promedio de $264$ MB versus $268$ MB del segundo gráfico, habiendo una disminución del $1,5\%$ de consumo de memoria RAM. En el primer gráfico se observa un aumento del consumo de memoria en el segundo 200, a diferencia del segundo gráfico, debido al mayor consumo de eventos y creación de nuevos operadores. Posterior al segundo 600, por parte del sistema sin uso del modelo, se muestra un aumento del consumo de memoria, lo cual se debe a la cantidad de eventos en la cola que existen en el sistema, a diferencia del primer gráfico que hubo una convergencia en el consumo de la memoria, por lo que posteriormente al reducir las colas, reduce igualmente el consumo de memoria principal en la ejecución.
 
 \begin{figure}[!ht]
 \centering
@@ -621,8 +635,6 @@ En las Figuras \ref{fig:app3-processSystem-cm} y \ref{fig:app3-processSystem-sm}
 
 En cuanto a la cantidad total de eventos procesados, en las Figuras \ref{fig:app3-eventCount-cm} y \ref{fig:app3-eventCount-sm} se aprecia que la cantidad de eventos procesados es mayor en el primero gráfico, el cual hace uso del modelo elástico. En el primer gráfico existe un total de 88.169 eventos procesados y en el segundo un total de 29.714 eventos procesados, existiendo una mejora de 3 veces la cantidad de eventos procesados.
 
-\clearpage
-
 \begin{figure}[!ht]
 \centering
     \includegraphics[scale=0.75]{images/exp/app3/cm/logical/eventCount.eps}
@@ -630,6 +642,23 @@ En cuanto a la cantidad total de eventos procesados, en las Figuras \ref{fig:app
     \label{fig:app3-eventCount-cm}
 \end{figure}
 
+%%% EXP 3 - TIEMPO ALGORITMOS %%%
+
+Finalmente, en la Tabla \ref{tab:tiempo-algoritmos} se muestra el tiempo promedio de ejecución de cada uno de los algoritmos para el análisis de un operador. Se puede observar que si bien el algoritmo predictivo posee un tiempo de ejecución mayor que el algoritmo reactivo, no produce una sobrecarga en el modelo elástico.
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{| c | c |}
+\hline
+Algoritmo & Tiempo (ms) \\ \hline
+Reactivo & 0.03 \\
+Predictivo & 4.63 \\ \hline
+\end{tabular}
+\caption{Tiempos de ejecución de los algoritmos del modelo elástico.}
+\label{tab:tiempo-algoritmos}
+\end{table}
+
+\clearpage
 \begin{figure}[!ht]
 \centering
     \includegraphics[scale=0.75]{images/exp/app3/sm/logical/eventCount.eps}

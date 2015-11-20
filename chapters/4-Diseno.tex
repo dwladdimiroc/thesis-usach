@@ -38,7 +38,7 @@ Para el modelo se consideraron dos tipos de algoritmos: predictivo, enfocado en 
 
 %Es importante denotar que dependiendo del tipo de caso es que un algoritmo va a funcionar mejor. Por ejemplo, si existe una variación muy alta en un período de tiempo considerable, el algoritmo predictivo puede detectar este tipo de \textit{peaks}. De esta manera, la predicción es más asertiva que el análisis en el momento. Pero en casos que no suceda lo anterior, y sólo hayan variaciones en ciertos instantes de la ejecución, se encuentra el algoritmo reactivo para analizar el estado del operador.
 
-\normalsize{Otra de las consideraciones que se ha realizado, es que cada uno de los algoritmos va a resolver un problema en específico según su política de resolución. Por ejemplo, si se desea detectar un \textit{peak} según el historial, el más indicado es el algoritmo predictivo. Y en caso de analizar sobrecargas según el presente, el algoritmo reactivo puede dar soluciones al respecto.}
+\normalsize{Otra de las consideraciones realizadas es que cada uno de los algoritmos va a resolver un problema en específico según su política de resolución. Por ejemplo, si se desea detectar un comportamiento según el historial, el más indicado es el algoritmo predictivo. Y en caso de analizar \textit{peaks} según el presente, el algoritmo reactivo puede dar soluciones al respecto.}
 
 Además de lo anterior, se considera que es necesario trabajar con los dos algoritmos en temporalidades distintas, es decir, en cierto período de tiempo se utiliza el reactivo y en otro el predictivo. Esto quiere decir que mientras se obtienen las $n$ muestras para realizar el cálculo de predictivo, el algoritmo reactivo está realizando un análisis de los distintos operadores.
 
@@ -74,9 +74,9 @@ Como se había mencionado anteriormente, el monitor de carga está encargado de 
 
 %Cada muestra está compuesta por la tasa de rendimiento del operador en ese período, la cual es utilizada por el algoritmo reactivo para determinar el estado del operador según los umbrales propuestos. Dentro de las consideraciones realizadas para la recolección de datos para el algoritmo reactivo, está el considerar que la tasa de procesamiento ($\mu$) es homogénea con el transcurso del tiempo, considerando que los datos procesados son homogéneos, por lo tanto, se considera un valor promedio de la tasa de procesamiento según los primeros datos procesados.
 
-\normalsize{Cada muestra está compuesta por la tasa de llegada y la tasa de procesamiento del operador, la cual es utilizada tanto por el algoritmo reactivo como predictivo. Por parte del algoritmo reactivo, se considera el promedio de las muestras obtenidas en  la última $T_r$ ventana de tiempo. En cambio, para el algoritmo predictivo, se considera las muestras obtenidas en la última $T_p$ ventana de tiempo.
+\normalsize{Cada muestra está compuesta por la tasa de llegada y la tasa de procesamiento del operador, la cual es utilizada tanto por el algoritmo reactivo como predictivo. Por parte del algoritmo reactivo, se considera el promedio de las tasas de llegada y servicio en la última ventana de tiempo $T_r$. En cambio, para el algoritmo predictivo, se considera las muestras obtenidas en la última ventana de tiempo $T_p$.
 
-Dentro de las consideraciones realizadas para la recolección de datos, está el considerar que la tasa de procesamiento es homogénea para el operador en la ejecución del sistema. Por lo tanto, se realiza un \textit{benchmark} de la tasa de procesamiento del operador al inicio de la ejecución del sistema con las primeras muestras obtenidas, de tal manera de obtener el valor que se utiliza para el cálculo de la tasa de rendimiento.}
+Dentro de las consideraciones realizadas para la recolección de datos, dentro de las consideraciones está que la tasa de procesamiento del operador es homogénea. Por lo tanto, se realiza un \textit{benchmark} de la tasa de procesamiento del operador al inicio de la ejecución del sistema con las primeras muestras obtenidas, de tal manera de obtener el valor que se utiliza para el cálculo de la tasa de rendimiento.}
 
 %De esta manera, se espera que existan $n$ muestras para que se ejecute el algoritmo predictivo, por lo que existe una ventana de tiempo $T_p$ entre cada ejecución del algoritmo. %La cantidad de muestras fue determinado según la literatura, debido que se considera un número apropiado para realizar una predicción del operador \citep{GongGW10}.
 
@@ -88,21 +88,28 @@ Dentro de las consideraciones realizadas para la recolección de datos, está el
 \section{Algoritmo reactivo}
 
 %El diseño del algoritmo reactivo se basa en el análisis del estado del operador en un período determinado, siendo definido su estado por una variable del operador, el cual depende del rango en que se encuentre dado los umbrales que se establecen. Este diseño analiza según la tasa de rendimiento ($\rho$), donde el estado del operador depende del valor que éste posea según los parámetros del algoritmo.
-\normalsize{El algoritmo reactivo se basa en el análisis del estado del operador de las muestras obtenidas en la última $T_r$ ventana de tiempo, definiendo el estado del operador según la tasa de rendimiento que éste posea en ese período, el cual puede ser ocioso, estable o inestable.}
 
-En el Algoritmo \ref{alg:reactive} se presenta el algoritmo que analiza el estado de un operador según su tasa de rendimiento; en el caso que sea mayor a 1, su estado es inestable, menor a 0.5, significa que está en estado ocioso, y en otro caso, significa que está estable. Estos datos posteriormente son considerados por el administrador de réplicas, el cual analiza el comportamiento que debe tener el sistema según lo indicado por el algoritmo.
+\normalsize{Este análisis emplea las muestras obtenidas en la última ventana de tiempo $T_r$, las cuales permiten describir el estado del operador (ocioso, estable o inestable) en dicha ventana de tiempo.}
+
+En el Algoritmo \ref{alg:reactive} se presenta el mecanismo de análisis de estado para un operador dado. Dicho estado está determinado por su tasa de rendimiento, la cual en caso de ser mayor a 1, su estado es inestable, si es menor a 0.5, su estado es ocioso, y en otro caso, significa que está estable. Estos datos posteriormente son considerados por el administrador de réplicas, para una posible modificación de la cantidad de réplicas según el comportamiento del operador.
 
 \begin{algorithm}[!ht]
 	\caption{Algoritmo reactivo del modelo elástico.}
 	\label{alg:reactive}
 	\begin{algorithmic}[1]
-	\REQUIRE Tasa de procesamiento $\rho$ del operador $\phi$.
-	\ENSURE Estado del operador $\phi$.
-	\RETURN{estadoOperador($\rho_{\phi}$)}
+	\REQUIRE Tasa de rendimiento $\rho$ del operador $i$.
+	\ENSURE Actual estado $\delta$ del operador $i$.
+	\IF {$\rho_i > 1$}
+		\RETURN $\phi_i$: ``inestable"
+	\ELSIF {$\rho_i < 0.5$}
+		\RETURN $\delta_i$: ``ocioso"
+	\ELSE
+		\RETURN $\delta_i$: ``estable"
+	\ENDIF
 	\end{algorithmic}
 \end{algorithm}
 
-En la Figura \ref{fig:umbrales} se observa el estado de un operador según la tasa de procesamiento. En los primeros 90 segundos la tasa del operador es mayor al límite superior, lo cual indica que el sistema es inestable, es decir, el operador posee sobrecarga. Posteriormente, en el segundo 50, la tasa de rendimiento empieza a disminuir, ya sea por una optimización sobre los recursos lógicos o una disminución de la tasa de llegada, por lo que ahora el operador ya no se encuentra sobrecargado (inestable), sino que se encuentra entre el límite inferior y superior, cuyo rango define al operador como un sistema estable.
+En la Figura \ref{fig:umbrales} se observa el estado de un operador según la tasa de procesamiento. En los primeros 90 segundos la tasa del operador es mayor al límite superior, lo cual indica que el sistema es inestable, es decir, el operador posee sobrecarga. Posteriormente, en el segundo 50, la tasa de rendimiento empieza a disminuir, ya sea por una optimización sobre los recursos lógicos o una disminución de la tasa de llegada. \normalsize{Por lo que ahora el operador ya no se encuentra sobrecargado (inestable), sino que se encuentra entre el límite inferior y superior, cuyo rango define al operador como un sistema estable hasta el segundo 170, donde se encuentra ocioso, hasta llegar al segundo 230.}
 
 \begin{figure}[ht!]
   \centering
@@ -145,13 +152,13 @@ Por lo tanto, para cada operador se construye una cadena de Markov según el his
 
 Obtenida la matriz de transición se puede calcular la distribución estacionaria de la cadena de Markov, la cual indica las probabilidades de que en el futuro el operador esté en cada uno de los posibles estados, ya sea ocioso, estable o inestable. Para este cálculo se utiliza la ecuación de Chapman-Kolmogórov \citep{Papoulis1984} descrita en la Sección \ref{subsec:cadenaMarkov}.
 
-El Algoritmo \ref{alg:distEstacionaria} describe el cálculo de la distribución estacionaria, cuya entrada es la matriz de transición de un operador del SPS. 
+El Algoritmo \ref{alg:distEstacionaria} describe el cálculo de la distribución estacionaria, cuya entrada es la matriz de transición de un operador del SPS y $upsilon$ que corresponde a la cantidad de transiciones realizadas para obtener la distribución estacionaria. 
 
 \begin{algorithm}[!t]
-	\caption{Cálculo de la distribución estacionaria de la cadena de Markov de un operador $\phi$.}
+	\caption{Cálculo de la distribución estacionaria de la cadena de Markov de un operador $i$.}
 	\label{alg:distEstacionaria}
 	\begin{algorithmic}[1]
-	\REQUIRE $P$ Matriz de transición del operador $\phi$ y $\upsilon$ cantidad de iteraciones deseadas.
+	\REQUIRE $P$ Matriz de transición del operador $i$ y $\upsilon$ cantidad de iteraciones deseadas.
 	\ENSURE $\Delta$ Distribución estacionaria de la cadena de Markov del operador $\phi$.
 	\STATE $i \leftarrow 1$
 	\FOR {$k=0$ a $\upsilon$}
@@ -178,25 +185,28 @@ El Algoritmo \ref{alg:distEstacionaria} describe el cálculo de la distribución
 
 %Antes de realizar el cálculo, es importante analizar si efectivamente existen transiciones en todos los estados, debido a que existe la posibilidad que no haya una transición a un estado en particular en un período de tiempo. Por ejemplo, puede ocurrir que en una ventana de tiempo nunca se ha alcanzado el estado ocioso en el sistema, pero si el estable o inestable. Como el cálculo de la distribución estacionaria requiere un estado de inicio, se ha verificado si efectivamente existe o no el estado, y en caso no existir, el estado de inicio es alguno existente.
 
-\normalsize{Antes de realizar el cálculo de la distribución estacionaria, es importante determinar si la cadena es irreductible y sus estados son recurrentes positivos aperiódicos. En caso de ser reductible, determinar cual es la cadena de Markov irreductible para el cálculo de la distribución estacionaria.}
+\normalsize{Antes de realizar el cálculo de la distribución estacionaria, es importante determinar si la cadena es irreductible y sus estados son recurrentes positivos aperiódicos. En caso de ser reductible, se debe determinar la cadena irreductible, y utilizar ésta para el cálculo de la distribución estacionaria.}
 
-La cantidad de iteraciones $\upsilon$ que debe realizarse para el cálculo correspondiente, es un parámetro entrada del algoritmo. Es importante destacar que entre mayor es la cantidad de iteraciones, mayor es la precisión del valor predicho. Esto implica a su vez un mayor tiempo de cómputo, por lo que se ha considerado un punto medio, de tal manera de lograr un bajo margen de error, pero con bajo costo en el tiempo de ejecución. %La cantidad de iteraciones escogida para la implementación fue de 100.000.
+La cantidad de iteraciones $\upsilon$ que debe realizarse para el cálculo correspondiente, es un parámetro entrada del algoritmo. Es importante destacar que entre mayor es la cantidad de iteraciones, mayor es la precisión del valor predicho. Esto implica a su vez un mayor tiempo de cómputo, por lo que en este trabajo se ha considerado un valor medio determinado por pruebas que permitieron medir el costo en tiempo de cómputo versus la calidad de los resultados obtenidos.
 
-Obtenida la distribución estacionaria, se procede a analizar las probabilidades obtenidas y como es el comportamiento del operador. Para esto, se ha considerado que las variables aleatorias obtenidas tengan una desviación estándar superior a $\alpha$, lo que indica que la probabilidad mayor de la distribución estacionaria no posea incertidumbre. \normalsize{Esto significa que la diferencia entre los distintos valores debe ser significativo, de tal manera que la mayor probabilidad sea tendenciosa comparado con las otras, siendo menos probable el porcentaje de error de predicción.} En el caso que no supere la desviación estándar, puede ser que dos probabilidades sean muy parecidas y la probabilidad no sea un comportamiento determinante \citep{soong2004fundamentals}. El Algoritmo \ref{alg:predictive} detalla el análisis que se realiza a la distribución estacionaria, siendo en primer lugar el análisis estadístico de las probabilidades, y en segundo lugar la obtención del estado con mayor valor de las probabilidades, retornando finalmente el estado del operador.
+%se ha considerado un punto medio, de tal manera de lograr un bajo margen de error, pero con bajo costo en el tiempo de ejecución.
+
+%en este trabajo consideramos un valor medio determinado por pruebas que permitieron medir el costo en tiempo de computo versus la calidad de los resultados obtenidos.
+
+Obtenida la distribución estacionaria, se procede a analizar las probabilidades obtenidas y como es el comportamiento del operador. Para esto, se ha considerado que las variables aleatorias obtenidas tengan una desviación estándar superior a $\alpha$. El anterior parámetro tiene por objetivo reducir la incertidumbre en el momento de seleccionar un estado como posible comportamiento futuro. \normalsize{Por lo tanto, un valor de $\alpha$ adecuado permite establecer una diferencia significativa entre las variables aleatorias al considerar uno de estos estados, disminuyendo el error de la predicción realizada.} En el caso que no supere la desviación estándar, puede ser que dos probabilidades sean muy parecidas y la probabilidad no sea un comportamiento determinante \citep{soong2004fundamentals}. El Algoritmo \ref{alg:predictive} detalla el análisis que se realiza a la distribución estacionaria, siendo en primer lugar el análisis estadístico de las probabilidades, y en segundo lugar la obtención del estado con mayor valor de las probabilidades, retornando finalmente el estado del operador.
 
 \begin{algorithm}[t]
 	\caption{Algoritmo predictivo del modelo elástico.}
 	\label{alg:predictive}
 	\begin{algorithmic}[1]
 	\REQUIRE$\Delta$ Distribución estacionaria de la cadena de Markov del operador $\phi$.
-	\ENSURE Estado a futuro del operador, donde -1 significa estado ocioso, 0 estable y 1 inestable.
-	\IF {$\sigma(\Delta_1,\Delta_2,\Delta_3) > 0.25$ \COMMENT {Desviaci\'on est\'andar de las probabilidades de la distribuci\'on estacionaria}} 
-		\STATE $i_{\phi} \leftarrow getStateMax(\Delta)$ \COMMENT {Obtención del estado con mayor probabilidad}
-		\RETURN {estadoOperador($i_{\phi}$)}
+	\ENSURE Futuro estado $\delta^{+}$ de la predicción del operador $i$
+	\IF {$\sigma(\Delta_1,\ldots,\Delta_m) > \alpha; m \epsilon [1,3]$} 
+		\RETURN $\delta^{+}$: \texttt{max}({$\Delta_1,\ldots,\Delta_m$})
+
+	\ELSE
+		\RETURN $\delta^{+}$: ``estable"
 	\ENDIF
-	
-	\RETURN 0
-	
 	\end{algorithmic}
 \end{algorithm}
 
@@ -206,44 +216,38 @@ El último componente del modelo es el administrador de réplicas, cuya función
 
 %Para esto, se ha diseñado un administrador que ejecuta uno de los algoritmos (reactivo o predictivo) según el período del ciclo que se encuentre el sistema. Cada ciclo posee 20 períodos, donde los primeros 19 corresponden al algoritmo reactivo y el último corresponde al algoritmo predictivo. Cada período posee un intervalo de 5 segundos, de esta manera, cada ciclo tiene un intervalo de 100 segundos, la cantidad necesaria para obtener las muestras para el algoritmo predictivo, suponiendo que cada muestra es obtenida cada 1 segundo.
 
-\normalsize{Para esto, se ha diseñado un administrador que ejecuta el algoritmo reactivo en un período de $T_r$ y el algoritmo predictivo en un período de $T_p$. Cabe destacar, que la ventana de tiempo utilizada para el algoritmo reactivo es mayor que la del predictivo, esto debido que uno analiza el comportamiento en el momento y otro futuro según la historia.}
+\normalsize{Para esto, se ha diseñado un administrador que ejecuta el algoritmo reactivo en un período de $T_r$ y el algoritmo predictivo en un período de $T_p$. Cabe destacar, que la ventana de tiempo utilizada para el algoritmo reactivo es menor que la del predictivo, esto debido que uno analiza el comportamiento en el momento y otro a futuro según la historia.}
 
-En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero se analiza qué tipo de algoritmo se debe ejecutar según el período del ciclo. En caso de ejecutarse el módulo predictivo, se analiza el resultado de la predicción, por lo que si el estado es ocioso el sistema disminuye la cantidad de réplicas y si es inestable las aumenta. Como el proceso de predicción se realiza con menor frecuencia y analiza una mayor ventana de tiempo, se ha considerado que se debe modificar una mayor cantidad de réplicas que en el módulo reactivo. Por otra parte, de realizarse el algoritmo reactivo se analiza si existen dos alertas consecutivas del mismo estado del operador, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Además de cambiar el estado actual del operador a estable, de tal manera de no considerar ese período para el próximo análisis reactivo.
+En el Algoritmo \ref{alg:administracion} está el procedimiento de administración, donde primero se analiza qué tipo de algoritmo se debe ejecutar según el período del ciclo. En caso de ejecutarse el módulo predictivo, se analiza el resultado de la predicción, por lo que si el estado es ocioso el sistema disminuye la cantidad de réplicas y si es inestable las aumenta. Como el proceso de predicción se realiza con menor frecuencia y analiza una mayor ventana de tiempo, se ha considerado que se debe modificar una mayor cantidad de réplicas que en el módulo reactivo. Por otra parte, de realizarse el algoritmo reactivo se analiza si existen $\beta$ alertas consecutivas del mismo estado del operador, ya sea ocioso o inestable, y de ser así, realizar una modificación a la cantidad de réplicas del operador. Además de cambiar el estado actual del operador a estable, de tal manera de no considerar ese período para el próximo análisis reactivo.
 
 Una de las consideraciones que se han tenido para el diseño del administrador, es limitar la cantidad máxima de réplicas que pueden realizarse. Esto se debe a que una de las limitantes de este trabajo es que se utiliza solo una máquina, y por ende la cantidad de recursos son limitados, por lo que al aumentar la cantidad de réplicas indefinidamente genera una sobrecarga en los recursos disponibles por parte de la máquina.
 
-\clearpage
-
 \begin{algorithm}[!ht]
-	\caption{Administración de réplicas de un operador $\phi$ dado su comportamiento en el modelo elástico.}
+	\caption{Administración de réplicas de un operador $i$ dado su comportamiento en el modelo elástico.}
 	\label{alg:administracion}
 	\begin{algorithmic}[1]
-	\REQUIRE Operador $\phi$ a analizar y $\iota$ período en que se encuentra el modelo elástico.
+	\REQUIRE Operador $i$ a analizar y $\iota$ la ventana de tiempo del modelo elástico.
 	\ENSURE Cantidad de réplicas a modificar del operador.	
-	
 	\IF {$\iota$ es $T_p$}
 		\STATE $\delta_{\iota} \leftarrow AlgoritmoPredictivo(\phi)$
-		\IF {$\delta_{\iota}$ es estado inestable}
+		\IF {$\delta_{\iota}$: ``inestable"}
 			\IF {No excede la cantidad máxima de réplicas en el sistema}
-				\RETURN Crear $\theta$ réplicas del operador $\phi$
+				\RETURN Crear $\theta$ réplicas del operador $i$
 			\ENDIF
-		\ELSIF {$\delta_{\iota}$ es estado ocioso}
-			\RETURN Remover $\theta$ réplicas del operador $\phi$
+		\ELSIF {$\delta_{\iota}$: ``ocioso"}
+			\RETURN Remover $\theta$ réplicas del operador $i$
 		\ENDIF
 	\ELSE[$\iota$ es $T_r$]
 		\STATE $\delta_{\iota} \leftarrow AlgoritmoReactivo(\phi)$
-		\IF {$\delta_{\iota}$ \AND $\delta_{\iota-1}$ son estado inestable}
+		\IF {$\delta_{\iota},\dots,\delta_{\iota-(\beta-1)}$: ``inestable"}
 			\IF {No excede la cantidad máxima de réplicas en el sistema}
 				\STATE $\delta_{\iota} \leftarrow \text{estado estable}$ 
-				\RETURN Crear $\omega$ réplica del operador $\phi$
+				\RETURN Crear $\omega$ réplica del operador $i$
 			\ENDIF
-		\ELSIF {$\delta_{\iota}$ \AND $\delta_{\iota-1}$ son estado ocioso}
+		\ELSIF {$\delta_{\iota},\dots,\delta_{\iota-(\beta-1)}$: ``ocioso"}
 			\STATE $\delta_{\iota} \leftarrow \text{estado estable}$ 
-			\RETURN Remover $\omega$ réplica del operador $\phi$
+			\RETURN Remover $\omega$ réplica del operador $i$
 		\ENDIF 
-	\ENDIF
-	
-	\RETURN No hacer nada al operador $\phi$
-	
+	\ENDIF	
 	\end{algorithmic}
 \end{algorithm}
