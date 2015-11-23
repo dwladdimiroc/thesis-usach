@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  23 NOV 2015 11:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.17)  23 NOV 2015 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3546,40 +3546,40 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 140.
  [35 <./images/Fision.pdf>]
-<images/EjFision.png, id=1363, 818.05624pt x 641.39626pt>
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 147.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 147.
+ [36]
+<images/EjFision.png, id=1367, 818.05624pt x 641.39626pt>
 File: images/EjFision.png Graphic file (type png)
 
 <use images/EjFision.png>
-Package pdftex.def Info: images/EjFision.png used on input line 149.
+Package pdftex.def Info: images/EjFision.png used on input line 150.
 (pdftex.def)             Requested size: 245.41876pt x 192.42035pt.
 )
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 53.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 53.
- [36]
 LaTeX Info: Redefining \. on input line 53.
 LaTeX Info: Redefining \% on input line 53.
 Package babel Info: Redefining spanish shorthand <<
@@ -5246,6 +5246,34 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 637.
  [69 <./images/exp/app3/cm/fisical/consumeRAM-eps-converted-to.pdf> <./images/e
 xp/app3/sm/fisical/consumeRAM-eps-converted-to.pdf>]
+LaTeX Info: Redefining \. on input line 642.
+LaTeX Info: Redefining \% on input line 642.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 642.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 642.
+ [70 <./images/exp/app3/cm/logical/processSystem-eps-converted-to.pdf> <./image
+s/exp/app3/sm/logical/processSystem-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/exp/app3/cm/logical/eventCount.eps>
 
 (epstopdf)                    date: 2015-11-13 16:20:47
@@ -5256,73 +5284,17 @@ converted-to.pdf>
 (epstopdf)                    size: 9294 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/cm/logical
 /eventCount-eps-converted-to.pdf images/exp/app3/cm/logical/eventCount.eps>
-(epstopdf)             \includegraphics on input line 640.
+(epstopdf)             \includegraphics on input line 646.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf, id=1859, 361.35pt 
+<images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf, id=1874, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
  <use images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app3/cm/logical/eventCount-eps-converted-to
-.pdf used on input line 640.
+.pdf used on input line 646.
 (pdftex.def)             Requested size: 271.01184pt x 189.70828pt.
-LaTeX Info: Redefining \. on input line 661.
-LaTeX Info: Redefining \% on input line 661.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 661.
-
-[70 <./images/exp/app3/cm/logical/processSystem-eps-converted-to.pdf> <./images
-/exp/app3/sm/logical/processSystem-eps-converted-to.pdf>]
-LaTeX Info: Redefining \. on input line 661.
-LaTeX Info: Redefining \% on input line 661.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 661.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 661.
- [71 <./images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/exp/app3/sm/logical/eventCount.eps>
 
 (epstopdf)                    date: 2015-11-13 16:25:14
@@ -5333,16 +5305,16 @@ converted-to.pdf>
 (epstopdf)                    size: 9470 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/exp/app3/sm/logical
 /eventCount-eps-converted-to.pdf images/exp/app3/sm/logical/eventCount.eps>
-(epstopdf)             \includegraphics on input line 664.
+(epstopdf)             \includegraphics on input line 653.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf, id=1885, 361.35pt 
+<images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf, id=1875, 361.35pt 
 x 252.945pt>
 File: images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf Graphic file (
 type pdf)
  <use images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf>
 Package pdftex.def Info: images/exp/app3/sm/logical/eventCount-eps-converted-to
-.pdf used on input line 664.
+.pdf used on input line 653.
 (pdftex.def)             Requested size: 271.01184pt x 189.70828pt.
 )
 LaTeX Info: Redefining \. on input line 55.
@@ -5372,13 +5344,43 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 55.
 
-[72
-
- <./images/exp/app3/sm/logical/eventCount-eps-converted-to.pdf>]
+[71 <./images/exp/app3/cm/logical/eventCount-eps-converted-to.pdf> <./images/ex
+p/app3/sm/logical/eventCount-eps-converted-to.pdf>]
 \openout2 = `chapters/6-Conclusiones.aux'.
 
 
 (./chapters/6-Conclusiones.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
+ [72
+
+
+
+]
 Cap\IeC {\'\i }tulo 6.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -5428,11 +5430,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 17.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 17.
-[73
-
-
-
-]
+[73]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 26.
 Package babel Info: Redefining spanish shorthand >>
@@ -8122,7 +8120,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
 Here is how much of TeX's memory you used:
  18094 strings out of 493304
  271024 string characters out of 6139871
- 525559 words of memory out of 5000000
+ 526555 words of memory out of 5000000
  20330 multiletter control sequences out of 15000+600000
  39489 words of font info for 88 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -8143,7 +8141,7 @@ xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
 lvetic/uhvro8a.pfb>
-Output written on tesis-postgrado.pdf (127 pages, 1907817 bytes).
+Output written on tesis-postgrado.pdf (127 pages, 1907674 bytes).
 PDF statistics:
  2929 PDF objects out of 2984 (max. 8388607)
  2476 compressed objects within 25 object streams
