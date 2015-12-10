@@ -6,61 +6,46 @@ A level-1 auxiliary file: preliminares/dedicatoria.aux
 A level-1 auxiliary file: preliminares/agradecimiento.aux
 A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: chapters/1-Introduccion.aux
-A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
-A level-1 auxiliary file: chapters/3-BalanceDeCarga.aux
-A level-1 auxiliary file: chapters/4-Diseno.aux
-A level-1 auxiliary file: chapters/5-Experimentos.aux
-A level-1 auxiliary file: chapters/6-Conclusiones.aux
 The style file: apa-good.bst
-A level-1 auxiliary file: anexos/Anexo-1.aux
-A level-1 auxiliary file: anexos/Anexo-2.aux
-A level-1 auxiliary file: anexos/Anexo-3.aux
-A level-1 auxiliary file: anexos/Anexo-4.aux
-A level-1 auxiliary file: anexos/Anexo-5.aux
 Database file #1: bibliografia.bib
-Warning--empty journal in cooper1972introduction
-Warning--empty journal in falk2012first
-Warning--empty journal in de1978calculus
-Warning--empty journal in sturm2000foundations
-You've used 65 entries,
+You've used 10 entries,
             2804 wiz_defined-function locations,
-            962 strings with 17566 characters,
-and the built_in function-call counts, 38347 in all, are:
-= -- 3106
-> -- 1642
-< -- 54
-+ -- 636
-- -- 549
-* -- 2797
-:= -- 5994
-add.period$ -- 191
-call.type$ -- 65
-change.case$ -- 537
-chr.to.int$ -- 65
-cite$ -- 69
-duplicate$ -- 2750
-empty$ -- 2842
-format.name$ -- 740
-if$ -- 7605
+            644 strings with 6652 characters,
+and the built_in function-call counts, 5370 in all, are:
+= -- 460
+> -- 186
+< -- 10
++ -- 70
+- -- 60
+* -- 359
+:= -- 853
+add.period$ -- 31
+call.type$ -- 10
+change.case$ -- 74
+chr.to.int$ -- 10
+cite$ -- 10
+duplicate$ -- 393
+empty$ -- 411
+format.name$ -- 88
+if$ -- 1073
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 560
-newline$ -- 326
-num.names$ -- 260
-pop$ -- 1249
+missing$ -- 75
+newline$ -- 57
+num.names$ -- 40
+pop$ -- 162
 preamble$ -- 1
-purify$ -- 443
+purify$ -- 60
 quote$ -- 0
-skip$ -- 1209
+skip$ -- 185
 stack$ -- 0
-substring$ -- 1585
-swap$ -- 1421
-text.length$ -- 22
+substring$ -- 236
+swap$ -- 192
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 534
-warning$ -- 4
-while$ -- 278
+type$ -- 84
+warning$ -- 0
+while$ -- 43
 width$ -- 0
-write$ -- 811
-(There were 4 warnings)
+write$ -- 132
