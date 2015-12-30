@@ -14,8 +14,8 @@
 \LoadClass[10pt,oneside,letterpaper]{book}
 
 % Letra Arial
-\renewcommand{\rmdefault}{phv}
-\renewcommand{\sfdefault}{phv}
+\usepackage{fontspec}
+\setmainfont{Arial}
 
 % Interlineado de 1.5:
 \renewcommand{\baselinestretch}{1.5}

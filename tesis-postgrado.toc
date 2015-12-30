@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {2.5}MAPE}{14}{section.2.5}
 \contentsline {section}{\numberline {2.6}Procesos estoc\'asticos}{15}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Cadena de Markov}{16}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Trabajo relacionado}{20}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.2}Trabajo relacionado}{19}{subsection.2.6.2}
 \contentsline {section}{\numberline {2.7}Teor\'ia de colas}{20}{section.2.7}
 \contentsline {chapter}{\numberline {3}Balance de carga en SPS}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Perspectivas de balance de carga}{23}{section.3.1}
