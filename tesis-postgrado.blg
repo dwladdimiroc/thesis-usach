@@ -6,46 +6,56 @@ A level-1 auxiliary file: preliminares/dedicatoria.aux
 A level-1 auxiliary file: preliminares/agradecimiento.aux
 A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: chapters/1-Introduccion.aux
+A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
+A level-1 auxiliary file: chapters/3-BalanceDeCarga.aux
+A level-1 auxiliary file: chapters/4-Diseno.aux
+A level-1 auxiliary file: chapters/5-Experimentos.aux
+A level-1 auxiliary file: chapters/6-Conclusiones.aux
 The style file: apa-good.bst
+A level-1 auxiliary file: anexos/Anexo-1.aux
+A level-1 auxiliary file: anexos/Anexo-2.aux
+A level-1 auxiliary file: anexos/Anexo-3.aux
+A level-1 auxiliary file: anexos/Anexo-4.aux
+A level-1 auxiliary file: anexos/Anexo-5.aux
 Database file #1: bibliografia.bib
-You've used 10 entries,
+You've used 65 entries,
             2804 wiz_defined-function locations,
-            644 strings with 6652 characters,
-and the built_in function-call counts, 5370 in all, are:
-= -- 460
-> -- 186
-< -- 10
-+ -- 70
-- -- 60
-* -- 359
-:= -- 853
-add.period$ -- 31
-call.type$ -- 10
-change.case$ -- 74
-chr.to.int$ -- 10
-cite$ -- 10
-duplicate$ -- 393
-empty$ -- 411
-format.name$ -- 88
-if$ -- 1073
+            964 strings with 17621 characters,
+and the built_in function-call counts, 38509 in all, are:
+= -- 3106
+> -- 1642
+< -- 54
++ -- 636
+- -- 549
+* -- 2805
+:= -- 6006
+add.period$ -- 197
+call.type$ -- 65
+change.case$ -- 531
+chr.to.int$ -- 65
+cite$ -- 65
+duplicate$ -- 2754
+empty$ -- 2892
+format.name$ -- 740
+if$ -- 7665
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 75
-newline$ -- 57
-num.names$ -- 40
-pop$ -- 162
+missing$ -- 570
+newline$ -- 332
+num.names$ -- 260
+pop$ -- 1251
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 443
 quote$ -- 0
-skip$ -- 185
+skip$ -- 1219
 stack$ -- 0
-substring$ -- 236
-swap$ -- 192
-text.length$ -- 3
+substring$ -- 1585
+swap$ -- 1435
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 516
 warning$ -- 0
-while$ -- 43
+while$ -- 278
 width$ -- 0
-write$ -- 132
+write$ -- 823

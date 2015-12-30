@@ -23,8 +23,8 @@
 % #### Init file 'tesis-postgrado.cls' ####
 
 % Archivos suplementarios
-\RequirePackage[spanish]{babel}
-\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+\RequirePackage{inputenc}
 \ifkeys\RequirePackage[notref,notcite]{showkeys}\fi
 
 % Configuración de header y footer
@@ -34,6 +34,7 @@
 
 % Símbolos y fuentes
 \RequirePackage{amsfonts}
+\RequirePackage{indentfirst}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amstext}
@@ -45,7 +46,7 @@
 \RequirePackage{textcomp}
 \RequirePackage{units}
 \RequirePackage{upgreek}
-\RequirePackage{soulutf8}				% Resaltar en amarillo un texto
+\RequirePackage{soul}				% Resaltar en amarillo un texto
 
 
 % Entornos y figuras
@@ -89,6 +90,7 @@
 \renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
 \renewcommand{\algorithmicensure}{\textbf{Salida:}}
 \renewcommand{\algorithmiccomment}[1]{//#1}
+\RequirePackage{etoolbox}										% Interlineado
 
 % Enumeración de cada figura y algoritmo
 \RequirePackage{tesis-enumeracion}
@@ -118,9 +120,9 @@
     breaklines=true,
     tabsize=4,
     upquote=true,
-    extendedchars=true,
-    morecomment=[s]{/**\<}{*/},
-    morecomment=[s]{/*}{*/},
+    extendedchars=true
+%    morecomment=[s]{/**\<}{*/},
+%    morecomment=[s]{/*}{*/}
 }
 
 % Minimizar fragmentado de listados
@@ -162,8 +164,8 @@
 
 % Bibliografia
 \RequirePackage{natbib}
-\RequirePackage[fixlanguage]{babelbib}
-\selectbiblanguage{spanish}
+\RequirePackage{babelbib}
+%\selectbiblanguage{spanish}
 \bibpunct{(}{)}{;}{}{,}{,}
 \setcounter{secnumdepth}{3}	%Mostrar numeración en las subsubsecciones
 \setcounter{tocdepth}{3}		%Mostrar las subsubsecciones en el índice
@@ -262,22 +264,15 @@
     \renewcommand{\footrulewidth}{0pt}
 }
 
-% Cambios al default de spanish
-%\deactivatetilden
-%\decimalpoint
-
-% Headings
-%\markboth{}{}
-
 % Renombre de los títulos por defecto
-\renewcommand\captionsspanish{}
+\renewcommand\captionsenglish{}
 
 \renewcommand{\contentsname}{\centerline{Tabla de contenido}}
-\renewcommand{\listtablename}{\centerline{Índice de tablas}}
-\renewcommand{\listfigurename}{\centerline{Índice de ilustraciones}}
-\renewcommand{\listalgorithmcfname}{\centerline{Índice de algoritmos}}
+\renewcommand{\listtablename}{\centerline{\'Indice de tablas}}
+\renewcommand{\listfigurename}{\centerline{\'Indice de ilustraciones}}
+\renewcommand{\listalgorithmcfname}{\centerline{\'Indice de algoritmos}}
 
-\renewcommand{\bibname}{Referencias bibliográficas}
+\renewcommand{\bibname}{Referencias bibliogr\'aficas}
 
 \renewcommand{\appendixname}{Anexo}
 \renewcommand{\appendixtocname}{Anexos}
@@ -285,8 +280,8 @@
 
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\figurename}{Figura}
-\renewcommand{\lstlistingname}{Código}
-\renewcommand{\chaptername}{Capítulo}
+\renewcommand{\lstlistingname}{C\'odigo}
+\renewcommand{\chaptername}{Cap\'itulo}
 
 % Header de los capítulos
 \usepackage[compact]{titlesec}
@@ -456,7 +451,7 @@
             %Nombre 3: & \@nombretres \\
             R.U.N.: & \@run \\
             A\~no Ingreso: & \@annoingreso \\
-            Teléfono: & \@telefono \\
+            Tel\'efono: & \@telefono \\
             E-mail: & \@email \\
             Profesor: & \@profesorguia \\ 
         \end{tabular}
@@ -473,8 +468,8 @@
 			{\bf \normalsize \@autor}\\[1cm]
 			\vspace*{2.5cm}
 			\begin{flushleft}
-				{\normalsize \hspace{7cm} Profesor guía: \@profesorguia}\\
-				{\normalsize \hspace{7cm} Profesor co-guía: \@profesorcoguia}\\
+				{\normalsize \hspace{7cm} Profesor gu\'ia: \@profesorguia}\\
+				{\normalsize \hspace{7cm} Profesor co-gu\'ia: \@profesorcoguia}\\
 				\vspace{1cm}
 				\hspace{6.8cm}
 				{\normalsize
@@ -507,7 +502,7 @@
 			\copyright\ 
 			\@autor \; - \@annoexamen \\ 
 			\includegraphics[height=12pt]{images/licences/cc_by.png}
-				~$\bullet$~~ Algunos derechos reservados. Esta obra está bajo una Licencia Creative Commons Atribución-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.      
+				~$\bullet$~~ Algunos derechos reservados. Esta obra est\'a bajo una Licencia Creative Commons Atribuci\'on-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.      
         \end{flushleft}
     \fi
 }

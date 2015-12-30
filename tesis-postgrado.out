@@ -1,14 +1,62 @@
-\BOOKMARK [0][]{chapter.1}{1 Introducci\363n}{}% 1
-\BOOKMARK [1][]{section.1.1}{1.1 Antecedentes y motivaci\363n}{chapter.1}% 2
-\BOOKMARK [1][]{section.1.2}{1.2 Descripci\363n del problema}{chapter.1}% 3
-\BOOKMARK [1][]{section.1.3}{1.3 Soluci\363n propuesta}{chapter.1}% 4
-\BOOKMARK [1][]{section.1.4}{1.4 Objetivos y alcance del proyecto}{chapter.1}% 5
-\BOOKMARK [2][]{subsection.1.4.1}{1.4.1 Objetivo general}{section.1.4}% 6
-\BOOKMARK [2][]{subsection.1.4.2}{1.4.2 Objetivos espec\355ficos}{section.1.4}% 7
-\BOOKMARK [2][]{subsection.1.4.3}{1.4.3 Alcances}{section.1.4}% 8
-\BOOKMARK [1][]{section.1.5}{1.5 Metodolog\355a y herramientas utilizadas}{chapter.1}% 9
-\BOOKMARK [2][]{subsection.1.5.1}{1.5.1 Metodolog\355a}{section.1.5}% 10
-\BOOKMARK [2][]{subsection.1.5.2}{1.5.2 Herramientas de desarrollo}{section.1.5}% 11
-\BOOKMARK [1][]{section.1.6}{1.6 Organizaci\363n del documento}{chapter.1}% 12
-\BOOKMARK [0][]{chapter*.8}{Referencias bibliogr\341ficas}{}% 13
-\BOOKMARK [0][]{section*.9}{Anexos}{}% 14
+\BOOKMARK [0][]{chapter.1}{1 Introducción}{}% 1
+\BOOKMARK [1][]{section.1.1}{1.1 Antecedentes y motivación}{chapter.1}% 2
+\BOOKMARK [1][]{section.1.2}{1.2 Descripción del problema}{chapter.1}% 3
+\BOOKMARK [1][]{section.1.3}{1.3 Solución propuesta}{chapter.1}% 4
+\BOOKMARK [1][]{section.1.4}{1.4\040Objetivos\040y\040alcance\040del\040proyecto}{chapter.1}% 5
+\BOOKMARK [2][]{subsection.1.4.1}{1.4.1\040Objetivo\040general}{section.1.4}% 6
+\BOOKMARK [2][]{subsection.1.4.2}{1.4.2 Objetivos específicos}{section.1.4}% 7
+\BOOKMARK [2][]{subsection.1.4.3}{1.4.3\040Alcances}{section.1.4}% 8
+\BOOKMARK [1][]{section.1.5}{1.5 Metodología y herramientas utilizadas}{chapter.1}% 9
+\BOOKMARK [2][]{subsection.1.5.1}{1.5.1 Metodología}{section.1.5}% 10
+\BOOKMARK [2][]{subsection.1.5.2}{1.5.2\040Herramientas\040de\040desarrollo}{section.1.5}% 11
+\BOOKMARK [1][]{section.1.6}{1.6 Organización del documento}{chapter.1}% 12
+\BOOKMARK [0][]{chapter.2}{2 Marco Teórico}{}% 13
+\BOOKMARK [1][]{section.2.1}{2.1\040Streaming}{chapter.2}% 14
+\BOOKMARK [1][]{section.2.2}{2.2\040Stream\040processing}{chapter.2}% 15
+\BOOKMARK [1][]{section.2.3}{2.3\040Sistemas\040de\040procesamiento\040de\040stream}{chapter.2}% 16
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1\040S4}{section.2.3}% 17
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2\040Storm}{section.2.3}% 18
+\BOOKMARK [1][]{section.2.4}{2.4\040Elasticidad}{chapter.2}% 19
+\BOOKMARK [1][]{section.2.5}{2.5\040MAPE}{chapter.2}% 20
+\BOOKMARK [1][]{section.2.6}{2.6 Procesos estocásticos}{chapter.2}% 21
+\BOOKMARK [2][]{subsection.2.6.1}{2.6.1\040Cadena\040de\040Markov}{section.2.6}% 22
+\BOOKMARK [2][]{subsection.2.6.2}{2.6.2\040Trabajo\040relacionado}{section.2.6}% 23
+\BOOKMARK [1][]{section.2.7}{2.7 Teoría de colas}{chapter.2}% 24
+\BOOKMARK [0][]{chapter.3}{3\040Balance\040de\040carga\040en\040SPS}{}% 25
+\BOOKMARK [1][]{section.3.1}{3.1\040Perspectivas\040de\040balance\040de\040carga}{chapter.3}% 26
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Recursos físicos}{section.3.1}% 27
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Recursos lógicos}{section.3.1}% 28
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Enfoque estático}{section.3.1}% 29
+\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Enfoque dinámico}{section.3.1}% 30
+\BOOKMARK [1][]{section.3.2}{3.2 Técnicas de balance de carga}{chapter.3}% 31
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Planificación determinista}{section.3.2}% 32
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2\040Load\040Shedding}{section.3.2}% 33
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Migración}{section.3.2}% 34
+\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Fisión}{section.3.2}% 35
+\BOOKMARK [0][]{chapter.4}{4 Diseño del modelo elástico}{}% 36
+\BOOKMARK [1][]{section.4.1}{4.1 Análisis del módelo elástico}{chapter.4}% 37
+\BOOKMARK [1][]{section.4.2}{4.2 Recolección de los datos}{chapter.4}% 38
+\BOOKMARK [1][]{section.4.3}{4.3\040Algoritmo\040reactivo}{chapter.4}% 39
+\BOOKMARK [1][]{section.4.4}{4.4\040Algoritmo\040predictivo}{chapter.4}% 40
+\BOOKMARK [1][]{section.4.5}{4.5 Administración del sistema}{chapter.4}% 41
+\BOOKMARK [0][]{chapter.5}{5 Experimentos y evaluación}{}% 42
+\BOOKMARK [1][]{section.5.1}{5.1 Implementación del sistema}{chapter.5}% 43
+\BOOKMARK [1][]{section.5.2}{5.2 Diseño de los experimentos}{chapter.5}% 44
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Aplicación 1: Análisis de tweets en escenarios de desastres naturales}{section.5.2}% 45
+\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 Aplicación 2: Contador de palabras en muestras de textos}{section.5.2}% 46
+\BOOKMARK [2][]{subsection.5.2.3}{5.2.3 Aplicación 3: Aplicación sintética}{section.5.2}% 47
+\BOOKMARK [1][]{section.5.3}{5.3 Evaluación}{chapter.5}% 48
+\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Aplicación 1: Análisis de tweets en escenarios de desastres naturales}{section.5.3}% 49
+\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 Aplicación 2: Contador de palabras en muestras de textos}{section.5.3}% 50
+\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 Aplicación 3: Aplicación sintética}{section.5.3}% 51
+\BOOKMARK [0][]{chapter.6}{6\040Conclusiones}{}% 52
+\BOOKMARK [1][]{section.6.1}{6.1 Detalles de la contribución}{chapter.6}% 53
+\BOOKMARK [1][]{section.6.2}{6.2\040Discusiones}{chapter.6}% 54
+\BOOKMARK [1][]{section.6.3}{6.3\040Trabajo\040futuro}{chapter.6}% 55
+\BOOKMARK [0][]{chapter*.57}{Referencias bibliográficas}{}% 56
+\BOOKMARK [0][]{section*.58}{Anexos}{}% 57
+\BOOKMARK [0][]{appendix.A}{A Conformación de matriz de transición}{}% 58
+\BOOKMARK [0][]{appendix.B}{B Clases para la implementación del sistema de monitoreo}{}% 59
+\BOOKMARK [0][]{appendix.C}{C Modificaciones al código fuente de S4}{}% 60
+\BOOKMARK [0][]{appendix.D}{D Configuración para la comunicación de S4}{}% 61
+\BOOKMARK [0][]{appendix.E}{E Estadísticas de los operadores}{}% 62

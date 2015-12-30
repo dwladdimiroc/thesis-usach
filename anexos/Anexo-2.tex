@@ -1,11 +1,11 @@
-\chapter{Clases para la implementación del sistema de monitoreo}
+\chapter{Clases para la implementaci\'on del sistema de monitoreo}
 \label{apendice:clases}
 
-En el Código \ref{lst:statusPE} se muestra las estadísticas de un PE en específico, donde se guarda el nombre del \textit{stream} asociado al PE, la tasa de llegada ($\lambda$), tasa de servicio ($\mu * s$), tasa de servicio unitaria ($\mu$), tasa de rendimiento ($\rho$), cola, historial del PE para el cálculo predictivo, clase del PE, cantidad de réplicas, historial de alertas para la replicación según el algoritmo reactivo y cantidad total de eventos procesados.
+En el C\'odigo \ref{lst:statusPE} se muestra las estad\'isticas de un PE en espec\'ifico, donde se guarda el nombre del \textit{stream} asociado al PE, la tasa de llegada ($\lambda$), tasa de servicio ($\mu * s$), tasa de servicio unitaria ($\mu$), tasa de rendimiento ($\rho$), cola, historial del PE para el c\'alculo predictivo, clase del PE, cantidad de r\'eplicas, historial de alertas para la replicaci\'on seg\'un el algoritmo reactivo y cantidad total de eventos procesados.
 
-Estas estadísticas son las que se utilizan como entrada para el algoritmo reactivo o predictivo, de tal manera que puedan realizar los cálculos correspondientes.
+Estas estad\'isticas son las que se utilizan como entrada para el algoritmo reactivo o predictivo, de tal manera que puedan realizar los c\'alculos correspondientes.
 
-\begin{lstlisting}[caption={Clase StatusPE, el cual contiene las estadísticas de un PE específico.},label={lst:statusPE},language=Java]
+\begin{lstlisting}[caption={Clase StatusPE, el cual contiene las estad\'isticas de un PE espec\'ifico.},label={lst:statusPE},language=Java]
 public class StatusPE {
 
 	private String stream;
@@ -134,9 +134,9 @@ public class StatusPE {
 
 \end{lstlisting}
 
-En el Código \ref{lst:topologyApp} se muestra la clase que almacena una arista con sus respectivos vértices del grafo, de esta manera, se posee un mapa del grafo, siendo utilizado para saber la topología que utilizó el usuario en el grafo. De esta manera, se puede tratar la replicación por parte de un operador a otro, viendo los distintos cambios que surgen en la topología del grafo.
+En el C\'odigo \ref{lst:topologyApp} se muestra la clase que almacena una arista con sus respectivos v\'ertices del grafo, de esta manera, se posee un mapa del grafo, siendo utilizado para saber la topolog\'ia que utiliz\'o el usuario en el grafo. De esta manera, se puede tratar la replicaci\'on por parte de un operador a otro, viendo los distintos cambios que surgen en la topolog\'ia del grafo.
 
-\begin{lstlisting}[caption={Clase TopologyApp, el cual contiene las topología del grafo diseñado por el usuario.},label={lst:topologyApp},language=Java]
+\begin{lstlisting}[caption={Clase TopologyApp, el cual contiene las topolog\'ia del grafo dise\~nado por el usuario.},label={lst:topologyApp},language=Java]
 public class TopologyApp {
 	private Class<? extends AdapterApp> adapter;
 	private Class<? extends ProcessingElement> peSend;
