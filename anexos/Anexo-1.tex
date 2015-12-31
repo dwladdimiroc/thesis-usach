@@ -1,16 +1,16 @@
-\chapter{Conformación de matriz de transición}
+\chapter{Conformaci\'on de matriz de transici\'on}
 \label{apendice:matrizTransicion}
 
-En el Algoritmo \ref{alg:matrizTransicion} se puede apreciar la conformación de la matriz de transición dado la historia de un operador determinado.
+En el Algoritmo \ref{alg:matrizTransicion} se puede apreciar la conformaci\'on de la matriz de transici\'on dado la historia de un operador determinado.
 
 \begin{algorithm}[!hb]
 	\setstretch{1}
-	\caption{Algoritmo para la conformación de la matriz de transición.}
+	\caption{Algoritmo para la conformaci\'on de la matriz de transici\'on.}
 	\label{alg:matrizTransicion}
 	\begin{algorithmic}[1]
-	\REQUIRE $rho$ Historial de procesamiento de tamaño $n$ del operador $\phi$.
-	\ENSURE $\Gamma$ Matriz de transición del operador $\phi$.
-	\STATE $P \leftarrow Matriz[3x3]$ \COMMENT {Matriz de transición}
+	\REQUIRE $rho$ Historial de procesamiento de tama\~no $n$ del operador $\phi$.
+	\ENSURE $\Gamma$ Matriz de transici\'on del operador $\phi$.
+	\STATE $P \leftarrow Matriz[3x3]$ \COMMENT {Matriz de transici\'on}
 	\STATE $\tau \leftarrow Arreglo[3]$ \COMMENT {Contador para la normalizaci\'on de los datos}
 	\FOR {$i=1$ a $n$}
 		\IF {$\rho_i < 0.5$ \AND $\rho_{i+1} < 0.5$}

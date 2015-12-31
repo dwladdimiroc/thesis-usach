@@ -1,4 +1,18 @@
-\select@language {spanish}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Per\'iodo de tiempo que duerme la hebra asignada al PE.\relax }}{47}{table.caption.32}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Tiempos de ejecuci\'on de los algoritmos del modelo el\'astico.\relax }}{59}{table.caption.54}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {D.1}{\ignorespaces Par\'ametros de la configuraci\'on para la comunicaci\'on de S4.\relax }}{75}{table.caption.59}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

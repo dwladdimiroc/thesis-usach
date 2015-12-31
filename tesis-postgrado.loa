@@ -2,6 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< HEAD
 \contentsline {algocf}{\numberline {4.1}{\ignorespaces Algoritmo reactivo del modelo el\IeC {\'a}stico.\relax }}{37}{algocf.4.1}
 \contentsline {algocf}{\numberline {4.2}{\ignorespaces C\IeC {\'a}lculo de la distribuci\IeC {\'o}n estacionaria de la cadena de Markov de un operador $i$.\relax }}{39}{algocf.4.2}
 \contentsline {algocf}{\numberline {4.3}{\ignorespaces Algoritmo predictivo del modelo el\IeC {\'a}stico.\relax }}{40}{algocf.4.3}
@@ -10,6 +11,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {algocf}{\numberline {A.1}{\ignorespaces Algoritmo para la conformaci\IeC {\'o}n de la matriz de transici\IeC {\'o}n.\relax }}{69}{algocf.Alph1.1}
+=======
+\contentsline {algocf}{\numberline {4.1}{\ignorespaces Algoritmo reactivo del modelo el\'astico.\relax }}{37}{algocf.4.1}
+\contentsline {algocf}{\numberline {4.2}{\ignorespaces C\'alculo de la distribuci\'on estacionaria de la cadena de Markov de un operador $i$.\relax }}{39}{algocf.4.2}
+\contentsline {algocf}{\numberline {4.3}{\ignorespaces Algoritmo predictivo del modelo el\'astico.\relax }}{40}{algocf.4.3}
+\contentsline {algocf}{\numberline {4.4}{\ignorespaces Administraci\'on de r\'eplicas de un operador $i$ dado su comportamiento en el modelo el\'astico.\relax }}{41}{algocf.4.4}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {algocf}{\numberline {A.1}{\ignorespaces Algoritmo para la conformaci\'on de la matriz de transici\'on.\relax }}{68}{algocf.A.1}
+>>>>>>> 2593dcc9f1f0f407aaed2b40f87140ab2e858079
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

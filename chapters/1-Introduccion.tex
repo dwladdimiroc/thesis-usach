@@ -1,60 +1,60 @@
-\chapter{Introducción}
+\chapter{Introducci\'on}
 \label{cap:introduccion}
 
-\section{Antecedentes y motivación}
+\section{Antecedentes y motivaci\'on}
 \label{intro:motivacion}
 
-La gran contribución de información en la Internet se ha debido al origen de la Web 2.0 donde ésta se caracteriza por la participación activa del usuario, \normalsize{como} en blogs, redes sociales u otras aplicaciones Web \citep{web2007oberhelman}.
+La gran contribuci\'on de informaci\'on en la Internet se ha debido al origen de la Web 2.0 donde \'esta se caracteriza por la participaci\'on activa del usuario, \normalsize{como} en blogs, redes sociales u otras aplicaciones Web \citep{web2007oberhelman}.
 
-%Con el objetivo de extraer información de dichos datos, se crean sistemas de procesamiento para grandes cantidades de información generadas por la interacción entre los usuarios.
+%Con el objetivo de extraer informaci\'on de dichos datos, se crean sistemas de procesamiento para grandes cantidades de informaci\'on generadas por la interacci\'on entre los usuarios.
 
-Con el paso del tiempo, más y más información es generada por distintas interacciones generadas por los usuarios. \normalsize{Por lo que analizar} o extraer esta información no es una tarea fácil, más aún cuando muchas de estas interacciones deben ser analizadas en tiempo real, dada su dependencia temporal. Por esta última característica es que sistemas tradicionales de procesamiento basados en MapReduce \citep{2010Lin} o \textit{bash processing} \citep{HawwashN14} no son ideales para el análisis de esta información.
+Con el paso del tiempo, m\'as y m\'as informaci\'on es generada por distintas interacciones generadas por los usuarios. \normalsize{Por lo que analizar} o extraer esta informaci\'on no es una tarea f\'acil, m\'as a\'un cuando muchas de estas interacciones deben ser analizadas en tiempo real, dada su dependencia temporal. Por esta \'ultima caracter\'istica es que sistemas tradicionales de procesamiento basados en MapReduce \citep{2010Lin} o \textit{bash processing} \citep{HawwashN14} no son ideales para el an\'alisis de esta informaci\'on.
 
-Es así como con el tiempo se han ido creando distintos sistemas de procesamiento capaces de lidiar con las restricciones de temporalidad, debido al interesante funcionamiento que poseen, las que se caracterizan por ser capaces de procesar grandes flujos de datos en tiempo real \citep{ChenZ14a}. El requisito de procesar informaci\'on en tiempo real surge por la necesidad de los usuarios en obtener respuestas r\'apidas y actualizadas que le permitan tomar decisiones en per\'iodos cortos de tiempo. Dentro de los ejemplos existentes se encuentran: análisis de sentimientos de los mensajes de usuarios, análisis de los precios de la bolsa de valores, recopilación de información en caso de emergencia, entre otros. Este tipo de aplicaciones son necesarias para sus usuarios, debido que proveen de información actualizada que permite mejorar entre otros casos la toma de decisiones \citep{Wenzel14}.
+Es as\'i como con el tiempo se han ido creando distintos sistemas de procesamiento capaces de lidiar con las restricciones de temporalidad, debido al interesante funcionamiento que poseen, las que se caracterizan por ser capaces de procesar grandes flujos de datos en tiempo real \citep{ChenZ14a}. El requisito de procesar informaci\'on en tiempo real surge por la necesidad de los usuarios en obtener respuestas r\'apidas y actualizadas que le permitan tomar decisiones en per\'iodos cortos de tiempo. Dentro de los ejemplos existentes se encuentran: an\'alisis de sentimientos de los mensajes de usuarios, an\'alisis de los precios de la bolsa de valores, recopilaci\'on de informaci\'on en caso de emergencia, entre otros. Este tipo de aplicaciones son necesarias para sus usuarios, debido que proveen de informaci\'on actualizada que permite mejorar entre otros casos la toma de decisiones \citep{Wenzel14}.
 
-Un ejemplo de esto son las aplicaciones que analizan redes sociales en caso de un desastre natural, donde grandes cantidades de información son generadas, y se requiere procesar esta información lo más cercano al tiempo real para obtener información que permita un trabajo de recuperación más eficiente dado el suceso \citep{andrade2014fundamentals}. De esta manera, se puede construir un sistema que procese los datos realizando un análisis de la percepción de la gente, búsqueda de personas desaparecidas o focos de necesidad. Con esta información, se puede establecer sectores críticos, facilitar la búsqueda de personas, distribución de alertas, o detección de necesidades, lo cual es crucial para tomar decisiones en esos momentos.
+Un ejemplo de esto son las aplicaciones que analizan redes sociales en caso de un desastre natural, donde grandes cantidades de informaci\'on son generadas, y se requiere procesar esta informaci\'on lo m\'as cercano al tiempo real para obtener informaci\'on que permita un trabajo de recuperaci\'on m\'as eficiente dado el suceso \citep{andrade2014fundamentals}. De esta manera, se puede construir un sistema que procese los datos realizando un an\'alisis de la percepci\'on de la gente, b\'usqueda de personas desaparecidas o focos de necesidad. Con esta informaci\'on, se puede establecer sectores cr\'iticos, facilitar la b\'usqueda de personas, distribuci\'on de alertas, o detecci\'on de necesidades, lo cual es crucial para tomar decisiones en esos momentos.
 
-Por otra parte, también son utilizados para llevar a cabo predicciones en la bolsa de comercio\normalsize{. De esta manera,} se crean sistemas de procesamiento que apliquen modelos matemáticos, los cuales permiten predecir el comportamiento para el siguiente día en el mercado. Con estos sistemas, la ganancia que existe por parte de las personas interesadas puede aumentar considerablemente, por lo que ha generando un alto interés en el desarrollo e investigación en esta área.
+Por otra parte, tambi\'en son utilizados para llevar a cabo predicciones en la bolsa de comercio\normalsize{. De esta manera,} se crean sistemas de procesamiento que apliquen modelos matem\'aticos, los cuales permiten predecir el comportamiento para el siguiente d\'ia en el mercado. Con estos sistemas, la ganancia que existe por parte de las personas interesadas puede aumentar considerablemente, por lo que ha generando un alto inter\'es en el desarrollo e investigaci\'on en esta \'area.
 
-También se aplica en casos de seguridad en redes, donde se permite realizar un monitoreo de las actividades ocurridas en la red. Como la información es procesada en tiempo real, ayuda a detectar a tiempo las posibles acciones de usuarios maliciosos. Dentro de las aplicaciones que existen sobre este tema, \normalsize{son el análisis de los logs de la red cerrada}, donde con esta información se puede verificar si existe algún \textit{bug}, error o anomalía, además de ver si existe algún intruso o violación al sistema.
+Tambi\'en se aplica en casos de seguridad en redes, donde se permite realizar un monitoreo de las actividades ocurridas en la red. Como la informaci\'on es procesada en tiempo real, ayuda a detectar a tiempo las posibles acciones de usuarios maliciosos. Dentro de las aplicaciones que existen sobre este tema, \normalsize{son el an\'alisis de los logs de la red cerrada}, donde con esta informaci\'on se puede verificar si existe alg\'un \textit{bug}, error o anomal\'ia, adem\'as de ver si existe alg\'un intruso o violaci\'on al sistema.
 
-Para dar soporte a estas aplicaciones existen los SPS (Sistemas de Procesamiento de \textit{Stream}) tales como S4 \citep{s4yahoo}, Storm \citep{stormtwitter}, Samza \citep{samza}, entre otros. El paradigma de procesamiento de estos sistemas se basa en grafos, donde los vértices son operaciones realizadas al flujo de datos, representadas por las distintas aristas. Para la generación de una aplicación, el usuario debe diseñar una topología de procesamiento compuesto por las tareas u operaciones deseadas. Cada grafo o topología tiene un \textit{input} desde una fuente de datos, y un \textit{output} del flujo de salida proveniente del último operador. Aunque poseen bastante flexibilidad para la creación de diversas aplicaciones, por la facilidad de crear distintas topologías, no lo tiene para adaptarse con el tiempo a las condiciones del tráfico \normalsize{entrante} cuando se encuentran en funcionamiento, esto debido a que las topolog\'ias de procesamiento generadas son est\'aticas en tiempo de ejecución. Dada la naturaleza din\'amica de las interacciones, pueden surgir problemas de distribución de carga en la topología asociada a la aplicación.
+Para dar soporte a estas aplicaciones existen los SPS (Sistemas de Procesamiento de \textit{Stream}) tales como S4 \citep{s4yahoo}, Storm \citep{stormtwitter}, Samza \citep{samza}, entre otros. El paradigma de procesamiento de estos sistemas se basa en grafos, donde los v\'ertices son operaciones realizadas al flujo de datos, representadas por las distintas aristas. Para la generaci\'on de una aplicaci\'on, el usuario debe dise\~nar una topolog\'ia de procesamiento compuesto por las tareas u operaciones deseadas. Cada grafo o topolog\'ia tiene un \textit{input} desde una fuente de datos, y un \textit{output} del flujo de salida proveniente del \'ultimo operador. Aunque poseen bastante flexibilidad para la creaci\'on de diversas aplicaciones, por la facilidad de crear distintas topolog\'ias, no lo tiene para adaptarse con el tiempo a las condiciones del tr\'afico \normalsize{entrante} cuando se encuentran en funcionamiento, esto debido a que las topolog\'ias de procesamiento generadas son est\'aticas en tiempo de ejecuci\'on. Dada la naturaleza din\'amica de las interacciones, pueden surgir problemas de distribuci\'on de carga en la topolog\'ia asociada a la aplicaci\'on.
 
-El problema de sobrecarga conlleva a una baja en el rendimiento, produciendo una pérdida de recursos, tiempo e información. Abordar este problema es crítico, puesto que al realizar una optimización en el sistema, implica un aumento en la cantidad de datos procesados, y una mayor precisión en los resultados por parte de la aplicación.
+El problema de sobrecarga conlleva a una baja en el rendimiento, produciendo una p\'erdida de recursos, tiempo e informaci\'on. Abordar este problema es cr\'itico, puesto que al realizar una optimizaci\'on en el sistema, implica un aumento en la cantidad de datos procesados, y una mayor precisi\'on en los resultados por parte de la aplicaci\'on.
 
-Lo anterior lo podemos entender de mejor manera con el siguiente ejemplo: se posee un tiempo $t$ para procesar $n$ datos\normalsize{. Si se aumenta} la cantidad de datos procesados, se tiene que en el mismo tiempo $t$ se procesan una cantidad $n+m$ de datos, donde $m$ son los datos adicionales a analizar debido a la mejora del rendimiento. Como existe un aumento en la cantidad de datos procesados, la información obtenida puede ser más precisa, dado que se posee una mayor cantidad de datos. Por ejemplo, al procesar una mayor cantidad de transacciones en la bolsa de comercio, se puede poseer una predicción más precisa de cómo se comporta la bolsa a futuro. Desde otro punto de vista, se efectúa una mejora en los recursos utilizados, habiendo una disminución de los recursos ociosos.
+Lo anterior lo podemos entender de mejor manera con el siguiente ejemplo: se posee un tiempo $t$ para procesar $n$ datos\normalsize{. Si se aumenta} la cantidad de datos procesados, se tiene que en el mismo tiempo $t$ se procesan una cantidad $n+m$ de datos, donde $m$ son los datos adicionales a analizar debido a la mejora del rendimiento. Como existe un aumento en la cantidad de datos procesados, la informaci\'on obtenida puede ser m\'as precisa, dado que se posee una mayor cantidad de datos. Por ejemplo, al procesar una mayor cantidad de transacciones en la bolsa de comercio, se puede poseer una predicci\'on m\'as precisa de c\'omo se comporta la bolsa a futuro. Desde otro punto de vista, se efect\'ua una mejora en los recursos utilizados, habiendo una disminuci\'on de los recursos ociosos.
 
-\section{Descripción del problema}
+\section{Descripci\'on del problema}
 \label{intro:problema}
 
-%Dada la rigidez de la topología, la cual no varía en el transcurso del procesamiento, y el carácter altamente dinámico del tráfico, y los posibles \textit{peaks} que pueden alteran el tráfico entrante, pueden generarse problemas de balance de carga entre los operadores de la topología, sobrecargando alguno de estos y comprometiendo el rendimiento del sistema.
+%Dada la rigidez de la topolog\'ia, la cual no var\'ia en el transcurso del procesamiento, y el car\'acter altamente din\'amico del tr\'afico, y los posibles \textit{peaks} que pueden alteran el tr\'afico entrante, pueden generarse problemas de balance de carga entre los operadores de la topolog\'ia, sobrecargando alguno de estos y comprometiendo el rendimiento del sistema.
 
-Dado el carácter estático del grafo de procesamiento en tiempo de ejecución y el carácter altamente dinámico del tráfico, puede surgir problemas de balance de carga entre los operadores de la topología, sobrecargando alguno de estos y comprometiendo el rendimiento del sistema.
+Dado el car\'acter est\'atico del grafo de procesamiento en tiempo de ejecuci\'on y el car\'acter altamente din\'amico del tr\'afico, puede surgir problemas de balance de carga entre los operadores de la topolog\'ia, sobrecargando alguno de estos y comprometiendo el rendimiento del sistema.
 
-\section{Solución propuesta}
+\section{Soluci\'on propuesta}
 \label{intro:solucion}
 
-La solución propuesta consiste en un modelo elástico de replicación de operadores para los sistemas de procesamiento de \textit{stream}, el cual permite adaptar el grafo de procesamiento a las variaciones del tráfico. Para esto se ha implementado cuatro módulos que componen la estructura del modelo elástico: monitor de carga, analizador de carga, predictor de carga y administrador de réplicas.
+La soluci\'on propuesta consiste en un modelo el\'astico de replicaci\'on de operadores para los sistemas de procesamiento de \textit{stream}, el cual permite adaptar el grafo de procesamiento a las variaciones del tr\'afico. Para esto se ha implementado cuatro m\'odulos que componen la estructura del modelo el\'astico: monitor de carga, analizador de carga, predictor de carga y administrador de r\'eplicas.
 
-El monitor de carga está encargado de recuperar el nivel de carga de cada uno de los operadores. Esta información es entregada a los módulos analizador y predictor de carga, los cuales están encargados de medir el nivel de carga del operador, y según eso modificar la cantidad de réplicas necesarias. Cada uno de estos módulos trabaja de forma independiente y poseen distintos enfoques: reactivo y predictivo.
+El monitor de carga est\'a encargado de recuperar el nivel de carga de cada uno de los operadores. Esta informaci\'on es entregada a los m\'odulos analizador y predictor de carga, los cuales est\'an encargados de medir el nivel de carga del operador, y seg\'un eso modificar la cantidad de r\'eplicas necesarias. Cada uno de estos m\'odulos trabaja de forma independiente y poseen distintos enfoques: reactivo y predictivo.
 
-El analizador de carga aplica un enfoque reactivo, el cual analiza el tráfico de los operadores en el tiempo actual y cuantifica su carga. El estado de la carga de cada operador depende de un umbral, por lo que según éste se solicita al administrador de réplica incrementar o disminuir la cantidad de réplicas del operador.
+El analizador de carga aplica un enfoque reactivo, el cual analiza el tr\'afico de los operadores en el tiempo actual y cuantifica su carga. El estado de la carga de cada operador depende de un umbral, por lo que seg\'un \'este se solicita al administrador de r\'eplica incrementar o disminuir la cantidad de r\'eplicas del operador.
 
-El predictor de carga aplica un enfoque predictivo, el cual analiza la carga de los distintos operadores en una ventana de tiempo y predice la carga para la siguiente ventana. Con esta información el administrador de réplicas determina la mejor configuración de los operadores para dicho período.
+El predictor de carga aplica un enfoque predictivo, el cual analiza la carga de los distintos operadores en una ventana de tiempo y predice la carga para la siguiente ventana. Con esta informaci\'on el administrador de r\'eplicas determina la mejor configuraci\'on de los operadores para dicho per\'iodo.
 
-El administrador de réplicas por su parte se alimenta de la información entregada por los dos módulos anteriores, y en base a esto, toma una decisión respecto a los recursos asignados al operador. En otras palabras, verifica cuántas réplicas son necesarias según el tamaño del tráfico.
+El administrador de r\'eplicas por su parte se alimenta de la informaci\'on entregada por los dos m\'odulos anteriores, y en base a esto, toma una decisi\'on respecto a los recursos asignados al operador. En otras palabras, verifica cu\'antas r\'eplicas son necesarias seg\'un el tama\~no del tr\'afico.
 
 \section{Objetivos y alcance del proyecto}
 \label{intro:objetivos}
 
 \subsection{Objetivo general}
-	Dise\~no, construcción y evaluaci\'on de un modelo elástico de replicación de operadores para un sistema de procesamiento de \textit{stream} en tiempo real.
+	Dise\~no, construcci\'on y evaluaci\'on de un modelo el\'astico de replicaci\'on de operadores para un sistema de procesamiento de \textit{stream} en tiempo real.
 
-\subsection{Objetivos específicos}
+\subsection{Objetivos espec\'ificos}
 \begin{enumerate}
 	\item Dise\~nar e implementar un algoritmo reactivo que permita analizar en el momento la carga de los operadores.
 	\item Dise\~nar e implementar un algoritmo de predicci\'on que permita estimar la carga de los operadores.
-	\item Dise\~nar e implementar un algoritmo que permita la administraci\'on del número de operadores del grafo de procesamiento de forma el\'astica.
+	\item Dise\~nar e implementar un algoritmo que permita la administraci\'on del n\'umero de operadores del grafo de procesamiento de forma el\'astica.
 	\item Dise\~nar y construir experimentos que permitan validar la hip\'otesis formulada.
 	\item Evaluar y analizar el rendimiento del modelo a trav\'es de aplicaciones generadas sobre un sistema de procesamiento de \textit{stream}.
 \end{enumerate}
@@ -62,32 +62,32 @@ El administrador de réplicas por su parte se alimenta de la información entreg
 \subsection{Alcances}
 Dentro de los alcances y limitaciones que se tiene en el proyecto son:
 \begin{enumerate}
-	\item La evaluación de la solución se ha implementado sobre un solo sistema de procesamiento de \textit{stream}.
-	\item Los datos emitidos de la fuente de datos son homogéneos, teniendo una tasa de procesamiento \normalsize{constante para cada operador.}
-	\item La distribución de flujo de datos es a nivel de operadores y no de máquinas, por lo que no se ha analizado la carga de estos \'ultimos.
+	\item La evaluaci\'on de la soluci\'on se ha implementado sobre un solo sistema de procesamiento de \textit{stream}.
+	\item Los datos emitidos de la fuente de datos son homog\'eneos, teniendo una tasa de procesamiento \normalsize{constante para cada operador.}
+	\item La distribuci\'on de flujo de datos es a nivel de operadores y no de m\'aquinas, por lo que no se ha analizado la carga de estos \'ultimos.
 	\item Los algoritmos propuestos no incluyen t\'ecnicas que garanticen el procesamiento de todo el flujo de datos.
-	\item En la evaluación de los algoritmos propuestos se ha considerado el costo de comunicación de manera igualitaria para todos los operadores.
+	\item En la evaluaci\'on de los algoritmos propuestos se ha considerado el costo de comunicaci\'on de manera igualitaria para todos los operadores.
 \end{enumerate}
 
 
-\section{Metodología y herramientas utilizadas}
+\section{Metodolog\'ia y herramientas utilizadas}
 \label{intro:metodologia}
 
-\subsection{Metodología}
-Dado el carácter de investigación del trabajo propuesto, se ha utilizado el método científico para la realización de éste. Dentro de las etapas propuesta por \citep{hernandez2010metodologia} están:
+\subsection{Metodolog\'ia}
+Dado el car\'acter de investigaci\'on del trabajo propuesto, se ha utilizado el m\'etodo cient\'ifico para la realizaci\'on de \'este. Dentro de las etapas propuesta por \citep{hernandez2010metodologia} est\'an:
 
 \begin{enumerate}
-	\item Formulación de la hipótesis: ``La utilización de un modelo elástico en un sistema de procesamiento de \textit{stream} permitirá aumentar la cantidad de eventos procesados, y con ello la precisión de los resultados".
-	\item Elaboración del marco teórico: Exponer los trabajos que existen sobre problemas de carga en los operadores de SPS. Así mismo, los conceptos fundamentales de estos sistemas.
-	\item Seleccionar el diseño apropiado de investigación: Diseñar el modelo elástico para el problema de balance de carga a nivel lógico en un SPS, vale decir, los distintos módulos, donde se posea un algoritmo reactivo y otro predictivo. Cada diseño y ejecución de los experimentos se basan en los principios de un SPS definiendo métricas acordes para dicho modelo de procesamiento.
-	\item Analizar los resultados: De debe analizar los resultados según las métricas establecidas y el modelo propuesto.
-	\item Presentar los resultados: Elaborar el reporte de investigación y presentar los resultados en gráficos y tablas.
-	\item Concluir en base a los resultados de la investigación.
+	\item Formulaci\'on de la hip\'otesis: ``La utilizaci\'on de un modelo el\'astico en un sistema de procesamiento de \textit{stream} permitir\'a aumentar la cantidad de eventos procesados, y con ello la precisi\'on de los resultados".
+	\item Elaboraci\'on del marco te\'orico: Exponer los trabajos que existen sobre problemas de carga en los operadores de SPS. As\'i mismo, los conceptos fundamentales de estos sistemas.
+	\item Seleccionar el dise\~no apropiado de investigaci\'on: Dise\~nar el modelo el\'astico para el problema de balance de carga a nivel l\'ogico en un SPS, vale decir, los distintos m\'odulos, donde se posea un algoritmo reactivo y otro predictivo. Cada dise\~no y ejecuci\'on de los experimentos se basan en los principios de un SPS definiendo m\'etricas acordes para dicho modelo de procesamiento.
+	\item Analizar los resultados: De debe analizar los resultados seg\'un las m\'etricas establecidas y el modelo propuesto.
+	\item Presentar los resultados: Elaborar el reporte de investigaci\'on y presentar los resultados en gr\'aficos y tablas.
+	\item Concluir en base a los resultados de la investigaci\'on.
 \end{enumerate}
 
 \subsection{Herramientas de desarrollo}
-Para el procesamiento de \textit{stream} se ha utilizado Apache S4 0.6.0, por lo que es necesario para su configuración Java SE Development Kit 7. Dentro esto, el lenguaje de programación de cada uno de los módulos del modelo desarrollado se ha utilizado el lenguaje de programación Java, y se ha trabajado sobre el IDE Eclipse Standard 4.4.2. De forma complementaria, se ha utilizado Texmaker 4.1 para la confección de los distintos informes requeridos y la documentación correspondiente al trabajo.
+Para el procesamiento de \textit{stream} se ha utilizado Apache S4 0.6.0, por lo que es necesario para su configuraci\'on Java SE Development Kit 7. Dentro esto, el lenguaje de programaci\'on de cada uno de los m\'odulos del modelo desarrollado se ha utilizado el lenguaje de programaci\'on Java, y se ha trabajado sobre el IDE Eclipse Standard 4.4.2. De forma complementaria, se ha utilizado Texmaker 4.1 para la confecci\'on de los distintos informes requeridos y la documentaci\'on correspondiente al trabajo.
 
-\section{Organización del documento}
+\section{Organizaci\'on del documento}
 \label{intro:organizacion}
-En el presente documento se divide en seis capítulos. En \normalsize{este} capítulo se presenta la problemática y la solución propuesta, en conjunto con los objetivos y la metodología utilizada. En el segundo capítulo se exponen los conceptos teóricos involucrados. Posteriormente, el tercer capítulo aborda los distintos enfoques y técnicas que se han brindado en la literatura para dar soluciones al problema planteado. Luego, el cuarto capítulo se describe el diseño de los algoritmos utilizados en el modelo propuesto, explicando las distintas decisiones que se han tomado para el diseño de éste. En el quinto capítulo se presentan los distintos experimentos realizados para evaluar el sistema diseñado, donde se explica su implementación y evaluación según los experimentos diseñados. Finalmente, en el sexto capítulo se exponen las respectivas conclusiones obtenidas a partir del presente trabajo.
+En el presente documento se divide en seis cap\'itulos. En \normalsize{este} cap\'itulo se presenta la problem\'atica y la soluci\'on propuesta, en conjunto con los objetivos y la metodolog\'ia utilizada. En el segundo cap\'itulo se exponen los conceptos te\'oricos involucrados. Posteriormente, el tercer cap\'itulo aborda los distintos enfoques y t\'ecnicas que se han brindado en la literatura para dar soluciones al problema planteado. Luego, el cuarto cap\'itulo se describe el dise\~no de los algoritmos utilizados en el modelo propuesto, explicando las distintas decisiones que se han tomado para el dise\~no de \'este. En el quinto cap\'itulo se presentan los distintos experimentos realizados para evaluar el sistema dise\~nado, donde se explica su implementaci\'on y evaluaci\'on seg\'un los experimentos dise\~nados. Finalmente, en el sexto cap\'itulo se exponen las respectivas conclusiones obtenidas a partir del presente trabajo.

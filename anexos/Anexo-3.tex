@@ -1,9 +1,9 @@
-\chapter{Modificaciones al código fuente de S4}
+\chapter{Modificaciones al c\'odigo fuente de S4}
 \label{apendice:codigoFuenteS4}
 
-En el Código \ref{lst:monitor} se presenta la implementanción de las tareas que están a cargo del envío de estadísticas al sistema de distribución de carga, donde una de ellas está a cargo de obtener las muestras para el historia, y la otra está a cargo de enviar las estadísticas de los PE existentes en el sistema. Además de esto, para la ejecución del sistema, se debe esperar que el \textit{Adapter} esté ejecutándose, por lo que espera la notificación por parte de éste para la ejecución de las tareas.
+En el C\'odigo \ref{lst:monitor} se presenta la implementanci\'on de las tareas que est\'an a cargo del env\'io de estad\'isticas al sistema de distribuci\'on de carga, donde una de ellas est\'a a cargo de obtener las muestras para el historia, y la otra est\'a a cargo de enviar las estad\'isticas de los PE existentes en el sistema. Adem\'as de esto, para la ejecuci\'on del sistema, se debe esperar que el \textit{Adapter} est\'e ejecut\'andose, por lo que espera la notificaci\'on por parte de \'este para la ejecuci\'on de las tareas.
 
-\begin{lstlisting}[caption={Tareas que ejecutan el sistema de distribución de carga.},label={lst:monitor},language=Java]
+\begin{lstlisting}[caption={Tareas que ejecutan el sistema de distribuci\'on de carga.},label={lst:monitor},language=Java]
 private void startMonitor() {
 	if (runMonitor) {
 		synchronized (getBlockAdapter()) {
@@ -33,9 +33,9 @@ private void startMonitor() {
 }
 \end{lstlisting}
 
-En el Código \ref{lst:add} se muestra la implementanción que realizada para añadir una réplica a un PE en específico. El tipo \textit{StatusPE} hace referencia un objeto creado en la implementanción, para almacenar los datos y estadísticas correspondientes al PE en el análisis de carga según el sistema de distribución de carga, como la cantidad de réplicas deseadas.
+En el C\'odigo \ref{lst:add} se muestra la implementanci\'on que realizada para a\~nadir una r\'eplica a un PE en espec\'ifico. El tipo \textit{StatusPE} hace referencia un objeto creado en la implementanci\'on, para almacenar los datos y estad\'isticas correspondientes al PE en el an\'alisis de carga seg\'un el sistema de distribuci\'on de carga, como la cantidad de r\'eplicas deseadas.
 
-\begin{lstlisting}[caption={Añadir r\'eplicas a un PE en S4.},label={lst:add},language=Java]
+\begin{lstlisting}[caption={A\~nadir r\'eplicas a un PE en S4.},label={lst:add},language=Java]
 public void addReplication(StatusPE statusPE) {
 	for (Streamable<Event> stream : getStreams()) {
 		for (ProcessingElement PEPrototype : stream.getTargetPEs()) {
@@ -50,7 +50,7 @@ public void addReplication(StatusPE statusPE) {
 }
 \end{lstlisting}
 
-En el Código \ref{lst:remove} se muestra la implementanción que realizada para eliminar una réplica a un PE en específico.
+En el C\'odigo \ref{lst:remove} se muestra la implementanci\'on que realizada para eliminar una r\'eplica a un PE en espec\'ifico.
 
 \begin{lstlisting}[caption={Eliminar r\'eplicas a un PE en S4.},label={lst:remove},language=Java]
 public void removeReplication(StatusPE statusPE) {
