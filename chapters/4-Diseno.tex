@@ -13,7 +13,7 @@ En la Figura \ref{fig:ejReplicacion} se muestra un ejemplo de la replicación pr
 \begin{figure}[!ht]
 	\centering
 		\includegraphics[scale=0.6]{images/EjReplicacion.pdf}
-	\caption{Ejemplo de replicación del modelo propuesto.}
+	\caption[Ejemplo de replicación del modelo propuesto.]{Ejemplo de replicación del modelo propuesto.\\Fuente: Elaboración propia.}
 	\label{fig:ejReplicacion}
 \end{figure}
 
@@ -28,7 +28,7 @@ Para la detección del nivel de carga de un operador es necesario contar con un 
 \begin{figure}[!ht]
 	\centering
 		\includegraphics[scale=0.6]{images/AnalisisTeoriaColas.pdf}
-	\caption{Enfoque de un SPS con conceptos de teoría de colas.}
+	\caption[Enfoque de un SPS con conceptos de teoría de colas.]{Enfoque de un SPS con conceptos de teoría de colas.\\Fuente: Elaboración propia.}
 	\label{fig:analisisTeoriaColas}
 \end{figure}
 
@@ -51,7 +51,7 @@ Dado lo anterior, se ha diseñado un modelo elástico \normalsize{basado en el m
 \begin{figure}[ht!]
   \centering
     \includegraphics[scale=0.5]{images/Diagrama.pdf}
-  \caption{Estructura del modelo elástico.}
+  \caption[Estructura del modelo elástico.]{Estructura del modelo elástico.\\Fuente: Elaboración propia.}
   \label{fig:componentesSistemas}
 \end{figure}
 
@@ -93,6 +93,8 @@ Dentro de las consideraciones realizadas para la recolección de datos, dentro d
 
 En el Algoritmo \ref{alg:reactive} se presenta el mecanismo de análisis de estado para un operador dado. Dicho estado está determinado por su tasa de rendimiento, la cual en caso de ser mayor a 1, su estado es inestable, si es menor a 0.5, su estado es ocioso, y en otro caso, significa que está estable. Estos datos posteriormente son considerados por el administrador de réplicas, para una posible modificación de la cantidad de réplicas según el comportamiento del operador.
 
+En la Figura \ref{fig:umbrales} se observa el estado de un operador según la tasa de procesamiento. En los primeros 90 segundos la tasa del operador es mayor al límite superior, lo cual indica que el sistema es inestable, es decir, el operador posee sobrecarga. Posteriormente, en el segundo 50, la tasa de rendimiento empieza a disminuir, ya sea por una optimización sobre los recursos lógicos o una disminución de la tasa de llegada. \normalsize{Por lo que ahora el operador ya no se encuentra sobrecargado (inestable), sino que se encuentra entre el límite inferior y superior, cuyo rango define al operador como un sistema estable hasta el segundo 170, donde se encuentra ocioso, hasta llegar al segundo 230.}
+
 \begin{algorithm}[!ht]
 	\caption{Algoritmo reactivo del modelo elástico.}
 	\label{alg:reactive}
@@ -109,12 +111,11 @@ En el Algoritmo \ref{alg:reactive} se presenta el mecanismo de análisis de esta
 	\end{algorithmic}
 \end{algorithm}
 
-En la Figura \ref{fig:umbrales} se observa el estado de un operador según la tasa de procesamiento. En los primeros 90 segundos la tasa del operador es mayor al límite superior, lo cual indica que el sistema es inestable, es decir, el operador posee sobrecarga. Posteriormente, en el segundo 50, la tasa de rendimiento empieza a disminuir, ya sea por una optimización sobre los recursos lógicos o una disminución de la tasa de llegada. \normalsize{Por lo que ahora el operador ya no se encuentra sobrecargado (inestable), sino que se encuentra entre el límite inferior y superior, cuyo rango define al operador como un sistema estable hasta el segundo 170, donde se encuentra ocioso, hasta llegar al segundo 230.}
-
 \begin{figure}[ht!]
   \centering
+  \captionsetup{justification=centering}
     \includegraphics[scale=0.8]{images/Umbrales.eps}
-  \caption{Comportamiento de la tasa de procesamiento de un operador.}
+	\caption[Comportamiento de la tasa de procesamiento de un operador.]{Comportamiento de la tasa de procesamiento de un operador. \\ Fuente: Elaboración propia.}
   \label{fig:umbrales}
 \end{figure}
 
@@ -132,8 +133,9 @@ Tomando las bases anteriores, se ha diseñado una cadena de Markov en base a tre
 
 \begin{figure}[ht!]
   \centering
+  \captionsetup{justification=centering}
     \includegraphics[scale=0.75]{images/CadenaMarkovPredictiva.pdf}
-  \caption{Cadena de Markov dado el modelo propuesto del sistema.}
+  \caption[Cadena de Markov dado el modelo propuesto del sistema.]{Cadena de Markov dado el modelo propuesto del sistema.\\Fuente: Elaboración propia.}
   \label{fig:cadenaMarkovPredictiva}
 \end{figure}
 

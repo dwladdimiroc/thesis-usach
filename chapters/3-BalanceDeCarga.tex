@@ -91,7 +91,7 @@ En los SPS también se utiliza la técnica de \textit{load shedding}, que consis
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.6]{images/LoadShedding.pdf}
-	\caption{Load shedding en un SPS.}
+	\caption[Load shedding en un SPS.]{Load shedding en un SPS.\\Fuente: Elaboración propia.}
 	\label{fig:loadShedding}
 \end{figure}
 
@@ -110,7 +110,7 @@ Si bien no existe una implementación que utilice la perspectiva según los recu
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.45]{images/Migracion.pdf}
-	\caption{Técnica de migración en un SPS.}
+	\caption[Técnica de migración en un SPS.]{Técnica de migración en un SPS.\\Fuente: Elaboración propia.}
 	\label{fig:migracion}
 \end{figure}
 
@@ -126,7 +126,7 @@ En algunos SPS el \textit{split} y el \textit{merge} son operadores que deben se
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.4]{images/Fision.pdf}
-	\caption{Técnica de fisión en un SPS.}
+	\caption[Técnica de fisión en un SPS.]{Técnica de fisión en un SPS.\\Fuente: Elaboración propia.}
 	\label{fig:fision}
 \end{figure}
 
@@ -144,10 +144,9 @@ En \citep{FernandezMKP13}, aplican fisión en el caso que exista un cuello de bo
 
 Dentro de las desventajas existentes por parte de estos trabajos realizados, es que no utilizan la historia del operador para analizar el comportamiento a futuro de la carga. El uso de sistemas de predicción puede estabilizar el sistema cuando existen \textit{peaks} en el tráfico, debido que estos son detectados en el pasado, y se verifica si pueden ocurrir en el futuro. \normalsize{Otra} desventaja, es que en algunos trabajos es necesario detener la ejecución de la aplicación, cambiar el número de réplicas y volver a iniciar, lo cual genera una pérdida de eventos.
 
-\newpage
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.3]{images/EjFision.png}
-	\caption{Ejemplo de replicación de los operadores \citep{FernandezMKP13}.}
+	\caption[Ejemplo de replicación de los operadores.]{Ejemplo de replicación de los operadores.\\Fuente: \cite{FernandezMKP13}.}
 	\label{fig:ejFision}
 \end{figure}

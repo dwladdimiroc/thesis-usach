@@ -428,7 +428,7 @@
 % Cubierta
 \newcommand{\makecubierta}
 {
-\newgeometry{top=4cm, bottom=2.5cm, left=4cm, right=2.5cm}
+\newgeometry{top=4.5cm, bottom=2.5cm, left=4cm, right=2.5cm}
 
 \vspace*{-1.0cm}
 \begin{picture}(18,4)(0,40)

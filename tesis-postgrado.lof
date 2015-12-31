@@ -1,2 +1,93 @@
 \select@language {spanish}
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Flujo de datos entre el servidor y los clientes.}}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ejemplo de modelo de SPS.}}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Modelo push de procesamiento.}}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Modelo pull de procesamiento.}}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Elasticidad en un SPS.}}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Ejemplo de un sistema basado en MAPE.}}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Proceso de Markov.}}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Cadena de Markov.}}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo de cadena de Markov.}}{17}{figure.caption.16}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Ejemplo de cadena de Markov reductible.}}{18}{figure.caption.17}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Ejemplo de cadena de Markov con estados aperi\IeC {\'o}dicos.}}{19}{figure.caption.18}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Ejemplo de un sistema basado en teor\IeC {\'\i }a de colas.}}{21}{figure.caption.19}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Load shedding en un SPS.}}{28}{figure.caption.20}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces T\IeC {\'e}cnica de migraci\IeC {\'o}n en un SPS.}}{29}{figure.caption.21}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces T\IeC {\'e}cnica de fisi\IeC {\'o}n en un SPS.}}{30}{figure.caption.22}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Ejemplo de replicaci\IeC {\'o}n de los operadores.}}{31}{figure.caption.23}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de replicaci\IeC {\'o}n del modelo propuesto.}}{33}{figure.caption.24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Enfoque de un SPS con conceptos de teor\IeC {\'\i }a de colas.}}{34}{figure.caption.25}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Estructura del modelo el\IeC {\'a}stico.}}{35}{figure.caption.26}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Comportamiento de la tasa de procesamiento de un operador.}}{37}{figure.caption.27}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Cadena de Markov dado el modelo propuesto del sistema.}}{38}{figure.caption.28}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Distribuci\IeC {\'o}n de la carga entre las r\IeC {\'e}plicas.}}{43}{figure.caption.29}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Aplicaci\IeC {\'o}n 1: An\IeC {\'a}lisis de \textit {tweets} en escenarios de desastres naturales.}}{45}{figure.caption.30}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Aplicaci\IeC {\'o}n 2: Contador de palabras en muestras de textos.}}{46}{figure.caption.31}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Aplicaci\IeC {\'o}n 3: Aplicaci\IeC {\'o}n sint\IeC {\'e}tica.}}{47}{figure.caption.33}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Rendimiento y cantidad de r\IeC {\'e}plicas totales del grafo en la primera aplicaci\IeC {\'o}n con env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{49}{figure.caption.34}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Rendimiento y cantidad de r\IeC {\'e}plicas totales del grafo en la primera aplicaci\IeC {\'o}n con env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{49}{figure.caption.35}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Cantidad total de eventos procesados en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{50}{figure.caption.36}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Cantidad total de eventos procesados en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{50}{figure.caption.37}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Rendimiento y cantidad de r\IeC {\'e}plicas totales del grafo en la primera aplicaci\IeC {\'o}n con env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{51}{figure.caption.38}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Rendimiento y cantidad de r\IeC {\'e}plicas totales del grafo en la primera aplicaci\IeC {\'o}n con env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{51}{figure.caption.39}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Cantidad total de eventos procesados en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{52}{figure.caption.40}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Cantidad total de eventos procesados en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{52}{figure.caption.41}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Flujo de datos y cantidad de r\IeC {\'e}plicas totales del grafo en la primera aplicaci\IeC {\'o}n con env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{53}{figure.caption.42}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Cantidad total de eventos procesados en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{54}{figure.caption.43}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Cantidad total de eventos procesados en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{55}{figure.caption.44}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Flujo de datos y cantidad de r\IeC {\'e}plicas totales del grafo en la primera aplicaci\IeC {\'o}n con env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{55}{figure.caption.45}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Cantidad total de eventos procesados en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{56}{figure.caption.46}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Cantidad total de eventos procesados en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{56}{figure.caption.47}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Porcentaje de utilizaci\IeC {\'o}n de la CPU en la tercera aplicaci\IeC {\'o}n con uso del modelo.}}{57}{figure.caption.48}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Porcentaje de utilizaci\IeC {\'o}n de la CPU en la tercera aplicaci\IeC {\'o}n sin uso del modelo.}}{57}{figure.caption.49}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Consumo de memoria RAM en la tercera aplicaci\IeC {\'o}n con uso del modelo.}}{58}{figure.caption.50}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Consumo de memoria RAM en la tercera aplicaci\IeC {\'o}n sin uso del modelo.}}{58}{figure.caption.51}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Rendimiento y cantidad de r\IeC {\'e}plicas totales del grafo en la tercera aplicaci\IeC {\'o}n con uso del modelo.}}{59}{figure.caption.52}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Rendimiento y cantidad de r\IeC {\'e}plicas totales del grafo en la tercera aplicaci\IeC {\'o}n sin uso del modelo.}}{59}{figure.caption.53}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Cantidad de eventos procesados en la tercera aplicaci\IeC {\'o}n con uso del modelo.}}{60}{figure.caption.54}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Cantidad de eventos procesados en la tercera aplicaci\IeC {\'o}n sin uso del modelo.}}{60}{figure.caption.55}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Estad\IeC {\'\i }sticas del PE Stopword en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{77}{figure.caption.60}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces Estad\IeC {\'\i }sticas del PE Stopword en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{77}{figure.caption.61}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Estad\IeC {\'\i }sticas del PE Language en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{78}{figure.caption.62}
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Estad\IeC {\'\i }sticas del PE Language en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{78}{figure.caption.63}
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{79}{figure.caption.64}
+\contentsline {figure}{\numberline {E.6}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{79}{figure.caption.65}
+\contentsline {figure}{\numberline {E.7}{\ignorespaces Estad\IeC {\'\i }sticas del PE Mongo en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{80}{figure.caption.66}
+\contentsline {figure}{\numberline {E.8}{\ignorespaces Estad\IeC {\'\i }sticas del PE Mongo en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{80}{figure.caption.67}
+\contentsline {figure}{\numberline {E.9}{\ignorespaces Estad\IeC {\'\i }sticas del PE Stopword en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{81}{figure.caption.68}
+\contentsline {figure}{\numberline {E.10}{\ignorespaces Estad\IeC {\'\i }sticas del PE Stopword en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{81}{figure.caption.69}
+\contentsline {figure}{\numberline {E.11}{\ignorespaces Estad\IeC {\'\i }sticas del PE Language en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{82}{figure.caption.70}
+\contentsline {figure}{\numberline {E.12}{\ignorespaces Estad\IeC {\'\i }sticas del PE Language en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{82}{figure.caption.71}
+\contentsline {figure}{\numberline {E.13}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{83}{figure.caption.72}
+\contentsline {figure}{\numberline {E.14}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{83}{figure.caption.73}
+\contentsline {figure}{\numberline {E.15}{\ignorespaces Estad\IeC {\'\i }sticas del PE Mongo en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{84}{figure.caption.74}
+\contentsline {figure}{\numberline {E.16}{\ignorespaces Estad\IeC {\'\i }sticas del PE Mongo en la primera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{84}{figure.caption.75}
+\contentsline {figure}{\numberline {E.17}{\ignorespaces Estad\IeC {\'\i }sticas del PE Split en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{85}{figure.caption.76}
+\contentsline {figure}{\numberline {E.18}{\ignorespaces Estad\IeC {\'\i }sticas del PE Split en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{85}{figure.caption.77}
+\contentsline {figure}{\numberline {E.19}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{86}{figure.caption.78}
+\contentsline {figure}{\numberline {E.20}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{86}{figure.caption.79}
+\contentsline {figure}{\numberline {E.21}{\ignorespaces Estad\IeC {\'\i }sticas del PE Merge en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{87}{figure.caption.80}
+\contentsline {figure}{\numberline {E.22}{\ignorespaces Estad\IeC {\'\i }sticas del PE Merge en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{87}{figure.caption.81}
+\contentsline {figure}{\numberline {E.23}{\ignorespaces Estad\IeC {\'\i }sticas del PE Split en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{88}{figure.caption.82}
+\contentsline {figure}{\numberline {E.24}{\ignorespaces Estad\IeC {\'\i }sticas del PE Split en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{88}{figure.caption.83}
+\contentsline {figure}{\numberline {E.25}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{89}{figure.caption.84}
+\contentsline {figure}{\numberline {E.26}{\ignorespaces Estad\IeC {\'\i }sticas del PE Counter en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{89}{figure.caption.85}
+\contentsline {figure}{\numberline {E.27}{\ignorespaces Estad\IeC {\'\i }sticas del PE Merge en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos con uso del modelo.}}{90}{figure.caption.86}
+\contentsline {figure}{\numberline {E.28}{\ignorespaces Estad\IeC {\'\i }sticas del PE Merge en la segunda aplicaci\IeC {\'o}n con un env\IeC {\'\i }o variable de la fuente de datos sin uso del modelo.}}{90}{figure.caption.87}
+\contentsline {figure}{\numberline {E.29}{\ignorespaces Estad\IeC {\'\i }sticas del primer PE en la tercera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{91}{figure.caption.88}
+\contentsline {figure}{\numberline {E.30}{\ignorespaces Estad\IeC {\'\i }sticas del primer PE en la tercera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{91}{figure.caption.89}
+\contentsline {figure}{\numberline {E.31}{\ignorespaces Estad\IeC {\'\i }sticas del segundo PE en la tercera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{92}{figure.caption.90}
+\contentsline {figure}{\numberline {E.32}{\ignorespaces Estad\IeC {\'\i }sticas del segundo PE en la tercera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{92}{figure.caption.91}
+\contentsline {figure}{\numberline {E.33}{\ignorespaces Estad\IeC {\'\i }sticas del tercer PE en la tercera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos con uso del modelo.}}{93}{figure.caption.92}
+\contentsline {figure}{\numberline {E.34}{\ignorespaces Estad\IeC {\'\i }sticas del tercer PE en la tercera aplicaci\IeC {\'o}n con un env\IeC {\'\i }o constante de la fuente de datos sin uso del modelo.}}{93}{figure.caption.93}

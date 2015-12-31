@@ -1,8 +1,21 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{65}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Abadi et~al.(2003)Abadi, Carney, {\c{C}}etintemel, Cherniack, Convey,
+  Lee, Stonebraker, Tatbul, \& Zdonik}]{aurora}
+Abadi, D.~J., Carney, D., {\c{C}}etintemel, U., Cherniack, M., Convey, C., Lee,
+  S., Stonebraker, M., Tatbul, N., \& Zdonik, S.~B. (2003).
+\newblock Aurora: a new model and architecture for data stream management.
+\newblock {\em {VLDB} J.\/}, {\em 12\/}(2), 120--139.
+
+\bibitem[{Alves et~al.(2010)Alves, Bizarro, \& Marques}]{Alves2010flood}
+Alves, D., Bizarro, P., \& Marques, P. (2010).
+\newblock Flood: Elastic streaming mapreduce.
+\newblock In {\em Proceedings of the Fourth ACM International Conference on
+  Distributed Event-Based Systems\/}, (pp. 113--114).
 
 \bibitem[{Andrade et~al.(2014)Andrade, Gedik, \&
   Turaga}]{andrade2014fundamentals}
@@ -11,11 +24,148 @@ Andrade, H., Gedik, B., \& Turaga, D. (2014).
   {S}ystems, and {A}nalytics\/}.
 \newblock Cambridge University Press.
 
+\bibitem[{Appel et~al.(2012)Appel, Frischbier, Freudenreich, \&
+  Buchmann}]{AppelFFB12}
+Appel, S., Frischbier, S., Freudenreich, T., \& Buchmann, A.~P. (2012).
+\newblock Eventlets: Components for the integration of event streams with
+  {SOA}.
+\newblock In {\em 2012 Fifth {IEEE} International Conference on
+  Service-Oriented Computing and Applications (SOCA), Taipei, Taiwan, Diciembre
+  17-19, 2012\/}, (pp. 1--9).
+
+\bibitem[{Arasu et~al.(2004)Arasu, Cherniack, Galvez, Maier, Maskey, Ryvkina,
+  Stonebraker, \& Tibbetts}]{ArasuCGMMRST04}
+Arasu, A., Cherniack, M., Galvez, E.~F., Maier, D., Maskey, A., Ryvkina, E.,
+  Stonebraker, M., \& Tibbetts, R. (2004).
+\newblock Linear road: {A} stream data management benchmark.
+\newblock In {\em (e)Proceedings of the Thirtieth International Conference on
+  Very Large Data Bases, Toronto, Canada, August 31 - September 3 2004\/}, (pp.
+  480--491).
+
+\bibitem[{Bhuvanagiri et~al.(2006)Bhuvanagiri, Ganguly, Kesh, \&
+  Saha}]{BhuvanagiriGKS06}
+Bhuvanagiri, L., Ganguly, S., Kesh, D., \& Saha, C. (2006).
+\newblock Simpler algorithm for estimating frequency moments of data streams.
+\newblock In {\em Proceedings of the Seventeenth Annual {ACM-SIAM} Symposium on
+  Discrete Algorithms, {SODA} 2006, Miami, Florida, USA, January 22-26,
+  2006\/}, (pp. 708--713).
+
+\bibitem[{Bose(2013)}]{bose2013introduction}
+Bose, S.~K. (2013).
+\newblock {\em An introduction to queueing systems\/}.
+\newblock Springer Science \& Business Media.
+
+\bibitem[{Brucker(2004)}]{bookScheduling}
+Brucker, P. (2004).
+\newblock {\em Scheduling algorithms\/}.
+\newblock Springer.
+
+\bibitem[{Casavant \& Kuhl(1988)}]{CasavantK88}
+Casavant, T.~L., \& Kuhl, J.~G. (1988).
+\newblock A taxonomy of scheduling in general-purpose distributed computing
+  systems.
+\newblock {\em {IEEE} Trans. Software Eng.\/}, {\em 14\/}(2), 141--154.
+
+\bibitem[{Chakravarthy \& Jiang(2009)}]{ChakravarthyJ09}
+Chakravarthy, S., \& Jiang, Q. (2009).
+\newblock {\em Stream Data Processing: {A} Quality of Service Perspective -
+  Modeling, Scheduling, Load Shedding, and Complex Event Processing\/}, vol.~36
+  of {\em Advances in Database Systems\/}.
+\newblock Kluwer.
+
 \bibitem[{Chen \& Zhang(2014)}]{ChenZ14a}
 Chen, C. L.~P., \& Zhang, C. (2014).
 \newblock Data-intensive applications, challenges, techniques and technologies:
   {A} survey on {B}ig {D}ata.
 \newblock {\em Inf. Sci.\/}, {\em 275\/}, 314--347.
+
+\bibitem[{Ching \& Ng(2006)}]{ching2006markov}
+Ching, W.~K., \& Ng, M.~K. (2006).
+\newblock {\em Markov chains\/}.
+\newblock Springer.
+
+\bibitem[{Chodorow(2013)}]{chodorow2013mongodb}
+Chodorow, K. (2013).
+\newblock {\em MongoDB: The definitive guide\/}.
+\newblock O'Reilly Media, Inc.
+
+\bibitem[{Cooper(1972)}]{cooper1972introduction}
+Cooper, R.~B. (1972).
+\newblock {\em Introduction to queueing theory\/}.
+\newblock Macmillan.
+
+\bibitem[{De~Sapio(1978)}]{de1978calculus}
+De~Sapio, R. (1978).
+\newblock {\em Calculus for the life sciences\/}.
+\newblock WH Freeman.
+
+\bibitem[{Dong \& Akl(2006)}]{dong2006scheduling}
+Dong, F., \& Akl, S.~G. (2006).
+\newblock {\em Scheduling algorithms for grid computing: State of the art and
+  open problems\/}.
+\newblock Queen’s {U}niversity.
+
+\bibitem[{Dong et~al.(2007)Dong, Tong, \& Sadler}]{DongTS07}
+Dong, M., Tong, L., \& Sadler, B.~M. (2007).
+\newblock Information retrieval and processing in sensor networks:
+  Deterministic scheduling versus random access.
+\newblock {\em {IEEE} Transactions on Signal Processing\/}, {\em 55\/}(12),
+  5806--5820.
+
+\bibitem[{Falk et~al.(2012)Falk, Marohn, Michel, Hofmann, Macke, Tewes, \&
+  Dinges}]{falk2012first}
+Falk, M., Marohn, F., Michel, R., Hofmann, D., Macke, M., Tewes, B., \& Dinges,
+  P. (2012).
+\newblock {\em A first course on time series analysis: examples with SAS\/}.
+\newblock Fakultat fur Mathematik und Informatik.
+
+\bibitem[{Fernandez et~al.(2013)Fernandez, Migliavacca, Kalyvianaki, \&
+  Pietzuch}]{FernandezMKP13}
+Fernandez, R.~C., Migliavacca, M., Kalyvianaki, E., \& Pietzuch, P. (2013).
+\newblock Integrating scale out and fault tolerance in stream processing using
+  operator state management.
+\newblock In {\em Proceedings of the {ACM} {SIGMOD} International Conference on
+  Management of Data, {SIGMOD} 2013, New York, NY, USA, June 22-27, 2013\/},
+  (pp. 725--736).
+
+\bibitem[{Ganguly(2009)}]{Ganguly09}
+Ganguly, S. (2009).
+\newblock Deterministically estimating data stream frequencies.
+\newblock In {\em Combinatorial Optimization and Applications, Third
+  International Conference, {COCOA} 2009, Huangshan, China, June 10-12, 2009.
+  Proceedings\/}, (pp. 301--312).
+
+\bibitem[{Gedik et~al.(2014)Gedik, Schneider, Hirzel, \& Wu}]{GedikSHW14}
+Gedik, B., Schneider, S., Hirzel, M., \& Wu, K. (2014).
+\newblock Elastic scaling for data stream processing.
+\newblock {\em {IEEE} Trans. Parallel Distrib. Syst.\/}, {\em 25\/}(6),
+  1447--1463.
+
+\bibitem[{Goetsch(2014)}]{kelly2014elasticity}
+Goetsch, K. (2014).
+\newblock {\em eCommerce in the Cloud - Bringing Elasticity to eCommerce\/}.
+\newblock O'Reilly.
+
+\bibitem[{Gong et~al.(2010)Gong, Gu, \& Wilkes}]{GongGW10}
+Gong, Z., Gu, X., \& Wilkes, J. (2010).
+\newblock {PRESS:} predictive elastic resource scaling for cloud systems.
+\newblock In {\em Proceedings of the 6th International Conference on Network
+  and Service Management, {CNSM} 2010, Niagara Falls, Canada, October 25-29,
+  2010\/}, (pp. 9--16).
+
+\bibitem[{Gulisano et~al.(2012)Gulisano, Jim{\'{e}}nez{-}Peris,
+  Pati{\~{n}}o{-}Mart{\'{\i}}nez, Soriente, \& Valduriez}]{GulisanoJPSV12}
+Gulisano, V., Jim{\'{e}}nez{-}Peris, R., Pati{\~{n}}o{-}Mart{\'{\i}}nez, M.,
+  Soriente, C., \& Valduriez, P. (2012).
+\newblock Streamcloud: An elastic and scalable data streaming system.
+\newblock {\em {IEEE} Trans. Parallel Distrib. Syst.\/}, {\em 23\/}(12),
+  2351--2365.
+
+\bibitem[{Gupta \& Bepari(1999)}]{Gupta99loadsharing}
+Gupta, D., \& Bepari, P. (1999).
+\newblock Load sharing in distributed systems.
+\newblock In {\em Proceedings of the National Workshop on Distributed
+  Computing\/}.
 
 \bibitem[{Hawwash \& Nasraoui(2014)}]{HawwashN14}
 Hawwash, B., \& Nasraoui, O. (2014).
@@ -26,11 +176,89 @@ Hawwash, B., \& Nasraoui, O. (2014).
   Models and Applications, BigMine 2014, New York City, USA, Agosto 24,
   2014\/}, (pp. 182--197).
 
+\bibitem[{Hirzel et~al.(2013)Hirzel, Soul{\'{e}}, Schneider, Gedik, \&
+  Grimm}]{HirzelSSGG13}
+Hirzel, M., Soul{\'{e}}, R., Schneider, S., Gedik, B., \& Grimm, R. (2013).
+\newblock A catalog of stream processing optimizations.
+\newblock {\em {ACM} Comput. Surv.\/}, {\em 46\/}(4), 46:1--46:34.
+
+\bibitem[{Hunt et~al.(2010)Hunt, Konar, Junqueira, \& Reed}]{HuntKJR10}
+Hunt, P., Konar, M., Junqueira, F.~P., \& Reed, B. (2010).
+\newblock Zookeeper: Wait-free coordination for internet-scale systems.
+\newblock In {\em 2010 {USENIX} Annual Technical Conference, Boston, MA, USA,
+  June 23-25, 2010\/}.
+
+\bibitem[{Ishii \& Suzumura(2011)}]{IshiiS11}
+Ishii, A., \& Suzumura, T. (2011).
+\newblock Elastic stream computing with clouds.
+\newblock In {\em {IEEE} International Conference on Cloud Computing, {CLOUD}
+  2011, Washington, DC, USA, 4-9 July, 2011\/}, (pp. 195--202).
+
+\bibitem[{Jacob et~al.(2004)Jacob, Lanyon-Hogg, Nadgir, \&
+  Yassin}]{redbooks2004practical}
+Jacob, B., Lanyon-Hogg, R., Nadgir, D.~K., \& Yassin, A.~F. (2004).
+\newblock {\em A Practical Guide to the {IBM} Autonomic Computing Toolkit\/}.
+\newblock {IBM} Corporation, International Technical Support Organization.
+
+\bibitem[{Karp et~al.(2003)Karp, Shenker, \& Papadimitriou}]{KarpSP03}
+Karp, R.~M., Shenker, S., \& Papadimitriou, C.~H. (2003).
+\newblock A simple algorithm for finding frequent elements in streams and bags.
+\newblock {\em {ACM} Trans. Database Syst.\/}, {\em 28\/}, 51--55.
+
+\bibitem[{Kephart et~al.(2005)Kephart, Kephart, Chess, Boutilier, Das, Kephart,
+  \& Walsh}]{ibm2005architectural}
+Kephart, J., Kephart, J., Chess, D., Boutilier, C., Das, R., Kephart, J.~O., \&
+  Walsh, W.~E. (2005).
+\newblock An architectural blueprint for autonomic computing.
+\newblock {\em IBM White paper\/}.
+
+\bibitem[{Lehrig et~al.(2015)Lehrig, Eikerling, \& Becker}]{LehrigEB15}
+Lehrig, S., Eikerling, H., \& Becker, S. (2015).
+\newblock Scalability, elasticity, and efficiency in cloud computing: a
+  systematic literature review of definitions and metrics.
+\newblock In {\em Proceedings of the 11th International {ACM} {SIGSOFT}
+  Conference on Quality of Software Architectures, QoSA'15 (part of CompArch
+  2015), Montreal, QC, Canada, May 4-8, 2015\/}, (pp. 83--92).
+
+\bibitem[{Leibiusky et~al.(2012)Leibiusky, Eisbruch, \& Simonassi}]{bookstorm}
+Leibiusky, J., Eisbruch, G., \& Simonassi, D. (2012).
+\newblock {\em Getting Started with Storm - Continuous Streaming Computation
+  with Twitter's Cluster Technology\/}.
+\newblock O'Reilly.
+
 \bibitem[{Lin \& Dyer(2010)}]{2010Lin}
 Lin, J., \& Dyer, C. (2010).
 \newblock {\em Data-Intensive Text Processing with MapReduce\/}.
 \newblock Synthesis Lectures on Human Language Technologies. Morgan {\&}
   Claypool Publishers.
+
+\bibitem[{Madsen et~al.(2014)Madsen, Thyssen, \& Zhou}]{MadsenTZ14}
+Madsen, K. G.~S., Thyssen, P., \& Zhou, Y. (2014).
+\newblock Integrating fault-tolerance and elasticity in a distributed data
+  stream processing system.
+\newblock In {\em Conference on Scientific and Statistical Database Management,
+  {SSDBM} '14, Aalborg, Denmark, June 30 - July 02, 2014\/}, (p.~48).
+
+\bibitem[{Mattmann \& Zitting(2011)}]{mattmann2011tika}
+Mattmann, C., \& Zitting, J. (2011).
+\newblock {\em Tika in action\/}.
+\newblock Manning Publications Co.
+
+\bibitem[{Menin(2002)}]{Menin2002SMH}
+Menin, E. (2002).
+\newblock {\em The Streaming Media Handbook\/}.
+\newblock Pearson Education.
+
+\bibitem[{Miao et~al.(2014)Miao, Yu, \& Jain}]{MiaoYJ14}
+Miao, R., Yu, M., \& Jain, N. (2014).
+\newblock {NIMBUS:} cloud-scale attack detection and mitigation.
+\newblock In {\em {ACM} {SIGCOMM} 2014 Conference, SIGCOMM'14, Chicago, IL,
+  USA, August 17-22, 2014\/}, (pp. 121--122).
+
+\bibitem[{Mohri et~al.(2012)Mohri, Rostamizadeh, \& Talwalkar}]{bookMohri2012}
+Mohri, M., Rostamizadeh, A., \& Talwalkar, A. (2012).
+\newblock {\em Foundations of Machine Learning\/}.
+\newblock Adaptive computation and machine learning. {MIT} Press.
 
 \bibitem[{Neumeyer et~al.(2010)Neumeyer, Robbins, Nair, \& Kesari}]{s4yahoo}
 Neumeyer, L., Robbins, B., Nair, A., \& Kesari, A. (2010).
@@ -39,10 +267,43 @@ Neumeyer, L., Robbins, B., Nair, A., \& Kesari, A. (2010).
   Data Mining Workshops, Sydney, Australia, 14 December 2010\/}, (pp.
   170--177).
 
+\bibitem[{Nguyen et~al.(2013)Nguyen, Shen, Gu, Subbiah, \&
+  Wilkes}]{NguyenSGSW13}
+Nguyen, H., Shen, Z., Gu, X., Subbiah, S., \& Wilkes, J. (2013).
+\newblock {AGILE:} elastic distributed resource scaling for
+  infrastructure-as-a-service.
+\newblock In {\em 10th International Conference on Autonomic Computing,
+  ICAC'13, San Jose, CA, USA, June 26-28, 2013\/}, (pp. 69--82).
+
 \bibitem[{Oberhelman(2007)}]{web2007oberhelman}
 Oberhelman, D. (2007).
 \newblock Coming to terms with {W}eb 2.0.
 \newblock {\em Reference Reviews\/}, {\em 21\/}, 5--6.
+
+\bibitem[{Papoulis \& Pillai(1984)}]{Papoulis1984}
+Papoulis, A., \& Pillai, U. (1984).
+\newblock {\em Probability, {R}andom {V}ariables, and {S}tochastic
+  {P}rocesses\/}.
+\newblock Mc-Graw Hill.
+
+\bibitem[{Pittau et~al.(2007)Pittau, Alimonda, Carta, \&
+  Acquaviva}]{PittauACA07}
+Pittau, M., Alimonda, A., Carta, S., \& Acquaviva, A. (2007).
+\newblock Impact of task migration on streaming multimedia for embedded
+  multiprocessors: {A} quantitative evaluation.
+\newblock In {\em Proceedings of the 2007 5th Workshop on Embedded Systems for
+  Real-Time Multimedia, ESTImedia 2007, October 4-5, Salzburg, Austria,
+  conjunction with {CODES+ISSS} 2007\/}, (pp. 59--64).
+
+\bibitem[{Rushton(2010)}]{rushton2010handbook}
+Rushton, A. (2010).
+\newblock {\em The handbook of logistics and distribution management\/}.
+\newblock Kogan Page Publishers.
+
+\bibitem[{S4(2014)}]{s4}
+S4 (2014).
+\newblock Distributed stream computing platform.
+\newblock [Online] \url{http://incubator.apache.org/s4/}.
 
 \bibitem[{Sampieri et~al.(2010)Sampieri, Collado, \&
   Lucio}]{hernandez2010metodologia}
@@ -55,10 +316,74 @@ Samza, A. (2014).
 \newblock Samza.
 \newblock [Online] \url{http://samza.incubator.apache.org/}.
 
+\bibitem[{Schneider et~al.(2009)Schneider, Andrade, Gedik, Biem, \&
+  Wu}]{SchneiderAGBW09}
+Schneider, S., Andrade, H., Gedik, B., Biem, A., \& Wu, K. (2009).
+\newblock Elastic scaling of data parallel operators in stream processing.
+\newblock In {\em 23rd {IEEE} International Symposium on Parallel and
+  Distributed Processing, {IPDPS} 2009, Rome, Italy, May 23-29, 2009\/}, (pp.
+  1--12).
+
+\bibitem[{Services(2015)}]{amazonec2}
+Services, A.~W. (2015).
+\newblock Amazon elastic compute cloud (ec2).
+\newblock [Online] \url{https://aws.amazon.com/ec2/}.
+
+\bibitem[{Shahrivari(2014)}]{Shahrivari14}
+Shahrivari, S. (2014).
+\newblock Beyond batch processing: Towards real-time and streaming big data.
+\newblock {\em Computing Research Repository\/}, {\em abs/1403.3375\/}.
+
+\bibitem[{Sheu \& Chi(2009)}]{SheuC09}
+Sheu, T., \& Chi, Y. (2009).
+\newblock Intelligent stale-frame discards for real-time video streaming over
+  wireless ad hoc networks.
+\newblock {\em {EURASIP} J. Wireless Comm. and Networking\/}, {\em 2009\/}.
+
+\bibitem[{Soong(2004)}]{soong2004fundamentals}
+Soong, T.~T. (2004).
+\newblock {\em Fundamentals of probability and statistics for engineers\/}.
+\newblock John Wiley \& Sons.
+
+\bibitem[{Stonebraker et~al.(2005)Stonebraker, {\c{C}}etintemel, \&
+  Zdonik}]{StonebrakerCZ05}
+Stonebraker, M., {\c{C}}etintemel, U., \& Zdonik, S.~B. (2005).
+\newblock The 8 requirements of real-time stream processing.
+\newblock {\em {SIGMOD} Record\/}, {\em 34\/}(4), 42--47.
+
 \bibitem[{Storm(2014)}]{stormtwitter}
 Storm (2014).
 \newblock Distributed and fault-tolerant realtime computation.
 \newblock [Online] \url{http://storm.incubator.apache.org/}.
+
+\bibitem[{Sturm et~al.(2000)Sturm, Morris, \& Jander}]{sturm2000foundations}
+Sturm, R., Morris, W., \& Jander, M. (2000).
+\newblock {\em Foundations of {S}ervice {L}evel {M}anagement\/}.
+\newblock Sams publishing.
+
+\bibitem[{Tanenbaum \& van Steen(2007)}]{bookTanenbaum}
+Tanenbaum, A.~S., \& van Steen, M. (2007).
+\newblock {\em Distributed {S}ystems - {P}rinciples and paradigms\/}.
+\newblock Pearson Education.
+
+\bibitem[{Taylor \& Karlin(2014)}]{taylor2014introduction}
+Taylor, H.~M., \& Karlin, S. (2014).
+\newblock {\em An introduction to stochastic modeling\/}.
+\newblock Academic press.
+
+\bibitem[{Thies et~al.(2002)Thies, Karczmarek, \& Amarasinghe}]{ThiesKA02}
+Thies, W., Karczmarek, M., \& Amarasinghe, S.~P. (2002).
+\newblock Streamit: {A} language for streaming applications.
+\newblock In {\em Compiler Construction, 11th International Conference, {CC}
+  2002, Held as Part of the Joint European Conferences on Theory and Practice
+  of Software, {ETAPS} 2002, Grenoble, France, April 8-12, 2002,
+  Proceedings\/}, (pp. 179--196).
+
+\bibitem[{Wang \& Loguinov(2007)}]{X11cp}
+Wang, X., \& Loguinov, D. (2007).
+\newblock Load-balancing performance of consistent hashing: asymptotic analysis
+  of random node join.
+\newblock {\em {IEEE/ACM} Trans. Netw.\/}, {\em 15\/}(4), 892--905.
 
 \bibitem[{Wenzel(2014)}]{Wenzel14}
 Wenzel, S. (2014).
@@ -66,5 +391,26 @@ Wenzel, S. (2014).
   data business applications.
 \newblock In {\em Business Information Systems - 17th International Conference,
   {BIS} 2014, Larnaca, Cyprus, Mayo 22-23, 2014. Proceedings\/}, (pp. 61--72).
+
+\bibitem[{Wu et~al.(2012)Wu, Kumar, Wu, \& Ooi}]{WuKWO12}
+Wu, S., Kumar, V., Wu, K., \& Ooi, B.~C. (2012).
+\newblock Parallelizing stateful operators in a distributed stream processing
+  system: how, should you and how much?
+\newblock In {\em Proceedings of the Sixth {ACM} International Conference on
+  Distributed Event-Based Systems, {DEBS} 2012, Berlin, Germany, July 16-20,
+  2012\/}, (pp. 278--289).
+
+\bibitem[{Xing et~al.(2005)Xing, Zdonik, \& Hwang}]{XingZH05}
+Xing, Y., Zdonik, S.~B., \& Hwang, J. (2005).
+\newblock Dynamic load distribution in the borealis stream processor.
+\newblock In {\em Proceedings of the 21st International Conference on Data
+  Engineering, {ICDE} 2005, 5-8 April 2005, Tokyo, Japan\/}, (pp. 791--802).
+
+\bibitem[{Xu et~al.(2014)Xu, Chen, Tang, \& Su}]{XuCTS14}
+Xu, J., Chen, Z., Tang, J., \& Su, S. (2014).
+\newblock T-storm: Traffic-aware online scheduling in storm.
+\newblock In {\em {IEEE} 34th International Conference on Distributed Computing
+  Systems, {ICDCS} 2014, Madrid, Spain, June 30 - July 3, 2014\/}, (pp.
+  535--544).
 
 \end{thebibliography}
