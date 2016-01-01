@@ -13,11 +13,7 @@ En la Figura \ref{fig:ejReplicacion} se muestra un ejemplo de la replicaci\'on p
 \begin{figure}[!ht]
 	\centering
 		\includegraphics[scale=0.6]{images/EjReplicacion.pdf}
-<<<<<<< HEAD
-	\caption[Ejemplo de replicación del modelo propuesto.]{Ejemplo de replicación del modelo propuesto.\\Fuente: Elaboración propia.}
-=======
-	\caption{Ejemplo de replicaci\'on del modelo propuesto.}
->>>>>>> 2593dcc9f1f0f407aaed2b40f87140ab2e858079
+	\caption[Ejemplo de replicaci\'on del modelo propuesto.]{Ejemplo de replicaci\'on del modelo propuesto.\\Fuente: Elaboraci\'on propia.}
 	\label{fig:ejReplicacion}
 \end{figure}
 
@@ -31,12 +27,8 @@ Para la detecci\'on del nivel de carga de un operador es necesario contar con un
 
 \begin{figure}[!ht]
 	\centering
-		\includegraphics[scale=0.6]{images/AnalisisTeoriaColas.pdf}
-<<<<<<< HEAD
-	\caption[Enfoque de un SPS con conceptos de teoría de colas.]{Enfoque de un SPS con conceptos de teoría de colas.\\Fuente: Elaboración propia.}
-=======
-	\caption{Enfoque de un SPS con conceptos de teor\'ia de colas.}
->>>>>>> 2593dcc9f1f0f407aaed2b40f87140ab2e858079
+	\includegraphics[scale=0.6]{images/AnalisisTeoriaColas.pdf}
+	\caption[Enfoque de un SPS con conceptos de teor\'ia de colas.]{Enfoque de un SPS con conceptos de teor\'ia de colas.\\Fuente: Elaboraci\'on propia.}
 	\label{fig:analisisTeoriaColas}
 \end{figure}
 
@@ -59,11 +51,7 @@ Dado lo anterior, se ha dise\~nado un modelo el\'astico \normalsize{basado en el
 \begin{figure}[ht!]
   \centering
     \includegraphics[scale=0.5]{images/Diagrama.pdf}
-<<<<<<< HEAD
-  \caption[Estructura del modelo elástico.]{Estructura del modelo elástico.\\Fuente: Elaboración propia.}
-=======
-  \caption{Estructura del modelo el\'astico.}
->>>>>>> 2593dcc9f1f0f407aaed2b40f87140ab2e858079
+  \caption[Estructura del modelo el\'astico.]{Estructura del modelo el\'astico.\\Fuente: Elaboraci\'on propia.}
   \label{fig:componentesSistemas}
 \end{figure}
 
@@ -105,8 +93,6 @@ Dentro de las consideraciones realizadas para la recolecci\'on de datos, dentro 
 
 En el Algoritmo \ref{alg:reactive} se presenta el mecanismo de an\'alisis de estado para un operador dado. Dicho estado est\'a determinado por su tasa de rendimiento, la cual en caso de ser mayor a 1, su estado es inestable, si es menor a 0.5, su estado es ocioso, y en otro caso, significa que est\'a estable. Estos datos posteriormente son considerados por el administrador de r\'eplicas, para una posible modificaci\'on de la cantidad de r\'eplicas seg\'un el comportamiento del operador.
 
-En la Figura \ref{fig:umbrales} se observa el estado de un operador según la tasa de procesamiento. En los primeros 90 segundos la tasa del operador es mayor al límite superior, lo cual indica que el sistema es inestable, es decir, el operador posee sobrecarga. Posteriormente, en el segundo 50, la tasa de rendimiento empieza a disminuir, ya sea por una optimización sobre los recursos lógicos o una disminución de la tasa de llegada. \normalsize{Por lo que ahora el operador ya no se encuentra sobrecargado (inestable), sino que se encuentra entre el límite inferior y superior, cuyo rango define al operador como un sistema estable hasta el segundo 170, donde se encuentra ocioso, hasta llegar al segundo 230.}
-
 \begin{algorithm}[!ht]
 	\caption{Algoritmo reactivo del modelo el\'astico.}
 	\label{alg:reactive}
@@ -123,16 +109,13 @@ En la Figura \ref{fig:umbrales} se observa el estado de un operador según la ta
 	\end{algorithmic}
 \end{algorithm}
 
-<<<<<<< HEAD
-=======
 En la Figura \ref{fig:umbrales} se observa el estado de un operador seg\'un la tasa de procesamiento. En los primeros 90 segundos la tasa del operador es mayor al l\'imite superior, lo cual indica que el sistema es inestable, es decir, el operador posee sobrecarga. Posteriormente, en el segundo 50, la tasa de rendimiento empieza a disminuir, ya sea por una optimizaci\'on sobre los recursos l\'ogicos o una disminuci\'on de la tasa de llegada. \normalsize{Por lo que ahora el operador ya no se encuentra sobrecargado (inestable), sino que se encuentra entre el l\'imite inferior y superior, cuyo rango define al operador como un sistema estable hasta el segundo 170, donde se encuentra ocioso, hasta llegar al segundo 230.}
 
->>>>>>> 2593dcc9f1f0f407aaed2b40f87140ab2e858079
 \begin{figure}[ht!]
   \centering
   \captionsetup{justification=centering}
     \includegraphics[scale=0.8]{images/Umbrales.eps}
-	\caption[Comportamiento de la tasa de procesamiento de un operador.]{Comportamiento de la tasa de procesamiento de un operador. \\ Fuente: Elaboración propia.}
+	\caption[Comportamiento de la tasa de procesamiento de un operador.]{Comportamiento de la tasa de procesamiento de un operador. \\ Fuente: Elaboraci\'on propia.}
   \label{fig:umbrales}
 \end{figure}
 
@@ -152,7 +135,7 @@ Tomando las bases anteriores, se ha dise\~nado una cadena de Markov en base a tr
   \centering
   \captionsetup{justification=centering}
     \includegraphics[scale=0.75]{images/CadenaMarkovPredictiva.pdf}
-  \caption[Cadena de Markov dado el modelo propuesto del sistema.]{Cadena de Markov dado el modelo propuesto del sistema.\\Fuente: Elaboración propia.}
+  \caption[Cadena de Markov dado el modelo propuesto del sistema.]{Cadena de Markov dado el modelo propuesto del sistema.\\Fuente: Elaboraci\'on propia.}
   \label{fig:cadenaMarkovPredictiva}
 \end{figure}
 

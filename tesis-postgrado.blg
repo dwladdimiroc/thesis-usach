@@ -2,9 +2,9 @@ This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesis-postgrado.aux
 A level-1 auxiliary file: preliminares/cubierta.aux
-A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: preliminares/dedicatoria.aux
 A level-1 auxiliary file: preliminares/agradecimiento.aux
+A level-1 auxiliary file: preliminares/abstract.aux
 A level-1 auxiliary file: chapters/1-Introduccion.aux
 A level-1 auxiliary file: chapters/2-MarcoTeorico.aux
 A level-1 auxiliary file: chapters/3-BalanceDeCarga.aux

@@ -1,67 +1,3 @@
-<<<<<<< HEAD
-\BOOKMARK [0][]{chapter.1}{1 Introducci\363n}{}% 1
-\BOOKMARK [1][]{section.1.1}{1.1 Antecedentes y motivaci\363n}{chapter.1}% 2
-\BOOKMARK [1][]{section.1.2}{1.2 Descripci\363n del problema}{chapter.1}% 3
-\BOOKMARK [1][]{section.1.3}{1.3 Soluci\363n propuesta}{chapter.1}% 4
-\BOOKMARK [1][]{section.1.4}{1.4 Objetivos y alcance del proyecto}{chapter.1}% 5
-\BOOKMARK [2][]{subsection.1.4.1}{1.4.1 Objetivo general}{section.1.4}% 6
-\BOOKMARK [2][]{subsection.1.4.2}{1.4.2 Objetivos espec\355ficos}{section.1.4}% 7
-\BOOKMARK [2][]{subsection.1.4.3}{1.4.3 Alcances}{section.1.4}% 8
-\BOOKMARK [1][]{section.1.5}{1.5 Metodolog\355a y herramientas utilizadas}{chapter.1}% 9
-\BOOKMARK [2][]{subsection.1.5.1}{1.5.1 Metodolog\355a}{section.1.5}% 10
-\BOOKMARK [2][]{subsection.1.5.2}{1.5.2 Herramientas de desarrollo}{section.1.5}% 11
-\BOOKMARK [1][]{section.1.6}{1.6 Organizaci\363n del documento}{chapter.1}% 12
-\BOOKMARK [0][]{chapter.2}{2 Marco Te\363rico}{}% 13
-\BOOKMARK [1][]{section.2.1}{2.1 Streaming}{chapter.2}% 14
-\BOOKMARK [1][]{section.2.2}{2.2 Stream processing}{chapter.2}% 15
-\BOOKMARK [1][]{section.2.3}{2.3 Sistemas de procesamiento de stream}{chapter.2}% 16
-\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 S4}{section.2.3}% 17
-\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Storm}{section.2.3}% 18
-\BOOKMARK [1][]{section.2.4}{2.4 Elasticidad}{chapter.2}% 19
-\BOOKMARK [1][]{section.2.5}{2.5 MAPE}{chapter.2}% 20
-\BOOKMARK [1][]{section.2.6}{2.6 Procesos estoc\341sticos}{chapter.2}% 21
-\BOOKMARK [2][]{subsection.2.6.1}{2.6.1 Cadena de Markov}{section.2.6}% 22
-\BOOKMARK [2][]{subsection.2.6.2}{2.6.2 Trabajo relacionado}{section.2.6}% 23
-\BOOKMARK [1][]{section.2.7}{2.7 Teor\355a de colas}{chapter.2}% 24
-\BOOKMARK [0][]{chapter.3}{3 Balance de carga en SPS}{}% 25
-\BOOKMARK [1][]{section.3.1}{3.1 Perspectivas de balance de carga}{chapter.3}% 26
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Recursos f\355sicos}{section.3.1}% 27
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Recursos l\363gicos}{section.3.1}% 28
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Enfoque est\341tico}{section.3.1}% 29
-\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Enfoque din\341mico}{section.3.1}% 30
-\BOOKMARK [1][]{section.3.2}{3.2 T\351cnicas de balance de carga}{chapter.3}% 31
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Planificaci\363n determinista}{section.3.2}% 32
-\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Load Shedding}{section.3.2}% 33
-\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Migraci\363n}{section.3.2}% 34
-\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Fisi\363n}{section.3.2}% 35
-\BOOKMARK [0][]{chapter.4}{4 Dise\361o del modelo el\341stico}{}% 36
-\BOOKMARK [1][]{section.4.1}{4.1 An\341lisis del m\363delo el\341stico}{chapter.4}% 37
-\BOOKMARK [1][]{section.4.2}{4.2 Recolecci\363n de los datos}{chapter.4}% 38
-\BOOKMARK [1][]{section.4.3}{4.3 Algoritmo reactivo}{chapter.4}% 39
-\BOOKMARK [1][]{section.4.4}{4.4 Algoritmo predictivo}{chapter.4}% 40
-\BOOKMARK [1][]{section.4.5}{4.5 Administraci\363n del sistema}{chapter.4}% 41
-\BOOKMARK [0][]{chapter.5}{5 Experimentos y evaluaci\363n}{}% 42
-\BOOKMARK [1][]{section.5.1}{5.1 Implementaci\363n del sistema}{chapter.5}% 43
-\BOOKMARK [1][]{section.5.2}{5.2 Dise\361o de los experimentos}{chapter.5}% 44
-\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Aplicaci\363n 1: An\341lisis de tweets en escenarios de desastres naturales}{section.5.2}% 45
-\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 Aplicaci\363n 2: Contador de palabras en muestras de textos}{section.5.2}% 46
-\BOOKMARK [2][]{subsection.5.2.3}{5.2.3 Aplicaci\363n 3: Aplicaci\363n sint\351tica}{section.5.2}% 47
-\BOOKMARK [1][]{section.5.3}{5.3 Evaluaci\363n}{chapter.5}% 48
-\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Aplicaci\363n 1: An\341lisis de tweets en escenarios de desastres naturales}{section.5.3}% 49
-\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 Aplicaci\363n 2: Contador de palabras en muestras de textos}{section.5.3}% 50
-\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 Aplicaci\363n 3: Aplicaci\363n sint\351tica}{section.5.3}% 51
-\BOOKMARK [0][]{chapter.6}{6 Conclusiones}{}% 52
-\BOOKMARK [1][]{section.6.1}{6.1 Detalles de la contribuci\363n}{chapter.6}% 53
-\BOOKMARK [1][]{section.6.2}{6.2 Discusiones}{chapter.6}% 54
-\BOOKMARK [1][]{section.6.3}{6.3 Trabajo futuro}{chapter.6}% 55
-\BOOKMARK [0][]{chapter*.57}{Referencias bibliogr\341ficas}{}% 56
-\BOOKMARK [0][]{section*.58}{Anexos}{}% 57
-\BOOKMARK [0][]{appendix.Alph1}{A Conformaci\363n de matriz de transici\363n}{}% 58
-\BOOKMARK [0][]{appendix.Alph2}{B Clases para la implementaci\363n del sistema de monitoreo}{}% 59
-\BOOKMARK [0][]{appendix.Alph3}{C Modificaciones al c\363digo fuente de S4}{}% 60
-\BOOKMARK [0][]{appendix.Alph4}{D Configuraci\363n para la comunicaci\363n de S4}{}% 61
-\BOOKMARK [0][]{appendix.Alph5}{E Estad\355sticas de los operadores}{}% 62
-=======
 \BOOKMARK [0][]{chapter.1}{1 Introducción}{}% 1
 \BOOKMARK [1][]{section.1.1}{1.1 Antecedentes y motivación}{chapter.1}% 2
 \BOOKMARK [1][]{section.1.2}{1.2 Descripción del problema}{chapter.1}% 3
@@ -124,4 +60,3 @@
 \BOOKMARK [0][]{appendix.C}{C Modificaciones al código fuente de S4}{}% 60
 \BOOKMARK [0][]{appendix.D}{D Configuración para la comunicación de S4}{}% 61
 \BOOKMARK [0][]{appendix.E}{E Estadísticas de los operadores}{}% 62
->>>>>>> 2593dcc9f1f0f407aaed2b40f87140ab2e858079
