@@ -510,6 +510,7 @@
 % Dedicatoria
 \newenvironment{dedicatoria}[1]
 {
+	\thispagestyle{empty}
     \vspace*{17cm}\par
     \hspace*{5cm}
     \begin{flushright}
@@ -521,7 +522,7 @@
 \newenvironment{agradecimiento}
 {
     \chapter*{\centerline{AGRADECIMIENTOS}}
-}{}
+}{\thispagestyle{empty}}
 
 % Resumen
 \newcommand{\KeywordsES}[1]
